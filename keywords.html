@@ -4437,6 +4437,7 @@
         "24.3"
     ]
 };
+    var docs = {};
     </script>
     <style>
     body {
@@ -4495,7 +4496,16 @@
     for (const feature of features) {
         const row = table.insertRow();
         const cell = row.insertCell();
-        cell.textContent = feature;
+
+        if (docs.hasOwnProperty(feature)) {
+            const link = document.createElement('a');
+            link.href = docs[feature];
+            link.textContent = feature;
+            cell.appendChild(link);
+        } else {
+            cell.textContent = feature;
+        }
+
         for (const version of versions) {
             const cell = row.insertCell();
             if (availability[feature].includes(version)) {

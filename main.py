@@ -3,6 +3,8 @@ import csv
 import joblib
 import json
 
+from scrape_docs import function_pages, function_doc_template
+
 memory = joblib.Memory("cache", verbose=0)
 
 
@@ -40,6 +42,36 @@ def run_query(query: str, tag: str) -> dict:
 
     response = requests.post("https://fiddle.clickhouse.com/api/runs", json=json_data)
     return response.json().get("result", {}).get("output")
+
+
+@memory.cache
+def get_function_pages() -> dict[str, str]:
+    page_ref = {}
+
+    for page in function_pages:
+        print("Processing", page)
+        response = requests.get(function_doc_template.format(page=page))
+        response.raise_for_status()
+
+        page_ref[page] = response.text
+
+    return page_ref
+
+
+def get_url_for_function(function: str) -> str | None:
+    # standardise function name
+    std_func = function.lower()
+
+    # pages contain anchor links to the functions, like #arrayjoin or #formatreadablesize.
+    # we can iterate over pages, check for "#{std_func}" and return the page if found.
+    # not every function is documented (https://github.com/ClickHouse/clickhouse-docs/issues/1833),
+    # so we return None if we can't find the function.
+
+    page_ref = get_function_pages()
+
+    for page, content in page_ref.items():
+        if f'id="{std_func}"' in content:
+            return f"{function_doc_template.format(page=page)}#{std_func}"
 
 
 @memory.cache
@@ -102,6 +134,16 @@ def render(
         for feature in all_features
     }
 
+    docs_links = (
+        {
+            feature: url
+            for feature in all_features
+            if (url := get_url_for_function(feature)) is not None
+        }
+        if feature_type == "function"
+        else {}
+    )
+
     doc = f"""<!doctype html>
 
 <head>
@@ -119,6 +161,7 @@ def render(
     </script>
     <script>
     var availability = {json.dumps(feature_to_versions, indent=4)};
+    var docs = {json.dumps(docs_links, indent=4)};
     </script>
     <style>
     body {{
@@ -188,7 +231,16 @@ def render(
     for (const feature of features) {
         const row = table.insertRow();
         const cell = row.insertCell();
-        cell.textContent = feature;
+
+        if (docs.hasOwnProperty(feature)) {
+            const link = document.createElement('a');
+            link.href = docs[feature];
+            link.textContent = feature;
+            cell.appendChild(link);
+        } else {
+            cell.textContent = feature;
+        }
+
         for (const version of versions) {
             const cell = row.insertCell();
             if (availability[feature].includes(version)) {
