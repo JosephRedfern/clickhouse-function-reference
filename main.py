@@ -112,6 +112,15 @@ def render(
     feature_type: str = "function",
     filename: str = "index.html",
 ) -> None:
+
+    # Mapping from altenative function names to the canonical name
+    aliases = {
+        func["name"]: func["alias_to"]
+        for funcs in version_info.values()
+        for func in funcs
+        if "alias_to" in func and func["alias_to"] != ""
+    }
+
     # Deduplicated list of all features
     all_features = sorted(
         list(
@@ -162,6 +171,7 @@ def render(
     <script>
     var availability = {json.dumps(feature_to_versions, indent=4)};
     var docs = {json.dumps(docs_links, indent=4)};
+    var aliases = {json.dumps(aliases, indent=4)};
     </script>
     <style>
     body {{
@@ -232,13 +242,26 @@ def render(
         const row = table.insertRow();
         const cell = row.insertCell();
 
+        var url = null; 
+        
+        // direct link to docs
         if (docs.hasOwnProperty(feature)) {
-            const link = document.createElement('a');
-            link.href = docs[feature];
-            link.textContent = feature;
-            cell.appendChild(link);
+            url = document.createElement('a');
         } else {
-            cell.textContent = feature;
+            if (aliases.hasOwnProperty(feature)) {
+               // no direct link to docs, check if there is an alias
+                url = docs[aliases[feature]];
+            }
+        }
+
+        if (url) {
+            cell.innerHTML = `<a href="${url}">${feature}</a>`;
+        } else {
+            cell.innerHTML = feature;
+        }
+
+        if (aliases.hasOwnProperty(feature)) {
+            cell.innerHTML += "*";
         }
 
         for (const version of versions) {
@@ -279,6 +302,7 @@ def render(
 
     """
     doc += "</script>"
+    doc += '<p style="margin-top: 15px">* indicates an alias to another function</p>'
 
     doc += "</div>"
     doc += "</div>"

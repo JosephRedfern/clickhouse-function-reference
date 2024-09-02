@@ -52846,6 +52846,179 @@
     "yesterday": "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions/#yesterday",
     "zookeeperSessionUptime": "https://clickhouse.com/docs/en/sql-reference/functions/other-functions/#zookeepersessionuptime"
 };
+    var aliases = {
+    "from_utc_timestamp": "fromUTCTimestamp",
+    "connection_id": "connectionid",
+    "truncate": "trunc",
+    "ceiling": "ceil",
+    "rand32": "rand",
+    "INET6_ATON": "IPv6StringToNum",
+    "INET_ATON": "IPv4StringToNum",
+    "replace": "replaceAll",
+    "mapFromString": "extractKeyValuePairs",
+    "str_to_map": "extractKeyValuePairs",
+    "levenshteinDistanceUTF8": "editDistanceUTF8",
+    "mismatches": "byteHammingDistance",
+    "SUBSTRING_INDEX": "substringIndex",
+    "TO_BASE64": "base64Encode",
+    "SVG": "svg",
+    "INET6_NTOA": "IPv6NumToString",
+    "JSON_ARRAY_LENGTH": "JSONArrayLength",
+    "caseWithExpr": "caseWithExpression",
+    "INET_NTOA": "IPv4NumToString",
+    "current_database": "currentDatabase",
+    "levenshteinDistance": "editDistance",
+    "pmod": "positiveModulo",
+    "current_schemas": "currentSchemas",
+    "TO_UNIXTIME": "parseDateTime",
+    "current_user": "currentUser",
+    "visitParamExtractFloat": "simpleJSONExtractFloat",
+    "TIMESTAMP_DIFF": "dateDiff",
+    "visitParamHas": "simpleJSONHas",
+    "timeZoneOffset": "timezoneOffset",
+    "timestamp_diff": "dateDiff",
+    "timestampDiff": "dateDiff",
+    "date_diff": "dateDiff",
+    "REGEXP_REPLACE": "replaceAll",
+    "timeZone": "timezone",
+    "DATE_TRUNC": "dateTrunc",
+    "vectorDifference": "tupleMinus",
+    "DAYOFMONTH": "toDayOfMonth",
+    "distanceL2Squared": "L2SquaredDistance",
+    "partitionID": "partitionId",
+    "MONTH": "toMonth",
+    "FROM_DAYS": "fromDaysSinceYearZero",
+    "DATE_FORMAT": "formatDateTime",
+    "caseWithoutExpr": "multiIf",
+    "query_id": "queryID",
+    "rtrim": "trimRight",
+    "visitParamExtractUInt": "simpleJSONExtractUInt",
+    "substr": "substring",
+    "caseWithoutExpression": "multiIf",
+    "hostname": "hostName",
+    "concat_ws": "concatWithSeparator",
+    "power": "pow",
+    "FROM_UNIXTIME": "fromUnixTimestamp",
+    "curdate": "today",
+    "YEAR": "toYear",
+    "byteSlice": "substring",
+    "mid": "substring",
+    "distanceL2": "L2Distance",
+    "DATE_DIFF": "dateDiff",
+    "DATABASE": "currentDatabase",
+    "rpad": "rightPad",
+    "jsonMergePatch": "JSONMergePatch",
+    "visitParamExtractBool": "simpleJSONExtractBool",
+    "CHAR_LENGTH": "lengthUTF8",
+    "positive_modulo": "positiveModulo",
+    "MAP_FROM_ARRAYS": "mapFromArrays",
+    "fullHostName": "FQDN",
+    "trim": "trimBoth",
+    "MILLISECOND": "toMillisecond",
+    "minSampleSizeContinous": "minSampleSizeContinuous",
+    "FROM_BASE64": "base64Decode",
+    "LAST_DAY": "toLastDayOfMonth",
+    "timeZoneOf": "timezoneOf",
+    "OCTET_LENGTH": "length",
+    "user": "currentUser",
+    "distanceLp": "LpDistance",
+    "lcase": "lower",
+    "REGEXP_MATCHES": "match",
+    "toTimeZone": "toTimezone",
+    "SECOND": "toSecond",
+    "str_to_date": "parseDateTimeOrNull",
+    "FORMAT_BYTES": "formatReadableSize",
+    "normL2Squared": "L2SquaredNorm",
+    "visitParamExtractRaw": "simpleJSONExtractRaw",
+    "serverTimeZone": "serverTimezone",
+    "normalizeLp": "LpNormalize",
+    "week": "toWeek",
+    "DAYOFYEAR": "toDayOfYear",
+    "scalarProduct": "dotProduct",
+    "yandexConsistentHash": "kostikConsistentHash",
+    "TO_DAYS": "toDaysSinceYearZero",
+    "toStartOfFiveMinute": "toStartOfFiveMinutes",
+    "sqid": "sqidEncode",
+    "HOUR": "toHour",
+    "QUARTER": "toQuarter",
+    "UTC_timestamp": "UTCTimestamp",
+    "ln": "log",
+    "extractAllGroups": "extractAllGroupsVertical",
+    "SCHEMA": "currentDatabase",
+    "normLinf": "LinfNorm",
+    "instr": "positionCaseInsensitive",
+    "DAYOFWEEK": "toDayOfWeek",
+    "flatten": "arrayFlatten",
+    "normalizeLinf": "LinfNormalize",
+    "MINUTE": "toMinute",
+    "ltrim": "trimLeft",
+    "normalizeL2": "L2Normalize",
+    "initial_query_id": "initialQueryID",
+    "to_utc_timestamp": "toUTCTimestamp",
+    "width_bucket": "widthBucket",
+    "lpad": "leftPad",
+    "ucase": "upper",
+    "REGEXP_EXTRACT": "regexpExtract",
+    "normalizeL1": "L1Normalize",
+    "CHARACTER_LENGTH": "lengthUTF8",
+    "distanceLinf": "LinfDistance",
+    "yearweek": "toYearWeek",
+    "visitParamExtractInt": "simpleJSONExtractInt",
+    "splitByAlpha": "alphaTokens",
+    "current_timestamp": "now",
+    "normLp": "LpNorm",
+    "distanceL1": "L1Distance",
+    "current_date": "today",
+    "normL1": "L1Norm",
+    "vectorSum": "tuplePlus",
+    "mod": "modulo",
+    "normL2": "L2Norm",
+    "DAY": "toDayOfMonth",
+    "visitParamExtractString": "simpleJSONExtractString",
+    "anova": "analysisOfVariance",
+    "BIT_XOR": "groupBitXor",
+    "BIT_OR": "groupBitOr",
+    "approx_top_count": "approx_top_k",
+    "lttb": "largestTriangleThreeBuckets",
+    "COVAR_POP": "covarPop",
+    "STD": "stddevPop",
+    "STDDEV_POP": "stddevPop",
+    "VAR_POP": "varPop",
+    "STDDEV_SAMP": "stddevSamp",
+    "VAR_SAMP": "varSamp",
+    "last_value_respect_nulls": "anyLast_respect_nulls",
+    "first_value_respect_nulls": "any_respect_nulls",
+    "COVAR_SAMP": "covarSamp",
+    "any_value": "any",
+    "medianDeterministic": "quantileDeterministic",
+    "last_value": "anyLast",
+    "medianExact": "quantileExact",
+    "medianDD": "quantileDD",
+    "percent_rank": "percentRank",
+    "medianInterpolatedWeighted": "quantileInterpolatedWeighted",
+    "medianTDigestWeighted": "quantileTDigestWeighted",
+    "medianBFloat16": "quantileBFloat16",
+    "first_value": "any",
+    "medianTDigest": "quantileTDigest",
+    "sparkBar": "sparkbar",
+    "medianTimingWeighted": "quantileTimingWeighted",
+    "array_agg": "groupArray",
+    "median": "quantile",
+    "medianTiming": "quantileTiming",
+    "dense_rank": "denseRank",
+    "medianGK": "quantileGK",
+    "medianExactLow": "quantileExactLow",
+    "BIT_AND": "groupBitAnd",
+    "medianExactHigh": "quantileExactHigh",
+    "group_concat": "groupConcat",
+    "medianBFloat16Weighted": "quantileBFloat16Weighted",
+    "medianExactWeighted": "quantileExactWeighted",
+    "any_value_respect_nulls": "any_respect_nulls",
+    "array_concat_agg": "groupArrayArray",
+    "locate": "position",
+    "fromUnixTimestamp": "FROM_UNIXTIME",
+    "dateTrunc": "date_trunc"
+};
     </script>
     <style>
     body {
@@ -52905,13 +53078,26 @@
         const row = table.insertRow();
         const cell = row.insertCell();
 
+        var url = null; 
+        
+        // direct link to docs
         if (docs.hasOwnProperty(feature)) {
-            const link = document.createElement('a');
-            link.href = docs[feature];
-            link.textContent = feature;
-            cell.appendChild(link);
+            url = document.createElement('a');
         } else {
-            cell.textContent = feature;
+            if (aliases.hasOwnProperty(feature)) {
+               // no direct link to docs, check if there is an alias
+                url = docs[aliases[feature]];
+            }
+        }
+
+        if (url) {
+            cell.innerHTML = `<a href="${url}">${feature}</a>`;
+        } else {
+            cell.innerHTML = feature;
+        }
+
+        if (aliases.hasOwnProperty(feature)) {
+            cell.innerHTML += "*";
         }
 
         for (const version of versions) {
@@ -52950,4 +53136,4 @@
         cell.removeChild(cell.lastChild);
     }
 
-    </script></div></div><div style='margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a></p></footer></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>
+    </script><p style="margin-top: 15px">* indicates an alias to another function</p></div></div><div style='margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a></p></footer></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>
