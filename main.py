@@ -7,16 +7,32 @@ memory = joblib.Memory("cache", verbose=0)
 
 
 def main() -> None:
-    info = {}
+    function_info = {}
+    keyword_info = {}
 
     tags = get_tags()
 
-    for tag in tags[:36]:
-        print("Processing", tag)
-        funcs = get_functions(tag)
-        info[tag] = funcs
+    for version in tags[:36]:
+        print("Processing", version)
+        funcs = get_functions(version)
+        keywords = get_keywords(version)
+        function_info[version] = funcs
+        keyword_info[version] = keywords
 
-    render(info)
+    render(
+        function_info,
+        title="ClickHouse Function Reference",
+        header="ClickHouse Function Availability Reference",
+        feature_type="function",
+        filename="index.html",
+    )
+    render(
+        keyword_info,
+        title="ClickHouse Keyword Reference",
+        header="ClickHouse Keyword Reference",
+        feature_type="keyword",
+        filename="keywords.html",
+    )
 
 
 def run_query(query: str, tag: str) -> dict:
@@ -29,6 +45,15 @@ def run_query(query: str, tag: str) -> dict:
 @memory.cache
 def get_functions(tag: str) -> list[str]:
     tsv = run_query("SELECT * FROM system.functions FORMAT TabSeparatedWithNames", tag)
+    reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
+    return list(reader)
+
+
+@memory.cache
+def get_keywords(tag: str) -> list[str]:
+    tsv = run_query(
+        "SELECT keyword as name FROM system.keywords FORMAT TabSeparatedWithNames", tag
+    )
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
@@ -48,24 +73,40 @@ def get_tags(exclude_patch: bool = True, exclude_alpine: bool = True) -> list[st
     return tags
 
 
-def render(version_info: dict, filename: str = "index.html") -> None:
-    all_funcs = sorted(
-        list({func["name"] for funcs in version_info.values() for func in funcs})
+def render(
+    version_info: dict,
+    title: str = "ClickHouse Function Reference",
+    header: str = "ClickHouse Function Availability Reference",
+    feature_type: str = "function",
+    filename: str = "index.html",
+) -> None:
+    # Deduplicated list of all features
+    all_features = sorted(
+        list(
+            {
+                func["name"]
+                for funcs in version_info.values()
+                for func in funcs
+                if "name" in func
+            }
+        )
     )
-    func_to_tags = {
-        func: [
+
+    # Mapping from feature to list of versions it is available in
+    feature_to_versions = {
+        feature: [
             tag
             for tag, funcs in version_info.items()
-            if any(f["name"] == func for f in funcs)
+            if any(f.get("name") == feature for f in funcs)
         ]
-        for func in all_funcs
+        for feature in all_features
     }
 
     doc = f"""<!doctype html>
 
 <head>
     <meta charset="UTF-8">
-    <title>ClickHouse Function Reference</title>    
+    <title>{title}</title>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7W1TNNL21"></script>
@@ -77,26 +118,35 @@ def render(version_info: dict, filename: str = "index.html") -> None:
         gtag('config', 'G-W7W1TNNL21');
     </script>
     <script>
-    var function_availability = {json.dumps(func_to_tags, indent=4)};
+    var availability = {json.dumps(feature_to_versions, indent=4)};
     </script>
     <style>
     body {{
         font-size: 13px;
+    }}
+
+    .main{{
+        margin-top: 20px;
     }}
     </style>
 
 </head>
 <body>
 <div class="container" style="max-width: none">
-<h1> ClickHouse Function Availability Reference</h1>
+<h1>{header}</h1>
+<nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
+<div class="main">
 """
 
+    doc += f"""
+    <input type="text" id="search" onkeyup="search()" placeholder="Search for {feature_type}s...">
+    """
+
     doc += """
-    <input type="text" id="search" onkeyup="search()" placeholder="Search for functions...">
     <script>
     function search() {
         const input = document.getElementById('search').value.toUpperCase();
-        const table = document.getElementById('function_table');
+        const table = document.getElementById('feature_table');
         const rows = table.getElementsByTagName('tr');
         for (let i = 1; i < rows.length; i++) {
             const cells = rows[i].getElementsByTagName('td');
@@ -117,41 +167,43 @@ def render(version_info: dict, filename: str = "index.html") -> None:
     </script>
     """
 
-    doc += "<table id='function_table'></table>"
+    doc += "<table id='feature_table'></table>"
 
-    # Using Javascript,  populate the table with the data we have in function_availability
+    # Using Javascript,  populate the table with the data we have in availability
 
     doc += "<script>"
     doc += """
-    const table = document.getElementById('function_table');
-    const functions = Object.keys(function_availability);
-    const tags = [...new Set(Object.values(function_availability).flat())];
+    const table = document.getElementById('feature_table');
+    const features = Object.keys(availability);
+    const versions = [...new Set(Object.values(availability).flat())];
     const header = table.createTHead();
     const headerRow = header.insertRow(0);
     headerRow.insertCell(0);
-    for (const tag of tags) {
+
+    for (const version of versions) {
         const cell = headerRow.insertCell();
-        cell.textContent = tag;
+        cell.textContent = version;
     }
-    for (const func of functions) {
+
+    for (const feature of features) {
         const row = table.insertRow();
         const cell = row.insertCell();
-        cell.textContent = func;
-        for (const tag of tags) {
+        cell.textContent = feature;
+        for (const version of versions) {
             const cell = row.insertCell();
-            if (function_availability[func].includes(tag)) {
+            if (availability[feature].includes(version)) {
                 cell.textContent = '✓';
                 cell.style.backgroundColor = 'green';
             } else {
                 cell.textContent = '✗';
                 cell.style.backgroundColor = 'red';
             }
-            cell.onmouseover = () => showTooltip(cell, tag, func);
+            cell.onmouseover = () => showTooltip(cell, version, feature);
             cell.onmouseout = () => hideTooltip(cell);
         }
     }
 
-    function showTooltip(cell, tag, func) {
+    function showTooltip(cell, version, feature) {
         const tooltip = document.createElement('div');
         tooltip.style.position = 'absolute';
         tooltip.style.backgroundColor = 'black';
@@ -160,10 +212,10 @@ def render(version_info: dict, filename: str = "index.html") -> None:
         tooltip.style.borderRadius = '5px';
         tooltip.style.zIndex = '1000';
         
-        if (function_availability[func].includes(tag)) {
-            tooltip.textContent = `${func} is available in ${tag}`;
+        if (availability[feature].includes(version)) {
+            tooltip.textContent = `${feature} is available in ${version}`;
         } else {
-            tooltip.textContent = `${func} is not available in ${tag}`;
+            tooltip.textContent = `${feature} is not available in ${version}`;
         }
         
         cell.appendChild(tooltip);
@@ -177,9 +229,7 @@ def render(version_info: dict, filename: str = "index.html") -> None:
     doc += "</script>"
 
     doc += "</div>"
-
-    with open(filename, "w") as f:
-        f.write(doc)
+    doc += "</div>"
 
     doc += "<div style='margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a></p></footer></div>"
     doc += '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>'
