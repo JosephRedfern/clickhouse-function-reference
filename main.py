@@ -7,6 +7,8 @@ from scrape_docs import function_pages, function_doc_template
 
 memory = joblib.Memory("cache", verbose=0)
 
+ALLOWED_TAGS = {"latest", "head"}
+
 
 def main() -> None:
     function_info = {}
@@ -97,7 +99,7 @@ def get_tags(exclude_patch: bool = True, exclude_alpine: bool = True) -> list[st
     # if exclude_patch then strip the patch version, convert to set to remove duplicates
 
     if exclude_patch:
-        tags = [t for t in tags if t.count(".") == 1]
+        tags = [t for t in tags if t.count(".") == 1 or t in ALLOWED_TAGS]
 
     if exclude_alpine:
         tags = [t for t in tags if "alpine" not in t]
