@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 import csv
 import joblib
 import json
@@ -182,12 +183,13 @@ def render(
 
     .main{{
         margin-top: 20px;
+
     }}
     </style>
 
 </head>
 <body>
-<div class="container" style="max-width: none">
+<div class="container" style="max-width: none; margin-left: 10px; margin-right: 10px;">
 <h1>{header}</h1>
 <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
 <div class="main">
@@ -307,10 +309,12 @@ def render(
     doc += '<p style="margin-top: 15px">* indicates an alias to another function</p>'
 
     doc += "</div>"
+
     doc += "</div>"
 
-    doc += "<div style='margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a></p></footer></div>"
     doc += '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>'
+    doc += f"<div style='padding: 5px; margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a> | last updated {datetime.today().strftime('%Y-%m-%d %H:%M')}</p></footer></div>"
+ 
     doc += "</body>"
 
     with open(filename, "w") as f:
