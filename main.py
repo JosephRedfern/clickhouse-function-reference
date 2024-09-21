@@ -61,20 +61,22 @@ def get_function_pages() -> dict[str, str]:
     return page_ref
 
 
+@memory.cache
 def get_url_for_function(function: str) -> str | None:
-    # standardise function name
     std_func = function.lower()
-
-    # pages contain anchor links to the functions, like #arrayjoin or #formatreadablesize.
-    # we can iterate over pages, check for "#{std_func}" and return the page if found.
-    # not every function is documented (https://github.com/ClickHouse/clickhouse-docs/issues/1833),
-    # so we return None if we can't find the function.
-
     page_ref = get_function_pages()
 
     for page, content in page_ref.items():
+        # Check for exact match
         if f'id="{std_func}"' in content:
             return f"{function_doc_template.format(page=page)}#{std_func}"
+        
+        # Check for partial match (in case of slight naming differences)
+        if f'id="{std_func.replace("_", "")}"' in content:
+            return f"{function_doc_template.format(page=page)}#{std_func.replace('_', '')}"
+        
+
+    return None
 
 
 @memory.cache
@@ -146,15 +148,14 @@ def render(
         for feature in all_features
     }
 
-    docs_links = (
-        {
-            feature: url
-            for feature in all_features
-            if (url := get_url_for_function(feature)) is not None
-        }
-        if feature_type == "function"
-        else {}
-    )
+    docs_links = {}
+    if feature_type == "function":
+        for feature in all_features:
+            url = get_url_for_function(feature)
+            if url:
+                docs_links[feature] = url
+            else:
+                print(f"Warning: No URL found for function {feature}")
 
     doc = f"""<!doctype html>
 <html lang="en">
@@ -189,9 +190,9 @@ def render(
         display: block;
     }}
     #feature_table th, #feature_table td {{
-        white-space: nowrap;
-        padding: 5px;
+        border: none;
     }}
+
     .tooltip {{
         position: absolute;
         background-color: black;
@@ -207,6 +208,16 @@ def render(
         font-size: 0.8rem;
         padding: 0.2rem 0.4rem;
     }}
+    #feature_table th:not(:first-child),
+    #feature_table td:not(:first-child) {{
+        width: 45px;
+        min-width: 45px;
+        max-width: 45px;
+    }}
+    #feature_table th:first-child,
+    #feature_table td:first-child {{
+        width: auto;
+    }}
     </style>
 </head>
 <body>
@@ -216,7 +227,7 @@ def render(
     <div class="main">
         <input type="text" id="search" class="form-control mb-3" onkeyup="search()" placeholder="Search for {feature_type}s...">
         <div class="table-responsive">
-            <table id="feature_table" class="table table-bordered table-sm"></table>
+            <table id="feature_table" class="table table-sm"></table>
         </div>
         <p class="mt-3">* indicates an alias to another function</p>
     </div>
@@ -304,8 +315,16 @@ def render(
         const cell = headerRow.insertCell();
         cell.textContent = version;
         cell.style.cursor = 'pointer';
-        cell.title = 'Click to hide this column';  // Add this line
+        cell.title = 'Click to hide this column';
         cell.onclick = () => toggleColumn(i + 1);  // +1 because the first column is for feature names
+        
+        // Add these lines to set width and text alignment
+        if (i > 0) {{  // Skip the first column (function/keyword names)
+            cell.style.width = '40px';
+            cell.style.minWidth = '40px';
+            cell.style.maxWidth = '40px';
+            cell.style.textAlign = 'center';
+        }}
     }}
 
     for (const feature of features) {{
@@ -316,18 +335,17 @@ def render(
         
         // direct link to docs
         if (docs.hasOwnProperty(feature)) {{
-            url = document.createElement('a');
-        }} else {{
-            if (aliases.hasOwnProperty(feature)) {{
-               // no direct link to docs, check if there is an alias
-                url = docs[aliases[feature]];
-            }}
+            url = docs[feature];
+        }} else if (aliases.hasOwnProperty(feature)) {{
+            // no direct link to docs, check if there is an alias
+            url = docs[aliases[feature]];
         }}
 
         if (url) {{
             cell.innerHTML = `<a href="${{url}}">${{feature}}</a>`;
         }} else {{
             cell.innerHTML = feature;
+            console.log(`No URL found for feature ${{feature}}`);
         }}
 
         if (aliases.hasOwnProperty(feature)) {{
@@ -343,6 +361,7 @@ def render(
                 cell.textContent = '✗';
                 cell.style.backgroundColor = 'red';
             }}
+            cell.style.textAlign = 'center';  // Center the checkmark/cross
             cell.onmouseover = () => showTooltip(cell, version, feature);
             cell.onmouseout = () => hideTooltip(cell);
         }}
