@@ -200,6 +200,13 @@ def render(
         border-radius: 5px;
         z-index: 1000;
     }}
+    #hidden-column-buttons {{
+        margin-top: 10px;
+    }}
+    #hidden-column-buttons button {{
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }}
     </style>
 </head>
 <body>
@@ -239,6 +246,51 @@ def render(
         }}
     }}
 
+    let hiddenColumns = new Set();
+
+    function toggleColumn(index) {{
+        const table = document.getElementById('feature_table');
+        const rows = table.getElementsByTagName('tr');
+        const version = versions[index - 1];  // -1 because index is 1-based
+        
+        if (hiddenColumns.has(index)) {{
+            hiddenColumns.delete(index);
+            for (let i = 0; i < rows.length; i++) {{    
+                rows[i].cells[index].style.display = '';
+            }}
+        }} else {{
+            hiddenColumns.add(index);
+            for (let i = 0; i < rows.length; i++) {{
+                rows[i].cells[index].style.display = 'none';
+            }}
+        }}
+        
+        updateHiddenColumnButtons();
+    }}
+
+    function updateHiddenColumnButtons() {{
+        let buttonContainer = document.getElementById('hidden-column-buttons');
+        if (!buttonContainer) {{
+            buttonContainer = document.createElement('div');
+            buttonContainer.id = 'hidden-column-buttons';
+            buttonContainer.className = 'mb-2';
+            document.querySelector('.main').insertBefore(buttonContainer, document.getElementById('feature_table').parentNode);
+        }}
+        
+        buttonContainer.innerHTML = '';  // Clear existing buttons
+        
+        hiddenColumns.forEach(index => {{
+            const version = versions[index - 1];  // -1 because index is 1-based
+            const button = document.createElement('button');
+            button.textContent = `+ ${{version}}`;
+            button.className = 'btn btn-outline-primary btn-sm me-1 mb-1';
+            button.onclick = () => toggleColumn(index);
+            buttonContainer.appendChild(button);
+        }});
+        
+        buttonContainer.style.display = hiddenColumns.size > 0 ? 'block' : 'none';
+    }}
+
     const table = document.getElementById('feature_table');
     const features = Object.keys(availability);
     const versions = [...new Set(Object.values(availability).flat())];
@@ -246,9 +298,14 @@ def render(
     const headerRow = header.insertRow(0);
     headerRow.insertCell(0);
 
-    for (const version of versions) {{
+    // Modify the existing code that creates the header row
+    for (let i = 0; i < versions.length; i++) {{
+        const version = versions[i];
         const cell = headerRow.insertCell();
         cell.textContent = version;
+        cell.style.cursor = 'pointer';
+        cell.title = 'Click to hide this column';  // Add this line
+        cell.onclick = () => toggleColumn(i + 1);  // +1 because the first column is for feature names
     }}
 
     for (const feature of features) {{
