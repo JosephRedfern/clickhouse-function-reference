@@ -157,9 +157,10 @@ def render(
     )
 
     doc = f"""<!doctype html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google tag (gtag.js) -->
@@ -168,7 +169,6 @@ def render(
         window.dataLayer = window.dataLayer || [];
         function gtag(){{dataLayer.push(arguments);}}
         gtag('js', new Date());
-
         gtag('config', 'G-W7W1TNNL21');
     </script>
     <script>
@@ -180,56 +180,65 @@ def render(
     body {{
         font-size: 13px;
     }}
-
-    .main{{
+    .main {{
         margin-top: 20px;
-
+    }}
+    #feature_table {{
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }}
+    #feature_table th, #feature_table td {{
+        white-space: nowrap;
+        padding: 5px;
+    }}
+    .tooltip {{
+        position: absolute;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
     }}
     </style>
-
 </head>
 <body>
-<div class="container" style="max-width: none; margin-left: 10px; margin-right: 10px;">
-<h1>{header}</h1>
-<nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
-<div class="main">
-"""
-
-    doc += f"""
-    <input type="text" id="search" onkeyup="search()" placeholder="Search for {feature_type}s...">
-    """
-
-    doc += """
-    <script>
-    function search() {
+<div class="container-fluid">
+    <h1>{header}</h1>
+    <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
+    <div class="main">
+        <input type="text" id="search" class="form-control mb-3" onkeyup="search()" placeholder="Search for {feature_type}s...">
+        <div class="table-responsive">
+            <table id="feature_table" class="table table-bordered table-sm"></table>
+        </div>
+        <p class="mt-3">* indicates an alias to another function</p>
+    </div>
+    <footer class="mt-3">
+        <p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a> | last updated {datetime.today().strftime('%Y-%m-%d %H:%M')}</p>
+    </footer>
+</div>
+<script>
+    function search() {{
         const input = document.getElementById('search').value.toUpperCase();
         const table = document.getElementById('feature_table');
         const rows = table.getElementsByTagName('tr');
-        for (let i = 1; i < rows.length; i++) {
+        for (let i = 1; i < rows.length; i++) {{
             const cells = rows[i].getElementsByTagName('td');
             let found = false;
-            for (const cell of cells) {
-                if (cell.textContent.toUpperCase().includes(input)) {
+            for (const cell of cells) {{
+                if (cell.textContent.toUpperCase().includes(input)) {{
                     found = true;
                     break;
-                }
-            }
-            if (found) {
+                }}
+            }}
+            if (found) {{
                 rows[i].style.display = '';
-            } else {
+            }} else {{
                 rows[i].style.display = 'none';
-            }
-        }
-    }
-    </script>
-    """
+            }}
+        }}
+    }}
 
-    doc += "<table id='feature_table'></table>"
-
-    # Using Javascript,  populate the table with the data we have in availability
-
-    doc += "<script>"
-    doc += """
     const table = document.getElementById('feature_table');
     const features = Object.keys(availability);
     const versions = [...new Set(Object.values(availability).flat())];
@@ -237,52 +246,52 @@ def render(
     const headerRow = header.insertRow(0);
     headerRow.insertCell(0);
 
-    for (const version of versions) {
+    for (const version of versions) {{
         const cell = headerRow.insertCell();
         cell.textContent = version;
-    }
+    }}
 
-    for (const feature of features) {
+    for (const feature of features) {{
         const row = table.insertRow();
         const cell = row.insertCell();
 
         var url = null; 
         
         // direct link to docs
-        if (docs.hasOwnProperty(feature)) {
+        if (docs.hasOwnProperty(feature)) {{
             url = document.createElement('a');
-        } else {
-            if (aliases.hasOwnProperty(feature)) {
+        }} else {{
+            if (aliases.hasOwnProperty(feature)) {{
                // no direct link to docs, check if there is an alias
                 url = docs[aliases[feature]];
-            }
-        }
+            }}
+        }}
 
-        if (url) {
-            cell.innerHTML = `<a href="${url}">${feature}</a>`;
-        } else {
+        if (url) {{
+            cell.innerHTML = `<a href="${{url}}">${{feature}}</a>`;
+        }} else {{
             cell.innerHTML = feature;
-        }
+        }}
 
-        if (aliases.hasOwnProperty(feature)) {
+        if (aliases.hasOwnProperty(feature)) {{
             cell.innerHTML += "*";
-        }
+        }}
 
-        for (const version of versions) {
+        for (const version of versions) {{
             const cell = row.insertCell();
-            if (availability[feature].includes(version)) {
+            if (availability[feature].includes(version)) {{
                 cell.textContent = '✓';
                 cell.style.backgroundColor = 'green';
-            } else {
+            }} else {{
                 cell.textContent = '✗';
                 cell.style.backgroundColor = 'red';
-            }
+            }}
             cell.onmouseover = () => showTooltip(cell, version, feature);
             cell.onmouseout = () => hideTooltip(cell);
-        }
-    }
+        }}
+    }}
 
-    function showTooltip(cell, version, feature) {
+    function showTooltip(cell, version, feature) {{
         const tooltip = document.createElement('div');
         tooltip.style.position = 'absolute';
         tooltip.style.backgroundColor = 'black';
@@ -291,31 +300,23 @@ def render(
         tooltip.style.borderRadius = '5px';
         tooltip.style.zIndex = '1000';
         
-        if (availability[feature].includes(version)) {
-            tooltip.textContent = `${feature} is available in ${version}`;
-        } else {
-            tooltip.textContent = `${feature} is not available in ${version}`;
-        }
+        if (availability[feature].includes(version)) {{
+            tooltip.textContent = `${{feature}} is available in ${{version}}`;
+        }} else {{
+            tooltip.textContent = `${{feature}} is not available in ${{version}}`;
+        }}
         
         cell.appendChild(tooltip);
-    }
+    }}
 
-    function hideTooltip(cell) {
+    function hideTooltip(cell) {{
         cell.removeChild(cell.lastChild);
-    }
-
-    """
-    doc += "</script>"
-    doc += '<p style="margin-top: 15px">* indicates an alias to another function</p>'
-
-    doc += "</div>"
-
-    doc += "</div>"
-
-    doc += '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>'
-    doc += f"<div style='padding: 5px; margin-top: 5px'><footer><p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a> | last updated {datetime.today().strftime('%Y-%m-%d %H:%M')}</p></footer></div>"
- 
-    doc += "</body>"
+    }}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+"""
 
     with open(filename, "w") as f:
         f.write(doc)
