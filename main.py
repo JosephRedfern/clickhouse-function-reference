@@ -17,12 +17,15 @@ def main() -> None:
 
     tags = get_tags()
 
-    for version in tags[:36]:
+    for version in tags:
         print("Processing", version)
         funcs = get_functions(version)
         keywords = get_keywords(version)
         function_info[version] = funcs
         keyword_info[version] = keywords
+        if version == "21.9":
+            # Stop at 21.9 - we need to draw the line somewhere since performance starts to degrade too much
+            break
 
     render(
         function_info,
@@ -224,6 +227,7 @@ def render(
 <div class="container-fluid">
     <h1>{header}</h1>
     <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
+    <div><p style="margin-top: 5px;">This tool provides information about function and keyword availability across a range of recent ClickHouse releases, sourced from the <code>system.functions</code> and <code>system.keywords</code> tables for each release.</p></div>
     <div class="main">
         <input type="text" id="search" class="form-control mb-3" onkeyup="search()" placeholder="Search for {feature_type}s...">
         <div class="table-responsive">
