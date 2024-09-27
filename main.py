@@ -14,6 +14,7 @@ ALLOWED_TAGS = {"latest", "head"}
 def main() -> None:
     function_info = {}
     keyword_info = {}
+    setting_info = {}
 
     tags = get_tags()
 
@@ -21,8 +22,10 @@ def main() -> None:
         print("Processing", version)
         funcs = get_functions(version)
         keywords = get_keywords(version)
+        settings = get_settings(version)
         function_info[version] = funcs
         keyword_info[version] = keywords
+        setting_info[version] = settings
         if version == "21.9":
             # Stop at 21.9 - we need to draw the line somewhere since performance starts to degrade too much
             break
@@ -40,6 +43,13 @@ def main() -> None:
         header="ClickHouse Keyword Reference",
         feature_type="keyword",
         filename="keywords.html",
+    )
+    render(
+        setting_info,
+        title="ClickHouse Setting Reference",
+        header="ClickHouse Setting Reference",
+        feature_type="setting",
+        filename="settings.html",
     )
 
 
@@ -93,6 +103,14 @@ def get_functions(tag: str) -> list[str]:
 def get_keywords(tag: str) -> list[str]:
     tsv = run_query(
         "SELECT keyword as name FROM system.keywords FORMAT TabSeparatedWithNames", tag
+    )
+    reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
+    return list(reader)
+
+@memory.cache
+def get_settings(tag: str) -> list[str]:
+    tsv = run_query(
+        "SELECT name FROM system.settings FORMAT TabSeparatedWithNames", tag
     )
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
@@ -226,7 +244,7 @@ def render(
 <body>
 <div class="container-fluid">
     <h1>{header}</h1>
-    <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> ]</nav>
+    <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> | <a href="settings.html">Setting Reference</a>]</nav>
     <div><p style="margin-top: 5px;">This tool provides information about function and keyword availability across a range of recent ClickHouse releases, sourced from the <code>system.functions</code> and <code>system.keywords</code> tables for each release.</p></div>
     <div class="main">
         <input type="text" id="search" class="form-control mb-3" onkeyup="search()" placeholder="Search for {feature_type}s...">
