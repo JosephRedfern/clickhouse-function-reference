@@ -9,6 +9,7 @@ from scrape_docs import function_pages, function_doc_template
 memory = joblib.Memory("cache", verbose=0)
 
 ALLOWED_TAGS = {"latest", "head"}
+CACHE_DENY_LIST = {"latest", "head"}
 
 
 def main() -> None:
@@ -52,6 +53,8 @@ def main() -> None:
         filename="settings.html",
     )
 
+def should_cache(metadata: dict) -> bool:
+    return not metadata.get("input_args", {}).get("tag", "").strip("'") in CACHE_DENY_LIST
 
 def run_query(query: str, tag: str) -> dict:
     json_data = {"query": query, "version": tag}
@@ -60,7 +63,7 @@ def run_query(query: str, tag: str) -> dict:
     return response.json().get("result", {}).get("output")
 
 
-@memory.cache
+@memory.cache(cache_validation_callback=should_cache)
 def get_function_pages() -> dict[str, str]:
     page_ref = {}
 
@@ -74,7 +77,7 @@ def get_function_pages() -> dict[str, str]:
     return page_ref
 
 
-@memory.cache
+@memory.cache(cache_validation_callback=should_cache)
 def get_url_for_function(function: str) -> str | None:
     std_func = function.lower()
     page_ref = get_function_pages()
@@ -92,14 +95,14 @@ def get_url_for_function(function: str) -> str | None:
     return None
 
 
-@memory.cache
+@memory.cache(cache_validation_callback=should_cache)
 def get_functions(tag: str) -> list[str]:
     tsv = run_query("SELECT * FROM system.functions FORMAT TabSeparatedWithNames", tag)
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
 
-@memory.cache
+@memory.cache(cache_validation_callback=should_cache)
 def get_keywords(tag: str) -> list[str]:
     tsv = run_query(
         "SELECT keyword as name FROM system.keywords FORMAT TabSeparatedWithNames", tag
@@ -107,7 +110,7 @@ def get_keywords(tag: str) -> list[str]:
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
-@memory.cache
+@memory.cache(cache_validation_callback=should_cache)
 def get_settings(tag: str) -> list[str]:
     tsv = run_query(
         "SELECT name FROM system.settings FORMAT TabSeparatedWithNames", tag
