@@ -1,8 +1,11 @@
+import subprocess
 import requests
 from datetime import datetime
+import time
 import csv
 import joblib
 import json
+from loguru import logger
 
 from scrape_docs import function_pages, function_doc_template
 
@@ -10,6 +13,8 @@ memory = joblib.Memory("cache", verbose=0)
 
 ALLOWED_TAGS = {"latest", "head"}
 CACHE_DENY_LIST = {"latest", "head"}
+USE_FIDDLE = False
+CONTAINER_NAME_TEMPLATE = "clickhouse-function-reference-{tag}"
 
 
 def main() -> None:
@@ -20,7 +25,7 @@ def main() -> None:
     tags = get_tags()
 
     for version in tags:
-        print("Processing", version)
+        logger.info(f"Processing {version}")
         funcs = get_functions(version)
         keywords = get_keywords(version)
         settings = get_settings(version)
@@ -30,6 +35,34 @@ def main() -> None:
         if version == "21.9":
             # Stop at 21.9 - we need to draw the line somewhere since performance starts to degrade too much
             break
+
+        # If we're not using Fiddle, then clean up dangling containers
+        if not USE_FIDDLE:
+            run_proc = subprocess.run(
+                [
+                    "docker",
+                    "inspect",
+                    "-f",
+                    "{{.State.Running}}",
+                    CONTAINER_NAME_TEMPLATE.format(tag=version),
+                ],
+                capture_output=True,
+            )
+            if (
+                run_proc.returncode == 0
+                and run_proc.stdout.decode("utf-8").strip() == "true"
+            ):
+                logger.info(
+                    f"Container for {version} is still running, stopping and removing"
+                )
+                subprocess.run(
+                    ["docker", "stop", CONTAINER_NAME_TEMPLATE.format(tag=version)],
+                    capture_output=True,
+                )
+                subprocess.run(
+                    ["docker", "rm", CONTAINER_NAME_TEMPLATE.format(tag=version)],
+                    capture_output=True,
+                )
 
     render(
         function_info,
@@ -53,14 +86,115 @@ def main() -> None:
         filename="settings.html",
     )
 
+
 def should_cache(metadata: dict) -> bool:
-    return not metadata.get("input_args", {}).get("tag", "").strip("'") in CACHE_DENY_LIST
+    return (
+        metadata.get("input_args", {}).get("tag", "").strip("'") not in CACHE_DENY_LIST
+    )
+
 
 def run_query(query: str, tag: str) -> dict:
-    json_data = {"query": query, "version": tag}
+    if USE_FIDDLE:
+        return run_query_against_fiddle(query, tag)
+    else:
+        return run_query_against_version_locally(query, tag)
 
+
+def run_query_against_fiddle(query: str, tag: str) -> dict:
+    """
+    Run the given query against a specific version of ClickHouse on Fiddle, and return the result.
+    """
+    logger.info(f"Running query against Fiddle for {tag}")
+    json_data = {"query": query, "version": tag}
     response = requests.post("https://fiddle.clickhouse.com/api/runs", json=json_data)
     return response.json().get("result", {}).get("output")
+
+
+def run_query_against_version_locally(query: str, tag: str) -> dict:
+    """
+    Run the given query against a specific version of ClickHouse locally, using a docker container.
+    """
+
+    logger.info(f"Running query against local container for {tag}")
+
+    container_name = CONTAINER_NAME_TEMPLATE.format(tag=tag)
+
+    # Check if container is already running
+    run_proc = subprocess.run(
+        ["docker", "inspect", "-f", "{{.State.Running}}", container_name],
+        capture_output=True,
+    )
+    if run_proc.returncode == 0 and run_proc.stdout.decode("utf-8").strip() == "true":
+        logger.info(f"Container for {tag} is already running, skipping pull and run")
+    else:
+        # check if the container exists, but is not running, and remove it
+        remove_proc = subprocess.run(
+            ["docker", "rm", "-f", container_name], capture_output=True
+        )
+        if remove_proc.returncode == 0:
+            logger.info(f"Removed existing container for {tag}")
+
+        logger.info(f"Pulling image for {tag}")
+        pull_proc = subprocess.run(
+            ["docker", "pull", f"clickhouse/clickhouse-server:{tag}"],
+            capture_output=True,
+        )
+
+        if pull_proc.returncode != 0:
+            logger.error(f"Failed to pull image for {tag}")
+
+        logger.info(f"Running container for {tag}")
+        run_proc = subprocess.run(
+            [
+                "docker",
+                "run",
+                "--name",
+                container_name,
+                "-d",
+                f"clickhouse/clickhouse-server:{tag}",
+            ],
+            capture_output=True,
+        )
+
+        if run_proc.returncode != 0:
+            logger.error(f"Failed to run container for {tag}")
+
+    result = None
+
+    # Run the query up to 60 times, with a delay between each attempt
+    for n in range(60):
+        logger.info(f"Running query for {tag}")
+        query_process = subprocess.run(
+            [
+                "docker",
+                "exec",
+                "-i",
+                container_name,
+                "clickhouse-client",
+                "--query",
+                query,
+            ],
+            capture_output=True,
+        )
+
+        stdout_text = query_process.stdout.decode("utf-8")
+        stderr_text = query_process.stderr.decode("utf-8")
+
+        if (
+            query_process.returncode == 0 or "UNKNOWN_TABLE" in stderr_text
+        ):  # UNKNOWN_TABLE is expected if the table doesn't exist
+            logger.info(f"Query succeeded!")
+            result = stdout_text
+            break
+        logger.warning(
+            f"Query failed, retrying ({n}): {query_process.stderr.decode('utf-8')}"
+        )
+        time.sleep(0.25)
+
+    if result is None:
+        logger.error(f"Failed to run query for {tag}")
+
+    return result
 
 
 @memory.cache(cache_validation_callback=should_cache)
@@ -68,7 +202,7 @@ def get_function_pages() -> dict[str, str]:
     page_ref = {}
 
     for page in function_pages:
-        print("Processing", page)
+        logger.info("Processing page: {page}")
         response = requests.get(function_doc_template.format(page=page))
         response.raise_for_status()
 
@@ -86,11 +220,12 @@ def get_url_for_function(function: str) -> str | None:
         # Check for exact match
         if f'id="{std_func}"' in content:
             return f"{function_doc_template.format(page=page)}#{std_func}"
-        
+
         # Check for partial match (in case of slight naming differences)
         if f'id="{std_func.replace("_", "")}"' in content:
-            return f"{function_doc_template.format(page=page)}#{std_func.replace('_', '')}"
-        
+            return (
+                f"{function_doc_template.format(page=page)}#{std_func.replace('_', '')}"
+            )
 
     return None
 
@@ -109,6 +244,7 @@ def get_keywords(tag: str) -> list[str]:
     )
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
+
 
 @memory.cache(cache_validation_callback=should_cache)
 def get_settings(tag: str) -> list[str]:
@@ -141,7 +277,6 @@ def render(
     feature_type: str = "function",
     filename: str = "index.html",
 ) -> None:
-
     # Mapping from altenative function names to the canonical name
     aliases = {
         func["name"]: func["alias_to"]
@@ -179,7 +314,7 @@ def render(
             if url:
                 docs_links[feature] = url
             else:
-                print(f"Warning: No URL found for function {feature}")
+                logger.warning(f"No URL found for function {feature}")
 
     doc = f"""<!doctype html>
 <html lang="en">
