@@ -1,6 +1,3 @@
-import requests
-
-
 function_pages = [
     "arithmetic-functions",
     "array-functions",

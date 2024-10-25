@@ -183,13 +183,13 @@ def run_query_against_version_locally(query: str, tag: str) -> dict:
         if (
             query_process.returncode == 0 or "UNKNOWN_TABLE" in stderr_text
         ):  # UNKNOWN_TABLE is expected if the table doesn't exist
-            logger.info(f"Query succeeded!")
+            logger.info("Query succeeded!")
             result = stdout_text
             break
         logger.warning(
             f"Query failed, retrying ({n}): {query_process.stderr.decode('utf-8')}"
         )
-        time.sleep(0.25)
+        time.sleep(0.10)
 
     if result is None:
         logger.error(f"Failed to run query for {tag}")
@@ -202,7 +202,7 @@ def get_function_pages() -> dict[str, str]:
     page_ref = {}
 
     for page in function_pages:
-        logger.info("Processing page: {page}")
+        logger.info(f"Processing page: {page}")
         response = requests.get(function_doc_template.format(page=page))
         response.raise_for_status()
 
