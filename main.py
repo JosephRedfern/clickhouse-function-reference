@@ -233,6 +233,8 @@ def get_url_for_function(function: str) -> str | None:
 @memory.cache(cache_validation_callback=should_cache)
 def get_functions(tag: str) -> list[str]:
     tsv = run_query("SELECT * FROM system.functions FORMAT TabSeparatedWithNames", tag)
+    if tsv is None:
+        return []
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
@@ -242,6 +244,8 @@ def get_keywords(tag: str) -> list[str]:
     tsv = run_query(
         "SELECT keyword as name FROM system.keywords FORMAT TabSeparatedWithNames", tag
     )
+    if tsv is None:
+        return []
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
@@ -251,6 +255,8 @@ def get_settings(tag: str) -> list[str]:
     tsv = run_query(
         "SELECT name FROM system.settings FORMAT TabSeparatedWithNames", tag
     )
+    if tsv is None:
+        return []
     reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
     return list(reader)
 
