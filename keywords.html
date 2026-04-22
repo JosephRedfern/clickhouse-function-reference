@@ -53,11 +53,13 @@
         margin: 0;
         width: max-content;
     }
-    /* Sticky header row */
-    #feature_table thead th {
+    /* Sticky header row — applied to thead as a unit, not individual th cells */
+    #feature_table thead {
         position: sticky;
         top: 0;
         z-index: 2;
+    }
+    #feature_table thead th {
         background: #f1f3f5;
         border-bottom: 2px solid #ced4da;
     }
@@ -78,9 +80,6 @@
     }
     /* Rotated version column headers */
     th.ver-col {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        white-space: nowrap;
         vertical-align: bottom;
         padding: 8px 4px;
         cursor: pointer;
@@ -90,9 +89,15 @@
         max-width: 28px;
         text-align: center;
         font-weight: 500;
+        overflow: hidden;
     }
     th.ver-col:hover {
         background: #e9ecef;
+    }
+    th.ver-col span {
+        display: inline-block;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
     }
     /* Availability cells */
     td.avail, td.unavail {
@@ -148,63 +153,63 @@
                 <thead>
                     <tr>
                         <th class="name-col"></th>
-                        <th class="ver-col" onclick="toggleCol(1)" title="Click to hide head">head</th>
-            <th class="ver-col" onclick="toggleCol(2)" title="Click to hide latest">latest</th>
-            <th class="ver-col" onclick="toggleCol(3)" title="Click to hide 26.3">26.3</th>
-            <th class="ver-col" onclick="toggleCol(4)" title="Click to hide 26.2">26.2</th>
-            <th class="ver-col" onclick="toggleCol(5)" title="Click to hide 26.1">26.1</th>
-            <th class="ver-col" onclick="toggleCol(6)" title="Click to hide 25.12">25.12</th>
-            <th class="ver-col" onclick="toggleCol(7)" title="Click to hide 25.11">25.11</th>
-            <th class="ver-col" onclick="toggleCol(8)" title="Click to hide 25.10">25.10</th>
-            <th class="ver-col" onclick="toggleCol(9)" title="Click to hide 25.9">25.9</th>
-            <th class="ver-col" onclick="toggleCol(10)" title="Click to hide 25.8">25.8</th>
-            <th class="ver-col" onclick="toggleCol(11)" title="Click to hide 25.7">25.7</th>
-            <th class="ver-col" onclick="toggleCol(12)" title="Click to hide 25.6">25.6</th>
-            <th class="ver-col" onclick="toggleCol(13)" title="Click to hide 25.5">25.5</th>
-            <th class="ver-col" onclick="toggleCol(14)" title="Click to hide 25.4">25.4</th>
-            <th class="ver-col" onclick="toggleCol(15)" title="Click to hide 25.3">25.3</th>
-            <th class="ver-col" onclick="toggleCol(16)" title="Click to hide 25.2">25.2</th>
-            <th class="ver-col" onclick="toggleCol(17)" title="Click to hide 25.1">25.1</th>
-            <th class="ver-col" onclick="toggleCol(18)" title="Click to hide 24.12">24.12</th>
-            <th class="ver-col" onclick="toggleCol(19)" title="Click to hide 24.11">24.11</th>
-            <th class="ver-col" onclick="toggleCol(20)" title="Click to hide 24.10">24.10</th>
-            <th class="ver-col" onclick="toggleCol(21)" title="Click to hide 24.9">24.9</th>
-            <th class="ver-col" onclick="toggleCol(22)" title="Click to hide 24.8">24.8</th>
-            <th class="ver-col" onclick="toggleCol(23)" title="Click to hide 24.7">24.7</th>
-            <th class="ver-col" onclick="toggleCol(24)" title="Click to hide 24.6">24.6</th>
-            <th class="ver-col" onclick="toggleCol(25)" title="Click to hide 24.5">24.5</th>
-            <th class="ver-col" onclick="toggleCol(26)" title="Click to hide 24.4">24.4</th>
-            <th class="ver-col" onclick="toggleCol(27)" title="Click to hide 24.3">24.3</th>
-            <th class="ver-col" onclick="toggleCol(28)" title="Click to hide 24.2">24.2</th>
-            <th class="ver-col" onclick="toggleCol(29)" title="Click to hide 24.1">24.1</th>
-            <th class="ver-col" onclick="toggleCol(30)" title="Click to hide 23.12">23.12</th>
-            <th class="ver-col" onclick="toggleCol(31)" title="Click to hide 23.11">23.11</th>
-            <th class="ver-col" onclick="toggleCol(32)" title="Click to hide 23.10">23.10</th>
-            <th class="ver-col" onclick="toggleCol(33)" title="Click to hide 23.9">23.9</th>
-            <th class="ver-col" onclick="toggleCol(34)" title="Click to hide 23.8">23.8</th>
-            <th class="ver-col" onclick="toggleCol(35)" title="Click to hide 23.7">23.7</th>
-            <th class="ver-col" onclick="toggleCol(36)" title="Click to hide 23.6">23.6</th>
-            <th class="ver-col" onclick="toggleCol(37)" title="Click to hide 23.5">23.5</th>
-            <th class="ver-col" onclick="toggleCol(38)" title="Click to hide 23.4">23.4</th>
-            <th class="ver-col" onclick="toggleCol(39)" title="Click to hide 23.3">23.3</th>
-            <th class="ver-col" onclick="toggleCol(40)" title="Click to hide 23.2">23.2</th>
-            <th class="ver-col" onclick="toggleCol(41)" title="Click to hide 23.1">23.1</th>
-            <th class="ver-col" onclick="toggleCol(42)" title="Click to hide 22.12">22.12</th>
-            <th class="ver-col" onclick="toggleCol(43)" title="Click to hide 22.11">22.11</th>
-            <th class="ver-col" onclick="toggleCol(44)" title="Click to hide 22.10">22.10</th>
-            <th class="ver-col" onclick="toggleCol(45)" title="Click to hide 22.9">22.9</th>
-            <th class="ver-col" onclick="toggleCol(46)" title="Click to hide 22.8">22.8</th>
-            <th class="ver-col" onclick="toggleCol(47)" title="Click to hide 22.7">22.7</th>
-            <th class="ver-col" onclick="toggleCol(48)" title="Click to hide 22.6">22.6</th>
-            <th class="ver-col" onclick="toggleCol(49)" title="Click to hide 22.5">22.5</th>
-            <th class="ver-col" onclick="toggleCol(50)" title="Click to hide 22.4">22.4</th>
-            <th class="ver-col" onclick="toggleCol(51)" title="Click to hide 22.3">22.3</th>
-            <th class="ver-col" onclick="toggleCol(52)" title="Click to hide 22.2">22.2</th>
-            <th class="ver-col" onclick="toggleCol(53)" title="Click to hide 22.1">22.1</th>
-            <th class="ver-col" onclick="toggleCol(54)" title="Click to hide 21.12">21.12</th>
-            <th class="ver-col" onclick="toggleCol(55)" title="Click to hide 21.11">21.11</th>
-            <th class="ver-col" onclick="toggleCol(56)" title="Click to hide 21.10">21.10</th>
-            <th class="ver-col" onclick="toggleCol(57)" title="Click to hide 21.9">21.9</th>
+                        <th class="ver-col" onclick="toggleCol(1)" title="Click to hide head"><span>head</span></th>
+            <th class="ver-col" onclick="toggleCol(2)" title="Click to hide latest"><span>latest</span></th>
+            <th class="ver-col" onclick="toggleCol(3)" title="Click to hide 26.3"><span>26.3</span></th>
+            <th class="ver-col" onclick="toggleCol(4)" title="Click to hide 26.2"><span>26.2</span></th>
+            <th class="ver-col" onclick="toggleCol(5)" title="Click to hide 26.1"><span>26.1</span></th>
+            <th class="ver-col" onclick="toggleCol(6)" title="Click to hide 25.12"><span>25.12</span></th>
+            <th class="ver-col" onclick="toggleCol(7)" title="Click to hide 25.11"><span>25.11</span></th>
+            <th class="ver-col" onclick="toggleCol(8)" title="Click to hide 25.10"><span>25.10</span></th>
+            <th class="ver-col" onclick="toggleCol(9)" title="Click to hide 25.9"><span>25.9</span></th>
+            <th class="ver-col" onclick="toggleCol(10)" title="Click to hide 25.8"><span>25.8</span></th>
+            <th class="ver-col" onclick="toggleCol(11)" title="Click to hide 25.7"><span>25.7</span></th>
+            <th class="ver-col" onclick="toggleCol(12)" title="Click to hide 25.6"><span>25.6</span></th>
+            <th class="ver-col" onclick="toggleCol(13)" title="Click to hide 25.5"><span>25.5</span></th>
+            <th class="ver-col" onclick="toggleCol(14)" title="Click to hide 25.4"><span>25.4</span></th>
+            <th class="ver-col" onclick="toggleCol(15)" title="Click to hide 25.3"><span>25.3</span></th>
+            <th class="ver-col" onclick="toggleCol(16)" title="Click to hide 25.2"><span>25.2</span></th>
+            <th class="ver-col" onclick="toggleCol(17)" title="Click to hide 25.1"><span>25.1</span></th>
+            <th class="ver-col" onclick="toggleCol(18)" title="Click to hide 24.12"><span>24.12</span></th>
+            <th class="ver-col" onclick="toggleCol(19)" title="Click to hide 24.11"><span>24.11</span></th>
+            <th class="ver-col" onclick="toggleCol(20)" title="Click to hide 24.10"><span>24.10</span></th>
+            <th class="ver-col" onclick="toggleCol(21)" title="Click to hide 24.9"><span>24.9</span></th>
+            <th class="ver-col" onclick="toggleCol(22)" title="Click to hide 24.8"><span>24.8</span></th>
+            <th class="ver-col" onclick="toggleCol(23)" title="Click to hide 24.7"><span>24.7</span></th>
+            <th class="ver-col" onclick="toggleCol(24)" title="Click to hide 24.6"><span>24.6</span></th>
+            <th class="ver-col" onclick="toggleCol(25)" title="Click to hide 24.5"><span>24.5</span></th>
+            <th class="ver-col" onclick="toggleCol(26)" title="Click to hide 24.4"><span>24.4</span></th>
+            <th class="ver-col" onclick="toggleCol(27)" title="Click to hide 24.3"><span>24.3</span></th>
+            <th class="ver-col" onclick="toggleCol(28)" title="Click to hide 24.2"><span>24.2</span></th>
+            <th class="ver-col" onclick="toggleCol(29)" title="Click to hide 24.1"><span>24.1</span></th>
+            <th class="ver-col" onclick="toggleCol(30)" title="Click to hide 23.12"><span>23.12</span></th>
+            <th class="ver-col" onclick="toggleCol(31)" title="Click to hide 23.11"><span>23.11</span></th>
+            <th class="ver-col" onclick="toggleCol(32)" title="Click to hide 23.10"><span>23.10</span></th>
+            <th class="ver-col" onclick="toggleCol(33)" title="Click to hide 23.9"><span>23.9</span></th>
+            <th class="ver-col" onclick="toggleCol(34)" title="Click to hide 23.8"><span>23.8</span></th>
+            <th class="ver-col" onclick="toggleCol(35)" title="Click to hide 23.7"><span>23.7</span></th>
+            <th class="ver-col" onclick="toggleCol(36)" title="Click to hide 23.6"><span>23.6</span></th>
+            <th class="ver-col" onclick="toggleCol(37)" title="Click to hide 23.5"><span>23.5</span></th>
+            <th class="ver-col" onclick="toggleCol(38)" title="Click to hide 23.4"><span>23.4</span></th>
+            <th class="ver-col" onclick="toggleCol(39)" title="Click to hide 23.3"><span>23.3</span></th>
+            <th class="ver-col" onclick="toggleCol(40)" title="Click to hide 23.2"><span>23.2</span></th>
+            <th class="ver-col" onclick="toggleCol(41)" title="Click to hide 23.1"><span>23.1</span></th>
+            <th class="ver-col" onclick="toggleCol(42)" title="Click to hide 22.12"><span>22.12</span></th>
+            <th class="ver-col" onclick="toggleCol(43)" title="Click to hide 22.11"><span>22.11</span></th>
+            <th class="ver-col" onclick="toggleCol(44)" title="Click to hide 22.10"><span>22.10</span></th>
+            <th class="ver-col" onclick="toggleCol(45)" title="Click to hide 22.9"><span>22.9</span></th>
+            <th class="ver-col" onclick="toggleCol(46)" title="Click to hide 22.8"><span>22.8</span></th>
+            <th class="ver-col" onclick="toggleCol(47)" title="Click to hide 22.7"><span>22.7</span></th>
+            <th class="ver-col" onclick="toggleCol(48)" title="Click to hide 22.6"><span>22.6</span></th>
+            <th class="ver-col" onclick="toggleCol(49)" title="Click to hide 22.5"><span>22.5</span></th>
+            <th class="ver-col" onclick="toggleCol(50)" title="Click to hide 22.4"><span>22.4</span></th>
+            <th class="ver-col" onclick="toggleCol(51)" title="Click to hide 22.3"><span>22.3</span></th>
+            <th class="ver-col" onclick="toggleCol(52)" title="Click to hide 22.2"><span>22.2</span></th>
+            <th class="ver-col" onclick="toggleCol(53)" title="Click to hide 22.1"><span>22.1</span></th>
+            <th class="ver-col" onclick="toggleCol(54)" title="Click to hide 21.12"><span>21.12</span></th>
+            <th class="ver-col" onclick="toggleCol(55)" title="Click to hide 21.11"><span>21.11</span></th>
+            <th class="ver-col" onclick="toggleCol(56)" title="Click to hide 21.10"><span>21.10</span></th>
+            <th class="ver-col" onclick="toggleCol(57)" title="Click to hide 21.9"><span>21.9</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -844,7 +849,7 @@
         <p class="mt-1 text-muted" style="font-size:0.75rem;">* indicates an alias to another keyword</p>
     </div>
     <footer>
-        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; last updated 2026-04-22 22:55
+        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; last updated 2026-04-22 23:22
     </footer>
 </div>
 <script>

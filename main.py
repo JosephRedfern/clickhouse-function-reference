@@ -289,7 +289,7 @@ def render(
 
     # Build version header cells (1-based colIndex matches toggleCol() in JS)
     header_cells = "\n            ".join(
-        f'<th class="ver-col" onclick="toggleCol({i + 1})" title="Click to hide {escape(v)}">{escape(v)}</th>'
+        f'<th class="ver-col" onclick="toggleCol({i + 1})" title="Click to hide {escape(v)}"><span>{escape(v)}</span></th>'
         for i, v in enumerate(versions)
     )
 
@@ -366,11 +366,13 @@ def render(
         margin: 0;
         width: max-content;
     }}
-    /* Sticky header row */
-    #feature_table thead th {{
+    /* Sticky header row — applied to thead as a unit, not individual th cells */
+    #feature_table thead {{
         position: sticky;
         top: 0;
         z-index: 2;
+    }}
+    #feature_table thead th {{
         background: #f1f3f5;
         border-bottom: 2px solid #ced4da;
     }}
@@ -391,9 +393,6 @@ def render(
     }}
     /* Rotated version column headers */
     th.ver-col {{
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        white-space: nowrap;
         vertical-align: bottom;
         padding: 8px 4px;
         cursor: pointer;
@@ -403,9 +402,15 @@ def render(
         max-width: 28px;
         text-align: center;
         font-weight: 500;
+        overflow: hidden;
     }}
     th.ver-col:hover {{
         background: #e9ecef;
+    }}
+    th.ver-col span {{
+        display: inline-block;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
     }}
     /* Availability cells */
     td.avail, td.unavail {{
