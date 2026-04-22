@@ -3,66 +3,57 @@ import requests
 from datetime import datetime
 import time
 import csv
-import joblib
 import json
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from html import escape
 from loguru import logger
 
 from scrape_docs import function_pages, function_doc_template
 
-memory = joblib.Memory("cache", verbose=0)
-
 ALLOWED_TAGS = {"latest", "head"}
 CACHE_DENY_LIST = {"latest", "head"}
 USE_FIDDLE = False
+WORKERS = 8  # concurrent Docker containers; ignored when USE_FIDDLE=True
 CONTAINER_NAME_TEMPLATE = "clickhouse-function-reference-{tag}"
+CACHE_DIR = "cache"
+
+
+def _process_version(version: str) -> tuple[str, list, list, list]:
+    return (
+        version,
+        get_functions(version),
+        get_keywords(version),
+        get_settings(version),
+    )
 
 
 def main() -> None:
+    tags = get_tags()
+    versions = []
+    for v in tags:
+        versions.append(v)
+        if v == "21.9":
+            break
+
+    workers = 1 if USE_FIDDLE else WORKERS
+    results: dict[str, tuple] = {}
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(_process_version, v): v for v in versions}
+        for future in as_completed(futures):
+            version, funcs, keywords, settings = future.result()
+            results[version] = (funcs, keywords, settings)
+            logger.info(f"Finished {version}")
+            if not USE_FIDDLE:
+                _cleanup_container(version)
+
+    # Rebuild in original tag order so HTML columns stay consistent
     function_info = {}
     keyword_info = {}
     setting_info = {}
-
-    tags = get_tags()
-
-    for version in tags:
-        logger.info(f"Processing {version}")
-        funcs = get_functions(version)
-        keywords = get_keywords(version)
-        settings = get_settings(version)
-        function_info[version] = funcs
-        keyword_info[version] = keywords
-        setting_info[version] = settings
-        if version == "21.9":
-            # Stop at 21.9 - we need to draw the line somewhere since performance starts to degrade too much
-            break
-
-        # If we're not using Fiddle, then clean up dangling containers
-        if not USE_FIDDLE:
-            run_proc = subprocess.run(
-                [
-                    "docker",
-                    "inspect",
-                    "-f",
-                    "{{.State.Running}}",
-                    CONTAINER_NAME_TEMPLATE.format(tag=version),
-                ],
-                capture_output=True,
-            )
-            if (
-                run_proc.returncode == 0
-                and run_proc.stdout.decode("utf-8").strip() == "true"
-            ):
-                logger.info(
-                    f"Container for {version} is still running, stopping and removing"
-                )
-                subprocess.run(
-                    ["docker", "stop", CONTAINER_NAME_TEMPLATE.format(tag=version)],
-                    capture_output=True,
-                )
-                subprocess.run(
-                    ["docker", "rm", CONTAINER_NAME_TEMPLATE.format(tag=version)],
-                    capture_output=True,
-                )
+    for v in versions:
+        function_info[v], keyword_info[v], setting_info[v] = results[v]
 
     render(
         function_info,
@@ -87,192 +78,180 @@ def main() -> None:
     )
 
 
-def should_cache(metadata: dict) -> bool:
-    return (
-        metadata.get("input_args", {}).get("tag", "").strip("'") not in CACHE_DENY_LIST
-    )
-
-
-def run_query(query: str, tag: str) -> dict:
-    if USE_FIDDLE:
-        return run_query_against_fiddle(query, tag)
-    else:
-        return run_query_against_version_locally(query, tag)
-
-
-def run_query_against_fiddle(query: str, tag: str) -> dict:
-    """
-    Run the given query against a specific version of ClickHouse on Fiddle, and return the result.
-    """
-    logger.info(f"Running query against Fiddle for {tag}")
-    json_data = {"query": query, "version": tag}
-    response = requests.post("https://fiddle.clickhouse.com/api/runs", json=json_data)
-    return response.json().get("result", {}).get("output")
-
-
-def run_query_against_version_locally(query: str, tag: str) -> dict:
-    """
-    Run the given query against a specific version of ClickHouse locally, using a docker container.
-    """
-
-    logger.info(f"Running query against local container for {tag}")
-
-    container_name = CONTAINER_NAME_TEMPLATE.format(tag=tag)
-
-    # Check if container is already running
-    run_proc = subprocess.run(
-        ["docker", "inspect", "-f", "{{.State.Running}}", container_name],
+def _cleanup_container(version: str) -> None:
+    proc = subprocess.run(
+        ["docker", "inspect", "-f", "{{.State.Running}}", CONTAINER_NAME_TEMPLATE.format(tag=version)],
         capture_output=True,
     )
-    if run_proc.returncode == 0 and run_proc.stdout.decode("utf-8").strip() == "true":
-        logger.info(f"Container for {tag} is already running, skipping pull and run")
-    else:
-        # check if the container exists, but is not running, and remove it
-        remove_proc = subprocess.run(
-            ["docker", "rm", "-f", container_name], capture_output=True
-        )
-        if remove_proc.returncode == 0:
-            logger.info(f"Removed existing container for {tag}")
-
-        logger.info(f"Pulling image for {tag}")
-        pull_proc = subprocess.run(
-            ["docker", "pull", f"clickhouse/clickhouse-server:{tag}"],
-            capture_output=True,
-        )
-
-        if pull_proc.returncode != 0:
-            logger.error(f"Failed to pull image for {tag}")
-
-        logger.info(f"Running container for {tag}")
-        run_proc = subprocess.run(
-            [
-                "docker",
-                "run",
-                "--name",
-                container_name,
-                "-d",
-                f"clickhouse/clickhouse-server:{tag}",
-            ],
-            capture_output=True,
-        )
-
-        if run_proc.returncode != 0:
-            logger.error(f"Failed to run container for {tag}")
-
-    result = None
-
-    # Run the query up to 60 times, with a delay between each attempt
-    for n in range(60):
-        logger.info(f"Running query for {tag}")
-        query_process = subprocess.run(
-            [
-                "docker",
-                "exec",
-                "-i",
-                container_name,
-                "clickhouse-client",
-                "--query",
-                query,
-            ],
-            capture_output=True,
-        )
-
-        stdout_text = query_process.stdout.decode("utf-8")
-        stderr_text = query_process.stderr.decode("utf-8")
-
-        if (
-            query_process.returncode == 0 or "UNKNOWN_TABLE" in stderr_text
-        ):  # UNKNOWN_TABLE is expected if the table doesn't exist
-            logger.info("Query succeeded!")
-            result = stdout_text
-            break
-        logger.warning(
-            f"Query failed, retrying ({n}): {query_process.stderr.decode('utf-8')}"
-        )
-        time.sleep(0.10)
-
-    if result is None:
-        logger.error(f"Failed to run query for {tag}")
-
-    return result
+    if proc.returncode == 0 and proc.stdout.decode().strip() == "true":
+        logger.info(f"Stopping container for {version}")
+        subprocess.run(["docker", "stop", CONTAINER_NAME_TEMPLATE.format(tag=version)], capture_output=True)
+        subprocess.run(["docker", "rm", CONTAINER_NAME_TEMPLATE.format(tag=version)], capture_output=True)
 
 
-@memory.cache(cache_validation_callback=should_cache)
-def get_function_pages() -> dict[str, str]:
-    page_ref = {}
-
-    for page in function_pages:
-        logger.info(f"Processing page: {page}")
-        response = requests.get(function_doc_template.format(page=page))
-        response.raise_for_status()
-
-        page_ref[page] = response.text
-
-    return page_ref
+def load_json_cache(path: str):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return None
 
 
-@memory.cache(cache_validation_callback=should_cache)
-def get_url_for_function(function: str) -> str | None:
-    std_func = function.lower()
-    page_ref = get_function_pages()
-
-    for page, content in page_ref.items():
-        # Check for exact match
-        if f'id="{std_func}"' in content:
-            return f"{function_doc_template.format(page=page)}#{std_func}"
-
-        # Check for partial match (in case of slight naming differences)
-        if f'id="{std_func.replace("_", "")}"' in content:
-            return (
-                f"{function_doc_template.format(page=page)}#{std_func.replace('_', '')}"
-            )
-
-    return None
+def save_json_cache(path: str, data) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
 
 
-@memory.cache(cache_validation_callback=should_cache)
-def get_functions(tag: str) -> list[str]:
+def get_functions(tag: str) -> list[dict]:
+    cache_path = os.path.join(CACHE_DIR, "functions", f"{tag}.json")
+    if tag not in CACHE_DENY_LIST:
+        cached = load_json_cache(cache_path)
+        if cached is not None:
+            logger.info(f"Loaded cached functions for {tag}")
+            return cached
+
     tsv = run_query("SELECT * FROM system.functions FORMAT TabSeparatedWithNames", tag)
     if tsv is None:
         return []
-    reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
-    return list(reader)
+    result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
+    if tag not in CACHE_DENY_LIST:
+        save_json_cache(cache_path, result)
+    return result
 
 
-@memory.cache(cache_validation_callback=should_cache)
-def get_keywords(tag: str) -> list[str]:
+def get_keywords(tag: str) -> list[dict]:
+    cache_path = os.path.join(CACHE_DIR, "keywords", f"{tag}.json")
+    if tag not in CACHE_DENY_LIST:
+        cached = load_json_cache(cache_path)
+        if cached is not None:
+            logger.info(f"Loaded cached keywords for {tag}")
+            return cached
+
     tsv = run_query(
         "SELECT keyword as name FROM system.keywords FORMAT TabSeparatedWithNames", tag
     )
     if tsv is None:
         return []
-    reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
-    return list(reader)
+    result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
+    if tag not in CACHE_DENY_LIST:
+        save_json_cache(cache_path, result)
+    return result
 
 
-@memory.cache(cache_validation_callback=should_cache)
-def get_settings(tag: str) -> list[str]:
+def get_settings(tag: str) -> list[dict]:
+    cache_path = os.path.join(CACHE_DIR, "settings", f"{tag}.json")
+    if tag not in CACHE_DENY_LIST:
+        cached = load_json_cache(cache_path)
+        if cached is not None:
+            logger.info(f"Loaded cached settings for {tag}")
+            return cached
+
     tsv = run_query(
         "SELECT name FROM system.settings FORMAT TabSeparatedWithNames", tag
     )
     if tsv is None:
         return []
-    reader = csv.DictReader(tsv.splitlines(), delimiter="\t")
-    return list(reader)
+    result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
+    if tag not in CACHE_DENY_LIST:
+        save_json_cache(cache_path, result)
+    return result
+
+
+def get_docs_urls(features: list[str]) -> dict[str, str]:
+    """Return a function-name → docs-URL map, building and caching it on first call."""
+    cache_path = os.path.join(CACHE_DIR, "docs_urls.json")
+    cached = load_json_cache(cache_path)
+    if cached is not None:
+        logger.info("Loaded cached docs URLs")
+        return cached
+
+    logger.info("Building docs URL cache from documentation pages...")
+    page_ref = {}
+    for page in function_pages:
+        logger.info(f"Fetching docs page: {page}")
+        response = requests.get(function_doc_template.format(page=page))
+        response.raise_for_status()
+        page_ref[page] = response.text
+
+    urls = {}
+    for feature in features:
+        std = feature.lower()
+        for page, content in page_ref.items():
+            if f'id="{std}"' in content:
+                urls[feature] = f"{function_doc_template.format(page=page)}#{std}"
+                break
+            if f'id="{std.replace("_", "")}"' in content:
+                urls[feature] = f"{function_doc_template.format(page=page)}#{std.replace('_', '')}"
+                break
+        else:
+            logger.warning(f"No URL found for function {feature}")
+
+    save_json_cache(cache_path, urls)
+    return urls
+
+
+def run_query(query: str, tag: str) -> str | None:
+    if USE_FIDDLE:
+        return run_query_against_fiddle(query, tag)
+    return run_query_against_version_locally(query, tag)
+
+
+def run_query_against_fiddle(query: str, tag: str) -> str | None:
+    logger.info(f"Running query against Fiddle for {tag}")
+    response = requests.post(
+        "https://fiddle.clickhouse.com/api/runs",
+        json={"query": query, "version": tag},
+    )
+    return response.json().get("result", {}).get("output")
+
+
+def run_query_against_version_locally(query: str, tag: str) -> str | None:
+    logger.info(f"Running query against local container for {tag}")
+    container_name = CONTAINER_NAME_TEMPLATE.format(tag=tag)
+
+    proc = subprocess.run(
+        ["docker", "inspect", "-f", "{{.State.Running}}", container_name],
+        capture_output=True,
+    )
+    if not (proc.returncode == 0 and proc.stdout.decode().strip() == "true"):
+        subprocess.run(["docker", "rm", "-f", container_name], capture_output=True)
+        logger.info(f"Pulling image for {tag}")
+        if subprocess.run(
+            ["docker", "pull", f"clickhouse/clickhouse-server:{tag}"],
+            capture_output=True,
+        ).returncode != 0:
+            logger.error(f"Failed to pull image for {tag}")
+        logger.info(f"Running container for {tag}")
+        if subprocess.run(
+            ["docker", "run", "--name", container_name, "-d", f"clickhouse/clickhouse-server:{tag}"],
+            capture_output=True,
+        ).returncode != 0:
+            logger.error(f"Failed to run container for {tag}")
+
+    for n in range(60):
+        logger.info(f"Running query for {tag} (attempt {n + 1})")
+        proc = subprocess.run(
+            ["docker", "exec", "-i", container_name, "clickhouse-client", "--query", query],
+            capture_output=True,
+        )
+        stderr = proc.stderr.decode()
+        if proc.returncode == 0 or "UNKNOWN_TABLE" in stderr:
+            return proc.stdout.decode()
+        logger.warning(f"Query failed, retrying ({n}): {stderr}")
+        time.sleep(0.10)
+
+    logger.error(f"Failed to run query for {tag}")
+    return None
 
 
 def get_tags(exclude_patch: bool = True, exclude_alpine: bool = True) -> list[str]:
     r = requests.get("https://fiddle.clickhouse.com/api/tags")
     tags = r.json().get("result", {}).get("tags", [])
-
-    # if exclude_patch then strip the patch version, convert to set to remove duplicates
-
     if exclude_patch:
         tags = [t for t in tags if t.count(".") == 1 or t in ALLOWED_TAGS]
-
     if exclude_alpine:
-        tags = [t for t in tags if "alpine" not in t]
-
+        tags = [t for t in tags if "alpine" not in t and "distroless" not in t]
     return tags
 
 
@@ -283,7 +262,6 @@ def render(
     feature_type: str = "function",
     filename: str = "index.html",
 ) -> None:
-    # Mapping from altenative function names to the canonical name
     aliases = {
         func["name"]: func["alias_to"]
         for funcs in version_info.values()
@@ -291,45 +269,55 @@ def render(
         if "alias_to" in func and func["alias_to"] != ""
     }
 
-    # Deduplicated list of all features
-    all_features = sorted(
-        list(
-            {
-                func["name"]
-                for funcs in version_info.values()
-                for func in funcs
-                if "name" in func
-            }
-        )
-    )
+    all_features = sorted({
+        func["name"]
+        for funcs in version_info.values()
+        for func in funcs
+        if "name" in func
+    })
 
-    # Mapping from feature to list of versions it is available in
-    feature_to_versions = {
-        feature: [
-            tag
-            for tag, funcs in version_info.items()
-            if any(f.get("name") == feature for f in funcs)
-        ]
+    versions = list(version_info.keys())
+
+    feature_versions = {
+        feature: {tag for tag, funcs in version_info.items() if any(f.get("name") == feature for f in funcs)}
         for feature in all_features
     }
 
     docs_links = {}
     if feature_type == "function":
-        for feature in all_features:
-            url = get_url_for_function(feature)
-            if url:
-                docs_links[feature] = url
+        docs_links = get_docs_urls(all_features)
+
+    # Build version header cells (1-based colIndex matches toggleCol() in JS)
+    header_cells = "\n            ".join(
+        f'<th class="ver-col" onclick="toggleCol({i + 1})" title="Click to hide {escape(v)}">{escape(v)}</th>'
+        for i, v in enumerate(versions)
+    )
+
+    def build_row(feature: str) -> str:
+        url = docs_links.get(feature) or docs_links.get(aliases.get(feature, ""))
+        safe = escape(feature)
+        name_html = f'<a href="{escape(url)}">{safe}</a>' if url else safe
+        if feature in aliases:
+            name_html += f'<span class="alias-mark" title="Alias for {escape(aliases[feature])}">*</span>'
+
+        cells = [f'<td class="name-col">{name_html}</td>']
+        for v in versions:
+            if v in feature_versions[feature]:
+                cells.append(f'<td class="avail" title="{safe} available in {v}">✓</td>')
             else:
-                logger.warning(f"No URL found for function {feature}")
+                cells.append(f'<td class="unavail" title="{safe} not available in {v}">✗</td>')
+        return f'<tr data-name="{escape(feature.lower())}">' + "".join(cells) + "</tr>"
+
+    rows_html = "\n            ".join(build_row(f) for f in all_features)
+    versions_json = json.dumps(versions)
 
     doc = f"""<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>    
+    <title>{escape(title)}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7W1TNNL21"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -337,225 +325,192 @@ def render(
         gtag('js', new Date());
         gtag('config', 'G-W7W1TNNL21');
     </script>
-    <script>
-    var availability = {json.dumps(feature_to_versions, indent=4)};
-    var docs = {json.dumps(docs_links, indent=4)};
-    var aliases = {json.dumps(aliases, indent=4)};
-    </script>
     <style>
+    html, body {{
+        height: 100%;
+        margin: 0;
+    }}
     body {{
         font-size: 13px;
+        display: flex;
+        flex-direction: column;
+    }}
+    .page-wrap {{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+        padding: 12px 16px;
+    }}
+    h1 {{
+        font-size: 1.6rem;
+        margin-bottom: 4px;
     }}
     .main {{
-        margin-top: 20px;
-    }}
-    #feature_table {{
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-    }}
-    #feature_table th, #feature_table td {{
-        border: none;
-    }}
-
-    .tooltip {{
-        position: absolute;
-        background-color: black;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 1000;
-    }}
-    #hidden-column-buttons {{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
         margin-top: 10px;
     }}
-    #hidden-column-buttons button {{
+    .table-wrapper {{
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+    }}
+    #feature_table {{
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 0;
+        width: max-content;
+    }}
+    /* Sticky header row */
+    #feature_table thead th {{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: #f1f3f5;
+        border-bottom: 2px solid #ced4da;
+    }}
+    /* Sticky name column */
+    .name-col {{
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background: white;
+        min-width: 180px;
+        padding: 3px 8px;
+        border-right: 1px solid #dee2e6;
+        white-space: nowrap;
+    }}
+    thead .name-col {{
+        z-index: 3;
+        background: #f1f3f5;
+    }}
+    /* Rotated version column headers */
+    th.ver-col {{
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        vertical-align: bottom;
+        padding: 8px 4px;
+        cursor: pointer;
+        user-select: none;
+        width: 28px;
+        min-width: 28px;
+        max-width: 28px;
+        text-align: center;
+        font-weight: 500;
+    }}
+    th.ver-col:hover {{
+        background: #e9ecef;
+    }}
+    /* Availability cells */
+    td.avail, td.unavail {{
+        text-align: center;
+        width: 28px;
+        min-width: 28px;
+        max-width: 28px;
+        padding: 2px 0;
+    }}
+    td.avail {{
+        background: #d4edda;
+        color: #155724;
+    }}
+    td.unavail {{
+        background: #f8f9fa;
+        color: #ced4da;
+    }}
+    #feature_table tbody tr:hover .name-col {{
+        background: #f8f9fa;
+    }}
+    #feature_table tbody tr:hover td.avail {{
+        background: #b8dfc4;
+    }}
+    #feature_table tbody tr:hover td.unavail {{
+        background: #eef0f2;
+    }}
+    .alias-mark {{
+        color: #6c757d;
+        font-size: 0.8em;
+        margin-left: 1px;
+    }}
+    #restore-btns {{
+        margin-bottom: 6px;
+    }}
+    footer {{
         font-size: 0.8rem;
-        padding: 0.2rem 0.4rem;
-    }}
-    #feature_table th:not(:first-child),
-    #feature_table td:not(:first-child) {{
-        width: 45px;
-        min-width: 45px;
-        max-width: 45px;
-    }}
-    #feature_table th:first-child,
-    #feature_table td:first-child {{
-        width: auto;
+        color: #6c757d;
+        padding-top: 8px;
+        flex-shrink: 0;
     }}
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <h1>{header}</h1>
-    <nav>[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> | <a href="settings.html">Setting Reference</a>]</nav>
-    <div><p style="margin-top: 5px;">This tool provides information about function and keyword availability across a range of recent ClickHouse releases, sourced from the <code>system.functions</code>, <code>system.keywords</code>, and <code>system.functions</code> tables for each release.</p></div>
+<div class="page-wrap">
+    <h1>{escape(header)}</h1>
+    <nav class="mb-1">[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> | <a href="settings.html">Setting Reference</a> ]</nav>
+    <p class="text-muted mb-1" style="font-size:0.85rem;">Availability across recent ClickHouse releases, sourced from <code>system.functions</code>, <code>system.keywords</code>, and <code>system.settings</code>.</p>
     <div class="main">
-        <input type="text" id="search" class="form-control mb-3" onkeyup="search()" placeholder="Search for {feature_type}s...">
-        <div class="table-responsive">
-            <table id="feature_table" class="table table-sm"></table>
+        <input type="text" id="search" class="form-control form-control-sm mb-2" oninput="filterRows()" placeholder="Search for {escape(feature_type)}s...">
+        <div id="restore-btns"></div>
+        <div class="table-wrapper">
+            <table id="feature_table" class="table table-sm mb-0">
+                <thead>
+                    <tr>
+                        <th class="name-col"></th>
+                        {header_cells}
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows_html}
+                </tbody>
+            </table>
         </div>
-        <p class="mt-3">* indicates an alias to another function</p>
+        <p class="mt-1 text-muted" style="font-size:0.75rem;">* indicates an alias to another {escape(feature_type)}</p>
     </div>
-    <footer class="mt-3">
-        <p>Source on <a href='https://github.com/JosephRedfern/clickhouse-function-reference'>GitHub</a> | last updated {datetime.today().strftime('%Y-%m-%d %H:%M')}</p>
+    <footer>
+        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; last updated {datetime.today().strftime('%Y-%m-%d %H:%M')}
     </footer>
 </div>
 <script>
-    function search() {{
-        const input = document.getElementById('search').value.toUpperCase();
-        const table = document.getElementById('feature_table');
-        const rows = table.getElementsByTagName('tr');
-        for (let i = 1; i < rows.length; i++) {{
-            const cells = rows[i].getElementsByTagName('td');
-            let found = false;
-            for (const cell of cells) {{
-                if (cell.textContent.toUpperCase().includes(input)) {{
-                    found = true;
-                    break;
-                }}
-            }}
-            if (found) {{
-                rows[i].style.display = '';
-            }} else {{
-                rows[i].style.display = 'none';
-            }}
+    const versions = {versions_json};
+    const hiddenCols = new Set();
+
+    function filterRows() {{
+        const term = document.getElementById('search').value.toLowerCase();
+        for (const row of document.querySelectorAll('#feature_table tbody tr')) {{
+            row.style.display = row.dataset.name.includes(term) ? '' : 'none';
         }}
     }}
 
-    let hiddenColumns = new Set();
-
-    function toggleColumn(index) {{
-        const table = document.getElementById('feature_table');
-        const rows = table.getElementsByTagName('tr');
-        const version = versions[index - 1];  // -1 because index is 1-based
-        
-        if (hiddenColumns.has(index)) {{
-            hiddenColumns.delete(index);
-            for (let i = 0; i < rows.length; i++) {{    
-                rows[i].cells[index].style.display = '';
-            }}
+    function toggleCol(colIndex) {{
+        // colIndex is 1-based (1 = first version column, after the name column)
+        const cells = document.querySelectorAll(`#feature_table tr > :nth-child(${{colIndex + 1}})`);
+        if (hiddenCols.has(colIndex)) {{
+            hiddenCols.delete(colIndex);
+            cells.forEach(c => c.style.display = '');
         }} else {{
-            hiddenColumns.add(index);
-            for (let i = 0; i < rows.length; i++) {{
-                rows[i].cells[index].style.display = 'none';
-            }}
+            hiddenCols.add(colIndex);
+            cells.forEach(c => c.style.display = 'none');
         }}
-        
-        updateHiddenColumnButtons();
+        renderRestoreButtons();
     }}
 
-    function updateHiddenColumnButtons() {{
-        let buttonContainer = document.getElementById('hidden-column-buttons');
-        if (!buttonContainer) {{
-            buttonContainer = document.createElement('div');
-            buttonContainer.id = 'hidden-column-buttons';
-            buttonContainer.className = 'mb-2';
-            document.querySelector('.main').insertBefore(buttonContainer, document.getElementById('feature_table').parentNode);
+    function renderRestoreButtons() {{
+        const container = document.getElementById('restore-btns');
+        container.innerHTML = '';
+        for (const colIndex of [...hiddenCols].sort((a, b) => a - b)) {{
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-outline-secondary btn-sm me-1 mb-1';
+            btn.textContent = `+ ${{versions[colIndex - 1]}}`;
+            btn.onclick = () => toggleCol(colIndex);
+            container.appendChild(btn);
         }}
-        
-        buttonContainer.innerHTML = '';  // Clear existing buttons
-        
-        hiddenColumns.forEach(index => {{
-            const version = versions[index - 1];  // -1 because index is 1-based
-            const button = document.createElement('button');
-            button.textContent = `+ ${{version}}`;
-            button.className = 'btn btn-outline-primary btn-sm me-1 mb-1';
-            button.onclick = () => toggleColumn(index);
-            buttonContainer.appendChild(button);
-        }});
-        
-        buttonContainer.style.display = hiddenColumns.size > 0 ? 'block' : 'none';
-    }}
-
-    const table = document.getElementById('feature_table');
-    const features = Object.keys(availability);
-    const versions = [...new Set(Object.values(availability).flat())];
-    const header = table.createTHead();
-    const headerRow = header.insertRow(0);
-    headerRow.insertCell(0);
-
-    // Modify the existing code that creates the header row
-    for (let i = 0; i < versions.length; i++) {{
-        const version = versions[i];
-        const cell = headerRow.insertCell();
-        cell.textContent = version;
-        cell.style.cursor = 'pointer';
-        cell.title = 'Click to hide this column';
-        cell.onclick = () => toggleColumn(i + 1);  // +1 because the first column is for feature names
-        
-        // Add these lines to set width and text alignment
-        if (i > 0) {{  // Skip the first column (function/keyword names)
-            cell.style.width = '40px';
-            cell.style.minWidth = '40px';
-            cell.style.maxWidth = '40px';
-            cell.style.textAlign = 'center';
-        }}
-    }}
-
-    for (const feature of features) {{
-        const row = table.insertRow();
-        const cell = row.insertCell();
-
-        var url = null; 
-        
-        // direct link to docs
-        if (docs.hasOwnProperty(feature)) {{
-            url = docs[feature];
-        }} else if (aliases.hasOwnProperty(feature)) {{
-            // no direct link to docs, check if there is an alias
-            url = docs[aliases[feature]];
-        }}
-
-        if (url) {{
-            cell.innerHTML = `<a href="${{url}}">${{feature}}</a>`;
-        }} else {{
-            cell.innerHTML = feature;
-            console.log(`No URL found for feature ${{feature}}`);
-        }}
-
-        if (aliases.hasOwnProperty(feature)) {{
-            cell.innerHTML += "*";
-        }}
-
-        for (const version of versions) {{
-            const cell = row.insertCell();
-            if (availability[feature].includes(version)) {{
-                cell.textContent = '✓';
-                cell.style.backgroundColor = 'green';
-            }} else {{
-                cell.textContent = '✗';
-                cell.style.backgroundColor = 'red';
-            }}
-            cell.style.textAlign = 'center';  // Center the checkmark/cross
-            cell.onmouseover = () => showTooltip(cell, version, feature);
-            cell.onmouseout = () => hideTooltip(cell);
-        }}
-    }}
-
-    function showTooltip(cell, version, feature) {{
-        const tooltip = document.createElement('div');
-        tooltip.style.position = 'absolute';
-        tooltip.style.backgroundColor = 'black';
-        tooltip.style.color = 'white';
-        tooltip.style.padding = '10px';
-        tooltip.style.borderRadius = '5px';
-        tooltip.style.zIndex = '1000';
-        
-        if (availability[feature].includes(version)) {{
-            tooltip.textContent = `${{feature}} is available in ${{version}}`;
-        }} else {{
-            tooltip.textContent = `${{feature}} is not available in ${{version}}`;
-        }}
-        
-        cell.appendChild(tooltip);
-    }}
-
-    function hideTooltip(cell) {{
-        cell.removeChild(cell.lastChild);
     }}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 """

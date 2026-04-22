@@ -1,0 +1,6290 @@
+[
+  {
+    "name": "logTrace",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "aes_decrypt_mysql",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "aes_encrypt_mysql",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "decrypt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "encrypt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bayesAB",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "validateNestedArraySizes",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashArgCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashArgUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashArgCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashArg",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashArgCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashArgUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashArgCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleSimHashUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSimHashUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSimHashCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSimHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUnixTimestamp64Nano",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUnixTimestamp64Micro",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "jumpConsistentHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "yandexConsistentHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addressToSymbol",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toJSONString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSON_VALUE",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractKeysAndValuesRaw",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractFloat",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONType",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONKey",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONLength",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isValidJSON",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isZeroOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "assumeNotNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2CapUnion",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2CapContains",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2CellsIntersect",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2GetNeighbors",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2ToGeo",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stringToH3",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat32OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3IndexesAreNeighbors",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3ToParent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "murmurHash2_64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3GetBaseCell",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3GetResolution",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3EdgeLengthM",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "svg",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "equals",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "geohashesInBox",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsIntersectionCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonPerimeterSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitHammingDistance",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsDistanceSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsSymDifferenceSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonAreaSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "greatCircleDistance",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "mapKeys",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sign",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "atanh",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "formatReadableTimeDelta",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "geohashEncode",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "atan2",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "acos",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "SHA224",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractBool",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3kRing",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "asin",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "sin",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lgamma",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "log2",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "geoToH3",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUnixTimestamp64Milli",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "firstSignificantSubdomainCustom",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractBool",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractFloat",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONHas",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamHas",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sigmoid",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutQueryStringAndFragment",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt16OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutToFirstSignificantSubdomainCustom",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "URLHierarchy",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractURLParameterNames",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal128OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractURLParameters",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "path",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "pathFull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "port",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "domain",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitTest",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSearchCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapMax",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramDistanceCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramDistance",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractAllGroupsHorizontal",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractAllGroupsVertical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiFuzzyMatchAllIndices",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiFuzzyMatchAnyIndex",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiMatchAnyIndex",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "replaceRegexpAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetOrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "replaceOne",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extract",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "readWktPolygon",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notILike",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "geohashDecode",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toModifiedJulianDay",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notLike",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countSubstringsCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv4StringToNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "positionUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasToken",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetDate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstPosition",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstIndexCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "atan",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "rowNumberInAllBlocks",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstIndexCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAnyUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime32BestEffortOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "blockNumber",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutURLParameter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstPositionCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "positionCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "positionCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "splitByRegexp",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt256OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "pointInPolygon",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "splitByWhitespace",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lemmatize",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "synonyms",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "tryBase64Decode",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAllPositions",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "FROM_BASE64",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "replaceRegexpOne",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subBitmap",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "defaultValueOfArgumentType",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "base64Decode",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToContinent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ilike",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fromModifiedJulianDay",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "TO_BASE64",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "dictIsIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "base64Encode",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "decodeXMLComponent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countMatchesCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "normalizeQuery",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "erf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "trimBoth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fromUnixTimestamp64Nano",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lessOrEquals",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractQuarters",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSearch",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "readWktRing",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "trimRight",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "endsWith",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramDistanceCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "connectionId",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "initialQueryID",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "startsWith",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tan",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "substring",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "formatRow",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetHierarchy",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notEmpty",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "format",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "murmurHash3_64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reverseUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayEnumerateUniqRanked",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CRC64",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "pow",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reverse",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "lower",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfDay",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "caseWithoutExpr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CHAR_LENGTH",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "lengthUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "length",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "bitTestAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "floor",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "round",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsFixedString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3ToChildren",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayToSingle",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tgamma",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractRaw",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fuzzBits",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "randomFixedString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tupleHammingDistance",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractBool",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSearchUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "generateUUIDv4",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAllPositionsCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "randConstant",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "leftPad",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "convertCharset",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "firstSignificantSubdomain",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rand64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSON_EXISTS",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isIPAddressInRange",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleSimHashCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime32BestEffortOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutToFirstSignificantSubdomainWithWWW",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "roundToExp2",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "mapSubtract",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "partitionId",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intExp2",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "byteSize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "errorCodeToName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTime64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "yesterday",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "initializeAggregation",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalVariable",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countDigits",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfHour",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isDecimalOverflow",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isConstant",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "getSetting",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "shardNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "__getScalar",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "position",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "__bitBoolMaskOr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cosh",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "basename",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "evalMLMethod",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "filesystemFree",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "filesystemCapacity",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsDate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "filesystemAvailable",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "joinGet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNullInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNotInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeDayNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "splitByChar",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notNullIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSearchCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "trunc",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractArrayRaw",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "version",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "joinGetOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDate32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lowCardinalityIndices",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toLowCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "runningConcurrency",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "runningDifferenceStartingWithFirstValue",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitCount",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "timezoneOf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "timezone",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uptime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "pi",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "extractTextFromHTML",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "UUIDStringToNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "roundDown",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv6NumToString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "throwIf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ifNotFinite",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "FROM_UNIXTIME",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isInfinite",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayProduct",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsIntersectionSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeHourNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasColumnInTable",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bar",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractKeysAndValues",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "replicate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayJoin",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2RectUnion",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramDistanceUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "identity",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "indexHint",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ignore",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionHierarchy",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTime64OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsWithinCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "materialize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sleepEachRow",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffortUSOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "neighbor",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "splitByString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rowNumberInBlock",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "blockSize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "defaultValueOfTypeName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hiveHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "randomStringUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "blockSerializedSize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visibleWidth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fullHostName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hostName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayFilter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "defaultRoles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "currentRoles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt64OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "DATABASE",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt8OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "not",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "log1p",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "and",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayDifference",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayCumSumNonNegative",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleSimHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayCumSum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arraySort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dumpColumnStructure",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstIndex",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReverseSplit",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ifNull",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "normalizeQueryKeepNames",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "xxHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "in",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReverseFill",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "erfc",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutToFirstSignificantSubdomainCustomWithWWW",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayFill",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "substringUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayFirst",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayAvg",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cos",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayMax",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toColumnTypeName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayMin",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalDay",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsFloat32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "or",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayExists",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "trimLeft",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayMap",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsSymDifferenceCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "gccMurmurHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "exp2",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonPerimeterCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "murmurHash3_128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonConvexHullCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "murmurHash3_32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNullIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "javaHashUTF16LE",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3ToString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "URLHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToCountry",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUUID",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intHash32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "metroHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayPushFront",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapAndnotCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sipHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractUInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReduce",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "SHA256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "array",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffortUSOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt32OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MD5",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "randomString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "__bitBoolMaskAnd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasSubstr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "formatReadableQuantity",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "replaceAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeSecondNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "demangle",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toNullable",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "concat",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "formatReadableSize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "shardCount",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fromModifiedJulianDayOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt128OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmaskToList",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "xor",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitPositionsToArray",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "empty",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHashArg",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "_CAST",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetStringOrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayZip",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUUIDOrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetFloat64OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt64OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "today",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt32OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countSubstringsCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt16OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetDescendants",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "inIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUUID",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arraySlice",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetFloat64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNotNullInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayUniq",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonAreaCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intDiv",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cityHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToTopContinent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "e",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleSimHashCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "formatRowNoNewline",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSON_QUERY",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isIPv4String",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "UUIDNumToString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "modulo",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpret",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "unbin",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToDistrict",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sinh",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "date_trunc",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "__bitSwapLastTwo",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "formatDateTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dateDiff",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "tanh",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAnyCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "upperUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmaskToArray",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayAUC",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiMatchAllIndices",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasThreadFuzzer",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDayOfWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isFinite",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "transform",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "timezoneOffset",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toTimezone",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutQueryString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractYears",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tcpPort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractHours",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tid",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTime64OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractSeconds",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "alphaTokens",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "negate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "modelEvaluate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "file",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "roundAge",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MACStringToOUI",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addQuarters",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayResize",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addWeeks",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "HOUR",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "addHours",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "visitParamExtractUInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "caseWithExpression",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rand",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "addSeconds",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "splitByNonAlpha",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayStringConcat",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "randomPrintableASCII",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3HexAreaM2",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toYYYYMMDDhhmmss",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt16OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "timeSlots",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "timeSlot",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "queryString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "javaHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "acosh",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeMinuteNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeYearNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "unhex",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt8OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToPopulation",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfISOYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "getSizeOfEnumType",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfInterval",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toYYYYMMDD",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstPositionUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CRC32",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfFifteenMinutes",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayUInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfFiveMinute",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cbrt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfMinute",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfSecond",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasTokenCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "farmHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfMonth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "queryID",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wordShingleMinHashCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetDateOrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt64OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayElement",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sleep",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictHas",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "enabledProfiles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal32OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiFuzzyMatchAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isValidUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt32OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toMonday",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstIndexUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lowCardinalityKeys",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "halfMD5",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "domainWithoutWWW",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MINUTE",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "addDays",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toMinute",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractRaw",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt16OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bin",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toDayOfYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "log",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "DAYOFMONTH",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2RectAdd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetFloat32OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "xxHash32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "DAY",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toISOWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramMinHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toMonth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countMatches",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toQuarter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toISOYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "YEAR",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hypot",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalQuarter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toSecond",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "accurate_CastOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "defaultProfiles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalMonth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitRotateRight",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReverseSort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt8OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "SHA1",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchFirstPositionCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutFragment",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalSecond",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt256OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStringCutToZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "normalizedQueryHashKeepNames",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "coalesce",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime64BestEffortOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalHour",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapSubsetLimit",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffortOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "match",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fragment",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "repeat",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffortOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal128OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractUInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiMatchAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal256OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "roundDuration",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addMinutes",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfQuarter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "exp10",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal64OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTimeOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractFloat",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUUID",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetDateTimeOrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "greater",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeMonthNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDate32OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt256OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "leftPadUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToArea",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt64OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toModifiedJulianDayOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt64OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsEqualsCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "accurateCast",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt32OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "encodeXMLComponent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt8OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUUIDOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayEnumerateDenseRanked",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toYYYYMM",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal256OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fromUnixTimestamp64Milli",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CHARACTER_LENGTH",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "isNull",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "isNaN",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAllPositionsCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "FQDN",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "currentProfiles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTime32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arraySplit",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIPv6",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal32OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayFlatten",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dateName",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "s2RectIntersection",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CAST",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "caseWithExpr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "nullIf",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTimeOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitOr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "CRC32IEEE",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayDate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt128OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt128OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat32OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "SECOND",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayCompact",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapMin",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt16OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsUInt256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "map",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapHasAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayUInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutIPv6",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt32OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toTypeName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsUnionCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "char",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "mapContains",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayDateTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt16OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "wkt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv4ToIPv6",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "__bitWrapperFunc",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiply",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "accurate_Cast",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayIntersect",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt8OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "now",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime64BestEffortOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rightPadUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeWeekNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "topLevelDomain",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "greatest",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "isIPv6String",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toHour",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFixedString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapOrCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayUInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "isNotNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt16",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MACNumToString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAllPositionsUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToCity",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "DAYOFYEAR",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractRaw",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "appendTrailingCharIfAbsent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regionToName",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv4NumToStringClassC",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "upper",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "greaterOrEquals",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "s2RectContains",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "regexpQuoteMeta",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "readWktMultiPolygon",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapOr",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutWWW",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "less",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "readWktPoint",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsDateTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notEquals",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "geoToS2",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "nullInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNotNullIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayConcat",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "mapPopulateSeries",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTimeBestEffortUS",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDayOfMonth",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "gcd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "protocol",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "currentUser",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "if",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "caseWithoutExpression",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "currentDatabase",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "log10",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt64OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayWithConstant",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv4NumToString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetUInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiSearchAnyCaseInsensitive",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countSubstrings",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsFloat64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "plus",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetChildren",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv6CIDRToRange",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIntervalMinute",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitRotateLeft",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "geoDistance",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "mapValues",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toIPv4",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractGroups",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toYearWeek",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsDistanceCartesian",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lowerUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt256OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv4CIDRToRange",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MACStringToNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat64OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sipHash128",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayPopFront",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapAnd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapHasAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractWeeks",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayFirstIndex",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapXorCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapAndnot",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "asinh",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toFloat64OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsWithinSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapXor",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intExp10",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "decodeURLComponent",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitAnd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUUIDOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "notNullInIgnoreSet",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tupleElement",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tupleToNameValuePairs",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "tuple",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ceil",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONHas",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "runningDifference",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "DAYOFWEEK",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toDateTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitNot",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rightPad",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "has",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapToArray",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayCount",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayDistinct",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "greatCircleAngle",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "IPv6StringToNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUnixTimestamp",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "getMacro",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "runningAccumulate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "multiIf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractURLParameter",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "abs",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toValidUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayEnumerateUniq",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "moduloLegacy",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtractInt",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractMonths",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "cutToFirstSignificantSubdomain",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "roundBankers",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toUInt256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayEnumerateDense",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stem",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapAndCardinality",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitTestAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "normalizedQueryHash",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toYear",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayFloat64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapTransform",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "JSONExtract",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitShiftRight",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapContains",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sqrt",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "minus",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "QUARTER",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime64BestEffort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3IsValid",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3EdgeAngle",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "concatAssumeInjective",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayUInt32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intHash64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "enabledRoles",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "fromUnixTimestamp64Micro",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "range",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractMinutes",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "farmFingerprint64",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReduceInRanges",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapBuild",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitmapSubsetInRange",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayPopBack",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "h3ToGeo",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hex",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayPushBack",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "subtractDays",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "buildId",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "URLPathHierarchy",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addMonths",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "parseDateTime32BestEffort",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "indexOf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "polygonsUnionSpherical",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arraySum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetFloat32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ngramSimHashCaseInsensitiveUTF8",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "finalizeAggregation",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "divide",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "netloc",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitShiftLeft",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt32OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "extractAll",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "moduloOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toInt128OrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "bitXor",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "lcm",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "accurateCastOrNull",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDate32OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleJSONExtractString",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "least",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "nullIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "MONTH",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayReverse",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "now64",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "DATE",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "addressToLine",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "globalNotIn",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetInt8OrDefault",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "exp",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "toRelativeQuarterNum",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "arrayEnumerate",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dictGetDateTime",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "mapAdd",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "murmurHash2_32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toStartOfTenMinutes",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intDivOrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "addYears",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "queryStringAndFragment",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "emptyArrayFloat32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "countEqual",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "pointInEllipses",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "like",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "toDecimal64OrZero",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "reinterpretAsInt256",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "hasAny",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "ln",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "log"
+  },
+  {
+    "name": "replace",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "replaceAll"
+  },
+  {
+    "name": "rpad",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "rightPad"
+  },
+  {
+    "name": "mid",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "substring"
+  },
+  {
+    "name": "lcase",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "lower"
+  },
+  {
+    "name": "fromUnixTimestamp",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "FROM_UNIXTIME"
+  },
+  {
+    "name": "truncate",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "trunc"
+  },
+  {
+    "name": "ceiling",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "ceil"
+  },
+  {
+    "name": "ucase",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "upper"
+  },
+  {
+    "name": "rand32",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "rand"
+  },
+  {
+    "name": "power",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "pow"
+  },
+  {
+    "name": "initial_query_id",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "initialQueryID"
+  },
+  {
+    "name": "timeZone",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "timezone"
+  },
+  {
+    "name": "hostname",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "hostName"
+  },
+  {
+    "name": "yearweek",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "toYearWeek"
+  },
+  {
+    "name": "timeZoneOffset",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "timezoneOffset"
+  },
+  {
+    "name": "extractAllGroups",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "extractAllGroupsVertical"
+  },
+  {
+    "name": "lpad",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "leftPad"
+  },
+  {
+    "name": "substr",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "substring"
+  },
+  {
+    "name": "INET6_NTOA",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "IPv6NumToString"
+  },
+  {
+    "name": "INET6_ATON",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "IPv6StringToNum"
+  },
+  {
+    "name": "INET_ATON",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "IPv4StringToNum"
+  },
+  {
+    "name": "timeZoneOf",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "timezoneOf"
+  },
+  {
+    "name": "locate",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "position"
+  },
+  {
+    "name": "INET_NTOA",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "IPv4NumToString"
+  },
+  {
+    "name": "connection_id",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "connectionid"
+  },
+  {
+    "name": "user",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "currentUser"
+  },
+  {
+    "name": "toTimeZone",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "toTimezone"
+  },
+  {
+    "name": "week",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "toWeek"
+  },
+  {
+    "name": "flatten",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "arrayFlatten"
+  },
+  {
+    "name": "query_id",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "queryID"
+  },
+  {
+    "name": "dateTrunc",
+    "is_aggregate": "0",
+    "case_insensitive": "0",
+    "alias_to": "date_trunc"
+  },
+  {
+    "name": "mod",
+    "is_aggregate": "0",
+    "case_insensitive": "1",
+    "alias_to": "modulo"
+  },
+  {
+    "name": "lagInFrame",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "dense_rank",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rank",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "singleValueOrNull",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "studentTTest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "aggThrow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "categoricalInformationValue",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupArrayMovingAvg",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupArrayMovingSum",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "simpleLinearRegression",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "entropy",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "corr",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqCombined64",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stochasticLinearRegression",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sequenceMatch",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "retention",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesBFloat16",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "maxIntersectionsPosition",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitmapXor",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitmap",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "skewPop",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitXor",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitOr",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitmapAnd",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "topKWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "intervalLengthSum",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqCombined",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "rankCorr",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "maxMap",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "minMap",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumMapFiltered",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExactWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumMapFilteredWithOverflow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumMap",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "histogram",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantiles",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sum",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "covarPop",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "row_number",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "kurtPop",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "kurtSamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "skewSamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqExact",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumMapWithOverflow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stddevSamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "varPop",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "corrStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileTimingWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "covarPopStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stddevSampStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "varSamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "topK",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "last_value",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExactExclusive",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "first_value",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileTDigestWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileTDigest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "anyHeavy",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqTheta",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExactWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "max",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "mannWhitneyUTest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "maxIntersections",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExact",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqHLL12",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileBFloat16",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniq",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "min",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "sequenceNextNode",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesTimingWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "boundingRatio",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "any",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "anyLast",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "deltaSum",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "uniqUpTo",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "windowFunnel",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "deltaSumTimestamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "varSampStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumKahan",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesTDigestWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitAnd",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "argMax",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileDeterministic",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesTDigest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stochasticLogisticRegression",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "argMin",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "avg",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "covarSampStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesTiming",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "welchTTest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "covarSamp",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "varPopStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileTiming",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExactInclusive",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExactHigh",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupArraySample",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExactLow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupBitmapOr",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExact",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumCount",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupArrayInsertAt",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExactHigh",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sumWithOverflow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "sequenceCount",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesDeterministic",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupUniqArray",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "groupArray",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stddevPop",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantile",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "leadInFrame",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExactExclusive",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "count",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": ""
+  },
+  {
+    "name": "quantilesExactInclusive",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "stddevPopStable",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "quantileExactLow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "avgWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": ""
+  },
+  {
+    "name": "BIT_AND",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "groupBitAnd"
+  },
+  {
+    "name": "VAR_SAMP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "varSamp"
+  },
+  {
+    "name": "COVAR_SAMP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "covarSamp"
+  },
+  {
+    "name": "VAR_POP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "varPop"
+  },
+  {
+    "name": "medianTDigest",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileTDigest"
+  },
+  {
+    "name": "medianBFloat16",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileBFloat16"
+  },
+  {
+    "name": "medianTimingWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileTimingWeighted"
+  },
+  {
+    "name": "medianTiming",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileTiming"
+  },
+  {
+    "name": "medianExactHigh",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileExactHigh"
+  },
+  {
+    "name": "BIT_OR",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "groupBitOr"
+  },
+  {
+    "name": "medianDeterministic",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileDeterministic"
+  },
+  {
+    "name": "STDDEV_POP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "stddevPop"
+  },
+  {
+    "name": "STDDEV_SAMP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "stddevSamp"
+  },
+  {
+    "name": "medianExactLow",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileExactLow"
+  },
+  {
+    "name": "medianTDigestWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileTDigestWeighted"
+  },
+  {
+    "name": "medianExact",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileExact"
+  },
+  {
+    "name": "COVAR_POP",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "covarPop"
+  },
+  {
+    "name": "medianExactWeighted",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantileExactWeighted"
+  },
+  {
+    "name": "BIT_XOR",
+    "is_aggregate": "1",
+    "case_insensitive": "1",
+    "alias_to": "groupBitXor"
+  },
+  {
+    "name": "median",
+    "is_aggregate": "1",
+    "case_insensitive": "0",
+    "alias_to": "quantile"
+  }
+]
