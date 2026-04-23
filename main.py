@@ -15,7 +15,9 @@ from loguru import logger
 from scrape_docs import (
     get_anchor_function_doc_pages,
     get_direct_function_doc_urls,
+    get_direct_statement_doc_urls,
     get_function_doc_pages,
+    get_statement_doc_pages,
 )
 
 ALLOWED_TAGS = {"latest", "head"}
@@ -26,6 +28,16 @@ DOCS_FETCH_WORKERS = 16  # concurrent ClickHouse docs page fetches for URL disco
 CONTAINER_NAME_TEMPLATE = "clickhouse-function-reference-{tag}"
 CACHE_DIR = "cache"
 IMAGE_DIGESTS_CACHE_PATH = os.path.join(CACHE_DIR, "image_digests.json")
+FUNCTION_DOCS_CACHE_PATH = os.path.join(CACHE_DIR, "function_docs_urls.json")
+KEYWORD_DOCS_CACHE_PATH = os.path.join(CACHE_DIR, "keyword_docs_urls.json")
+SETTING_DOCS_CACHE_PATH = os.path.join(CACHE_DIR, "setting_docs_urls.json")
+SETTINGS_DOCS_PAGE_URL = "https://clickhouse.com/docs/operations/settings/settings"
+CURATED_DOCS_DIR = "curated_docs_urls"
+CURATED_DOCS_PATHS = {
+    "function": os.path.join(CURATED_DOCS_DIR, "functions.json"),
+    "keyword": os.path.join(CURATED_DOCS_DIR, "keywords.json"),
+    "setting": os.path.join(CURATED_DOCS_DIR, "settings.json"),
+}
 BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 template_env = Environment(
@@ -153,7 +165,49 @@ def load_json_cache(path: str):
 def save_json_cache(path: str, data) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=2, sort_keys=True)
+
+
+def _normalize_feature_name(value: str) -> str:
+    return re.sub(r"[\s_\-/]+", "", value).lower()
+
+
+def _fetch_page_ids(page_url: str) -> tuple[str, list[str]]:
+    logger.info(f"Fetching docs page: {page_url}")
+    response = requests.get(page_url, timeout=30)
+    response.raise_for_status()
+    content = response.text
+    matches = re.findall(r'\bid=(?:"([^"]+)"|([^\s>]+))', content)
+    return page_url, [quoted_id or unquoted_id for quoted_id, unquoted_id in matches]
+
+
+def _load_curated_docs_urls(feature_type: str) -> dict[str, str | None]:
+    curated_path = CURATED_DOCS_PATHS[feature_type]
+    curated = load_json_cache(curated_path)
+    if not isinstance(curated, dict):
+        return {}
+
+    result: dict[str, str | None] = {}
+    for key, value in curated.items():
+        if not isinstance(key, str):
+            continue
+        if value is None or isinstance(value, str):
+            result[key] = value
+    return result
+
+
+def _apply_curated_overrides(urls: dict[str, str], feature_type: str) -> dict[str, str]:
+    curated = _load_curated_docs_urls(feature_type)
+    if not curated:
+        return urls
+
+    merged = dict(urls)
+    for feature, override_url in curated.items():
+        if override_url is None:
+            merged.pop(feature, None)
+        else:
+            merged[feature] = override_url
+    return merged
 
 
 def get_functions(tag: str, force_refresh: bool = False) -> list[dict]:
@@ -199,7 +253,7 @@ def get_settings(tag: str, force_refresh: bool = False) -> list[dict]:
             return cached
 
     tsv = run_query(
-        "SELECT name FROM system.settings FORMAT TabSeparatedWithNames", tag
+        "SELECT name, alias_for FROM system.settings FORMAT TabSeparatedWithNames", tag
     )
     if tsv is None:
         return []
@@ -283,24 +337,28 @@ def get_remote_image_digest(tag: str) -> str | None:
     return manifest_response.headers.get("Docker-Content-Digest")
 
 
-def get_docs_urls(features: list[str]) -> dict[str, str]:
+def get_function_docs_urls(features: list[str]) -> dict[str, str]:
     """Return a function-name → docs-URL map, building and caching it on first call."""
-    cache_path = os.path.join(CACHE_DIR, "docs_urls.json")
-    cached = load_json_cache(cache_path)
-    if cached:
-        logger.info("Loaded cached docs URLs")
-        return cached
-    if cached == {}:
-        logger.info("Cached docs URLs are empty, rebuilding cache")
+    cached = load_json_cache(FUNCTION_DOCS_CACHE_PATH)
+    requested_features = set(features)
 
-    logger.info("Building docs URL cache from documentation pages...")
-    urls = {}
+    if isinstance(cached, dict) and requested_features.issubset(cached.keys()):
+        logger.info("Loaded cached function docs URLs")
+        return _apply_curated_overrides(cached, "function")
+
+    if cached == {}:
+        logger.info("Cached function docs URLs are empty, rebuilding cache")
+
+    logger.info("Building function docs URL cache from documentation pages...")
+    urls = dict(cached) if isinstance(cached, dict) else {}
     unresolved_features = []
 
     doc_pages = get_function_doc_pages()
     direct_doc_urls = get_direct_function_doc_urls(doc_pages)
     for feature in features:
-        normalized_feature = feature.lower().replace("_", "")
+        if feature in urls:
+            continue
+        normalized_feature = _normalize_feature_name(feature)
         direct_url = direct_doc_urls.get(normalized_feature)
         if direct_url is not None:
             urls[feature] = direct_url
@@ -312,41 +370,131 @@ def get_docs_urls(features: list[str]) -> dict[str, str]:
             f"Resolving {len(unresolved_features)} functions via docs page anchors..."
         )
 
-        def fetch_page_ids(page_url: str) -> tuple[str, list[tuple[str, str]]]:
-            logger.info(f"Fetching docs page: {page_url}")
-            response = requests.get(page_url, timeout=30)
-            response.raise_for_status()
-            content = response.text
-            return page_url, re.findall(r'\bid=(?:"([^"]+)"|([^\s>]+))', content)
-
         anchor_urls_by_feature = {}
         anchor_pages = get_anchor_function_doc_pages(doc_pages)
         with ThreadPoolExecutor(
             max_workers=min(DOCS_FETCH_WORKERS, len(anchor_pages) or 1)
         ) as executor:
             futures = {
-                executor.submit(fetch_page_ids, page_url): page_url
+                executor.submit(_fetch_page_ids, page_url): page_url
                 for page_url in anchor_pages
             }
             for future in as_completed(futures):
-                page_url, matches = future.result()
-                for quoted_id, unquoted_id in matches:
-                    anchor = quoted_id or unquoted_id
-                    normalized_anchor = anchor.lower().replace("_", "")
+                page_url, anchor_ids = future.result()
+                for anchor in anchor_ids:
+                    normalized_anchor = _normalize_feature_name(anchor)
                     anchor_urls_by_feature.setdefault(
                         normalized_anchor, f"{page_url}#{anchor}"
                     )
 
         for feature in unresolved_features:
-            normalized_feature = feature.lower().replace("_", "")
+            normalized_feature = _normalize_feature_name(feature)
             anchor_url = anchor_urls_by_feature.get(normalized_feature)
             if anchor_url is not None:
                 urls[feature] = anchor_url
             else:
                 logger.warning(f"No URL found for function {feature}")
 
-    save_json_cache(cache_path, urls)
-    return urls
+    save_json_cache(FUNCTION_DOCS_CACHE_PATH, urls)
+    return _apply_curated_overrides(urls, "function")
+
+
+def get_setting_docs_urls(features: list[str]) -> dict[str, str]:
+    cached = load_json_cache(SETTING_DOCS_CACHE_PATH)
+    requested_features = set(features)
+
+    if isinstance(cached, dict) and requested_features.issubset(cached.keys()):
+        logger.info("Loaded cached setting docs URLs")
+        return _apply_curated_overrides(cached, "setting")
+
+    if cached == {}:
+        logger.info("Cached setting docs URLs are empty, rebuilding cache")
+
+    logger.info("Building setting docs URL cache from documentation page...")
+    urls = dict(cached) if isinstance(cached, dict) else {}
+    unresolved_features = [feature for feature in features if feature not in urls]
+
+    if unresolved_features:
+        _, anchor_ids = _fetch_page_ids(SETTINGS_DOCS_PAGE_URL)
+        anchor_urls_by_feature = {
+            _normalize_feature_name(anchor): f"{SETTINGS_DOCS_PAGE_URL}#{anchor}"
+            for anchor in anchor_ids
+        }
+
+        for feature in unresolved_features:
+            normalized_feature = _normalize_feature_name(feature)
+            anchor_url = anchor_urls_by_feature.get(normalized_feature)
+            if anchor_url is not None:
+                urls[feature] = anchor_url
+            else:
+                logger.warning(f"No URL found for setting {feature}")
+
+    save_json_cache(SETTING_DOCS_CACHE_PATH, urls)
+    return _apply_curated_overrides(urls, "setting")
+
+
+def get_keyword_docs_urls(features: list[str]) -> dict[str, str]:
+    cached = load_json_cache(KEYWORD_DOCS_CACHE_PATH)
+    requested_features = set(features)
+
+    if isinstance(cached, dict) and requested_features.issubset(cached.keys()):
+        logger.info("Loaded cached keyword docs URLs")
+        return _apply_curated_overrides(cached, "keyword")
+
+    if cached == {}:
+        logger.info("Cached keyword docs URLs are empty, rebuilding cache")
+
+    logger.info("Building keyword docs URL cache from statements documentation...")
+    urls = dict(cached) if isinstance(cached, dict) else {}
+    unresolved_features = [feature for feature in features if feature not in urls]
+
+    if unresolved_features:
+        statement_pages = get_statement_doc_pages()
+        direct_doc_urls = get_direct_statement_doc_urls(statement_pages)
+        anchor_urls_by_feature: dict[str, str] = {}
+
+        with ThreadPoolExecutor(
+            max_workers=min(DOCS_FETCH_WORKERS, len(statement_pages) or 1)
+        ) as executor:
+            futures = {
+                executor.submit(_fetch_page_ids, page_url): page_url
+                for page_url in statement_pages
+            }
+            for future in as_completed(futures):
+                page_url, anchor_ids = future.result()
+                for anchor in anchor_ids:
+                    normalized_anchor = _normalize_feature_name(anchor)
+                    anchor_urls_by_feature.setdefault(
+                        normalized_anchor, f"{page_url}#{anchor}"
+                    )
+
+        for feature in unresolved_features:
+            normalized_feature = _normalize_feature_name(feature)
+
+            direct_url = direct_doc_urls.get(normalized_feature)
+            if direct_url is not None:
+                urls[feature] = direct_url
+                continue
+
+            anchor_url = anchor_urls_by_feature.get(normalized_feature)
+            if anchor_url is not None:
+                urls[feature] = anchor_url
+                continue
+
+            logger.warning(f"No URL found for keyword {feature}")
+
+    save_json_cache(KEYWORD_DOCS_CACHE_PATH, urls)
+    return _apply_curated_overrides(urls, "keyword")
+
+
+def get_feature_docs_urls(feature_type: str, features: list[str]) -> dict[str, str]:
+    if feature_type == "function":
+        return get_function_docs_urls(features)
+    if feature_type == "keyword":
+        return get_keyword_docs_urls(features)
+    if feature_type == "setting":
+        return get_setting_docs_urls(features)
+    return {}
 
 
 def run_query(query: str, tag: str) -> str | None:
@@ -443,19 +591,20 @@ def render(
     feature_type: str = "function",
     filename: str = "index.html",
 ) -> None:
+    alias_key = "alias_to" if feature_type == "function" else "alias_for"
     aliases = {
-        func["name"]: func["alias_to"]
-        for funcs in version_info.values()
-        for func in funcs
-        if "alias_to" in func and func["alias_to"] != ""
+        feature["name"]: feature[alias_key]
+        for features in version_info.values()
+        for feature in features
+        if alias_key in feature and feature[alias_key] != ""
     }
 
     all_features = sorted(
         {
-            func["name"]
-            for funcs in version_info.values()
-            for func in funcs
-            if "name" in func
+            feature["name"]
+            for features in version_info.values()
+            for feature in features
+            if "name" in feature
         }
     )
 
@@ -464,15 +613,13 @@ def render(
     feature_versions = {
         feature: {
             tag
-            for tag, funcs in version_info.items()
-            if any(f.get("name") == feature for f in funcs)
+            for tag, features in version_info.items()
+            if any(f.get("name") == feature for f in features)
         }
         for feature in all_features
     }
 
-    docs_links = {}
-    if feature_type == "function":
-        docs_links = get_docs_urls(all_features)
+    docs_links = get_feature_docs_urls(feature_type, all_features)
 
     features = []
     for feature in all_features:
