@@ -1,0 +1,1868 @@
+[
+  {
+    "name": "ABI"
+  },
+  {
+    "name": "ADD"
+  },
+  {
+    "name": "ADD COLUMN"
+  },
+  {
+    "name": "ADD CONSTRAINT"
+  },
+  {
+    "name": "ADD INDEX"
+  },
+  {
+    "name": "ADD PROJECTION"
+  },
+  {
+    "name": "ADD STATISTICS"
+  },
+  {
+    "name": "ADMIN OPTION FOR"
+  },
+  {
+    "name": "AFTER"
+  },
+  {
+    "name": "ALGORITHM"
+  },
+  {
+    "name": "ALIAS"
+  },
+  {
+    "name": "ALL"
+  },
+  {
+    "name": "ALL PROFILES"
+  },
+  {
+    "name": "ALL SETTINGS"
+  },
+  {
+    "name": "ALTER COLUMN"
+  },
+  {
+    "name": "ALTER DATABASE"
+  },
+  {
+    "name": "ALTER MASKING POLICY"
+  },
+  {
+    "name": "ALTER POLICY"
+  },
+  {
+    "name": "ALTER PROFILE"
+  },
+  {
+    "name": "ALTER PROFILES"
+  },
+  {
+    "name": "ALTER QUOTA"
+  },
+  {
+    "name": "ALTER ROLE"
+  },
+  {
+    "name": "ALTER ROW POLICY"
+  },
+  {
+    "name": "ALTER SETTINGS PROFILE"
+  },
+  {
+    "name": "ALTER TABLE"
+  },
+  {
+    "name": "ALTER TEMPORARY TABLE"
+  },
+  {
+    "name": "ALTER USER"
+  },
+  {
+    "name": "ALTER"
+  },
+  {
+    "name": "AND STDOUT"
+  },
+  {
+    "name": "AND"
+  },
+  {
+    "name": "ANTI"
+  },
+  {
+    "name": "ANY"
+  },
+  {
+    "name": "APPEND"
+  },
+  {
+    "name": "APPLY DELETED MASK"
+  },
+  {
+    "name": "APPLY PATCHES"
+  },
+  {
+    "name": "APPLY"
+  },
+  {
+    "name": "ARGUMENTS"
+  },
+  {
+    "name": "ARRAY JOIN"
+  },
+  {
+    "name": "AS"
+  },
+  {
+    "name": "ASC"
+  },
+  {
+    "name": "ASCENDING"
+  },
+  {
+    "name": "ASOF"
+  },
+  {
+    "name": "ASSUME"
+  },
+  {
+    "name": "AST"
+  },
+  {
+    "name": "ASYNC"
+  },
+  {
+    "name": "ATTACH PART"
+  },
+  {
+    "name": "ATTACH PARTITION"
+  },
+  {
+    "name": "ATTACH POLICY"
+  },
+  {
+    "name": "ATTACH PROFILE"
+  },
+  {
+    "name": "ATTACH QUOTA"
+  },
+  {
+    "name": "ATTACH ROLE"
+  },
+  {
+    "name": "ATTACH ROW POLICY"
+  },
+  {
+    "name": "ATTACH MASKING POLICY"
+  },
+  {
+    "name": "ATTACH SETTINGS PROFILE"
+  },
+  {
+    "name": "ATTACH USER"
+  },
+  {
+    "name": "ATTACH"
+  },
+  {
+    "name": "AZURE"
+  },
+  {
+    "name": "BACKUP"
+  },
+  {
+    "name": "bagexpansion"
+  },
+  {
+    "name": "BEGIN TRANSACTION"
+  },
+  {
+    "name": "BETWEEN"
+  },
+  {
+    "name": "BIDIRECTIONAL"
+  },
+  {
+    "name": "BOTH"
+  },
+  {
+    "name": "BY"
+  },
+  {
+    "name": "CASCADE"
+  },
+  {
+    "name": "CASE"
+  },
+  {
+    "name": "CAST"
+  },
+  {
+    "name": "CENTURY"
+  },
+  {
+    "name": "CHANGE"
+  },
+  {
+    "name": "CHANGED"
+  },
+  {
+    "name": "CHAR VARYING"
+  },
+  {
+    "name": "CHAR"
+  },
+  {
+    "name": "CHARACTER LARGE OBJECT"
+  },
+  {
+    "name": "CHARACTER VARYING"
+  },
+  {
+    "name": "CHARACTER"
+  },
+  {
+    "name": "CHECK ALL TABLES"
+  },
+  {
+    "name": "CHECK DATABASE"
+  },
+  {
+    "name": "CHECK TABLE"
+  },
+  {
+    "name": "CHECK GRANT"
+  },
+  {
+    "name": "CHECK"
+  },
+  {
+    "name": "CLEANUP"
+  },
+  {
+    "name": "CLEAR COLUMN"
+  },
+  {
+    "name": "CLEAR INDEX"
+  },
+  {
+    "name": "CLEAR PROJECTION"
+  },
+  {
+    "name": "CLEAR STATISTICS"
+  },
+  {
+    "name": "CLONE"
+  },
+  {
+    "name": "CLONE AS"
+  },
+  {
+    "name": "CLUSTER"
+  },
+  {
+    "name": "CLUSTERS"
+  },
+  {
+    "name": "CN"
+  },
+  {
+    "name": "CODEC"
+  },
+  {
+    "name": "COLLATE"
+  },
+  {
+    "name": "COLUMN"
+  },
+  {
+    "name": "COLUMNS"
+  },
+  {
+    "name": "COMMENT COLUMN"
+  },
+  {
+    "name": "COMMENT"
+  },
+  {
+    "name": "COMMIT"
+  },
+  {
+    "name": "COMPRESSION"
+  },
+  {
+    "name": "CONST"
+  },
+  {
+    "name": "CONSTRAINT"
+  },
+  {
+    "name": "CONNECTIONS"
+  },
+  {
+    "name": "COPY"
+  },
+  {
+    "name": "CREATE MASKING POLICY"
+  },
+  {
+    "name": "CREATE POLICY"
+  },
+  {
+    "name": "CREATE PROFILE"
+  },
+  {
+    "name": "CREATE QUOTA"
+  },
+  {
+    "name": "CREATE ROLE"
+  },
+  {
+    "name": "CREATE ROW POLICY"
+  },
+  {
+    "name": "CREATE SETTINGS PROFILE"
+  },
+  {
+    "name": "CREATE TABLE"
+  },
+  {
+    "name": "CREATE TEMPORARY TABLE"
+  },
+  {
+    "name": "CREATE USER"
+  },
+  {
+    "name": "CREATE"
+  },
+  {
+    "name": "CROSS"
+  },
+  {
+    "name": "CUBE"
+  },
+  {
+    "name": "CURRENT GRANTS"
+  },
+  {
+    "name": "CURRENT QUOTA"
+  },
+  {
+    "name": "CURRENT ROLES"
+  },
+  {
+    "name": "CURRENT ROW"
+  },
+  {
+    "name": "CURRENT TRANSACTION"
+  },
+  {
+    "name": "CURRENTUSER"
+  },
+  {
+    "name": "D"
+  },
+  {
+    "name": "DATA"
+  },
+  {
+    "name": "DATA INNER UUID"
+  },
+  {
+    "name": "DATABASE"
+  },
+  {
+    "name": "DATABASES"
+  },
+  {
+    "name": "DATE"
+  },
+  {
+    "name": "DAY"
+  },
+  {
+    "name": "DAYS"
+  },
+  {
+    "name": "DD"
+  },
+  {
+    "name": "DECADE"
+  },
+  {
+    "name": "DEALLOCATE"
+  },
+  {
+    "name": "DEDUPLICATE"
+  },
+  {
+    "name": "DEFAULT DATABASE"
+  },
+  {
+    "name": "DEFAULT ROLE"
+  },
+  {
+    "name": "DEFAULT"
+  },
+  {
+    "name": "DEFINER"
+  },
+  {
+    "name": "DELETE"
+  },
+  {
+    "name": "DEPENDS ON"
+  },
+  {
+    "name": "DESC"
+  },
+  {
+    "name": "DESCENDING"
+  },
+  {
+    "name": "DESCRIBE"
+  },
+  {
+    "name": "DETACH PART"
+  },
+  {
+    "name": "DETACH PARTITION"
+  },
+  {
+    "name": "DETACH"
+  },
+  {
+    "name": "DICTIONARIES"
+  },
+  {
+    "name": "DICTIONARY"
+  },
+  {
+    "name": "DISK"
+  },
+  {
+    "name": "DISTINCT ON"
+  },
+  {
+    "name": "DISTINCT"
+  },
+  {
+    "name": "DIV"
+  },
+  {
+    "name": "DOW"
+  },
+  {
+    "name": "DOY"
+  },
+  {
+    "name": "DROP COLUMN"
+  },
+  {
+    "name": "DROP CONSTRAINT"
+  },
+  {
+    "name": "DROP DEFAULT"
+  },
+  {
+    "name": "DROP DETACHED PART"
+  },
+  {
+    "name": "DROP DETACHED PARTITION"
+  },
+  {
+    "name": "DROP INDEX"
+  },
+  {
+    "name": "DROP PART"
+  },
+  {
+    "name": "DROP PARTITION"
+  },
+  {
+    "name": "DROP PROJECTION"
+  },
+  {
+    "name": "DROP STATISTICS"
+  },
+  {
+    "name": "DROP TABLE"
+  },
+  {
+    "name": "DROP TEMPORARY TABLE"
+  },
+  {
+    "name": "DROP"
+  },
+  {
+    "name": "DRY RUN"
+  },
+  {
+    "name": "ELSE"
+  },
+  {
+    "name": "EMPTY AS"
+  },
+  {
+    "name": "EMPTY"
+  },
+  {
+    "name": "ENABLED ROLES"
+  },
+  {
+    "name": "END"
+  },
+  {
+    "name": "ENFORCED"
+  },
+  {
+    "name": "ENGINE"
+  },
+  {
+    "name": "EPOCH"
+  },
+  {
+    "name": "EPHEMERAL"
+  },
+  {
+    "name": "ESTIMATE"
+  },
+  {
+    "name": "EVENT"
+  },
+  {
+    "name": "EVENTS"
+  },
+  {
+    "name": "EVERY"
+  },
+  {
+    "name": "EXCEPT DATABASE"
+  },
+  {
+    "name": "EXCEPT DATABASES"
+  },
+  {
+    "name": "EXCEPT TABLE"
+  },
+  {
+    "name": "EXCEPT TABLES"
+  },
+  {
+    "name": "EXCEPT"
+  },
+  {
+    "name": "EXCHANGE DICTIONARIES"
+  },
+  {
+    "name": "EXCHANGE TABLES"
+  },
+  {
+    "name": "EXECUTE"
+  },
+  {
+    "name": "EXECUTE AS"
+  },
+  {
+    "name": "EXISTS"
+  },
+  {
+    "name": "EXPLAIN"
+  },
+  {
+    "name": "EXPRESSION"
+  },
+  {
+    "name": "EXTENDED"
+  },
+  {
+    "name": "EXTERNAL DDL FROM"
+  },
+  {
+    "name": "FALSE"
+  },
+  {
+    "name": "FETCH PART"
+  },
+  {
+    "name": "FETCH PARTITION"
+  },
+  {
+    "name": "FETCH"
+  },
+  {
+    "name": "FIELDS"
+  },
+  {
+    "name": "FILE"
+  },
+  {
+    "name": "FILESYSTEM CACHE"
+  },
+  {
+    "name": "FILESYSTEM CACHES"
+  },
+  {
+    "name": "FILTER"
+  },
+  {
+    "name": "FINAL"
+  },
+  {
+    "name": "FIRST"
+  },
+  {
+    "name": "FOLLOWING"
+  },
+  {
+    "name": "FOR"
+  },
+  {
+    "name": "FORCE"
+  },
+  {
+    "name": "FOREIGN KEY"
+  },
+  {
+    "name": "FOREIGN"
+  },
+  {
+    "name": "FORGET PARTITION"
+  },
+  {
+    "name": "FORMAT"
+  },
+  {
+    "name": "FREEZE"
+  },
+  {
+    "name": "UNLOCK SNAPSHOT"
+  },
+  {
+    "name": "FROM INFILE"
+  },
+  {
+    "name": "FROM SHARD"
+  },
+  {
+    "name": "FROM SNAPSHOT"
+  },
+  {
+    "name": "FROM"
+  },
+  {
+    "name": "FULL"
+  },
+  {
+    "name": "FULLTEXT"
+  },
+  {
+    "name": "FUNCTION"
+  },
+  {
+    "name": "GLOBAL IN"
+  },
+  {
+    "name": "GLOBAL NOT IN"
+  },
+  {
+    "name": "GLOBAL"
+  },
+  {
+    "name": "GRANT OPTION FOR"
+  },
+  {
+    "name": "GRANT"
+  },
+  {
+    "name": "GRANTEES"
+  },
+  {
+    "name": "GRANULARITY"
+  },
+  {
+    "name": "GROUP BY"
+  },
+  {
+    "name": "GROUPING SETS"
+  },
+  {
+    "name": "GROUPS"
+  },
+  {
+    "name": "H"
+  },
+  {
+    "name": "HASH"
+  },
+  {
+    "name": "HAVING"
+  },
+  {
+    "name": "HDFS"
+  },
+  {
+    "name": "HH"
+  },
+  {
+    "name": "HIERARCHICAL"
+  },
+  {
+    "name": "HOST"
+  },
+  {
+    "name": "HOUR"
+  },
+  {
+    "name": "HOURS"
+  },
+  {
+    "name": "HTTP"
+  },
+  {
+    "name": "ID"
+  },
+  {
+    "name": "IDENTIFIED"
+  },
+  {
+    "name": "IF EMPTY"
+  },
+  {
+    "name": "IF EXISTS"
+  },
+  {
+    "name": "IF NOT EXISTS"
+  },
+  {
+    "name": "IGNORE NULLS"
+  },
+  {
+    "name": "ILIKE"
+  },
+  {
+    "name": "IN PARTITION"
+  },
+  {
+    "name": "IN"
+  },
+  {
+    "name": "INDEX"
+  },
+  {
+    "name": "INDEXES"
+  },
+  {
+    "name": "INDICES"
+  },
+  {
+    "name": "INHERIT"
+  },
+  {
+    "name": "INJECTIVE"
+  },
+  {
+    "name": "INNER"
+  },
+  {
+    "name": "INSERT INTO"
+  },
+  {
+    "name": "INTERPOLATE"
+  },
+  {
+    "name": "INTERSECT"
+  },
+  {
+    "name": "INTERVAL"
+  },
+  {
+    "name": "INTO OUTFILE"
+  },
+  {
+    "name": "INVISIBLE"
+  },
+  {
+    "name": "INVOKER"
+  },
+  {
+    "name": "IP"
+  },
+  {
+    "name": "ISODOW"
+  },
+  {
+    "name": "ISOYEAR"
+  },
+  {
+    "name": "IS NOT DISTINCT FROM"
+  },
+  {
+    "name": "IS DISTINCT FROM"
+  },
+  {
+    "name": "IS NOT NULL"
+  },
+  {
+    "name": "IS NULL"
+  },
+  {
+    "name": "JOIN"
+  },
+  {
+    "name": "JWT"
+  },
+  {
+    "name": "KERBEROS"
+  },
+  {
+    "name": "KEY BY"
+  },
+  {
+    "name": "KEY"
+  },
+  {
+    "name": "KEYED BY"
+  },
+  {
+    "name": "KEYS"
+  },
+  {
+    "name": "KILL"
+  },
+  {
+    "name": "KIND"
+  },
+  {
+    "name": "LANGUAGE"
+  },
+  {
+    "name": "LARGE OBJECT"
+  },
+  {
+    "name": "LAST"
+  },
+  {
+    "name": "LAYOUT"
+  },
+  {
+    "name": "LDAP"
+  },
+  {
+    "name": "LEADING"
+  },
+  {
+    "name": "LEFT ARRAY JOIN"
+  },
+  {
+    "name": "LEFT"
+  },
+  {
+    "name": "LESS THAN"
+  },
+  {
+    "name": "LEVEL"
+  },
+  {
+    "name": "LIFETIME"
+  },
+  {
+    "name": "LIGHTWEIGHT"
+  },
+  {
+    "name": "LIKE"
+  },
+  {
+    "name": "LIMIT"
+  },
+  {
+    "name": "LINEAR"
+  },
+  {
+    "name": "LIST"
+  },
+  {
+    "name": "LIVE"
+  },
+  {
+    "name": "LOCAL"
+  },
+  {
+    "name": "M"
+  },
+  {
+    "name": "MASTER THREAD"
+  },
+  {
+    "name": "MATCH"
+  },
+  {
+    "name": "MATERIALIZE COLUMN"
+  },
+  {
+    "name": "MATERIALIZE INDEX"
+  },
+  {
+    "name": "MATERIALIZE PROJECTION"
+  },
+  {
+    "name": "MATERIALIZE STATISTICS"
+  },
+  {
+    "name": "MATERIALIZE TTL"
+  },
+  {
+    "name": "MATERIALIZE"
+  },
+  {
+    "name": "MATERIALIZED"
+  },
+  {
+    "name": "MAX"
+  },
+  {
+    "name": "MCS"
+  },
+  {
+    "name": "MEMORY"
+  },
+  {
+    "name": "MERGES"
+  },
+  {
+    "name": "METRICS"
+  },
+  {
+    "name": "METRICS INNER UUID"
+  },
+  {
+    "name": "MI"
+  },
+  {
+    "name": "MICROSECOND"
+  },
+  {
+    "name": "MICROSECONDS"
+  },
+  {
+    "name": "MILLISECOND"
+  },
+  {
+    "name": "MILLISECONDS"
+  },
+  {
+    "name": "MILLENNIUM"
+  },
+  {
+    "name": "MIN"
+  },
+  {
+    "name": "MINUTE"
+  },
+  {
+    "name": "MINUTES"
+  },
+  {
+    "name": "MM"
+  },
+  {
+    "name": "MOD"
+  },
+  {
+    "name": "MODIFY COLUMN"
+  },
+  {
+    "name": "MODIFY COMMENT"
+  },
+  {
+    "name": "MODIFY DATABASE COMMENT"
+  },
+  {
+    "name": "MODIFY DEFINER"
+  },
+  {
+    "name": "MODIFY ORDER BY"
+  },
+  {
+    "name": "MODIFY QUERY"
+  },
+  {
+    "name": "MODIFY REFRESH"
+  },
+  {
+    "name": "MODIFY SAMPLE BY"
+  },
+  {
+    "name": "MODIFY STATISTICS"
+  },
+  {
+    "name": "MODIFY SETTING"
+  },
+  {
+    "name": "MODIFY SQL SECURITY"
+  },
+  {
+    "name": "MODIFY TTL"
+  },
+  {
+    "name": "MODIFY"
+  },
+  {
+    "name": "MONTH"
+  },
+  {
+    "name": "MONTHS"
+  },
+  {
+    "name": "MOVE PART"
+  },
+  {
+    "name": "MOVE PARTITION"
+  },
+  {
+    "name": "MOVE"
+  },
+  {
+    "name": "MS"
+  },
+  {
+    "name": "MUTATION"
+  },
+  {
+    "name": "N"
+  },
+  {
+    "name": "NAME"
+  },
+  {
+    "name": "NAMED COLLECTION"
+  },
+  {
+    "name": "NANOSECOND"
+  },
+  {
+    "name": "NANOSECONDS"
+  },
+  {
+    "name": "NATURAL"
+  },
+  {
+    "name": "NEXT"
+  },
+  {
+    "name": "NO ACTION"
+  },
+  {
+    "name": "NO DELAY"
+  },
+  {
+    "name": "NO LIMITS"
+  },
+  {
+    "name": "NONE"
+  },
+  {
+    "name": "NOT BETWEEN"
+  },
+  {
+    "name": "NOT IDENTIFIED"
+  },
+  {
+    "name": "NOT ILIKE"
+  },
+  {
+    "name": "NOT IN"
+  },
+  {
+    "name": "NOT KEYED"
+  },
+  {
+    "name": "NOT LIKE"
+  },
+  {
+    "name": "NOT OVERRIDABLE"
+  },
+  {
+    "name": "NOT"
+  },
+  {
+    "name": "NS"
+  },
+  {
+    "name": "NULL"
+  },
+  {
+    "name": "NULLS"
+  },
+  {
+    "name": "OFFSET"
+  },
+  {
+    "name": "ON DELETE"
+  },
+  {
+    "name": "ON UPDATE"
+  },
+  {
+    "name": "ON VOLUME"
+  },
+  {
+    "name": "ON"
+  },
+  {
+    "name": "ONLY"
+  },
+  {
+    "name": "OPTIMIZE TABLE"
+  },
+  {
+    "name": "OR REPLACE"
+  },
+  {
+    "name": "OR"
+  },
+  {
+    "name": "ORDER BY"
+  },
+  {
+    "name": "OUTER"
+  },
+  {
+    "name": "OVER"
+  },
+  {
+    "name": "OVERRIDABLE"
+  },
+  {
+    "name": "PARALLEL WITH"
+  },
+  {
+    "name": "PART"
+  },
+  {
+    "name": "PARTS"
+  },
+  {
+    "name": "PARTIAL"
+  },
+  {
+    "name": "PARTITION BY"
+  },
+  {
+    "name": "PARTITION"
+  },
+  {
+    "name": "PARTITIONS"
+  },
+  {
+    "name": "PASTE"
+  },
+  {
+    "name": "PATH"
+  },
+  {
+    "name": "PAUSE"
+  },
+  {
+    "name": "PERIODIC REFRESH"
+  },
+  {
+    "name": "PERMANENTLY"
+  },
+  {
+    "name": "PERMISSIVE"
+  },
+  {
+    "name": "PERSISTENT"
+  },
+  {
+    "name": "PIPELINE"
+  },
+  {
+    "name": "PLACING"
+  },
+  {
+    "name": "PLAN"
+  },
+  {
+    "name": "POPULATE"
+  },
+  {
+    "name": "PRECEDING"
+  },
+  {
+    "name": "PRECISION"
+  },
+  {
+    "name": "PREFIX"
+  },
+  {
+    "name": "PREWHERE"
+  },
+  {
+    "name": "PREPARE"
+  },
+  {
+    "name": "PRIMARY KEY"
+  },
+  {
+    "name": "PRIORITY"
+  },
+  {
+    "name": "PRIMARY"
+  },
+  {
+    "name": "PROFILE"
+  },
+  {
+    "name": "PROFILES"
+  },
+  {
+    "name": "PROJECTION"
+  },
+  {
+    "name": "Protobuf"
+  },
+  {
+    "name": "Files"
+  },
+  {
+    "name": "PULL"
+  },
+  {
+    "name": "Q"
+  },
+  {
+    "name": "QQ"
+  },
+  {
+    "name": "QUARTER"
+  },
+  {
+    "name": "QUARTERS"
+  },
+  {
+    "name": "QUERY TREE"
+  },
+  {
+    "name": "QUERY"
+  },
+  {
+    "name": "QUOTA"
+  },
+  {
+    "name": "RANDOMIZE FOR"
+  },
+  {
+    "name": "RANDOMIZED"
+  },
+  {
+    "name": "RANGE"
+  },
+  {
+    "name": "READ"
+  },
+  {
+    "name": "READONLY"
+  },
+  {
+    "name": "REALM"
+  },
+  {
+    "name": "RECOMPRESS"
+  },
+  {
+    "name": "REFERENCES"
+  },
+  {
+    "name": "REFRESH"
+  },
+  {
+    "name": "REGEXP"
+  },
+  {
+    "name": "REMOVE SAMPLE BY"
+  },
+  {
+    "name": "REMOVE TTL"
+  },
+  {
+    "name": "REMOVE"
+  },
+  {
+    "name": "RENAME COLUMN"
+  },
+  {
+    "name": "RENAME DATABASE"
+  },
+  {
+    "name": "RENAME DICTIONARY"
+  },
+  {
+    "name": "RENAME TABLE"
+  },
+  {
+    "name": "RENAME TO"
+  },
+  {
+    "name": "RENAME"
+  },
+  {
+    "name": "REPLACE PARTITION"
+  },
+  {
+    "name": "REPLACE"
+  },
+  {
+    "name": "REPLICATED"
+  },
+  {
+    "name": "RESET SETTING"
+  },
+  {
+    "name": "RESET AUTHENTICATION METHODS TO NEW"
+  },
+  {
+    "name": "RESOURCE"
+  },
+  {
+    "name": "RESPECT NULLS"
+  },
+  {
+    "name": "RESTORE"
+  },
+  {
+    "name": "RESTRICT"
+  },
+  {
+    "name": "RESTRICTIVE"
+  },
+  {
+    "name": "RESUME"
+  },
+  {
+    "name": "RETURNS"
+  },
+  {
+    "name": "REVOKE"
+  },
+  {
+    "name": "REWRITE PARTS"
+  },
+  {
+    "name": "RIGHT"
+  },
+  {
+    "name": "ROLE"
+  },
+  {
+    "name": "ROLLBACK"
+  },
+  {
+    "name": "ROLLUP"
+  },
+  {
+    "name": "ROW"
+  },
+  {
+    "name": "ROWS"
+  },
+  {
+    "name": "S"
+  },
+  {
+    "name": "S3"
+  },
+  {
+    "name": "SALT"
+  },
+  {
+    "name": "SAMPLE BY"
+  },
+  {
+    "name": "SAMPLE"
+  },
+  {
+    "name": "SAN"
+  },
+  {
+    "name": "SCHEME"
+  },
+  {
+    "name": "SECOND"
+  },
+  {
+    "name": "SECONDS"
+  },
+  {
+    "name": "SELECT"
+  },
+  {
+    "name": "SEMI"
+  },
+  {
+    "name": "SEQUENTIAL"
+  },
+  {
+    "name": "SERVER"
+  },
+  {
+    "name": "SET DEFAULT ROLE"
+  },
+  {
+    "name": "SET DEFAULT"
+  },
+  {
+    "name": "SET FAKE TIME"
+  },
+  {
+    "name": "SET NULL"
+  },
+  {
+    "name": "SET ROLE DEFAULT"
+  },
+  {
+    "name": "SET ROLE"
+  },
+  {
+    "name": "SET TRANSACTION SNAPSHOT"
+  },
+  {
+    "name": "SET"
+  },
+  {
+    "name": "SETTING"
+  },
+  {
+    "name": "SETTINGS"
+  },
+  {
+    "name": "SHOW ACCESS"
+  },
+  {
+    "name": "SHOW CREATE"
+  },
+  {
+    "name": "SHOW ENGINES"
+  },
+  {
+    "name": "SHOW FUNCTIONS"
+  },
+  {
+    "name": "SHOW GRANTS"
+  },
+  {
+    "name": "SHOW PRIVILEGES"
+  },
+  {
+    "name": "SHOW PROCESSLIST"
+  },
+  {
+    "name": "SHOW SETTING"
+  },
+  {
+    "name": "SHOW"
+  },
+  {
+    "name": "SIGNED"
+  },
+  {
+    "name": "SIMPLE"
+  },
+  {
+    "name": "SKIP"
+  },
+  {
+    "name": "SNAPSHOT"
+  },
+  {
+    "name": "SOME"
+  },
+  {
+    "name": "SOURCE"
+  },
+  {
+    "name": "SPATIAL"
+  },
+  {
+    "name": "SQL SECURITY"
+  },
+  {
+    "name": "SS"
+  },
+  {
+    "name": "START TRANSACTION"
+  },
+  {
+    "name": "STATISTICS"
+  },
+  {
+    "name": "STEP"
+  },
+  {
+    "name": "STORAGE"
+  },
+  {
+    "name": "STRICT"
+  },
+  {
+    "name": "SUBPARTITION BY"
+  },
+  {
+    "name": "SUBPARTITION"
+  },
+  {
+    "name": "SUBPARTITIONS"
+  },
+  {
+    "name": "SUSPEND"
+  },
+  {
+    "name": "SYNC"
+  },
+  {
+    "name": "SYNTAX"
+  },
+  {
+    "name": "SYSTEM"
+  },
+  {
+    "name": "TABLE OVERRIDE"
+  },
+  {
+    "name": "TABLE"
+  },
+  {
+    "name": "TABLES"
+  },
+  {
+    "name": "TAG"
+  },
+  {
+    "name": "TAGS"
+  },
+  {
+    "name": "TAGS INNER UUID"
+  },
+  {
+    "name": "TEMPORARY TABLE"
+  },
+  {
+    "name": "TEMPORARY"
+  },
+  {
+    "name": "TEST"
+  },
+  {
+    "name": "THEN"
+  },
+  {
+    "name": "TIME ZONE"
+  },
+  {
+    "name": "TIMESTAMP"
+  },
+  {
+    "name": "TO DISK"
+  },
+  {
+    "name": "TO INNER UUID"
+  },
+  {
+    "name": "TO SHARD"
+  },
+  {
+    "name": "TO TABLE"
+  },
+  {
+    "name": "TO VOLUME"
+  },
+  {
+    "name": "TO"
+  },
+  {
+    "name": "TOP"
+  },
+  {
+    "name": "TOTALS"
+  },
+  {
+    "name": "TRACKING ONLY"
+  },
+  {
+    "name": "TRAILING"
+  },
+  {
+    "name": "TRANSACTION"
+  },
+  {
+    "name": "TRIGGER"
+  },
+  {
+    "name": "TRUE"
+  },
+  {
+    "name": "TRUNCATE"
+  },
+  {
+    "name": "TTL"
+  },
+  {
+    "name": "TYPE"
+  },
+  {
+    "name": "TYPEOF"
+  },
+  {
+    "name": "UNBOUNDED"
+  },
+  {
+    "name": "UNDROP"
+  },
+  {
+    "name": "UNFREEZE"
+  },
+  {
+    "name": "UNION"
+  },
+  {
+    "name": "UNIQUE"
+  },
+  {
+    "name": "UNSET FAKE TIME"
+  },
+  {
+    "name": "UNSIGNED"
+  },
+  {
+    "name": "UPDATE"
+  },
+  {
+    "name": "URL"
+  },
+  {
+    "name": "USE"
+  },
+  {
+    "name": "USING"
+  },
+  {
+    "name": "UUID"
+  },
+  {
+    "name": "VALID UNTIL"
+  },
+  {
+    "name": "VALUES"
+  },
+  {
+    "name": "VARYING"
+  },
+  {
+    "name": "VIEW"
+  },
+  {
+    "name": "VISIBLE"
+  },
+  {
+    "name": "WATCH"
+  },
+  {
+    "name": "WATERMARK"
+  },
+  {
+    "name": "WEEK"
+  },
+  {
+    "name": "WEEKS"
+  },
+  {
+    "name": "WHEN"
+  },
+  {
+    "name": "WHERE"
+  },
+  {
+    "name": "WINDOW"
+  },
+  {
+    "name": "WORKLOAD"
+  },
+  {
+    "name": "QUALIFY"
+  },
+  {
+    "name": "WITH ADMIN OPTION"
+  },
+  {
+    "name": "WITH CHECK"
+  },
+  {
+    "name": "WITH FILL"
+  },
+  {
+    "name": "WITH GRANT OPTION"
+  },
+  {
+    "name": "WITH NAME"
+  },
+  {
+    "name": "WITH REPLACE OPTION"
+  },
+  {
+    "name": "WITH TIES"
+  },
+  {
+    "name": "WITH IMPLICIT"
+  },
+  {
+    "name": "WITH SETTINGS"
+  },
+  {
+    "name": "WITH"
+  },
+  {
+    "name": "WORKER THREAD"
+  },
+  {
+    "name": "RECURSIVE"
+  },
+  {
+    "name": "WK"
+  },
+  {
+    "name": "WRITE"
+  },
+  {
+    "name": "WRITABLE"
+  },
+  {
+    "name": "WW"
+  },
+  {
+    "name": "YEAR"
+  },
+  {
+    "name": "YEARS"
+  },
+  {
+    "name": "YY"
+  },
+  {
+    "name": "YYYY"
+  },
+  {
+    "name": "ZKPATH"
+  },
+  {
+    "name": "STALENESS"
+  },
+  {
+    "name": "WITH TABLES"
+  },
+  {
+    "name": "ALLOWED_LATENESS"
+  },
+  {
+    "name": "AUTO_INCREMENT"
+  },
+  {
+    "name": "base_backup"
+  },
+  {
+    "name": "BCRYPT_HASH"
+  },
+  {
+    "name": "BCRYPT_PASSWORD"
+  },
+  {
+    "name": "CHANGEABLE_IN_READONLY"
+  },
+  {
+    "name": "cluster_host_ids"
+  },
+  {
+    "name": "CURRENT_USER"
+  },
+  {
+    "name": "DOUBLE_SHA1_HASH"
+  },
+  {
+    "name": "DOUBLE_SHA1_PASSWORD"
+  },
+  {
+    "name": "IS_OBJECT_ID"
+  },
+  {
+    "name": "NO_PASSWORD"
+  },
+  {
+    "name": "NO_AUTHENTICATION"
+  },
+  {
+    "name": "PART_MOVE_TO_SHARD"
+  },
+  {
+    "name": "PLAINTEXT_PASSWORD"
+  },
+  {
+    "name": "SHA256_HASH"
+  },
+  {
+    "name": "SHA256_PASSWORD"
+  },
+  {
+    "name": "SCRAM_SHA256_HASH"
+  },
+  {
+    "name": "SCRAM_SHA256_PASSWORD"
+  },
+  {
+    "name": "SQL_TSI_DAY"
+  },
+  {
+    "name": "SQL_TSI_HOUR"
+  },
+  {
+    "name": "SQL_TSI_MICROSECOND"
+  },
+  {
+    "name": "SQL_TSI_MILLISECOND"
+  },
+  {
+    "name": "SQL_TSI_MINUTE"
+  },
+  {
+    "name": "SQL_TSI_MONTH"
+  },
+  {
+    "name": "SQL_TSI_NANOSECOND"
+  },
+  {
+    "name": "SQL_TSI_QUARTER"
+  },
+  {
+    "name": "SQL_TSI_SECOND"
+  },
+  {
+    "name": "SQL_TSI_WEEK"
+  },
+  {
+    "name": "SQL_TSI_YEAR"
+  },
+  {
+    "name": "SSH_KEY"
+  },
+  {
+    "name": "SSL_CERTIFICATE"
+  },
+  {
+    "name": "STRICTLY_ASCENDING"
+  },
+  {
+    "name": "WITH_ITEMINDEX"
+  }
+]

@@ -19,12 +19,13 @@ from scrape_docs import (
 )
 
 ALLOWED_TAGS = {"latest", "head"}
-CACHE_DENY_LIST = {"latest", "head"}
+MUTABLE_TAGS = {"latest", "head"}
 USE_FIDDLE = False
 WORKERS = 8  # concurrent Docker containers; ignored when USE_FIDDLE=True
 DOCS_FETCH_WORKERS = 16  # concurrent ClickHouse docs page fetches for URL discovery
 CONTAINER_NAME_TEMPLATE = "clickhouse-function-reference-{tag}"
 CACHE_DIR = "cache"
+IMAGE_DIGESTS_CACHE_PATH = os.path.join(CACHE_DIR, "image_digests.json")
 BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 template_env = Environment(
@@ -33,12 +34,14 @@ template_env = Environment(
 )
 
 
-def _process_version(version: str) -> tuple[str, list, list, list]:
+def _process_version(
+    version: str, force_refresh: bool = False
+) -> tuple[str, list, list, list]:
     return (
         version,
-        get_functions(version),
-        get_keywords(version),
-        get_settings(version),
+        get_functions(version, force_refresh=force_refresh),
+        get_keywords(version, force_refresh=force_refresh),
+        get_settings(version, force_refresh=force_refresh),
     )
 
 
@@ -50,17 +53,41 @@ def main() -> None:
         if v == "21.9":
             break
 
+    image_digests = load_image_digests()
+    resolved_digests = resolve_image_digests(versions)
+    refresh_tags = {
+        tag
+        for tag in versions
+        if tag in MUTABLE_TAGS
+        and (
+            not has_cached_data(tag)
+            or (
+                (digest := resolved_digests.get(tag)) is not None
+                and image_digests.get(tag) != digest
+            )
+        )
+    }
+
     workers = 1 if USE_FIDDLE else WORKERS
     results: dict[str, tuple] = {}
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {executor.submit(_process_version, v): v for v in versions}
+        futures = {
+            executor.submit(_process_version, v, force_refresh=v in refresh_tags): v
+            for v in versions
+        }
         for future in as_completed(futures):
             version, funcs, keywords, settings = future.result()
             results[version] = (funcs, keywords, settings)
             logger.info(f"Finished {version}")
             if not USE_FIDDLE:
                 _cleanup_container(version)
+
+    for tag in refresh_tags:
+        digest = resolved_digests.get(tag)
+        if digest:
+            image_digests[tag] = digest
+    save_image_digests(image_digests)
 
     # Rebuild in original tag order so HTML columns stay consistent
     function_info = {}
@@ -129,9 +156,9 @@ def save_json_cache(path: str, data) -> None:
         json.dump(data, f, indent=2)
 
 
-def get_functions(tag: str) -> list[dict]:
+def get_functions(tag: str, force_refresh: bool = False) -> list[dict]:
     cache_path = os.path.join(CACHE_DIR, "functions", f"{tag}.json")
-    if tag not in CACHE_DENY_LIST:
+    if not force_refresh:
         cached = load_json_cache(cache_path)
         if cached is not None:
             logger.info(f"Loaded cached functions for {tag}")
@@ -141,14 +168,13 @@ def get_functions(tag: str) -> list[dict]:
     if tsv is None:
         return []
     result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
-    if tag not in CACHE_DENY_LIST:
-        save_json_cache(cache_path, result)
+    save_json_cache(cache_path, result)
     return result
 
 
-def get_keywords(tag: str) -> list[dict]:
+def get_keywords(tag: str, force_refresh: bool = False) -> list[dict]:
     cache_path = os.path.join(CACHE_DIR, "keywords", f"{tag}.json")
-    if tag not in CACHE_DENY_LIST:
+    if not force_refresh:
         cached = load_json_cache(cache_path)
         if cached is not None:
             logger.info(f"Loaded cached keywords for {tag}")
@@ -160,14 +186,13 @@ def get_keywords(tag: str) -> list[dict]:
     if tsv is None:
         return []
     result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
-    if tag not in CACHE_DENY_LIST:
-        save_json_cache(cache_path, result)
+    save_json_cache(cache_path, result)
     return result
 
 
-def get_settings(tag: str) -> list[dict]:
+def get_settings(tag: str, force_refresh: bool = False) -> list[dict]:
     cache_path = os.path.join(CACHE_DIR, "settings", f"{tag}.json")
-    if tag not in CACHE_DENY_LIST:
+    if not force_refresh:
         cached = load_json_cache(cache_path)
         if cached is not None:
             logger.info(f"Loaded cached settings for {tag}")
@@ -179,9 +204,83 @@ def get_settings(tag: str) -> list[dict]:
     if tsv is None:
         return []
     result = list(csv.DictReader(tsv.splitlines(), delimiter="\t"))
-    if tag not in CACHE_DENY_LIST:
-        save_json_cache(cache_path, result)
+    save_json_cache(cache_path, result)
     return result
+
+
+def load_image_digests() -> dict[str, str]:
+    cached = load_json_cache(IMAGE_DIGESTS_CACHE_PATH)
+    if isinstance(cached, dict):
+        return {
+            tag: digest for tag, digest in cached.items() if isinstance(digest, str)
+        }
+    return {}
+
+
+def save_image_digests(digests: dict[str, str]) -> None:
+    save_json_cache(IMAGE_DIGESTS_CACHE_PATH, digests)
+
+
+def has_cached_data(tag: str) -> bool:
+    return all(
+        os.path.exists(os.path.join(CACHE_DIR, cache_type, f"{tag}.json"))
+        for cache_type in ("functions", "keywords", "settings")
+    )
+
+
+def resolve_image_digests(tags: list[str]) -> dict[str, str]:
+    digests = {}
+    for tag in tags:
+        if tag not in MUTABLE_TAGS:
+            continue
+        digest = get_remote_image_digest(tag)
+        if digest:
+            digests[tag] = digest
+    return digests
+
+
+def get_remote_image_digest(tag: str) -> str | None:
+    token_response = requests.get(
+        "https://auth.docker.io/token",
+        params={
+            "service": "registry.docker.io",
+            "scope": "repository:clickhouse/clickhouse-server:pull",
+        },
+        timeout=30,
+    )
+    token_response.raise_for_status()
+    token = token_response.json()["token"]
+
+    manifest_response = requests.get(
+        f"https://registry-1.docker.io/v2/clickhouse/clickhouse-server/manifests/{tag}",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": ",".join(
+                [
+                    "application/vnd.oci.image.index.v1+json",
+                    "application/vnd.docker.distribution.manifest.list.v2+json",
+                    "application/vnd.oci.image.manifest.v1+json",
+                    "application/vnd.docker.distribution.manifest.v2+json",
+                ]
+            ),
+        },
+        timeout=30,
+    )
+    manifest_response.raise_for_status()
+    manifest = manifest_response.json()
+
+    manifests = manifest.get("manifests")
+    if isinstance(manifests, list):
+        for entry in manifests:
+            platform = entry.get("platform", {})
+            if (
+                platform.get("os") == "linux"
+                and platform.get("architecture") == "amd64"
+            ):
+                return entry.get("digest")
+        return manifest_response.headers.get("Docker-Content-Digest")
+
+    return manifest_response.headers.get("Docker-Content-Digest")
 
 
 def get_docs_urls(features: list[str]) -> dict[str, str]:
@@ -318,7 +417,9 @@ def run_query_against_version_locally(query: str, tag: str) -> str | None:
         stderr = proc.stderr.decode()
         if proc.returncode == 0 or "UNKNOWN_TABLE" in stderr:
             return proc.stdout.decode()
-        logger.warning(f"Query failed, retrying ({n}): {stderr}")
+
+        if n > 10:
+            logger.warning(f"Query failed, retrying ({n}): {stderr}")
         time.sleep(0.10)
 
     logger.error(f"Failed to run query for {tag}")

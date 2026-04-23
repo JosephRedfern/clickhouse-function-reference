@@ -76,6 +76,20 @@
         z-index: 3;
         background: #f1f3f5;
     }
+    @media (max-width: 991.98px), (hover: none) and (pointer: coarse) {
+        #feature_table .name-col {
+            position: static !important;
+            left: auto !important;
+            min-width: 120px;
+            max-width: 160px;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        #feature_table thead .name-col {
+            z-index: 2;
+        }
+    }
     th.ver-col {
         vertical-align: bottom;
         padding: 8px 4px;
@@ -178,7 +192,7 @@
         <p class="mt-1 text-muted" style="font-size:0.75rem;">* indicates an alias to another {{ feature_type }}</p>
     </div>
     <footer>
-        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; last updated {{ generated_at }}
+        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; Last generated {{ generated_at }}
     </footer>
 </div>
 <script>
