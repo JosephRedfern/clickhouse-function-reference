@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import re
 import subprocess
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -11,12 +12,17 @@ import requests
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from loguru import logger
 
-from scrape_docs import function_doc_template, function_pages
+from scrape_docs import (
+    get_anchor_function_doc_pages,
+    get_direct_function_doc_urls,
+    get_function_doc_pages,
+)
 
 ALLOWED_TAGS = {"latest", "head"}
 CACHE_DENY_LIST = {"latest", "head"}
 USE_FIDDLE = False
 WORKERS = 8  # concurrent Docker containers; ignored when USE_FIDDLE=True
+DOCS_FETCH_WORKERS = 16  # concurrent ClickHouse docs page fetches for URL discovery
 CONTAINER_NAME_TEMPLATE = "clickhouse-function-reference-{tag}"
 CACHE_DIR = "cache"
 BASE_DIR = Path(__file__).parent
@@ -182,32 +188,63 @@ def get_docs_urls(features: list[str]) -> dict[str, str]:
     """Return a function-name → docs-URL map, building and caching it on first call."""
     cache_path = os.path.join(CACHE_DIR, "docs_urls.json")
     cached = load_json_cache(cache_path)
-    if cached is not None:
+    if cached:
         logger.info("Loaded cached docs URLs")
         return cached
+    if cached == {}:
+        logger.info("Cached docs URLs are empty, rebuilding cache")
 
     logger.info("Building docs URL cache from documentation pages...")
-    page_ref = {}
-    for page in function_pages:
-        logger.info(f"Fetching docs page: {page}")
-        response = requests.get(function_doc_template.format(page=page))
-        response.raise_for_status()
-        page_ref[page] = response.text
-
     urls = {}
+    unresolved_features = []
+
+    doc_pages = get_function_doc_pages()
+    direct_doc_urls = get_direct_function_doc_urls(doc_pages)
     for feature in features:
-        std = feature.lower()
-        for page, content in page_ref.items():
-            if f'id="{std}"' in content:
-                urls[feature] = f"{function_doc_template.format(page=page)}#{std}"
-                break
-            if f'id="{std.replace("_", "")}"' in content:
-                urls[feature] = (
-                    f"{function_doc_template.format(page=page)}#{std.replace('_', '')}"
-                )
-                break
+        normalized_feature = feature.lower().replace("_", "")
+        direct_url = direct_doc_urls.get(normalized_feature)
+        if direct_url is not None:
+            urls[feature] = direct_url
         else:
-            logger.warning(f"No URL found for function {feature}")
+            unresolved_features.append(feature)
+
+    if unresolved_features:
+        logger.info(
+            f"Resolving {len(unresolved_features)} functions via docs page anchors..."
+        )
+
+        def fetch_page_ids(page_url: str) -> tuple[str, list[tuple[str, str]]]:
+            logger.info(f"Fetching docs page: {page_url}")
+            response = requests.get(page_url, timeout=30)
+            response.raise_for_status()
+            content = response.text
+            return page_url, re.findall(r'\bid=(?:"([^"]+)"|([^\s>]+))', content)
+
+        anchor_urls_by_feature = {}
+        anchor_pages = get_anchor_function_doc_pages(doc_pages)
+        with ThreadPoolExecutor(
+            max_workers=min(DOCS_FETCH_WORKERS, len(anchor_pages) or 1)
+        ) as executor:
+            futures = {
+                executor.submit(fetch_page_ids, page_url): page_url
+                for page_url in anchor_pages
+            }
+            for future in as_completed(futures):
+                page_url, matches = future.result()
+                for quoted_id, unquoted_id in matches:
+                    anchor = quoted_id or unquoted_id
+                    normalized_anchor = anchor.lower().replace("_", "")
+                    anchor_urls_by_feature.setdefault(
+                        normalized_anchor, f"{page_url}#{anchor}"
+                    )
+
+        for feature in unresolved_features:
+            normalized_feature = feature.lower().replace("_", "")
+            anchor_url = anchor_urls_by_feature.get(normalized_feature)
+            if anchor_url is not None:
+                urls[feature] = anchor_url
+            else:
+                logger.warning(f"No URL found for function {feature}")
 
     save_json_cache(cache_path, urls)
     return urls
