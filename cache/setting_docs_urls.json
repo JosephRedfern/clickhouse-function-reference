@@ -872,6 +872,7 @@
   "postgresql_connection_pool_size": "https://clickhouse.com/docs/operations/settings/settings#postgresql_connection_pool_size",
   "postgresql_connection_pool_wait_timeout": "https://clickhouse.com/docs/operations/settings/settings#postgresql_connection_pool_wait_timeout",
   "postgresql_fault_injection_probability": "https://clickhouse.com/docs/operations/settings/settings#postgresql_fault_injection_probability",
+  "predicate_statistics_sample_rate": "https://clickhouse.com/docs/operations/settings/settings#predicate_statistics_sample_rate",
   "prefer_column_name_to_alias": "https://clickhouse.com/docs/operations/settings/settings#prefer_column_name_to_alias",
   "prefer_external_sort_block_bytes": "https://clickhouse.com/docs/operations/settings/settings#prefer_external_sort_block_bytes",
   "prefer_global_in_and_join": "https://clickhouse.com/docs/operations/settings/settings#prefer_global_in_and_join",
