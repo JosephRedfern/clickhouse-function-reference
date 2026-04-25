@@ -72,6 +72,7 @@
   "allow_iceberg_remove_orphan_files": "https://clickhouse.com/docs/operations/settings/settings#allow_iceberg_remove_orphan_files",
   "allow_insert_into_iceberg": "https://clickhouse.com/docs/operations/settings/settings#allow_insert_into_iceberg",
   "allow_introspection_functions": "https://clickhouse.com/docs/operations/settings/settings#allow_introspection_functions",
+  "allow_key_condition_coalesce_rewrite": "https://clickhouse.com/docs/operations/settings/settings#allow_key_condition_coalesce_rewrite",
   "allow_materialized_view_with_bad_select": "https://clickhouse.com/docs/operations/settings/settings#allow_materialized_view_with_bad_select",
   "allow_named_collection_override_by_default": "https://clickhouse.com/docs/operations/settings/settings#allow_named_collection_override_by_default",
   "allow_non_metadata_alters": "https://clickhouse.com/docs/operations/settings/settings#allow_non_metadata_alters",

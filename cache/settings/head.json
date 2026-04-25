@@ -1457,6 +1457,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_key_condition_coalesce_rewrite"
+  },
+  {
+    "alias_for": "",
     "name": "joined_subquery_requires_alias"
   },
   {
