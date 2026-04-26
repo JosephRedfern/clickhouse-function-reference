@@ -40,6 +40,8 @@ CURATED_DOCS_PATHS = {
 }
 BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR / "templates"
+ASSETS_DIR = BASE_DIR / "assets"
+DATA_DIR = ASSETS_DIR / "data"
 template_env = Environment(
     loader=FileSystemLoader(TEMPLATES_DIR),
     autoescape=select_autoescape(["html", "xml"]),
@@ -623,25 +625,33 @@ def render(
 
     features = []
     for feature in all_features:
-        cells = []
-        for version in versions:
-            is_available = version in feature_versions[feature]
-            cells.append(
-                {
-                    "class_name": "avail" if is_available else "unavail",
-                    "title": f"{feature} {'available' if is_available else 'not available'} in {version}",
-                    "symbol": "✓" if is_available else "✗",
-                }
-            )
-
         features.append(
             {
                 "name": feature,
                 "url": docs_links.get(feature)
                 or docs_links.get(aliases.get(feature, "")),
                 "alias_to": aliases.get(feature),
-                "cells": cells,
+                "availability": [
+                    version in feature_versions[feature] for version in versions
+                ],
             }
+        )
+
+    generated_at = datetime.today().strftime("%Y-%m-%d %H:%M")
+    data_path = DATA_DIR / f"{feature_type}s.json"
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(data_path, "w") as f:
+        json.dump(
+            {
+                "title": title,
+                "header": header,
+                "feature_type": feature_type,
+                "generated_at": generated_at,
+                "versions": versions,
+                "features": features,
+            },
+            f,
+            separators=(",", ":"),
         )
 
     template = template_env.get_template("reference.html.j2")
@@ -649,10 +659,8 @@ def render(
         title=title,
         header=header,
         feature_type=feature_type,
-        versions=versions,
-        versions_json=json.dumps(versions),
-        features=features,
-        generated_at=datetime.today().strftime("%Y-%m-%d %H:%M"),
+        data_url=f"assets/data/{feature_type}s.json",
+        generated_at=generated_at,
     )
 
     with open(BASE_DIR / filename, "w") as f:

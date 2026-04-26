@@ -148,87 +148,38 @@
         padding-top: 8px;
         flex-shrink: 0;
     }
+    #loading,
+    #error-message {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    #error-message {
+        display: none;
+    }
     </style>
 </head>
-<body>
+<body data-data-url="{{ data_url }}" data-feature-type="{{ feature_type }}">
 <div class="page-wrap">
     <h1>{{ header }}</h1>
     <nav class="mb-1">[ <a href="index.html">Function Reference</a> | <a href="keywords.html">Keyword Reference</a> | <a href="settings.html">Setting Reference</a> ]</nav>
     <p class="text-muted mb-1" style="font-size:0.85rem;">Availability across recent ClickHouse releases, sourced from <code>system.functions</code>, <code>system.keywords</code>, and <code>system.settings</code>.</p>
     <div class="main">
-        <input type="text" id="search" class="form-control form-control-sm mb-2" oninput="filterRows()" placeholder="Search for {{ feature_type }}s...">
+        <input type="text" id="search" class="form-control form-control-sm mb-2" placeholder="Search for {{ feature_type }}s..." disabled>
+        <div id="loading" class="text-muted">Loading {{ feature_type }} data...</div>
+        <div id="error-message" class="alert alert-danger py-2 px-3" role="alert"></div>
         <div id="restore-btns"></div>
         <div class="table-wrapper">
-            <table id="feature_table" class="table table-sm mb-0">
-                <thead>
-                    <tr>
-                        <th class="name-col"></th>
-                        {% for version in versions %}
-                        <th class="ver-col" onclick="toggleCol({{ loop.index }})" title="Click to hide {{ version }}"><span>{{ version }}</span></th>
-                        {% endfor %}
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for feature in features %}
-                    <tr data-name="{{ feature.name|lower }}">
-                        <td class="name-col">
-                            {% if feature.url %}
-                            <a href="{{ feature.url }}">{{ feature.name }}</a>
-                            {% else %}
-                            {{ feature.name }}
-                            {% endif %}
-                            {% if feature.alias_to %}
-                            <span class="alias-mark" title="Alias for {{ feature.alias_to }}">*</span>
-                            {% endif %}
-                        </td>
-                        {% for cell in feature.cells %}
-                        <td class="{{ cell.class_name }}" title="{{ cell.title }}">{{ cell.symbol }}</td>
-                        {% endfor %}
-                    </tr>
-                    {% endfor %}
-                </tbody>
+            <table id="feature_table" class="table table-sm mb-0" hidden>
+                <thead></thead>
+                <tbody></tbody>
             </table>
         </div>
         <p class="mt-1 text-muted" style="font-size:0.75rem;">* indicates an alias to another {{ feature_type }}</p>
     </div>
     <footer>
-        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; Last generated {{ generated_at }}
+        Source on <a href="https://github.com/JosephRedfern/clickhouse-function-reference">GitHub</a> &middot; Last generated <span id="generated-at">{{ generated_at }}</span>
     </footer>
 </div>
-<script>
-    const versions = {{ versions_json|safe }};
-    const hiddenCols = new Set();
-
-    function filterRows() {
-        const term = document.getElementById('search').value.toLowerCase();
-        for (const row of document.querySelectorAll('#feature_table tbody tr')) {
-            row.style.display = row.dataset.name.includes(term) ? '' : 'none';
-        }
-    }
-
-    function toggleCol(colIndex) {
-        const cells = document.querySelectorAll(`#feature_table tr > :nth-child(${colIndex + 1})`);
-        if (hiddenCols.has(colIndex)) {
-            hiddenCols.delete(colIndex);
-            cells.forEach(c => c.style.display = '');
-        } else {
-            hiddenCols.add(colIndex);
-            cells.forEach(c => c.style.display = 'none');
-        }
-        renderRestoreButtons();
-    }
-
-    function renderRestoreButtons() {
-        const container = document.getElementById('restore-btns');
-        container.innerHTML = '';
-        for (const colIndex of [...hiddenCols].sort((a, b) => a - b)) {
-            const btn = document.createElement('button');
-            btn.className = 'btn btn-outline-secondary btn-sm me-1 mb-1';
-            btn.textContent = `+ ${versions[colIndex - 1]}`;
-            btn.onclick = () => toggleCol(colIndex);
-            container.appendChild(btn);
-        }
-    }
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>
