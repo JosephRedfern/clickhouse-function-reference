@@ -854,6 +854,7 @@
   "parallel_replicas_mode": "https://clickhouse.com/docs/operations/settings/settings#parallel_replicas_mode",
   "parallel_replicas_only_with_analyzer": "https://clickhouse.com/docs/operations/settings/settings#parallel_replicas_only_with_analyzer",
   "parallel_replicas_prefer_local_join": "https://clickhouse.com/docs/operations/settings/settings#parallel_replicas_prefer_local_join",
+  "parallel_replicas_prefer_local_replica": "https://clickhouse.com/docs/operations/settings/settings#parallel_replicas_prefer_local_replica",
   "parallel_replicas_support_projection": "https://clickhouse.com/docs/operations/settings/settings#parallel_replicas_support_projection",
   "parallel_view_processing": "https://clickhouse.com/docs/operations/settings/settings#parallel_view_processing",
   "parallelize_output_from_storages": "https://clickhouse.com/docs/operations/settings/settings#parallelize_output_from_storages",

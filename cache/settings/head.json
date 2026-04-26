@@ -4045,6 +4045,10 @@
   },
   {
     "alias_for": "",
+    "name": "parallel_replicas_prefer_local_replica"
+  },
+  {
+    "alias_for": "",
     "name": "parallel_replicas_index_analysis_only_on_coordinator"
   },
   {
