@@ -954,6 +954,8 @@
   "numericIndexedVectorPointwiseSubtract": "https://clickhouse.com/docs/sql-reference/functions/numeric-indexed-vector-functions#numericIndexedVectorPointwiseSubtract",
   "numericIndexedVectorShortDebugString": "https://clickhouse.com/docs/sql-reference/functions/numeric-indexed-vector-functions#numericIndexedVectorShortDebugString",
   "numericIndexedVectorToMap": "https://clickhouse.com/docs/sql-reference/functions/numeric-indexed-vector-functions#numericIndexedVectorToMap",
+  "obfuscateQuery": "https://clickhouse.com/docs/sql-reference/functions/other-functions#obfuscateQuery",
+  "obfuscateQueryWithSeed": "https://clickhouse.com/docs/sql-reference/functions/other-functions#obfuscateQueryWithSeed",
   "or": "https://clickhouse.com/docs/sql-reference/functions/logical-functions#or",
   "overlay": "https://clickhouse.com/docs/sql-reference/functions/string-replace-functions#overlay",
   "overlayUTF8": "https://clickhouse.com/docs/sql-reference/functions/string-replace-functions#overlayUTF8",
