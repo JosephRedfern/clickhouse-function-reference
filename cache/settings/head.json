@@ -3253,6 +3253,10 @@
   },
   {
     "alias_for": "",
+    "name": "send_table_structure_on_insert_with_inline_data"
+  },
+  {
+    "alias_for": "",
     "name": "async_insert"
   },
   {
@@ -4365,6 +4369,10 @@
   },
   {
     "alias_for": "",
+    "name": "max_bytes_before_external_join"
+  },
+  {
+    "alias_for": "",
     "name": "enable_join_fixed_hash_table_conversion"
   },
   {
@@ -5309,10 +5317,6 @@
   },
   {
     "alias_for": "",
-    "name": "input_format_parquet_use_native_reader_v3"
-  },
-  {
-    "alias_for": "",
     "name": "input_format_parquet_memory_low_watermark"
   },
   {
@@ -5913,19 +5917,7 @@
   },
   {
     "alias_for": "",
-    "name": "output_format_parquet_version"
-  },
-  {
-    "alias_for": "",
     "name": "output_format_parquet_compression_method"
-  },
-  {
-    "alias_for": "",
-    "name": "output_format_parquet_compliant_nested_types"
-  },
-  {
-    "alias_for": "",
-    "name": "output_format_parquet_use_custom_encoder"
   },
   {
     "alias_for": "",
@@ -5974,10 +5966,6 @@
   {
     "alias_for": "",
     "name": "output_format_parquet_write_checksums"
-  },
-  {
-    "alias_for": "",
-    "name": "output_format_parquet_unsupported_types_as_binary"
   },
   {
     "alias_for": "",
@@ -6342,5 +6330,25 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_use_native_reader"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_parquet_use_native_reader_v3"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_use_custom_encoder"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_version"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_compliant_nested_types"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_unsupported_types_as_binary"
   }
 ]
