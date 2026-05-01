@@ -2985,6 +2985,14 @@
   },
   {
     "alias_for": "",
+    "name": "max_streams_for_union_step"
+  },
+  {
+    "alias_for": "",
+    "name": "max_streams_for_union_step_to_max_threads_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_aggregators_of_group_by_keys"
   },
   {

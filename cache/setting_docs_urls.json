@@ -680,6 +680,8 @@
   "max_skip_unavailable_shards_ratio": "https://clickhouse.com/docs/operations/settings/settings#max_skip_unavailable_shards_ratio",
   "max_streams_for_files_processing_in_cluster_functions": "https://clickhouse.com/docs/operations/settings/settings#max_streams_for_files_processing_in_cluster_functions",
   "max_streams_for_merge_tree_reading": "https://clickhouse.com/docs/operations/settings/settings#max_streams_for_merge_tree_reading",
+  "max_streams_for_union_step": "https://clickhouse.com/docs/operations/settings/settings#max_streams_for_union_step",
+  "max_streams_for_union_step_to_max_threads_ratio": "https://clickhouse.com/docs/operations/settings/settings#max_streams_for_union_step_to_max_threads_ratio",
   "max_streams_multiplier_for_merge_tables": "https://clickhouse.com/docs/operations/settings/settings#max_streams_multiplier_for_merge_tables",
   "max_streams_to_max_threads_ratio": "https://clickhouse.com/docs/operations/settings/settings#max_streams_to_max_threads_ratio",
   "max_subquery_depth": "https://clickhouse.com/docs/operations/settings/settings#max_subquery_depth",
