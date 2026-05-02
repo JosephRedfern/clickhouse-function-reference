@@ -105,6 +105,14 @@
   },
   {
     "alias_for": "",
+    "name": "max_threads_min_free_memory_per_thread"
+  },
+  {
+    "alias_for": "",
+    "name": "max_insert_threads_min_free_memory_per_thread"
+  },
+  {
+    "alias_for": "",
     "name": "use_concurrency_control"
   },
   {
@@ -3834,6 +3842,10 @@
   {
     "alias_for": "",
     "name": "enable_blob_storage_log"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_blob_storage_log_for_read_operations"
   },
   {
     "alias_for": "",
