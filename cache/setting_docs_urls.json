@@ -45,6 +45,7 @@
   "allow_experimental_delta_lake_writes": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_delta_lake_writes",
   "allow_experimental_expire_snapshots": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_expire_snapshots",
   "allow_experimental_funnel_functions": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_funnel_functions",
+  "allow_experimental_geo_types_in_iceberg": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_geo_types_in_iceberg",
   "allow_experimental_hash_functions": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_hash_functions",
   "allow_experimental_iceberg_compaction": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_iceberg_compaction",
   "allow_experimental_join_right_table_sorting": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_join_right_table_sorting",

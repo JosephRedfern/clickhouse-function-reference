@@ -3917,6 +3917,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_geo_types_in_iceberg"
+  },
+  {
+    "alias_for": "",
     "name": "show_data_lake_catalogs_in_system_tables"
   },
   {
