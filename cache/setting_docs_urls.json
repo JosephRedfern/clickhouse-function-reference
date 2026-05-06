@@ -1100,6 +1100,7 @@
   "unknown_packet_in_send_data": "https://clickhouse.com/docs/operations/settings/settings#unknown_packet_in_send_data",
   "update_parallel_mode": "https://clickhouse.com/docs/operations/settings/settings#update_parallel_mode",
   "update_sequential_consistency": "https://clickhouse.com/docs/operations/settings/settings#update_sequential_consistency",
+  "url_base": "https://clickhouse.com/docs/operations/settings/settings#url_base",
   "use_async_executor_for_materialized_views": "https://clickhouse.com/docs/operations/settings/settings#use_async_executor_for_materialized_views",
   "use_cache_for_count_from_files": "https://clickhouse.com/docs/operations/settings/settings#use_cache_for_count_from_files",
   "use_client_time_zone": "https://clickhouse.com/docs/operations/settings/settings#use_client_time_zone",
