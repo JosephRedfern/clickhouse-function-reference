@@ -2817,6 +2817,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_dictget_tuple_element"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_rewrite_like_perfect_affix"
   },
   {
@@ -3426,6 +3430,10 @@
   {
     "alias_for": "",
     "name": "page_cache_lookahead_blocks"
+  },
+  {
+    "alias_for": "",
+    "name": "page_cache_max_coalesced_bytes"
   },
   {
     "alias_for": "",

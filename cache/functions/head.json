@@ -20417,18 +20417,18 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression. Constant. [`const String`](/sql-reference/data-types/string) or [`const FixedString`](/sql-reference/data-types/fixedstring)\\n",
+    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression. Must contain at least one capturing group. Constant. [`const String`](/sql-reference/data-types/string) or [`const FixedString`](/sql-reference/data-types/fixedstring)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "\\nExtracts all groups from non-overlapping substrings matched by a regular expression.\\n    ",
-    "examples": "**Usage example**\\n\\n```sql title=Query\\nWITH \\'< Server: nginx\\n< Date: Tue, 22 Jan 2019 00:26:14 GMT\\n< Content-Type: text/html; charset=UTF-8\\n< Connection: keep-alive\\n\\' AS s\\nSELECT extractGroups(s, \\'< ([\\\\\\\\w\\\\\\\\-]+): ([^\\\\\\\\r\\\\\\\\n]+)\\');\\n```\\n\\n```response title=Response\\n[[\\'Server\\',\\'nginx\\'],[\\'Date\\',\\'Tue, 22 Jan 2019 00:26:14 GMT\\'],[\\'Content-Type\\',\\'text/html; charset=UTF-8\\'],[\\'Connection\\',\\'keep-alive\\']]\\n```\\n\\n",
+    "description": "\\nExtracts the capturing groups from the first substring matched by a regular expression. To extract groups from all matches, use [`extractAllGroupsHorizontal`](#extractAllGroupsHorizontal) or [`extractAllGroupsVertical`](#extractAllGroupsVertical).\\n    ",
+    "examples": "**Usage example**\\n\\n```sql title=Query\\nWITH \\'< Server: nginx\\n< Date: Tue, 22 Jan 2019 00:26:14 GMT\\n< Content-Type: text/html; charset=UTF-8\\n< Connection: keep-alive\\n\\' AS s\\nSELECT extractGroups(s, \\'< ([\\\\\\\\w\\\\\\\\-]+): ([^\\\\\\\\r\\\\\\\\n]+)\\');\\n```\\n\\n```response title=Response\\n[\\'Server\\',\\'nginx\\']\\n```\\n\\n",
     "introduced_in": "20.5.0",
     "is_aggregate": "0",
     "name": "extractGroups",
     "origin": "System",
     "parameters": "",
-    "returned_value": "If the function finds at least one matching group, it returns Array(Array(String)) column, clustered by group_id (`1` to `N`, where `N` is number of capturing groups in regexp). If there is no matching group, it returns an empty array. [`Array(Array(String))`](/sql-reference/data-types/array)",
+    "returned_value": "If the regular expression matches, returns an array containing the captured groups (`1` to `N`, where `N` is the number of capturing groups in `regexp`) of the first match. If there is no match, returns an empty array. [`Array(String)`](/sql-reference/data-types/array)",
     "syntax": "extractGroups(s, regexp)"
   },
   {
