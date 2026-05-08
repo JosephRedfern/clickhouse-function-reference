@@ -1033,6 +1033,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_top_k_dynamic_filtering_for_variable_length_types"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_limit_for_top_k_optimization"
   },
   {
@@ -4406,6 +4410,10 @@
   {
     "alias_for": "",
     "name": "max_bytes_before_external_join"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_ratio_before_external_join"
   },
   {
     "alias_for": "",
