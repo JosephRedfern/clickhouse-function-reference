@@ -4409,6 +4409,18 @@
   },
   {
     "alias_for": "",
+    "name": "shared_merge_tree_sequential_consistency_initial_parts_update_backoff_ms"
+  },
+  {
+    "alias_for": "",
+    "name": "shared_merge_tree_sequential_consistency_max_parts_update_backoff_ms"
+  },
+  {
+    "alias_for": "",
+    "name": "shared_merge_tree_sequential_consistency_parts_update_max_retries"
+  },
+  {
+    "alias_for": "",
     "name": "max_bytes_before_external_join"
   },
   {
@@ -4750,6 +4762,18 @@
   {
     "alias_for": "",
     "name": "allow_experimental_alias_table_engine"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_paimon_storage_engine"
+  },
+  {
+    "alias_for": "",
+    "name": "paimon_target_snapshot_id"
+  },
+  {
+    "alias_for": "",
+    "name": "max_consume_snapshots"
   },
   {
     "alias_for": "",
