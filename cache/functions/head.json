@@ -20421,7 +20421,7 @@
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "\\nExtracts the capturing groups from the first substring matched by a regular expression. To extract groups from all matches, use [`extractAllGroupsHorizontal`](#extractAllGroupsHorizontal) or [`extractAllGroupsVertical`](#extractAllGroupsVertical).\\n    ",
+    "description": "\\nExtracts the capturing groups from the first substring matched by a regular expression. To extract groups from all matches, use [`extractAllGroupsHorizontal`](#extractAllGroupsHorizontal) or [`extractAllGroupsVertical`](/sql-reference/functions/splitting-merging-functions#extractAllGroupsVertical).\\n    ",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nWITH \\'< Server: nginx\\n< Date: Tue, 22 Jan 2019 00:26:14 GMT\\n< Content-Type: text/html; charset=UTF-8\\n< Connection: keep-alive\\n\\' AS s\\nSELECT extractGroups(s, \\'< ([\\\\\\\\w\\\\\\\\-]+): ([^\\\\\\\\r\\\\\\\\n]+)\\');\\n```\\n\\n```response title=Response\\n[\\'Server\\',\\'nginx\\']\\n```\\n\\n",
     "introduced_in": "20.5.0",
     "is_aggregate": "0",

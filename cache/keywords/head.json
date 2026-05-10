@@ -414,6 +414,9 @@
     "name": "DELETE"
   },
   {
+    "name": "DETERMINISTIC"
+  },
+  {
     "name": "DEPENDS ON"
   },
   {
