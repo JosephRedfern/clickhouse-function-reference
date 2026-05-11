@@ -976,6 +976,7 @@
   "readonly": "https://clickhouse.com/docs/operations/settings/settings#readonly",
   "receive_data_timeout_ms": "https://clickhouse.com/docs/operations/settings/settings#receive_data_timeout_ms",
   "receive_timeout": "https://clickhouse.com/docs/operations/settings/settings#receive_timeout",
+  "recursive_cte_max_steps_in_type_inference": "https://clickhouse.com/docs/operations/settings/settings#recursive_cte_max_steps_in_type_inference",
   "regexp_dict_allow_hyperscan": "https://clickhouse.com/docs/operations/settings/settings#regexp_dict_allow_hyperscan",
   "regexp_dict_flag_case_insensitive": "https://clickhouse.com/docs/operations/settings/settings#regexp_dict_flag_case_insensitive",
   "regexp_dict_flag_dotall": "https://clickhouse.com/docs/operations/settings/settings#regexp_dict_flag_dotall",

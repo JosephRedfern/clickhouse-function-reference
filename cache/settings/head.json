@@ -2481,6 +2481,10 @@
   },
   {
     "alias_for": "",
+    "name": "recursive_cte_max_steps_in_type_inference"
+  },
+  {
+    "alias_for": "",
     "name": "allow_settings_after_format_in_insert"
   },
   {
