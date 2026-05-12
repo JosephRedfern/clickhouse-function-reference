@@ -63,6 +63,7 @@
   "allow_experimental_query_deduplication": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_query_deduplication",
   "allow_experimental_time_series_aggregate_functions": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_time_series_aggregate_functions",
   "allow_experimental_time_series_table": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_time_series_table",
+  "allow_experimental_unique_key": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_unique_key",
   "allow_experimental_window_view": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_window_view",
   "allow_experimental_ytsaurus_dictionary_source": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_ytsaurus_dictionary_source",
   "allow_experimental_ytsaurus_table_engine": "https://clickhouse.com/docs/operations/settings/settings#allow_experimental_ytsaurus_table_engine",

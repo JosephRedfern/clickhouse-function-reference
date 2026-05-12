@@ -1635,6 +1635,9 @@
     "name": "UNIQUE"
   },
   {
+    "name": "UNIQUE KEY"
+  },
+  {
     "name": "UNSET FAKE TIME"
   },
   {

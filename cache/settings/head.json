@@ -4457,6 +4457,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_unique_key"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_codecs"
   },
   {
