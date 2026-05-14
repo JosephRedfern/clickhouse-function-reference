@@ -2237,6 +2237,18 @@
   },
   {
     "alias_for": "",
+    "name": "dynamic_disk_allow_from_env"
+  },
+  {
+    "alias_for": "",
+    "name": "dynamic_disk_allow_include"
+  },
+  {
+    "alias_for": "",
+    "name": "dynamic_disk_allow_from_zk"
+  },
+  {
+    "alias_for": "",
     "name": "max_parts_to_move"
   },
   {
@@ -5865,6 +5877,18 @@
   },
   {
     "alias_for": "",
+    "name": "format_avro_schema_registry_connection_timeout"
+  },
+  {
+    "alias_for": "",
+    "name": "format_avro_schema_registry_send_timeout"
+  },
+  {
+    "alias_for": "",
+    "name": "format_avro_schema_registry_receive_timeout"
+  },
+  {
+    "alias_for": "",
     "name": "input_format_binary_read_json_as_string"
   },
   {
@@ -6058,6 +6082,10 @@
   {
     "alias_for": "",
     "name": "output_format_avro_rows_in_file"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_avro_confluent_subject"
   },
   {
     "alias_for": "",

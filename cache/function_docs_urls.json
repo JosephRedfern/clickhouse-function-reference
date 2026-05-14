@@ -767,6 +767,8 @@
   "isNotNull": "https://clickhouse.com/docs/sql-reference/functions/functions-for-nulls#isNotNull",
   "isNull": "https://clickhouse.com/docs/sql-reference/functions/functions-for-nulls#isNull",
   "isNullable": "https://clickhouse.com/docs/sql-reference/functions/functions-for-nulls#isNullable",
+  "isPrime": "https://clickhouse.com/docs/sql-reference/functions/math-functions#isPrime",
+  "isProbablePrime": "https://clickhouse.com/docs/sql-reference/functions/math-functions#isProbablePrime",
   "isValidASCII": "https://clickhouse.com/docs/sql-reference/functions/string-functions#isValidASCII",
   "isValidJSON": "https://clickhouse.com/docs/sql-reference/functions/json-functions#isValidJSON",
   "isValidUTF8": "https://clickhouse.com/docs/sql-reference/functions/string-functions#isValidUTF8",
