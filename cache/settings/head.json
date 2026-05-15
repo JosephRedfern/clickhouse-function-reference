@@ -2341,6 +2341,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_trivial_group_by_limit_query"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_count_from_files"
   },
   {
@@ -3066,6 +3070,10 @@
   {
     "alias_for": "",
     "name": "query_plan_push_down_limit"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_top_k_through_join"
   },
   {
     "alias_for": "",
