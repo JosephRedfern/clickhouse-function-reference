@@ -949,6 +949,10 @@
   },
   {
     "alias_for": "",
+    "name": "defer_partition_pruning_after_final"
+  },
+  {
+    "alias_for": "",
     "name": "mysql_max_rows_to_insert"
   },
   {
@@ -2546,6 +2550,10 @@
   {
     "alias_for": "",
     "name": "system_events_show_zero_values"
+  },
+  {
+    "alias_for": "",
+    "name": "system_metric_log_show_zero_values_in_histograms"
   },
   {
     "alias_for": "",
