@@ -379,6 +379,7 @@
   "enable_shared_storage_snapshot_in_query": "https://clickhouse.com/docs/operations/settings/settings#enable_shared_storage_snapshot_in_query",
   "enable_sharing_sets_for_mutations": "https://clickhouse.com/docs/operations/settings/settings#enable_sharing_sets_for_mutations",
   "enable_software_prefetch_in_aggregation": "https://clickhouse.com/docs/operations/settings/settings#enable_software_prefetch_in_aggregation",
+  "enable_software_prefetch_in_join": "https://clickhouse.com/docs/operations/settings/settings#enable_software_prefetch_in_join",
   "enable_time_time64_type": "https://clickhouse.com/docs/operations/settings/settings#enable_time_time64_type",
   "enable_unaligned_array_join": "https://clickhouse.com/docs/operations/settings/settings#enable_unaligned_array_join",
   "enable_url_encoding": "https://clickhouse.com/docs/operations/settings/settings#enable_url_encoding",

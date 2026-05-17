@@ -3193,6 +3193,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_software_prefetch_in_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_use_new_logical_join_step"
   },
   {
