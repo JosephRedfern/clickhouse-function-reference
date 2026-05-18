@@ -1108,6 +1108,7 @@
   "readWktPolygon": "https://clickhouse.com/docs/sql-reference/functions/geo/polygons#readwktpolygon",
   "readWktRing": "https://clickhouse.com/docs/sql-reference/functions/geo/polygons#readwktring",
   "regexpExtract": "https://clickhouse.com/docs/sql-reference/functions/string-functions#regexpExtract",
+  "regexpPosition": "https://clickhouse.com/docs/sql-reference/functions/string-functions#regexpPosition",
   "regexpQuoteMeta": "https://clickhouse.com/docs/sql-reference/functions/string-replace-functions#regexpQuoteMeta",
   "regionHierarchy": "https://clickhouse.com/docs/sql-reference/functions/ym-dict-functions#regionhierarchy",
   "regionIn": "https://clickhouse.com/docs/sql-reference/functions/ym-dict-functions#regionin",
