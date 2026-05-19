@@ -2749,6 +2749,18 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_data_file_size_lower_threshold_compaction"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_data_file_size_upper_threshold_compaction"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_max_number_datafiles_to_compact"
+  },
+  {
+    "alias_for": "",
     "name": "use_iceberg_metadata_files_cache"
   },
   {
@@ -2758,6 +2770,14 @@
   {
     "alias_for": "",
     "name": "use_parquet_metadata_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_delay_bias"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_data_cleanup"
   },
   {
     "alias_for": "",
@@ -4670,6 +4690,10 @@
   {
     "alias_for": "allow_insert_into_iceberg",
     "name": "allow_experimental_insert_into_iceberg"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_cleanup_old_data_files_compaction"
   },
   {
     "alias_for": "",
