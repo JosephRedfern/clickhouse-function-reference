@@ -654,12 +654,15 @@ def render(
             separators=(",", ":"),
         )
 
+    # Embed the timestamp in the JSON URL so CDNs treat each regen as a fresh
+    # resource and never serve a stale data file against a freshly-deployed HTML.
+    cache_buster = generated_at.replace(" ", "T").replace(":", "")
     template = template_env.get_template("reference.html.j2")
     doc = template.render(
         title=title,
         header=header,
         feature_type=feature_type,
-        data_url=f"assets/data/{feature_type}s.json",
+        data_url=f"assets/data/{feature_type}s.json?v={cache_buster}",
         generated_at=generated_at,
     )
 
