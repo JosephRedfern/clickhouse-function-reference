@@ -13,8 +13,10 @@
   const tbodyEl = tableEl.querySelector("tbody");
   const generatedAtEl = document.getElementById("generated-at");
 
+  const LTS_STORAGE_KEY = "ltsOnly";
+
   const hiddenCols = new Set();
-  let ltsOnly = false;
+  let ltsOnly = localStorage.getItem(LTS_STORAGE_KEY) === "true";
   let versions = [];
   let rows = [];
 
@@ -237,8 +239,10 @@
   }
 
   if (ltsToggle) {
+    ltsToggle.checked = ltsOnly;
     ltsToggle.addEventListener("change", () => {
       ltsOnly = ltsToggle.checked;
+      localStorage.setItem(LTS_STORAGE_KEY, ltsOnly);
       updateColVisibility();
     });
   }
