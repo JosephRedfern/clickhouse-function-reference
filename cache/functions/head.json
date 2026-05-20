@@ -2467,7 +2467,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `f(arr[, arr1, ... ,arrN])` \u2014 The lambda function to apply to elements of array `x`. [`Lambda function`](/sql-reference/functions/overview#arrow-operator-and-lambda)\\n- `arr` \u2014 Array to be sorted. [`Array(T)`](/sql-reference/data-types/array)\\n- `arr1, ... ,arrN` \u2014 N additional arrays, in the case when `f` accepts multiple arguments. [`Array(T)`](/sql-reference/data-types/array)\\n- `limit` \u2014 Index value up until which sorting will occur. [`(U)Int*`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `f(arr[, arr1, ... ,arrN])` \u2014 The lambda function to apply to elements of array `x`. [`Lambda function`](/sql-reference/functions/overview#arrow-operator-and-lambda)\\n- `limit` \u2014 Index value up until which sorting will occur. [`(U)Int*`](/sql-reference/data-types/int-uint)\\n- `arr` \u2014 Array to be sorted. [`Array(T)`](/sql-reference/data-types/array)\\n- `arr1, ... ,arrN` \u2014 N additional arrays, in the case when `f` accepts multiple arguments. [`Array(T)`](/sql-reference/data-types/array)\\n",
     "case_insensitive": "0",
     "categories": "Arrays",
     "create_query": "",
@@ -2481,7 +2481,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns an array of the same size as the original array where elements in the range `[1..limit]` are sorted\\nin descending order. The remaining elements `(limit..N]` are in an unspecified order.",
-    "syntax": "arrayPartialReverseSort([f,] arr [, arr1, ... ,arrN], limit)"
+    "syntax": "arrayPartialReverseSort([f,] limit, arr [, arr1, ... ,arrN])"
   },
   {
     "alias_to": "",
@@ -2503,7 +2503,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `f(arr[, arr1, ... ,arrN])` \u2014 The lambda function to apply to elements of array `x`. [`Lambda function`](/sql-reference/functions/overview#arrow-operator-and-lambda)\\n- `arr` \u2014 Array to be sorted. [`Array(T)`](/sql-reference/data-types/array)\\n- `arr1, ... ,arrN` \u2014 N additional arrays, in the case when `f` accepts multiple arguments. [`Array(T)`](/sql-reference/data-types/array)\\n- `limit` \u2014 Index value up until which sorting will occur. [`(U)Int*`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `f(arr[, arr1, ... ,arrN])` \u2014 The lambda function to apply to elements of array `x`. [`Lambda function`](/sql-reference/functions/overview#arrow-operator-and-lambda)\\n- `limit` \u2014 Index value up until which sorting will occur. [`(U)Int*`](/sql-reference/data-types/int-uint)\\n- `arr` \u2014 Array to be sorted. [`Array(T)`](/sql-reference/data-types/array)\\n- `arr1, ... ,arrN` \u2014 N additional arrays, in the case when `f` accepts multiple arguments. [`Array(T)`](/sql-reference/data-types/array)\\n",
     "case_insensitive": "0",
     "categories": "Arrays",
     "create_query": "",
@@ -2517,11 +2517,11 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns an array of the same size as the original array where elements in the range `[1..limit]` are sorted\\nin ascending order. The remaining elements `(limit..N]` are in an unspecified order.",
-    "syntax": "arrayPartialSort([f,] arr [, arr1, ... ,arrN], limit)"
+    "syntax": "arrayPartialSort([f,] limit, arr [, arr1, ... ,arrN])"
   },
   {
     "alias_to": "",
-    "arguments": "- `f(y1[, y2 ... yN])` \u2014 The lambda function to apply to elements of array `x`. - `arr` \u2014 An array to be sorted. [`Array(T)`](/sql-reference/data-types/array) - `arr1, ..., yN` \u2014 Optional. N additional arrays, in the case when `f` accepts multiple arguments. ",
+    "arguments": "- `f(y1[, y2 ... yN])` \u2014 The lambda function to apply to elements of array `x`. - `arr` \u2014 An array to be sorted. [`Array(T)`](/sql-reference/data-types/array) - `arr1, ..., arrN` \u2014 Optional. N additional arrays, in the case when `f` accepts multiple arguments. ",
     "case_insensitive": "0",
     "categories": "Arrays",
     "create_query": "",
@@ -4411,7 +4411,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `f(y1[, y2 ... yN])` \u2014 The lambda function to apply to elements of array `x`. - `arr` \u2014 An array to be sorted. [`Array(T)`](/sql-reference/data-types/array) - `arr1, ..., yN` \u2014 Optional. N additional arrays, in the case when `f` accepts multiple arguments. ",
+    "arguments": "- `f(y1[, y2 ... yN])` \u2014 The lambda function to apply to elements of array `x`. - `arr` \u2014 An array to be sorted. [`Array(T)`](/sql-reference/data-types/array) - `arr1, ..., arrN` \u2014 Optional. N additional arrays, in the case when `f` accepts multiple arguments. ",
     "case_insensitive": "0",
     "categories": "Arrays",
     "create_query": "",
@@ -4425,7 +4425,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns the array `x` sorted in descending order if no lambda function is provided, otherwise\\nit returns an array sorted according to the logic of the provided lambda function, and then reversed. [`Array(T)`](/sql-reference/data-types/array).",
-    "syntax": "arrayReverseSort([f,] arr [, arr1, ... ,arrN)"
+    "syntax": "arrayReverseSort([f,] arr [, arr1, ... ,arrN])"
   },
   {
     "alias_to": "",
@@ -30317,7 +30317,7 @@
     "case_insensitive": "0",
     "categories": "Aggregate Functions",
     "create_query": "",
-    "description": "\\nLike [`quantileBFloat16`](/sql-reference/aggregate-functions/reference/quantilebfloat16) but takes into account the weight of each sequence member.\\n\\nComputes an approximate [quantile](https://en.wikipedia.org/wiki/Quantile) of a sample consisting of [bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) numbers.\\n\\n`bfloat16` is a floating-point data type with 1 sign bit, 8 exponent bits and 7 fraction bits.\\nThe function converts input values to 32-bit floats and takes the most significant 16 bits.\\nThen it calculates `bfloat16` quantile value and converts the result to a 64-bit float by appending zero bits.\\nThe function is a fast quantile estimator with a relative error no more than 0.390625%.\\n    ",
+    "description": "\\nLike [`quantileBFloat16`](/sql-reference/aggregate-functions/reference/quantilebfloat16) but takes into account the weight of each sequence member.\\n\\nComputes an approximate [quantile](https://en.wikipedia.org/wiki/Quantile) of a sample consisting of [bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) numbers.\\n\\n`bfloat16` is a floating-point data type with 1 sign bit, 8 exponent bits and 7 fraction bits.\\nThe function converts input values to 32-bit floats and takes the most significant 16 bits.\\nThen it calculates `bfloat16` quantile value and converts the result to a 64-bit float by appending zero bits.\\nThe function is a fast quantile estimator with a maximum relative error of `0.78125%` (and an average relative error of approximately `0.27%`), corresponding to the 7-bit mantissa precision of `bfloat16`.\\n    ",
     "deterministic": "\\N",
     "examples": "**Computing weighted quantile with bfloat16**\\n\\n```sql title=Query\\nCREATE TABLE example_table (a UInt32, b Float32, w UInt32) ENGINE = Memory;\\nINSERT INTO example_table VALUES (1, 1.001, 1), (2, 1.002, 2), (3, 1.003, 3), (4, 1.004, 4);\\n\\nSELECT quantileBFloat16Weighted(0.75)(a, w), quantileBFloat16Weighted(0.75)(b, w) FROM example_table;\\n```\\n\\n```response title=Response\\n\u250c\u2500quantileBFloat16Weighted(0.75)(a, w)\u2500\u252c\u2500quantileBFloat16Weighted(0.75)(b, w)\u2500\u2510\\n\u2502                                    3 \u2502                                    1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "\\N",
@@ -31649,7 +31649,7 @@
     "case_insensitive": "0",
     "categories": "Aggregate Functions",
     "create_query": "",
-    "description": "\\nComputes an approximate [quantile](https://en.wikipedia.org/wiki/Quantile) of a sample consisting of [bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) numbers.\\n\\n`bfloat16` is a floating-point data type with 1 sign bit, 8 exponent bits and 7 fraction bits.\\nThe function converts input values to 32-bit floats and takes the most significant 16 bits. Then it calculates `bfloat16` quantile value and converts the result to a 64-bit float by appending zero bits.\\nThe function is a fast quantile estimator with a relative error no more than 0.390625%.\\n    ",
+    "description": "\\nComputes an approximate [quantile](https://en.wikipedia.org/wiki/Quantile) of a sample consisting of [bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) numbers.\\n\\n`bfloat16` is a floating-point data type with 1 sign bit, 8 exponent bits and 7 fraction bits.\\nThe function converts input values to 32-bit floats and takes the most significant 16 bits. Then it calculates `bfloat16` quantile value and converts the result to a 64-bit float by appending zero bits.\\nThe function is a fast quantile estimator with a maximum relative error of `0.78125%` (and an average relative error of approximately `0.27%`), corresponding to the 7-bit mantissa precision of `bfloat16`.\\n    ",
     "deterministic": "\\N",
     "examples": "**Computing quantile with bfloat16**\\n\\n```sql title=Query\\nCREATE TABLE example_table (a UInt32, b Float32) ENGINE = Memory;\\nINSERT INTO example_table VALUES (1, 1.001), (2, 1.002), (3, 1.003), (4, 1.004);\\n\\nSELECT quantileBFloat16(0.75)(a), quantileBFloat16(0.75)(b) FROM example_table;\\n```\\n\\n```response title=Response\\n\u250c\u2500quantileBFloat16(0.75)(a)\u2500\u252c\u2500quantileBFloat16(0.75)(b)\u2500\u2510\\n\u2502                         3 \u2502                         1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "\\N",
