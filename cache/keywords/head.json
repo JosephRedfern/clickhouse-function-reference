@@ -813,6 +813,24 @@
     "name": "IS NULL"
   },
   {
+    "name": "IS NOT UNKNOWN"
+  },
+  {
+    "name": "IS UNKNOWN"
+  },
+  {
+    "name": "IS NOT FALSE"
+  },
+  {
+    "name": "IS FALSE"
+  },
+  {
+    "name": "IS NOT TRUE"
+  },
+  {
+    "name": "IS TRUE"
+  },
+  {
     "name": "JOIN"
   },
   {

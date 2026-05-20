@@ -2793,6 +2793,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_cache_for_subqueries"
+  },
+  {
+    "alias_for": "",
     "name": "query_cache_nondeterministic_function_handling"
   },
   {
@@ -3217,14 +3221,6 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_use_new_logical_join_step"
-  },
-  {
-    "alias_for": "query_plan_use_new_logical_join_step",
-    "name": "query_plan_use_logical_join_step"
-  },
-  {
-    "alias_for": "",
     "name": "serialize_query_plan"
   },
   {
@@ -3590,6 +3586,10 @@
   {
     "alias_for": "",
     "name": "force_grouping_standard_compatibility"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_rank_dense_rank_arguments"
   },
   {
     "alias_for": "",
@@ -4825,10 +4825,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_alias_table_engine"
-  },
-  {
-    "alias_for": "",
     "name": "allow_experimental_paimon_storage_engine"
   },
   {
@@ -4990,6 +4986,10 @@
   {
     "alias_for": "",
     "name": "enable_qbit_type"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_alias_table_engine"
   },
   {
     "alias_for": "",
@@ -5330,6 +5330,14 @@
   {
     "alias_for": "",
     "name": "use_text_index_dictionary_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_use_logical_join_step"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_use_new_logical_join_step"
   },
   {
     "alias_for": "",

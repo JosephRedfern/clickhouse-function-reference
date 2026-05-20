@@ -1039,6 +1039,7 @@
   "positive_modulo": "https://clickhouse.com/docs/sql-reference/functions/arithmetic-functions#positiveModulo",
   "positive_modulo_or_null": "https://clickhouse.com/docs/sql-reference/functions/arithmetic-functions#positiveModuloOrNull",
   "pow": "https://clickhouse.com/docs/sql-reference/functions/math-functions#pow",
+  "prettyPrintJSON": "https://clickhouse.com/docs/sql-reference/functions/json-functions#prettyPrintJSON",
   "printf": "https://clickhouse.com/docs/sql-reference/functions/string-replace-functions#printf",
   "proportionsZTest": "https://clickhouse.com/docs/sql-reference/functions/math-functions#proportionsZTest",
   "protocol": "https://clickhouse.com/docs/sql-reference/functions/url-functions#protocol",
