@@ -8299,13 +8299,13 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 A number to format. [`UInt64`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `value` \u2014 A number to format. [`Int8`](/sql-reference/data-types/int-uint) or [`Int16`](/sql-reference/data-types/int-uint) or [`Int32`](/sql-reference/data-types/int-uint) or [`Int64`](/sql-reference/data-types/int-uint) or [`UInt8`](/sql-reference/data-types/int-uint) or [`UInt16`](/sql-reference/data-types/int-uint) or [`UInt32`](/sql-reference/data-types/int-uint) or [`UInt64`](/sql-reference/data-types/int-uint) or [`Float32`](/sql-reference/data-types/float) or [`Float64`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `precision` \u2014 Optional. Number of digits after the decimal point. Defaults to 2. [`const UInt8`](/sql-reference/data-types/int-uint)\\n",
     "case_insensitive": "0",
     "categories": "Other",
     "create_query": "",
     "description": "\\nGiven a number, this function returns a rounded number with suffix (thousand, million, billion, etc.) as a string.\\n\\nThis function accepts any numeric type as input, but internally it casts them to `Float64`.\\nResults might be suboptimal with large values.\\n    ",
     "deterministic": "1",
-    "examples": "**Format numbers with suffixes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1024, 1234 * 1000, (4567 * 1000) * 1000, 98765432101234]) AS number,\\n    formatReadableQuantity(number) AS number_for_humans\\n```\\n\\n```response title=Response\\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500number\u2500\u252c\u2500number_for_humans\u2500\u2510\\n\u2502           1024 \u2502 1.02 thousand     \u2502\\n\u2502        1234000 \u2502 1.23 million      \u2502\\n\u2502     4567000000 \u2502 4.57 billion      \u2502\\n\u2502 98765432101234 \u2502 98.77 trillion    \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Format numbers with suffixes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1024, 1234 * 1000, (4567 * 1000) * 1000, 98765432101234]) AS number,\\n    formatReadableQuantity(number) AS number_for_humans\\n```\\n\\n```response title=Response\\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500number\u2500\u252c\u2500number_for_humans\u2500\u2510\\n\u2502           1024 \u2502 1.02 thousand     \u2502\\n\u2502        1234000 \u2502 1.23 million      \u2502\\n\u2502     4567000000 \u2502 4.57 billion      \u2502\\n\u2502 98765432101234 \u2502 98.77 trillion    \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**With explicit precision**\\n\\n```sql title=Query\\nSELECT\\n    formatReadableQuantity(98765432101234, 0) AS no_decimals,\\n    formatReadableQuantity(98765432101234, 4) AS four_decimals\\n```\\n\\n```response title=Response\\n\u250c\u2500no_decimals\u2500\u2500\u252c\u2500four_decimals\u2500\u2500\u2500\u2500\u2500\u2510\\n\u2502 99 trillion  \u2502 98.7654 trillion  \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "20.10.0",
     "is_aggregate": "0",
@@ -8313,7 +8313,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns a rounded number with suffix as a string. [`String`](/sql-reference/data-types/string)",
-    "syntax": "formatReadableQuantity(x)"
+    "syntax": "formatReadableQuantity(value[, precision])"
   },
   {
     "alias_to": "",
@@ -13861,13 +13861,13 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 Size in bytes. [`UInt64`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `value` \u2014 Size in bytes. [`Int8`](/sql-reference/data-types/int-uint) or [`Int16`](/sql-reference/data-types/int-uint) or [`Int32`](/sql-reference/data-types/int-uint) or [`Int64`](/sql-reference/data-types/int-uint) or [`UInt8`](/sql-reference/data-types/int-uint) or [`UInt16`](/sql-reference/data-types/int-uint) or [`UInt32`](/sql-reference/data-types/int-uint) or [`UInt64`](/sql-reference/data-types/int-uint) or [`Float32`](/sql-reference/data-types/float) or [`Float64`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `precision` \u2014 Optional. Number of digits after the decimal point. Defaults to 2. [`const UInt8`](/sql-reference/data-types/int-uint)\\n",
     "case_insensitive": "0",
     "categories": "Other",
     "create_query": "",
     "description": "\\nGiven a size (number of bytes), this function returns a readable, rounded size with suffix (KB, MB, etc.) as a string.\\n\\nThe opposite operations of this function are [`parseReadableSize`](#parseReadableSize).\\n    ",
     "deterministic": "1",
-    "examples": "**Format file sizes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1, 1024, 1024*1024, 192851925]) AS filesize_bytes,\\n    formatReadableDecimalSize(filesize_bytes) AS filesize\\n```\\n\\n```response title=Response\\n\u250c\u2500filesize_bytes\u2500\u252c\u2500filesize\u2500\u2500\u2500\u2510\\n\u2502              1 \u2502 1.00 B     \u2502\\n\u2502           1024 \u2502 1.02 KB    \u2502\\n\u2502        1048576 \u2502 1.05 MB    \u2502\\n\u2502      192851925 \u2502 192.85 MB  \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Format file sizes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1, 1024, 1024*1024, 192851925]) AS filesize_bytes,\\n    formatReadableDecimalSize(filesize_bytes) AS filesize\\n```\\n\\n```response title=Response\\n\u250c\u2500filesize_bytes\u2500\u252c\u2500filesize\u2500\u2500\u2500\u2510\\n\u2502              1 \u2502 1.00 B     \u2502\\n\u2502           1024 \u2502 1.02 KB    \u2502\\n\u2502        1048576 \u2502 1.05 MB    \u2502\\n\u2502      192851925 \u2502 192.85 MB  \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**With explicit precision**\\n\\n```sql title=Query\\nSELECT\\n    formatReadableDecimalSize(192851925, 0) AS no_decimals,\\n    formatReadableDecimalSize(192851925, 4) AS four_decimals\\n```\\n\\n```response title=Response\\n\u250c\u2500no_decimals\u2500\u252c\u2500four_decimals\u2500\u2510\\n\u2502 193 MB      \u2502 192.8519 MB   \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "22.11.0",
     "is_aggregate": "0",
@@ -13875,7 +13875,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns a readable, rounded size with suffix as a string. [`String`](/sql-reference/data-types/string)",
-    "syntax": "formatReadableDecimalSize(x)"
+    "syntax": "formatReadableDecimalSize(value[, precision])"
   },
   {
     "alias_to": "",
@@ -21151,13 +21151,13 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 Size in bytes. [`UInt64`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `value` \u2014 Size in bytes. [`Int8`](/sql-reference/data-types/int-uint) or [`Int16`](/sql-reference/data-types/int-uint) or [`Int32`](/sql-reference/data-types/int-uint) or [`Int64`](/sql-reference/data-types/int-uint) or [`UInt8`](/sql-reference/data-types/int-uint) or [`UInt16`](/sql-reference/data-types/int-uint) or [`UInt32`](/sql-reference/data-types/int-uint) or [`UInt64`](/sql-reference/data-types/int-uint) or [`Float32`](/sql-reference/data-types/float) or [`Float64`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `precision` \u2014 Optional. Number of digits after the decimal point. Defaults to 2. [`const UInt8`](/sql-reference/data-types/int-uint)\\n",
     "case_insensitive": "0",
     "categories": "Other",
     "create_query": "",
     "description": "\\nGiven a size (number of bytes), this function returns a readable, rounded size with suffix (KiB, MiB, etc.) as string.\\n\\nThe opposite operations of this function are [`parseReadableSize`](#parseReadableSize), [`parseReadableSizeOrZero`](#parseReadableSizeOrZero), and [`parseReadableSizeOrNull`](#parseReadableSizeOrNull).\\nThis function accepts any numeric type as input, but internally it casts them to `Float64`. Results might be suboptimal with large values.\\n    ",
     "deterministic": "1",
-    "examples": "**Format file sizes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1, 1024, 1024*1024, 192851925]) AS filesize_bytes,\\n    formatReadableSize(filesize_bytes) AS filesize\\n```\\n\\n```response title=Response\\n\u250c\u2500filesize_bytes\u2500\u252c\u2500filesize\u2500\u2500\u2500\u2510\\n\u2502              1 \u2502 1.00 B     \u2502\\n\u2502           1024 \u2502 1.00 KiB   \u2502\\n\u2502        1048576 \u2502 1.00 MiB   \u2502\\n\u2502      192851925 \u2502 183.92 MiB \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Format file sizes**\\n\\n```sql title=Query\\nSELECT\\n    arrayJoin([1, 1024, 1024*1024, 192851925]) AS filesize_bytes,\\n    formatReadableSize(filesize_bytes) AS filesize\\n```\\n\\n```response title=Response\\n\u250c\u2500filesize_bytes\u2500\u252c\u2500filesize\u2500\u2500\u2500\u2510\\n\u2502              1 \u2502 1.00 B     \u2502\\n\u2502           1024 \u2502 1.00 KiB   \u2502\\n\u2502        1048576 \u2502 1.00 MiB   \u2502\\n\u2502      192851925 \u2502 183.92 MiB \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**With explicit precision**\\n\\n```sql title=Query\\nSELECT\\n    formatReadableSize(192851925, 0) AS no_decimals,\\n    formatReadableSize(192851925, 4) AS four_decimals\\n```\\n\\n```response title=Response\\n\u250c\u2500no_decimals\u2500\u252c\u2500four_decimals\u2500\u2500\u2510\\n\u2502 184 MiB     \u2502 183.9179 MiB   \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "1.1.0",
     "is_aggregate": "0",
@@ -21165,7 +21165,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns a readable, rounded size with suffix as a string. [`String`](/sql-reference/data-types/string)",
-    "syntax": "formatReadableSize(x)"
+    "syntax": "formatReadableSize(value[, precision])"
   },
   {
     "alias_to": "",

@@ -822,6 +822,7 @@
   "optimize_normalize_count_variants": "https://clickhouse.com/docs/operations/settings/settings#optimize_normalize_count_variants",
   "optimize_on_insert": "https://clickhouse.com/docs/operations/settings/settings#optimize_on_insert",
   "optimize_or_like_chain": "https://clickhouse.com/docs/operations/settings/settings#optimize_or_like_chain",
+  "optimize_prewhere_after_pushdown": "https://clickhouse.com/docs/operations/settings/settings#optimize_prewhere_after_pushdown",
   "optimize_qbit_distance_function_reads": "https://clickhouse.com/docs/operations/settings/settings#optimize_qbit_distance_function_reads",
   "optimize_read_in_order": "https://clickhouse.com/docs/operations/settings/settings#optimize_read_in_order",
   "optimize_redundant_functions_in_order_by": "https://clickhouse.com/docs/operations/settings/settings#optimize_redundant_functions_in_order_by",

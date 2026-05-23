@@ -3145,6 +3145,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_prewhere_after_pushdown"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_execute_functions_after_sorting"
   },
   {
