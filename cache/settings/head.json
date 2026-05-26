@@ -2105,6 +2105,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_sharding_aggregator"
+  },
+  {
+    "alias_for": "",
     "name": "read_in_order_use_buffering"
   },
   {
@@ -2933,6 +2937,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_limit_by_partitions_independently"
+  },
+  {
+    "alias_for": "",
     "name": "max_number_of_partitions_for_independent_aggregation"
   },
   {
@@ -3118,6 +3126,10 @@
   {
     "alias_for": "",
     "name": "query_plan_merge_filters"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_push_limit_by_into_sort"
   },
   {
     "alias_for": "",

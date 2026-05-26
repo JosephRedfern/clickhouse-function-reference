@@ -12673,13 +12673,13 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 `LIKE` pattern to match against. Can contain `%` (matches any number of characters), `_` (matches single character), and `\\\\` for escaping. [`String`](/sql-reference/data-types/string)\\n",
+    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 `LIKE` pattern to match against. Can contain `%` (matches any number of characters), `_` (matches single character), and `\\\\` for escaping. [`String`](/sql-reference/data-types/string)\\n- `escape_character` \u2014 Optional single-character string to use as the escape character instead of `\\\\`. Default: `\\\\`. [`String`](/sql-reference/data-types/string)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "\\nReturns whether string `haystack` matches the `LIKE` expression `pattern`.\\n\\nA `LIKE` expression can contain normal characters and the following metasymbols:\\n\\n- `%` indicates an arbitrary number of arbitrary characters (including zero characters).\\n- `_` indicates a single arbitrary character.\\n- `\\\\` is for escaping literals `%`, `_` and `\\\\`.\\n\\nMatching is based on UTF-8, e.g. `_` matches the Unicode code point `\u00a5` which is represented in UTF-8 using two bytes.\\n\\nIf the haystack or the `LIKE` expression are not valid UTF-8, the behavior is undefined.\\n\\nNo automatic Unicode normalization is performed, you can use the `normalizeUTF8*` functions for that.\\n\\nTo match against literal `%`, `_` and `\\\\` (which are `LIKE` metacharacters), prepend them with a backslash: `\\\\%`, `\\\\_` and `\\\\\\\\`.\\nThe backslash loses its special meaning (i.e. is interpreted literally) if it prepends a character different than `%`, `_` or `\\\\`.\\n\\n:::note\\nClickHouse requires backslashes in strings [to be quoted as well](../syntax.md#string), so you would actually need to write `\\\\\\\\%`, `\\\\\\\\_` and `\\\\\\\\\\\\\\\\`.\\n:::\\n\\nFor `LIKE` expressions of the form `%needle%`, the function is as fast as the `position` function.\\nAll other LIKE expressions are internally converted to a regular expression and executed with a performance similar to function `match`.\\n   ",
+    "description": "\\nReturns whether string `haystack` matches the `LIKE` expression `pattern`.\\n\\nA `LIKE` expression can contain normal characters and the following metasymbols:\\n\\n- `%` indicates an arbitrary number of arbitrary characters (including zero characters).\\n- `_` indicates a single arbitrary character.\\n- `\\\\` is for escaping literals `%`, `_` and `\\\\`.\\n\\nMatching is based on UTF-8, e.g. `_` matches the Unicode code point `\u00a5` which is represented in UTF-8 using two bytes.\\n\\nIf the haystack or the `LIKE` expression are not valid UTF-8, the behavior is undefined.\\n\\nNo automatic Unicode normalization is performed, you can use the `normalizeUTF8*` functions for that.\\n\\nTo match against literal `%`, `_` and `\\\\` (which are `LIKE` metacharacters), prepend them with a backslash: `\\\\%`, `\\\\_` and `\\\\\\\\`.\\nThe backslash loses its special meaning (i.e. is interpreted literally) if it prepends a character different than `%`, `_` or `\\\\`.\\n\\n:::note\\nClickHouse requires backslashes in strings [to be quoted as well](../syntax.md#string), so you would actually need to write `\\\\\\\\%`, `\\\\\\\\_` and `\\\\\\\\\\\\\\\\`.\\n:::\\n\\nFor `LIKE` expressions of the form `%needle%`, the function is as fast as the `position` function.\\nAll other LIKE expressions are internally converted to a regular expression and executed with a performance similar to function `match`.\\n\\n## ESCAPE clause\\n\\nThe optional `ESCAPE` clause specifies a custom escape character (must be a single ASCII character).\\nWhen provided, the custom escape character replaces the default backslash for escaping `%` and `_` metacharacters.\\nThe escape character can escape three things: `%` (literal percent), `_` (literal underscore), and itself (literal escape character).\\nWhen a custom escape character is used, the backslash has no special meaning and is treated as a literal character.\\n   ",
     "deterministic": "1",
-    "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'%House\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickHouse\\', \\'%House\\')\u2500\u2510\\n\u2502                            1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**Single character wildcard**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'Click_ouse\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickH\u22eflick_ouse\\')\u2500\u2510\\n\u2502                        1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**Non-matching pattern**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'%SQL%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickHouse\\', \\'%SQL%\\')\u2500\u2510\\n\u2502                           0 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'%House\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickHouse\\', \\'%House\\')\u2500\u2510\\n\u2502                            1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**Single character wildcard**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'Click_ouse\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickH\u22eflick_ouse\\')\u2500\u2510\\n\u2502                        1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**Non-matching pattern**\\n\\n```sql title=Query\\nSELECT like(\\'ClickHouse\\', \\'%SQL%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'ClickHouse\\', \\'%SQL%\\')\u2500\u2510\\n\u2502                           0 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**ESCAPE clause**\\n\\n```sql title=Query\\nSELECT \\'50%off\\' LIKE \\'50#%off\\' ESCAPE \\'#\\';\\n```\\n\\n```response title=Response\\n\u250c\u2500like(\\'50%off\\', \\'50#%off\\', \\'#\\')\u2500\u2510\\n\u2502                              1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "1.1.0",
     "is_aggregate": "0",
@@ -12687,7 +12687,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns `1` if the string matches the `LIKE` pattern, otherwise `0`. [`UInt8`](/sql-reference/data-types/int-uint)",
-    "syntax": "like(haystack, pattern)\\n-- haystack LIKE pattern"
+    "syntax": "like(haystack, pattern[, escape_character])\\n-- haystack LIKE pattern [ESCAPE \\'escape_character\\']"
   },
   {
     "alias_to": "",
@@ -14221,11 +14221,11 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `haystack` \u2014 The input string to search in. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 The SQL LIKE pattern to match against. `%` matches any number of characters (including zero), `_` matches exactly one character. [`String`](/sql-reference/data-types/string)\\n",
+    "arguments": "- `haystack` \u2014 The input string to search in. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 The SQL LIKE pattern to match against. `%` matches any number of characters (including zero), `_` matches exactly one character. [`String`](/sql-reference/data-types/string)\\n- `escape_character` \u2014 Optional single-character string to use as the escape character instead of `\\\\`. Default: `\\\\`. [`String`](/sql-reference/data-types/string)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "Checks whether a string does not match a pattern, case-insensitive. The pattern can contain special characters `%` and `_` for SQL LIKE matching.",
+    "description": "Checks whether a string does not match a pattern, case-insensitive. The pattern can contain special characters `%` and `_` for SQL LIKE matching. Supports the optional `ESCAPE` clause (see `like`).",
     "deterministic": "1",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT notILike(\\'ClickHouse\\', \\'%house%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500notILike(\\'Cl\u22ef \\'%house%\\')\u2500\u2510\\n\u2502                        0 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
@@ -14235,7 +14235,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns `1` if the string does not match the pattern (case-insensitive), otherwise `0`. [`UInt8`](/sql-reference/data-types/int-uint)",
-    "syntax": "notILike(haystack, pattern)"
+    "syntax": "notILike(haystack, pattern[, escape_character])\\n-- haystack NOT ILIKE pattern [ESCAPE \\'escape_character\\']"
   },
   {
     "alias_to": "",
@@ -14491,11 +14491,11 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 LIKE pattern to match against. [`String`](/sql-reference/data-types/string)\\n",
+    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 LIKE pattern to match against. [`String`](/sql-reference/data-types/string)\\n- `escape_character` \u2014 Optional single-character string to use as the escape character instead of `\\\\`. Default: `\\\\`. [`String`](/sql-reference/data-types/string)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "Similar to [`like`](#like) but negates the result.",
+    "description": "Similar to [`like`](#like) but negates the result. Supports the optional `ESCAPE` clause (see `like`).",
     "deterministic": "1",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT notLike(\\'ClickHouse\\', \\'%House%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500notLike(\\'Cli\u22ef \\'%House%\\')\u2500\u2510\\n\u2502                        0 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n**Non-matching pattern**\\n\\n```sql title=Query\\nSELECT notLike(\\'ClickHouse\\', \\'%SQL%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500notLike(\\'Cli\u22ef\\', \\'%SQL%\\')\u2500\u2510\\n\u2502                        1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
@@ -14505,7 +14505,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns `1` if the string does not match the `LIKE` pattern, otherwise `0`. [`UInt8`](/sql-reference/data-types/int-uint)",
-    "syntax": "notLike(haystack, pattern)\\n-- haystack NOT LIKE pattern"
+    "syntax": "notLike(haystack, pattern[, escape_character])\\n-- haystack NOT LIKE pattern [ESCAPE \\'escape_character\\']"
   },
   {
     "alias_to": "",
@@ -25255,11 +25255,11 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 LIKE pattern to match against. [`String`](/sql-reference/data-types/string)\\n",
+    "arguments": "- `haystack` \u2014 String in which the search is performed. [`String`](/sql-reference/data-types/string) or [`FixedString`](/sql-reference/data-types/fixedstring)\\n- `pattern` \u2014 LIKE pattern to match against. [`String`](/sql-reference/data-types/string)\\n- `escape_character` \u2014 Optional single-character string to use as the escape character instead of `\\\\`. Default: `\\\\`. [`String`](/sql-reference/data-types/string)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
-    "description": "Like [`like`](#like) but searches case-insensitively.",
+    "description": "Like [`like`](#like) but searches case-insensitively. Supports the optional `ESCAPE` clause (see `like`).",
     "deterministic": "1",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT ilike(\\'ClickHouse\\', \\'%house%\\');\\n```\\n\\n```response title=Response\\n\u250c\u2500ilike(\\'ClickHouse\\', \\'%house%\\')\u2500\u2510\\n\u2502                              1 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
@@ -25269,7 +25269,7 @@
     "origin": "System",
     "parameters": "",
     "returned_value": "Returns `1` if the string matches the LIKE pattern (case-insensitive), otherwise `0`. [`UInt8`](/sql-reference/data-types/int-uint)",
-    "syntax": "ilike(haystack, pattern)\\n-- haystack ILIKE pattern"
+    "syntax": "ilike(haystack, pattern[, escape_character])\\n-- haystack ILIKE pattern [ESCAPE \\'escape_character\\']"
   },
   {
     "alias_to": "",
