@@ -369,9 +369,6 @@
     "name": "DATA"
   },
   {
-    "name": "DATA INNER UUID"
-  },
-  {
     "name": "DATABASE"
   },
   {
@@ -774,6 +771,12 @@
     "name": "INNER"
   },
   {
+    "name": "INNER UUID"
+  },
+  {
+    "name": "INNER COLUMNS"
+  },
+  {
     "name": "INSERT INTO"
   },
   {
@@ -958,9 +961,6 @@
   },
   {
     "name": "METRICS"
-  },
-  {
-    "name": "METRICS INNER UUID"
   },
   {
     "name": "MI"
@@ -1410,6 +1410,9 @@
     "name": "SAMPLE"
   },
   {
+    "name": "SAMPLES"
+  },
+  {
     "name": "SAN"
   },
   {
@@ -1567,9 +1570,6 @@
   },
   {
     "name": "TAGS"
-  },
-  {
-    "name": "TAGS INNER UUID"
   },
   {
     "name": "TEMPORARY TABLE"
