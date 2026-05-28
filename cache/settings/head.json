@@ -2877,6 +2877,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_rewrite_has_to_in"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_dictget_tuple_element"
   },
   {
@@ -4577,6 +4581,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_streaming_queries"
+  },
+  {
+    "alias_for": "",
     "name": "allow_statistics_optimize"
   },
   {
@@ -4938,6 +4946,10 @@
   {
     "alias_for": "",
     "name": "ai_function_throw_on_quota_exceeded"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_embedding_max_batch_size"
   },
   {
     "alias_for": "",

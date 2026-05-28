@@ -159,6 +159,7 @@
   "age": "https://clickhouse.com/docs/sql-reference/functions/date-time-functions#age",
   "aggThrow": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/aggthrow",
   "aiClassify": "https://clickhouse.com/docs/sql-reference/functions/ai-functions#aiClassify",
+  "aiEmbed": "https://clickhouse.com/docs/sql-reference/functions/ai-functions#aiEmbed",
   "aiExtract": "https://clickhouse.com/docs/sql-reference/functions/ai-functions#aiExtract",
   "aiGenerate": "https://clickhouse.com/docs/sql-reference/functions/ai-functions#aiGenerate",
   "aiTranslate": "https://clickhouse.com/docs/sql-reference/functions/ai-functions#aiTranslate",

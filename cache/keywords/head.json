@@ -363,6 +363,9 @@
     "name": "CURRENTUSER"
   },
   {
+    "name": "CURSOR"
+  },
+  {
     "name": "D"
   },
   {
@@ -1531,6 +1534,9 @@
   },
   {
     "name": "STORAGE"
+  },
+  {
+    "name": "STREAM"
   },
   {
     "name": "STRICT"
