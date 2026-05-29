@@ -4021,6 +4021,10 @@
   },
   {
     "alias_for": "",
+    "name": "show_remote_databases_in_system_tables"
+  },
+  {
+    "alias_for": "show_remote_databases_in_system_tables",
     "name": "show_data_lake_catalogs_in_system_tables"
   },
   {
