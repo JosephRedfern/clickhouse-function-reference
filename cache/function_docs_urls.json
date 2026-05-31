@@ -684,6 +684,7 @@
   "h3PointDistM": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3pointdistm",
   "h3PointDistRads": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3pointdistrads",
   "h3PolygonToCells": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3polygontocells",
+  "h3PolygonToCellsWithContainment": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3polygontocellswithcontainment",
   "h3ToCenterChild": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3tocenterchild",
   "h3ToChildren": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3tochildren",
   "h3ToGeo": "https://clickhouse.com/docs/sql-reference/functions/geo/h3#h3togeo",

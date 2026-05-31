@@ -4069,6 +4069,10 @@
   },
   {
     "alias_for": "",
+    "name": "file_like_engine_default_partition_strategy"
+  },
+  {
+    "alias_for": "",
     "name": "use_iceberg_partition_pruning"
   },
   {

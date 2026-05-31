@@ -411,6 +411,7 @@
   "extract_key_value_pairs_max_pairs_per_row": "https://clickhouse.com/docs/operations/settings/settings#extract_key_value_pairs_max_pairs_per_row",
   "extremes": "https://clickhouse.com/docs/operations/settings/settings#extremes",
   "fallback_to_stale_replicas_for_distributed_queries": "https://clickhouse.com/docs/operations/settings/settings#fallback_to_stale_replicas_for_distributed_queries",
+  "file_like_engine_default_partition_strategy": "https://clickhouse.com/docs/operations/settings/settings#file_like_engine_default_partition_strategy",
   "filesystem_cache_allow_background_download": "https://clickhouse.com/docs/operations/settings/settings#filesystem_cache_allow_background_download",
   "filesystem_cache_boundary_alignment": "https://clickhouse.com/docs/operations/settings/settings#filesystem_cache_boundary_alignment",
   "filesystem_cache_enable_background_download_during_fetch": "https://clickhouse.com/docs/operations/settings/settings#filesystem_cache_enable_background_download_during_fetch",
