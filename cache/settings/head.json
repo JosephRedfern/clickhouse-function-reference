@@ -3237,11 +3237,7 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_max_limit_for_join_lazy_indexing"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_min_columns_for_join_lazy_indexing"
+    "name": "query_plan_max_set_size_for_projection_match"
   },
   {
     "alias_for": "",

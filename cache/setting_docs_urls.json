@@ -956,6 +956,7 @@
   "query_plan_max_limit_for_lazy_materialization": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_limit_for_lazy_materialization",
   "query_plan_max_limit_for_top_k_optimization": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_limit_for_top_k_optimization",
   "query_plan_max_optimizations_to_apply": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_optimizations_to_apply",
+  "query_plan_max_set_size_for_projection_match": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_set_size_for_projection_match",
   "query_plan_max_step_description_length": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_step_description_length",
   "query_plan_merge_expressions": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_expressions",
   "query_plan_merge_filter_into_join_condition": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_filter_into_join_condition",
