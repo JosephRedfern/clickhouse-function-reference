@@ -4541,6 +4541,10 @@
   },
   {
     "alias_for": "",
+    "name": "unique_key_max_encoded_size"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_unique_key"
   },
   {
