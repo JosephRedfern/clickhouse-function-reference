@@ -6213,6 +6213,10 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_float_precision"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_trim_fixed_string"
   },
   {

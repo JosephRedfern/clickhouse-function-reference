@@ -1139,6 +1139,7 @@
   "transform_null_in": "https://clickhouse.com/docs/operations/settings/settings#transform_null_in",
   "traverse_shadow_remote_data_paths": "https://clickhouse.com/docs/operations/settings/settings#traverse_shadow_remote_data_paths",
   "union_default_mode": "https://clickhouse.com/docs/operations/settings/settings#union_default_mode",
+  "unique_key_max_encoded_size": "https://clickhouse.com/docs/operations/settings/settings#unique_key_max_encoded_size",
   "unknown_packet_in_send_data": "https://clickhouse.com/docs/operations/settings/settings#unknown_packet_in_send_data",
   "update_parallel_mode": "https://clickhouse.com/docs/operations/settings/settings#update_parallel_mode",
   "update_sequential_consistency": "https://clickhouse.com/docs/operations/settings/settings#update_sequential_consistency",
