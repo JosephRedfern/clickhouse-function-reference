@@ -4269,6 +4269,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyzer_compatibility_prefer_alias_over_subcolumn"
+  },
+  {
+    "alias_for": "",
     "name": "session_timezone"
   },
   {

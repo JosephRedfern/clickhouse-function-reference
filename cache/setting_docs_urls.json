@@ -115,6 +115,7 @@
   "analyze_index_with_space_filling_curves": "https://clickhouse.com/docs/operations/settings/settings#analyze_index_with_space_filling_curves",
   "analyzer_compatibility_allow_compound_identifiers_in_unflatten_nested": "https://clickhouse.com/docs/operations/settings/settings#analyzer_compatibility_allow_compound_identifiers_in_unflatten_nested",
   "analyzer_compatibility_join_using_top_level_identifier": "https://clickhouse.com/docs/operations/settings/settings#analyzer_compatibility_join_using_top_level_identifier",
+  "analyzer_compatibility_prefer_alias_over_subcolumn": "https://clickhouse.com/docs/operations/settings/settings#analyzer_compatibility_prefer_alias_over_subcolumn",
   "analyzer_inline_views": "https://clickhouse.com/docs/operations/settings/settings#analyzer_inline_views",
   "any_join_distinct_right_table_keys": "https://clickhouse.com/docs/operations/settings/settings#any_join_distinct_right_table_keys",
   "apply_deleted_mask": "https://clickhouse.com/docs/operations/settings/settings#apply_deleted_mask",
