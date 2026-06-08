@@ -1830,6 +1830,12 @@
     "name": "IS_OBJECT_ID"
   },
   {
+    "name": "IPV4_PREFIX_BITS"
+  },
+  {
+    "name": "IPV6_PREFIX_BITS"
+  },
+  {
     "name": "NO_PASSWORD"
   },
   {

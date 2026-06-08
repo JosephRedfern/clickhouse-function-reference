@@ -6001,6 +6001,14 @@
   },
   {
     "alias_for": "",
+    "name": "format_avro_schema_registry_max_retries"
+  },
+  {
+    "alias_for": "",
+    "name": "format_avro_schema_registry_retry_initial_backoff_ms"
+  },
+  {
+    "alias_for": "",
     "name": "input_format_binary_read_json_as_string"
   },
   {
