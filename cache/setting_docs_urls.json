@@ -1201,6 +1201,7 @@
   "wait_changes_become_visible_after_commit_mode": "https://clickhouse.com/docs/operations/settings/settings#wait_changes_become_visible_after_commit_mode",
   "wait_for_async_insert": "https://clickhouse.com/docs/operations/settings/settings#wait_for_async_insert",
   "wait_for_async_insert_timeout": "https://clickhouse.com/docs/operations/settings/settings#wait_for_async_insert_timeout",
+  "wait_for_part_commit_in_dependent_materialized_views": "https://clickhouse.com/docs/operations/settings/settings#wait_for_part_commit_in_dependent_materialized_views",
   "wait_for_window_view_fire_signal_timeout": "https://clickhouse.com/docs/operations/settings/settings#wait_for_window_view_fire_signal_timeout",
   "webassembly_udf_max_fuel": "https://clickhouse.com/docs/operations/settings/settings#webassembly_udf_max_fuel",
   "webassembly_udf_max_input_block_size": "https://clickhouse.com/docs/operations/settings/settings#webassembly_udf_max_input_block_size",

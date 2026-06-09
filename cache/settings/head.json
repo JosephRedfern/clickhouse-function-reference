@@ -2469,6 +2469,10 @@
   },
   {
     "alias_for": "",
+    "name": "wait_for_part_commit_in_dependent_materialized_views"
+  },
+  {
+    "alias_for": "",
     "name": "materialized_views_ignore_errors"
   },
   {
@@ -3286,6 +3290,10 @@
   {
     "alias_for": "",
     "name": "function_sleep_max_microseconds_per_block"
+  },
+  {
+    "alias_for": "",
+    "name": "function_base58_max_input_size"
   },
   {
     "alias_for": "",
