@@ -447,6 +447,7 @@
   "formatdatetime_format_without_leading_zeros": "https://clickhouse.com/docs/operations/settings/settings#formatdatetime_format_without_leading_zeros",
   "formatdatetime_parsedatetime_m_is_month_name": "https://clickhouse.com/docs/operations/settings/settings#formatdatetime_parsedatetime_m_is_month_name",
   "fsync_metadata": "https://clickhouse.com/docs/operations/settings/settings#fsync_metadata",
+  "function_base58_max_input_size": "https://clickhouse.com/docs/operations/settings/settings#function_base58_max_input_size",
   "function_date_trunc_return_type_behavior": "https://clickhouse.com/docs/operations/settings/settings#function_date_trunc_return_type_behavior",
   "function_implementation": "https://clickhouse.com/docs/operations/settings/settings#function_implementation",
   "function_json_value_return_type_allow_complex": "https://clickhouse.com/docs/operations/settings/settings#function_json_value_return_type_allow_complex",

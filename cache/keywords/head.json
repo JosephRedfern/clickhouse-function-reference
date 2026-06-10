@@ -1902,6 +1902,12 @@
     "name": "STRICTLY_ASCENDING"
   },
   {
+    "name": "TIMEZONE_HOUR"
+  },
+  {
+    "name": "TIMEZONE_MINUTE"
+  },
+  {
     "name": "WITH_ITEMINDEX"
   }
 ]
