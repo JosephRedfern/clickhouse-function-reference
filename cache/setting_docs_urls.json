@@ -1170,6 +1170,7 @@
   "use_primary_key": "https://clickhouse.com/docs/operations/settings/settings#use_primary_key",
   "use_query_cache": "https://clickhouse.com/docs/operations/settings/settings#use_query_cache",
   "use_query_condition_cache": "https://clickhouse.com/docs/operations/settings/settings#use_query_condition_cache",
+  "use_reader_executor": "https://clickhouse.com/docs/operations/settings/settings#use_reader_executor",
   "use_roaring_bitmap_iceberg_positional_deletes": "https://clickhouse.com/docs/operations/settings/settings#use_roaring_bitmap_iceberg_positional_deletes",
   "use_skip_indexes": "https://clickhouse.com/docs/operations/settings/settings#use_skip_indexes",
   "use_skip_indexes_for_disjunctions": "https://clickhouse.com/docs/operations/settings/settings#use_skip_indexes_for_disjunctions",

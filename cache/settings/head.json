@@ -529,6 +529,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_reader_executor"
+  },
+  {
+    "alias_for": "",
     "name": "azure_skip_empty_files"
   },
   {
