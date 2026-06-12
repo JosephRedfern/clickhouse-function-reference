@@ -4093,6 +4093,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_limit_by_in_order"
+  },
+  {
+    "alias_for": "",
     "name": "keeper_map_strict_mode"
   },
   {
@@ -4534,6 +4538,10 @@
   {
     "alias_for": "",
     "name": "enable_join_fixed_hash_table_conversion"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_join_runtime_filter_shared_fixed_hash_table"
   },
   {
     "alias_for": "",
