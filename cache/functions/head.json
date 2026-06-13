@@ -6882,7 +6882,7 @@
     "categories": "Internal",
     "create_query": "",
     "description": "",
-    "deterministic": "1",
+    "deterministic": "0",
     "examples": "",
     "higher_order": "0",
     "introduced_in": "",

@@ -6349,6 +6349,10 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_pretty_use_nbsp_for_padding"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_pretty_highlight_digit_groups"
   },
   {
