@@ -1347,6 +1347,9 @@
     "name": "REPLICATED"
   },
   {
+    "name": "ADD ENUM VALUES"
+  },
+  {
     "name": "RESET SETTING"
   },
   {
