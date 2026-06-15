@@ -6533,6 +6533,18 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_image_width"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_image_height"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_image_terminal_mode"
+  },
+  {
+    "alias_for": "",
     "name": "input_format_max_block_size_bytes"
   },
   {
