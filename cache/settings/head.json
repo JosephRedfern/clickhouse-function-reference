@@ -3097,6 +3097,14 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_limit_by_function_keys"
+  },
+  {
+    "alias_for": "",
+    "name": "optimize_injective_functions_in_limit_by"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_group_by_constant_keys"
   },
   {
@@ -6242,6 +6250,10 @@
   {
     "alias_for": "",
     "name": "output_format_decimal_trailing_zeros"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_always_write_decimal_point_in_float_and_decimal"
   },
   {
     "alias_for": "",
