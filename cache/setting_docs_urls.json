@@ -359,6 +359,7 @@
   "enable_global_with_statement": "https://clickhouse.com/docs/operations/settings/settings#enable_global_with_statement",
   "enable_hdfs_pread": "https://clickhouse.com/docs/operations/settings/settings#enable_hdfs_pread",
   "enable_http_compression": "https://clickhouse.com/docs/operations/settings/settings#enable_http_compression",
+  "enable_identifier_resolve_cache": "https://clickhouse.com/docs/operations/settings/settings#enable_identifier_resolve_cache",
   "enable_job_stack_trace": "https://clickhouse.com/docs/operations/settings/settings#enable_job_stack_trace",
   "enable_join_fixed_hash_table_conversion": "https://clickhouse.com/docs/operations/settings/settings#enable_join_fixed_hash_table_conversion",
   "enable_join_runtime_filter_shared_fixed_hash_table": "https://clickhouse.com/docs/operations/settings/settings#enable_join_runtime_filter_shared_fixed_hash_table",
