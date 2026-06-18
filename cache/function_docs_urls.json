@@ -808,6 +808,7 @@
   "lessOrEquals": "https://clickhouse.com/docs/sql-reference/functions/comparison-functions#lessOrEquals",
   "lgamma": "https://clickhouse.com/docs/sql-reference/functions/math-functions#lgamma",
   "like": "https://clickhouse.com/docs/sql-reference/functions/string-search-functions#like",
+  "localtime": "https://clickhouse.com/docs/sql-reference/functions/date-time-functions#localtime",
   "locate": "https://clickhouse.com/docs/sql-reference/functions/string-search-functions#locate",
   "log": "https://clickhouse.com/docs/sql-reference/functions/math-functions#log",
   "log10": "https://clickhouse.com/docs/sql-reference/functions/math-functions#log10",

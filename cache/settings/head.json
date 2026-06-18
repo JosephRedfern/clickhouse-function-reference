@@ -4553,10 +4553,6 @@
   },
   {
     "alias_for": "",
-    "name": "enable_join_runtime_filter_shared_fixed_hash_table"
-  },
-  {
-    "alias_for": "",
     "name": "allow_experimental_materialized_postgresql_table"
   },
   {
@@ -4882,6 +4878,10 @@
   {
     "alias_for": "",
     "name": "join_runtime_bloom_filter_max_ratio_of_set_bits"
+  },
+  {
+    "alias_for": "",
+    "name": "join_runtime_filter_from_fixed_hash_table"
   },
   {
     "alias_for": "",
