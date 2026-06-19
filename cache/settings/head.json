@@ -4525,6 +4525,14 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_nullable_tuple_type"
+  },
+  {
+    "alias_for": "allow_experimental_nullable_tuple_type",
+    "name": "enable_nullable_tuple_type"
+  },
+  {
+    "alias_for": "",
     "name": "archive_adaptive_buffer_max_size_bytes"
   },
   {
@@ -4726,10 +4734,6 @@
   {
     "alias_for": "",
     "name": "allow_experimental_database_materialized_postgresql"
-  },
-  {
-    "alias_for": "",
-    "name": "allow_experimental_nullable_tuple_type"
   },
   {
     "alias_for": "",
@@ -4958,6 +4962,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_ai_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_credentials"
   },
   {
     "alias_for": "",
