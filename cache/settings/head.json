@@ -4561,6 +4561,14 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_max_limit_for_join_lazy_indexing"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_min_columns_for_join_lazy_indexing"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_materialized_postgresql_table"
   },
   {
@@ -6286,6 +6294,10 @@
   {
     "alias_for": "",
     "name": "input_format_record_errors_file_path"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_geojson_unsupported_geometry_handling"
   },
   {
     "alias_for": "",
