@@ -1301,6 +1301,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_optimize_join_order_max_searched_plans"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_optimize_join_order_randomize"
   },
   {
