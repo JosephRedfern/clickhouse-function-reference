@@ -989,11 +989,7 @@
   },
   {
     "alias_for": "",
-    "name": "force_index_by_date"
-  },
-  {
-    "alias_for": "",
-    "name": "use_primary_key"
+    "name": "use_lightweight_primary_key_index_analysis"
   },
   {
     "alias_for": "",
@@ -1002,6 +998,14 @@
   {
     "alias_for": "use_partition_pruning",
     "name": "use_partition_key"
+  },
+  {
+    "alias_for": "",
+    "name": "force_index_by_date"
+  },
+  {
+    "alias_for": "",
+    "name": "use_primary_key"
   },
   {
     "alias_for": "",
@@ -4753,10 +4757,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_query_deduplication"
-  },
-  {
-    "alias_for": "",
     "name": "allow_experimental_database_hms_catalog"
   },
   {
@@ -5014,6 +5014,10 @@
   {
     "alias_for": "",
     "name": "ai_function_embedding_max_batch_size"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_query_deduplication"
   },
   {
     "alias_for": "",
