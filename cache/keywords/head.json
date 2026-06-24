@@ -966,6 +966,9 @@
     "name": "MEMORY"
   },
   {
+    "name": "MEMORY RESERVATION"
+  },
+  {
     "name": "MERGES"
   },
   {

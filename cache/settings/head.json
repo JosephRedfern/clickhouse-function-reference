@@ -1893,6 +1893,10 @@
   },
   {
     "alias_for": "",
+    "name": "reserve_memory"
+  },
+  {
+    "alias_for": "",
     "name": "max_network_bandwidth"
   },
   {
@@ -2254,6 +2258,10 @@
   {
     "alias_for": "",
     "name": "allow_drop_detached"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_replace_partition_from_empty_source"
   },
   {
     "alias_for": "",
@@ -3825,6 +3833,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_cache_registry_show_certificate_and_signature"
+  },
+  {
+    "alias_for": "",
     "name": "filesystem_cache_allow_background_download"
   },
   {
@@ -4838,6 +4850,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_optimize_exchanges"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_workers_num"
   },
   {
     "alias_for": "",

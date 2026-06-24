@@ -1585,6 +1585,24 @@
   },
   {
     "alias_to": "",
+    "arguments": "- `vector` \u2014 Vector to transform. [`Array(BFloat16)`](/sql-reference/data-types/array) or [`Array(Float32)`](/sql-reference/data-types/array) or [`Array(Float64)`](/sql-reference/data-types/array)\\n- `seed` \u2014 Optional. Seed for the deterministic +/-1 signs (default 0). [`UInt*`](/sql-reference/data-types/int-uint)\\n- `output_dims` \u2014 Optional. Truncate the result to this many leading coordinates (default: the full transform length, which is the input length for exact Kronecker dimensions and otherwise the next power of two). [`UInt*`](/sql-reference/data-types/int-uint)\\n",
+    "case_insensitive": "0",
+    "categories": "Arrays",
+    "create_query": "",
+    "description": "\\nApplies a randomized Hadamard transform to a float vector: `y = (1/sqrt(k)) * (H * D * x)`, where\\n`D` is a diagonal matrix of deterministic +/-1 signs chosen by `seed`, `H` is the Walsh-Hadamard\\nmatrix, and the input is zero-padded to `m`, the next power of two of its length.\\n\\nThe transform is an orthogonal, **norm-preserving** rotation that spreads a vector\\'s energy evenly\\nacross coordinates, making the per-coordinate distribution approximately Gaussian and\\ndata-independent. It is useful as a preprocessing step before scalar quantization, and -- when\\ntruncated -- as a Johnson-Lindenstrauss / subsampled-randomized-Hadamard (SRHT) random projection.\\n\\nWhen the input length is `2^k * m` with `m` in `{12, 20}` (orders that have a Hadamard matrix, e.g.\\n`768 = 64 * 12`, `1536 = 128 * 12`, `3072 = 256 * 12`, `2560 = 128 * 20`), an exact Kronecker\\ntransform `H_(2^k) (x) H_m` is used instead of padding, so the output keeps the input dimension\\nrather than growing to the next power of two. All other lengths are zero-padded to `m`, the next\\npower of two.\\n\\nThe result has the same element type as the input; an empty input array returns an empty array.\\n\\n- `seed` (optional, default `0`): selects the sign pattern; the same seed always yields the same\\n  transform.\\n- `output_dims` (optional, default the transform length): keeps only the first `output_dims`\\n  coordinates. The `1/sqrt(output_dims)` scaling keeps the result norm-preserving for the full\\n  transform and norm-preserving in expectation when truncated. It must not exceed the transform\\n  length (the next power of two, or the input length for the exact Kronecker case).\\n",
+    "deterministic": "1",
+    "examples": "**Full transform (length padded to a power of two)**\\n\\n```sql title=Query\\nSELECT length(randomHadamardTransform([1, 2, 3]::Array(Float32)))\\n```\\n\\n```response title=Response\\n4\\n```\\n\\n**Norm is preserved**\\n\\n```sql title=Query\\nSELECT round(arraySum(x -> x * x, randomHadamardTransform([1, 2, 3, 4]::Array(Float32))) - 30, 4)\\n```\\n\\n```response title=Response\\n0\\n```\\n\\n**Truncated projection to 3 dimensions**\\n\\n```sql title=Query\\nSELECT length(randomHadamardTransform([1, 2, 3, 4, 5, 6, 7, 8]::Array(Float32), 42, 3))\\n```\\n\\n```response title=Response\\n3\\n```\\n\\n",
+    "higher_order": "0",
+    "introduced_in": "26.7.0",
+    "is_aggregate": "0",
+    "name": "randomHadamardTransform",
+    "origin": "System",
+    "parameters": "",
+    "returned_value": "The transformed vector (same element type as the input). Its length is the transform length: the input length for exact Kronecker dimensions, otherwise the input padded to the next power of two; optionally truncated to output_dims. [`Array(BFloat16)`](/sql-reference/data-types/array) or [`Array(Float32)`](/sql-reference/data-types/array) or [`Array(Float64)`](/sql-reference/data-types/array)",
+    "syntax": "randomHadamardTransform(vector[, seed[, output_dims]])"
+  },
+  {
+    "alias_to": "",
     "arguments": "- `arg1[, arg2, ..., argN]` \u2014 Variable number of arguments for which to compute the hash. [`Any`](/sql-reference/data-types)\\n",
     "case_insensitive": "0",
     "categories": "Hash",
@@ -12493,7 +12511,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `dict_name` \u2014 Name of the dictionary. [`String`](/sql-reference/data-types/string)\\n- `attr_names` \u2014 Name of the column of the dictionary, or tuple of column names. [`String`](/sql-reference/data-types/string) or [`Tuple(String)`](/sql-reference/data-types/tuple)\\n- `id_expr` \u2014 Key value. An expression returning UInt64/Tuple(T). [`UInt64`](/sql-reference/data-types/int-uint) or [`Tuple(T)`](/sql-reference/data-types/tuple)\\n- `default_value` \u2014 Default value to return if the key is not found. Type must match the attribute\\'s data type. ",
+    "arguments": "- `dict_name` \u2014 Name of the dictionary. [`String`](/sql-reference/data-types/string)\\n- `attr_names` \u2014 Name of the column of the dictionary, or tuple of column names. [`String`](/sql-reference/data-types/string) or [`Tuple(String)`](/sql-reference/data-types/tuple)\\n- `id_expr` \u2014 Key value. For a dictionary with a simple key, an expression returning a `UInt64` value. For a dictionary with a composite (complex) key, an expression returning a tuple of the key values. If the composite key consists of a single attribute, its value may be passed directly, without wrapping it in `tuple`. [`UInt64`](/sql-reference/data-types/int-uint) or [`Tuple(T)`](/sql-reference/data-types/tuple)\\n- `default_value` \u2014 Default value to return if the key is not found. Type must match the attribute\\'s data type. ",
     "case_insensitive": "0",
     "categories": "Dictionary",
     "create_query": "",
@@ -20161,7 +20179,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `dict_name` \u2014 Name of the dictionary. [`String`](/sql-reference/data-types/string)\\n- `attr_names` \u2014 Name of the column of the dictionary, or tuple of column names. [`String`](/sql-reference/data-types/string) or [`Tuple(String)`](/sql-reference/data-types/tuple)\\n- `id_expr` \u2014 Key value. An expression returning UInt64/Tuple(T). [`UInt64`](/sql-reference/data-types/int-uint) or [`Tuple(T)`](/sql-reference/data-types/tuple)\\n",
+    "arguments": "- `dict_name` \u2014 Name of the dictionary. [`String`](/sql-reference/data-types/string)\\n- `attr_names` \u2014 Name of the column of the dictionary, or tuple of column names. [`String`](/sql-reference/data-types/string) or [`Tuple(String)`](/sql-reference/data-types/tuple)\\n- `id_expr` \u2014 Key value. For a dictionary with a simple key, an expression returning a `UInt64` value. For a dictionary with a composite (complex) key, an expression returning a tuple of the key values. If the composite key consists of a single attribute, its value may be passed directly, without wrapping it in `tuple`. [`UInt64`](/sql-reference/data-types/int-uint) or [`Tuple(T)`](/sql-reference/data-types/tuple)\\n",
     "case_insensitive": "0",
     "categories": "Dictionary",
     "create_query": "",
