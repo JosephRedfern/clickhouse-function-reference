@@ -1097,6 +1097,7 @@
   "randStudentT": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randStudentT",
   "randUniform": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randUniform",
   "randomFixedString": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randomFixedString",
+  "randomHadamardTransform": "https://clickhouse.com/docs/sql-reference/functions/array-functions#randomHadamardTransform",
   "randomPrintableASCII": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randomPrintableASCII",
   "randomString": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randomString",
   "randomStringUTF8": "https://clickhouse.com/docs/sql-reference/functions/random-functions#randomStringUTF8",

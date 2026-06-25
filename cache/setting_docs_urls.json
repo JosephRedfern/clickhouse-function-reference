@@ -1033,6 +1033,7 @@
   "replace_running_query": "https://clickhouse.com/docs/operations/settings/settings#replace_running_query",
   "replace_running_query_max_wait_ms": "https://clickhouse.com/docs/operations/settings/settings#replace_running_query_max_wait_ms",
   "replication_wait_for_inactive_replica_timeout": "https://clickhouse.com/docs/operations/settings/settings#replication_wait_for_inactive_replica_timeout",
+  "reserve_memory": "https://clickhouse.com/docs/operations/settings/settings#reserve_memory",
   "restore_replace_external_dictionary_source_to_null": "https://clickhouse.com/docs/operations/settings/settings#restore_replace_external_dictionary_source_to_null",
   "restore_replace_external_engines_to_null": "https://clickhouse.com/docs/operations/settings/settings#restore_replace_external_engines_to_null",
   "restore_replace_external_table_functions_to_null": "https://clickhouse.com/docs/operations/settings/settings#restore_replace_external_table_functions_to_null",
