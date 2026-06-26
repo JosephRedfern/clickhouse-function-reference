@@ -654,6 +654,7 @@
   "groupBitmapOr": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupbitmapor",
   "groupBitmapXor": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupbitmapxor",
   "groupConcat": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupconcat",
+  "groupFormat": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupformat",
   "groupNumericIndexedVector": "https://clickhouse.com/docs/sql-reference/functions/numeric-indexed-vector-functions#group-numeric-indexed-vector",
   "groupUniqArray": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupuniqarray",
   "group_concat": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/groupconcat",

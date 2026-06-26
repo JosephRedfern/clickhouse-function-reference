@@ -4993,10 +4993,6 @@
   },
   {
     "alias_for": "",
-    "name": "ai_function_credentials"
-  },
-  {
-    "alias_for": "",
     "name": "ai_function_request_timeout_sec"
   },
   {
