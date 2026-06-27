@@ -4100,6 +4100,10 @@
     "name": "allow_experimental_delta_lake_writes"
   },
   {
+    "alias_for": "allow_experimental_delta_lake_writes",
+    "name": "allow_delta_lake_writes"
+  },
+  {
     "alias_for": "",
     "name": "allow_deprecated_error_prone_window_functions"
   },
