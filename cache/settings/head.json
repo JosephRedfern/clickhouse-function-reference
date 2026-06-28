@@ -6325,6 +6325,10 @@
   },
   {
     "alias_for": "",
+    "name": "format_geojson_validate_geometry"
+  },
+  {
+    "alias_for": "",
     "name": "errors_output_format"
   },
   {
