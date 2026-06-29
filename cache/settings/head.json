@@ -1325,6 +1325,10 @@
   },
   {
     "alias_for": "",
+    "name": "explain_query_plan_default"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_step_description_length"
   },
   {

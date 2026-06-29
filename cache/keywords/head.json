@@ -135,6 +135,12 @@
     "name": "ASYNC"
   },
   {
+    "name": "AT"
+  },
+  {
+    "name": "AT TIME ZONE"
+  },
+  {
     "name": "ATTACH PART"
   },
   {

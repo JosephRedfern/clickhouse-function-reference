@@ -409,6 +409,7 @@
   "except_default_mode": "https://clickhouse.com/docs/operations/settings/settings#except_default_mode",
   "exclude_materialize_skip_indexes_on_insert": "https://clickhouse.com/docs/operations/settings/settings#exclude_materialize_skip_indexes_on_insert",
   "execute_exists_as_scalar_subquery": "https://clickhouse.com/docs/operations/settings/settings#execute_exists_as_scalar_subquery",
+  "explain_query_plan_default": "https://clickhouse.com/docs/operations/settings/settings#explain_query_plan_default",
   "external_storage_connect_timeout_sec": "https://clickhouse.com/docs/operations/settings/settings#external_storage_connect_timeout_sec",
   "external_storage_max_read_bytes": "https://clickhouse.com/docs/operations/settings/settings#external_storage_max_read_bytes",
   "external_storage_max_read_rows": "https://clickhouse.com/docs/operations/settings/settings#external_storage_max_read_rows",
