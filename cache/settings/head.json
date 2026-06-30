@@ -2125,6 +2125,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_aggregation_in_order_limit"
+  },
+  {
+    "alias_for": "",
     "name": "enable_sharding_aggregator"
   },
   {
@@ -4121,10 +4125,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_deprecated_snowflake_conversion_functions"
-  },
-  {
-    "alias_for": "",
     "name": "optimize_distinct_in_order"
   },
   {
@@ -5129,6 +5129,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_deprecated_snowflake_conversion_functions"
+  },
+  {
+    "alias_for": "",
     "name": "async_insert_stale_timeout_ms"
   },
   {
@@ -5498,6 +5502,10 @@
   {
     "alias_for": "",
     "name": "output_format_csv_serialize_tuple_into_separate_columns"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_csv_header_serialize_tuple_into_separate_columns"
   },
   {
     "alias_for": "",
