@@ -2325,6 +2325,14 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_url_wildcard_from_index_pages"
+  },
+  {
+    "alias_for": "",
+    "name": "url_wildcard_max_directories_to_read"
+  },
+  {
+    "alias_for": "",
     "name": "odbc_bridge_connection_pool_size"
   },
   {
@@ -5550,6 +5558,10 @@
   {
     "alias_for": "",
     "name": "input_format_csv_empty_as_default"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_csv_missing_nullable_as_empty_string"
   },
   {
     "alias_for": "",
