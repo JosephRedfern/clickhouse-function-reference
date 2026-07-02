@@ -1020,6 +1020,9 @@
     "name": "MODIFY COMMENT"
   },
   {
+    "name": "MODIFY CONSTRAINT"
+  },
+  {
     "name": "MODIFY DATABASE COMMENT"
   },
   {

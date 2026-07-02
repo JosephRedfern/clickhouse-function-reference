@@ -4389,6 +4389,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_and_compare_chain_max_hash_work"
+  },
+  {
+    "alias_for": "",
     "name": "push_external_roles_in_interserver_queries"
   },
   {
@@ -4745,14 +4749,14 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_text_index_lazy_apply"
-  },
-  {
-    "alias_for": "",
     "name": "text_index_posting_list_apply_mode"
   },
   {
     "alias_for": "",
+    "name": "text_index_lazy_intersection_density_threshold"
+  },
+  {
+    "alias_for": "text_index_lazy_intersection_density_threshold",
     "name": "text_index_density_threshold"
   },
   {
@@ -5114,6 +5118,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_vector_similarity_index"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_text_index_lazy_apply"
   },
   {
     "alias_for": "",

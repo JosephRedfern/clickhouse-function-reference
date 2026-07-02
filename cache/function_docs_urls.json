@@ -490,6 +490,7 @@
   "domainWithoutWWW": "https://clickhouse.com/docs/sql-reference/functions/url-functions#domainWithoutWWW",
   "domainWithoutWWWRFC": "https://clickhouse.com/docs/sql-reference/functions/url-functions#domainWithoutWWWRFC",
   "dotProduct": "https://clickhouse.com/docs/sql-reference/functions/tuple-functions#dotProduct",
+  "dotProductTransposed": "https://clickhouse.com/docs/sql-reference/functions/distance-functions#dotProductTransposed",
   "dumpColumnStructure": "https://clickhouse.com/docs/sql-reference/functions/other-functions#dumpColumnStructure",
   "dynamicElement": "https://clickhouse.com/docs/sql-reference/functions/json-functions#dynamicElement",
   "dynamicType": "https://clickhouse.com/docs/sql-reference/functions/json-functions#dynamicType",
