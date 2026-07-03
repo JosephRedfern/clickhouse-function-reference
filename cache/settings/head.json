@@ -413,6 +413,10 @@
   },
   {
     "alias_for": "",
+    "name": "s3_validate_etag_on_read"
+  },
+  {
+    "alias_for": "",
     "name": "azure_check_objects_after_upload"
   },
   {
@@ -745,6 +749,14 @@
   },
   {
     "alias_for": "",
+    "name": "compile_regular_expressions"
+  },
+  {
+    "alias_for": "",
+    "name": "min_count_to_compile_regular_expression"
+  },
+  {
+    "alias_for": "",
     "name": "compile_aggregate_expressions"
   },
   {
@@ -818,6 +830,10 @@
   {
     "alias_for": "",
     "name": "skip_unavailable_shards"
+  },
+  {
+    "alias_for": "",
+    "name": "skip_unavailable_shards_mode"
   },
   {
     "alias_for": "",
@@ -4073,11 +4089,11 @@
   },
   {
     "alias_for": "",
-    "name": "show_remote_databases_in_system_tables"
+    "name": "show_data_lake_catalogs_in_system_tables"
   },
   {
-    "alias_for": "show_remote_databases_in_system_tables",
-    "name": "show_data_lake_catalogs_in_system_tables"
+    "alias_for": "",
+    "name": "show_remote_databases_in_system_tables"
   },
   {
     "alias_for": "",

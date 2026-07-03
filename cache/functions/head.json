@@ -7399,7 +7399,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 The base. [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `y` \u2014 The exponent. [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
+    "arguments": "- `x` \u2014 The base. [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `y` \u2014 The exponent. [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Mathematical",
     "create_query": "",
@@ -10603,7 +10603,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 First value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `y` \u2014 Second value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n",
+    "arguments": "- `x` \u2014 First value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `y` \u2014 Second value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Arithmetic",
     "create_query": "",
@@ -13627,7 +13627,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `y` \u2014 y-coordinate of the point through which the ray passes. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `x` \u2014 x-coordinate of the point through which the ray passes. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
+    "arguments": "- `y` \u2014 y-coordinate of the point through which the ray passes. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `x` \u2014 x-coordinate of the point through which the ray passes. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Mathematical",
     "create_query": "",
@@ -14293,7 +14293,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 First value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `y` \u2014 Second value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n",
+    "arguments": "- `x` \u2014 First value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n- `y` \u2014 Second value [`(U)Int8/16/32/64`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal`](/sql-reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Arithmetic",
     "create_query": "",
@@ -14383,7 +14383,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 The first cathetus of a right-angle triangle. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `y` \u2014 The second cathetus of a right-angle triangle. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
+    "arguments": "- `x` \u2014 The first cathetus of a right-angle triangle. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n- `y` \u2014 The second cathetus of a right-angle triangle. [`(U)Int*`](/sql-reference/data-types/int-uint) or [`Float*`](/sql-reference/data-types/float) or [`BFloat16`](/sql-reference/data-types/float) or [`Decimal*`](/sql-reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Mathematical",
     "create_query": "",
