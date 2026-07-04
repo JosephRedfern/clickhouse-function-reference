@@ -1025,6 +1025,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_partition_minmax_for_primary_key_pruning"
+  },
+  {
+    "alias_for": "",
     "name": "force_primary_key"
   },
   {
