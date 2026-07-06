@@ -2467,11 +2467,11 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 Code produced by quantizeBFloat16ToInt8. [`Int8`](/sql-reference/data-types/int-uint)\\n",
+    "arguments": "- `x` \u2014 Code(s) produced by quantizeBFloat16ToInt8. [`Int8`](/sql-reference/data-types/int-uint) or [`Array(Int8)`](/sql-reference/data-types/array) or [`QBit(Int8)`](/sql-reference/data-types/qbit)\\n",
     "case_insensitive": "0",
     "categories": "QBit",
     "create_query": "",
-    "description": "\\nReconstructs a `BFloat16` value from an `Int8` code produced by\\n[`quantizeBFloat16ToInt8`](#quantizeBFloat16ToInt8), by mapping the code back to the\\nreconstruction level of its Gaussian Lloyd-Max cell.\\n",
+    "description": "\\nReconstructs a `BFloat16` value from an `Int8` code produced by\\n[`quantizeBFloat16ToInt8`](#quantizeBFloat16ToInt8), by mapping the code back to the\\nreconstruction level of its Gaussian Lloyd-Max cell.\\n\\nThe argument may be a single `Int8`, an `Array(Int8)`, or a `QBit(Int8, ...)`; the function is\\napplied to every element and returns `BFloat16`, `Array(BFloat16)`, or a `QBit(BFloat16, ...)` of\\nthe same dimension and stride respectively.\\n",
     "deterministic": "1",
     "examples": "**Round trip**\\n\\n```sql title=Query\\nSELECT round(toFloat32(dequantizeInt8ToBFloat16(quantizeBFloat16ToInt8(0.5::BFloat16))), 4)\\n```\\n\\n```response title=Response\\n0.4961\\n```\\n\\n",
     "higher_order": "0",
@@ -2480,7 +2480,7 @@
     "name": "dequantizeInt8ToBFloat16",
     "origin": "System",
     "parameters": "",
-    "returned_value": "The reconstruction level of the cell. [`BFloat16`](/sql-reference/data-types/float)",
+    "returned_value": "The reconstruction level of the cell. [`BFloat16`](/sql-reference/data-types/float) or [`Array(BFloat16)`](/sql-reference/data-types/array) or [`QBit(BFloat16)`](/sql-reference/data-types/qbit)",
     "syntax": "dequantizeInt8ToBFloat16(x)"
   },
   {
@@ -24031,20 +24031,20 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `x` \u2014 Value to quantize (expected to be ~N(0,1)). [`BFloat16`](/sql-reference/data-types/float)\\n",
+    "arguments": "- `x` \u2014 Value(s) to quantize (expected to be ~N(0,1)). [`BFloat16`](/sql-reference/data-types/float) or [`Array(BFloat16)`](/sql-reference/data-types/array) or [`QBit(BFloat16)`](/sql-reference/data-types/qbit)\\n",
     "case_insensitive": "0",
     "categories": "QBit",
     "create_query": "",
-    "description": "\\nQuantizes a `BFloat16` value to `Int8` using a 256-level Gaussian Lloyd-Max quantizer\\n(the MSE-optimal scalar quantizer for a standard-normal source).\\n\\nIntended for values that are approximately distributed as `N(0, 1)`. A random orthogonal\\n(randomized Hadamard) rotation preserves the norm, so for a `d`-dimensional unit-norm embedding\\neach rotated coordinate has variance `1/d`; scale the rotated vector by `sqrt(d)` to reach unit\\nvariance before quantizing. Apply it over a vector with\\n[`arrayMap`](/sql-reference/functions/array-functions#arrayMap).\\n\\nThe result is the index `0..255` of the Lloyd-Max cell, stored as `Int8` as `index - 128`, so\\nthe sign bit equals the sign of the value (`+0`/`-0` map to the positive/negative central cells)\\nand the top `b` bits form a valid embedded `2^b`-level quantizer: bit-truncation of the code\\nyields coarser Int4/Int2/binary codes.\\n\\nUse [`dequantizeInt8ToBFloat16`](#dequantizeInt8ToBFloat16) to reconstruct the value.\\n",
+    "description": "\\nQuantizes a `BFloat16` value to `Int8` using a 256-level Gaussian Lloyd-Max quantizer\\n(the MSE-optimal scalar quantizer for a standard-normal source).\\n\\nIntended for values that are approximately distributed as `N(0, 1)`. A random orthogonal\\n(randomized Hadamard) rotation preserves the norm, so for a `d`-dimensional unit-norm embedding\\neach rotated coordinate has variance `1/d`; scale the rotated vector by `sqrt(d)` to reach unit\\nvariance before quantizing.\\n\\nThe argument may be a single `BFloat16`, an `Array(BFloat16)`, or a `QBit(BFloat16, ...)`; the\\nfunction is applied to every element and returns `Int8`, `Array(Int8)`, or a `QBit(Int8, ...)` of\\nthe same dimension and stride respectively. Passing a whole vector (`Array` or `QBit`) is preferred\\nover `arrayMap(x -> quantizeBFloat16ToInt8(x), ...)`.\\n\\nThe result is the index `0..255` of the Lloyd-Max cell, stored as `Int8` as `index - 128`, so\\nthe sign bit equals the sign of the value (`+0`/`-0` map to the positive/negative central cells)\\nand the top `b` bits form a valid embedded `2^b`-level quantizer: bit-truncation of the code\\nyields coarser Int4/Int2/binary codes.\\n\\nUse [`dequantizeInt8ToBFloat16`](#dequantizeInt8ToBFloat16) to reconstruct the value.\\n",
     "deterministic": "1",
-    "examples": "**Quantize a vector**\\n\\n```sql title=Query\\nSELECT arrayMap(x -> quantizeBFloat16ToInt8(x), [0.1, -0.5, 2.0]::Array(BFloat16))\\n```\\n\\n```response title=Response\\n[10,-49,116]\\n```\\n\\n",
+    "examples": "**Quantize a scalar**\\n\\n```sql title=Query\\nSELECT quantizeBFloat16ToInt8(2.0::BFloat16)\\n```\\n\\n```response title=Response\\n116\\n```\\n\\n**Quantize an array**\\n\\n```sql title=Query\\nSELECT quantizeBFloat16ToInt8([0.1, -0.5, 2.0]::Array(BFloat16))\\n```\\n\\n```response title=Response\\n[10,-49,116]\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "26.7.0",
     "is_aggregate": "0",
     "name": "quantizeBFloat16ToInt8",
     "origin": "System",
     "parameters": "",
-    "returned_value": "The Lloyd-Max cell index minus 128. [`Int8`](/sql-reference/data-types/int-uint)",
+    "returned_value": "The Lloyd-Max cell index minus 128. [`Int8`](/sql-reference/data-types/int-uint) or [`Array(Int8)`](/sql-reference/data-types/array) or [`QBit(Int8)`](/sql-reference/data-types/qbit)",
     "syntax": "quantizeBFloat16ToInt8(x)"
   },
   {
