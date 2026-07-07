@@ -3221,6 +3221,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_merge_expression_into_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_convert_join_to_in"
   },
   {

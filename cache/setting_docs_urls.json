@@ -976,6 +976,7 @@
   "query_plan_max_optimizations_to_apply": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_optimizations_to_apply",
   "query_plan_max_set_size_for_projection_match": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_set_size_for_projection_match",
   "query_plan_max_step_description_length": "https://clickhouse.com/docs/operations/settings/settings#query_plan_max_step_description_length",
+  "query_plan_merge_expression_into_join": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_expression_into_join",
   "query_plan_merge_expressions": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_expressions",
   "query_plan_merge_filter_into_join_condition": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_filter_into_join_condition",
   "query_plan_merge_filters": "https://clickhouse.com/docs/operations/settings/settings#query_plan_merge_filters",
