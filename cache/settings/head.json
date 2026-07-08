@@ -537,6 +537,18 @@
   },
   {
     "alias_for": "",
+    "name": "reader_executor_use_long_connections"
+  },
+  {
+    "alias_for": "",
+    "name": "reader_executor_min_bytes_for_seek"
+  },
+  {
+    "alias_for": "",
+    "name": "reader_executor_max_tail_for_drain"
+  },
+  {
+    "alias_for": "",
     "name": "azure_skip_empty_files"
   },
   {
@@ -706,6 +718,10 @@
   {
     "alias_for": "",
     "name": "allow_suspicious_indices"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_minmax_index_for_json"
   },
   {
     "alias_for": "",
@@ -1022,6 +1038,10 @@
   {
     "alias_for": "",
     "name": "use_primary_key"
+  },
+  {
+    "alias_for": "",
+    "name": "use_constant_folding_in_index_analysis"
   },
   {
     "alias_for": "",
@@ -2302,6 +2322,10 @@
   {
     "alias_for": "",
     "name": "dynamic_disk_allow_from_zk"
+  },
+  {
+    "alias_for": "",
+    "name": "s3_allow_server_credentials_in_user_queries"
   },
   {
     "alias_for": "",
@@ -3594,6 +3618,10 @@
   {
     "alias_for": "",
     "name": "load_marks_asynchronously"
+  },
+  {
+    "alias_for": "",
+    "name": "use_streaming_marks_compression"
   },
   {
     "alias_for": "",
