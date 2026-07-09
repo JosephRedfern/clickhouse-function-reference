@@ -945,6 +945,10 @@
   },
   {
     "alias_for": "",
+    "name": "merge_tree_generic_exclusion_search_max_steps"
+  },
+  {
+    "alias_for": "",
     "name": "merge_tree_max_rows_to_use_cache"
   },
   {
@@ -2430,6 +2434,10 @@
   {
     "alias_for": "",
     "name": "optimize_trivial_group_by_limit_query"
+  },
+  {
+    "alias_for": "",
+    "name": "optimize_trivial_count_with_sparsity_filter"
   },
   {
     "alias_for": "",
@@ -5101,6 +5109,14 @@
   },
   {
     "alias_for": "",
+    "name": "ai_function_text_default_credentials"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_embedding_default_credentials"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_query_deduplication"
   },
   {
@@ -5853,6 +5869,10 @@
   },
   {
     "alias_for": "",
+    "name": "input_format_arrow_use_native_reader"
+  },
+  {
+    "alias_for": "",
     "name": "column_names_for_schema_inference"
   },
   {
@@ -6570,6 +6590,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_unsupported_types_as_binary"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_use_native_writer"
   },
   {
     "alias_for": "",
