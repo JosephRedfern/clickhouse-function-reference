@@ -284,6 +284,7 @@
   "describe_include_subcolumns": "https://clickhouse.com/docs/operations/settings/settings#describe_include_subcolumns",
   "describe_include_virtual_columns": "https://clickhouse.com/docs/operations/settings/settings#describe_include_virtual_columns",
   "dialect": "https://clickhouse.com/docs/operations/settings/settings#dialect",
+  "dictionary_lazy_load": "https://clickhouse.com/docs/operations/settings/settings#dictionary_lazy_load",
   "dictionary_use_async_executor": "https://clickhouse.com/docs/operations/settings/settings#dictionary_use_async_executor",
   "dictionary_validate_primary_key_type": "https://clickhouse.com/docs/operations/settings/settings#dictionary_validate_primary_key_type",
   "discard_query_data": "https://clickhouse.com/docs/operations/settings/settings#discard_query_data",

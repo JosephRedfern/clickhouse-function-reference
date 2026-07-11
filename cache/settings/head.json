@@ -2085,6 +2085,10 @@
   },
   {
     "alias_for": "",
+    "name": "dictionary_lazy_load"
+  },
+  {
+    "alias_for": "",
     "name": "send_logs_level"
   },
   {
