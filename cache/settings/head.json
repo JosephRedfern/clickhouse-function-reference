@@ -2509,6 +2509,14 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_or_like_chain_min_patterns"
+  },
+  {
+    "alias_for": "",
+    "name": "optimize_or_like_chain_min_substrings"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_arithmetic_operations_in_aggregate_functions"
   },
   {
@@ -4397,6 +4405,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyzer_compatibility_allow_non_aggregate_in_having"
+  },
+  {
+    "alias_for": "",
     "name": "analyzer_compatibility_prefer_alias_over_subcolumn"
   },
   {
@@ -5081,6 +5093,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_eval_table_function"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_ai_functions"
   },
   {
@@ -5694,6 +5710,10 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_bloom_filter_push_down"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_parquet_dictionary_filter_push_down"
   },
   {
     "alias_for": "",

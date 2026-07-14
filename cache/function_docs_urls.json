@@ -482,6 +482,7 @@
   "dictGetUUIDOrDefault": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetUUIDOrDefault",
   "dictHas": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictHas",
   "dictIsIn": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictIsIn",
+  "digits": "https://clickhouse.com/docs/sql-reference/functions/other-functions#digits",
   "displayName": "https://clickhouse.com/docs/sql-reference/functions/other-functions#displayName",
   "distinctDynamicTypes": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/distinctdynamictypes",
   "distinctJSONPaths": "https://clickhouse.com/docs/sql-reference/aggregate-functions/reference/distinctjsonpaths",
