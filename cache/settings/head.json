@@ -5713,10 +5713,6 @@
   },
   {
     "alias_for": "",
-    "name": "input_format_parquet_dictionary_filter_push_down"
-  },
-  {
-    "alias_for": "",
     "name": "input_format_parquet_enable_json_parsing"
   },
   {
