@@ -18,6 +18,7 @@
   "ASSUME": "https://clickhouse.com/docs/sql-reference/statements/create/table#assume",
   "ATTACH": "https://clickhouse.com/docs/sql-reference/statements/attach",
   "BACKUP": "https://clickhouse.com/docs/sql-reference/statements/grant#backup",
+  "CHECK DATABASE": "https://clickhouse.com/docs/sql-reference/statements/check-database",
   "CHECK GRANT": "https://clickhouse.com/docs/sql-reference/statements/check-grant",
   "CHECK TABLE": "https://clickhouse.com/docs/sql-reference/statements/check-table",
   "CLEAR COLUMN": "https://clickhouse.com/docs/sql-reference/statements/alter/column#clear-column",
