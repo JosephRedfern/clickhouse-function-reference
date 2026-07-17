@@ -84,6 +84,9 @@
     "name": "ALTER"
   },
   {
+    "name": "ANALYZE"
+  },
+  {
     "name": "AND STDOUT"
   },
   {
@@ -934,6 +937,9 @@
   },
   {
     "name": "M"
+  },
+  {
+    "name": "MANIFEST"
   },
   {
     "name": "MASTER THREAD"
