@@ -1269,6 +1269,10 @@
   },
   {
     "alias_for": "",
+    "name": "snappy_mode"
+  },
+  {
+    "alias_for": "",
     "name": "http_native_compression_disable_checksumming_on_decompress"
   },
   {
@@ -1398,6 +1402,14 @@
   {
     "alias_for": "",
     "name": "parts_to_throw_insert"
+  },
+  {
+    "alias_for": "",
+    "name": "dead_blobs_to_delay_insert"
+  },
+  {
+    "alias_for": "",
+    "name": "dead_blobs_to_throw_insert"
   },
   {
     "alias_for": "",
@@ -3917,10 +3929,6 @@
   },
   {
     "alias_for": "",
-    "name": "distributed_cache_use_clients_cache_for_write"
-  },
-  {
-    "alias_for": "",
     "name": "distributed_cache_use_clients_cache_for_read"
   },
   {
@@ -4314,6 +4322,10 @@
   {
     "alias_for": "",
     "name": "parallel_replicas_local_plan"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_plan_based"
   },
   {
     "alias_for": "",
@@ -5154,6 +5166,10 @@
   {
     "alias_for": "",
     "name": "ai_function_embedding_default_credentials"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_cache_use_clients_cache_for_write"
   },
   {
     "alias_for": "",
