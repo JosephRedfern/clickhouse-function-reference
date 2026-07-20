@@ -468,6 +468,7 @@
   "dictGetKeys": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetKeys",
   "dictGetOrDefault": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetOrDefault",
   "dictGetOrNull": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetOrNull",
+  "dictGetRoot": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetRoot",
   "dictGetString": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetString",
   "dictGetStringOrDefault": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetStringOrDefault",
   "dictGetUInt16": "https://clickhouse.com/docs/sql-reference/functions/ext-dict-functions#dictGetUInt16",
