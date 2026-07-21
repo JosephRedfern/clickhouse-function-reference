@@ -1893,6 +1893,10 @@
   },
   {
     "alias_for": "",
+    "name": "reserve_memory"
+  },
+  {
+    "alias_for": "",
     "name": "max_network_bandwidth"
   },
   {
@@ -4053,11 +4057,11 @@
   },
   {
     "alias_for": "",
-    "name": "show_remote_databases_in_system_tables"
+    "name": "show_data_lake_catalogs_in_system_tables"
   },
   {
-    "alias_for": "show_remote_databases_in_system_tables",
-    "name": "show_data_lake_catalogs_in_system_tables"
+    "alias_for": "",
+    "name": "show_remote_databases_in_system_tables"
   },
   {
     "alias_for": "",
@@ -4306,6 +4310,10 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_allow_compound_identifiers_in_unflatten_nested"
+  },
+  {
+    "alias_for": "",
+    "name": "analyzer_compatibility_allow_non_aggregate_in_having"
   },
   {
     "alias_for": "",

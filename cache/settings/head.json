@@ -3149,10 +3149,6 @@
   },
   {
     "alias_for": "",
-    "name": "cloud_mode_database_engine"
-  },
-  {
-    "alias_for": "",
     "name": "distributed_ddl_output_mode"
   },
   {
@@ -4489,6 +4485,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_redundant_comparisons"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_and_compare_chain_max_hash_work"
   },
   {
@@ -5038,6 +5038,10 @@
   {
     "alias_for": "",
     "name": "join_runtime_filter_from_fixed_hash_table"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_join_runtime_filters_index_analysis"
   },
   {
     "alias_for": "",
@@ -5618,6 +5622,10 @@
   {
     "alias_for": "",
     "name": "query_plan_use_new_logical_join_step"
+  },
+  {
+    "alias_for": "",
+    "name": "cloud_mode_database_engine"
   },
   {
     "alias_for": "",
