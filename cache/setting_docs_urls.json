@@ -85,6 +85,7 @@
   "allow_introspection_functions": "https://clickhouse.com/docs/operations/settings/settings#allow_introspection_functions",
   "allow_key_condition_coalesce_rewrite": "https://clickhouse.com/docs/operations/settings/settings#allow_key_condition_coalesce_rewrite",
   "allow_limit_by_partitions_independently": "https://clickhouse.com/docs/operations/settings/settings#allow_limit_by_partitions_independently",
+  "allow_lossy_numeric_supertype": "https://clickhouse.com/docs/operations/settings/settings#allow_lossy_numeric_supertype",
   "allow_materialized_view_with_bad_select": "https://clickhouse.com/docs/operations/settings/settings#allow_materialized_view_with_bad_select",
   "allow_minmax_index_for_json": "https://clickhouse.com/docs/operations/settings/settings#allow_minmax_index_for_json",
   "allow_named_collection_override_by_default": "https://clickhouse.com/docs/operations/settings/settings#allow_named_collection_override_by_default",

@@ -4041,6 +4041,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_lossy_numeric_supertype"
+  },
+  {
+    "alias_for": "",
     "name": "enable_order_by_all"
   },
   {
