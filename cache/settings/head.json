@@ -3273,6 +3273,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_short_circuit_constant_false_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_convert_any_join_to_semi_or_anti_join"
   },
   {
@@ -4426,6 +4430,10 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_prefer_alias_over_subcolumn"
+  },
+  {
+    "alias_for": "",
+    "name": "analyzer_compatibility_apply_final_to_all_joined_tables"
   },
   {
     "alias_for": "",
@@ -5797,10 +5805,6 @@
   },
   {
     "alias_for": "",
-    "name": "input_format_orc_use_fast_decoder"
-  },
-  {
-    "alias_for": "",
     "name": "input_format_orc_filter_push_down"
   },
   {
@@ -6846,6 +6850,10 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_use_native_reader_v3"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_orc_use_fast_decoder"
   },
   {
     "alias_for": "",
