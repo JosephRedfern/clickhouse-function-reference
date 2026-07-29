@@ -2781,6 +2781,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_projection_index_in_read_pools"
+  },
+  {
+    "alias_for": "",
     "name": "async_socket_for_remote"
   },
   {
@@ -4601,6 +4605,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_parallel_single_level_merge"
+  },
+  {
+    "alias_for": "",
     "name": "min_outstreams_per_resize_after_split"
   },
   {
@@ -6170,6 +6178,10 @@
   {
     "alias_for": "",
     "name": "date_time_64_output_format_cut_trailing_zeros_align_to_groups_of_thousands"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_read_datetime_number_as_raw_value"
   },
   {
     "alias_for": "",
