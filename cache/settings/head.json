@@ -3881,6 +3881,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_cache_min_inflight_bytes_to_discard_connection_on_seek"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_cache_min_bytes_for_seek"
   },
   {
