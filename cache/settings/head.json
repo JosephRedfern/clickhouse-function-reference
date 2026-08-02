@@ -2981,6 +2981,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_query_condition_cache_for_top_k"
+  },
+  {
+    "alias_for": "",
     "name": "enable_shared_storage_snapshot_in_query"
   },
   {
@@ -3073,7 +3077,19 @@
   },
   {
     "alias_for": "",
+    "name": "allow_distinct_partitions_independently"
+  },
+  {
+    "alias_for": "",
+    "name": "force_distinct_partitions_independently"
+  },
+  {
+    "alias_for": "",
     "name": "max_number_of_partitions_for_independent_aggregation"
+  },
+  {
+    "alias_for": "",
+    "name": "max_number_of_partitions_for_independent_distinct"
   },
   {
     "alias_for": "",
