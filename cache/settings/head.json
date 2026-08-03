@@ -3125,6 +3125,10 @@
   },
   {
     "alias_for": "",
+    "name": "s3_base"
+  },
+  {
+    "alias_for": "",
     "name": "database_replicated_initial_query_timeout_sec"
   },
   {
@@ -5985,10 +5989,6 @@
   },
   {
     "alias_for": "",
-    "name": "input_format_arrow_use_native_reader"
-  },
-  {
-    "alias_for": "",
     "name": "column_names_for_schema_inference"
   },
   {
@@ -6713,10 +6713,6 @@
   },
   {
     "alias_for": "",
-    "name": "output_format_arrow_use_native_writer"
-  },
-  {
-    "alias_for": "",
     "name": "output_format_orc_string_as_string"
   },
   {
@@ -6894,6 +6890,14 @@
   {
     "alias_for": "",
     "name": "input_format_orc_use_fast_decoder"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_arrow_use_native_reader"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_use_native_writer"
   },
   {
     "alias_for": "",
