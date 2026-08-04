@@ -2977,6 +2977,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_query_condition_cache_for_top_k"
+  },
+  {
+    "alias_for": "",
     "name": "enable_shared_storage_snapshot_in_query"
   },
   {
@@ -4422,6 +4426,10 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_prefer_alias_over_subcolumn"
+  },
+  {
+    "alias_for": "",
+    "name": "analyzer_compatibility_apply_final_to_all_joined_tables"
   },
   {
     "alias_for": "",

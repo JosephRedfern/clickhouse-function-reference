@@ -4577,6 +4577,10 @@
   },
   {
     "alias_for": "",
+    "name": "throw_on_hive_partitioning_resolution_failure"
+  },
+  {
+    "alias_for": "",
     "name": "parallel_hash_join_threshold"
   },
   {
@@ -4886,6 +4890,10 @@
   {
     "alias_for": "",
     "name": "use_text_index_tokens_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "use_text_index_negative_tokens_cache"
   },
   {
     "alias_for": "",
