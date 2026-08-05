@@ -5237,6 +5237,10 @@
   },
   {
     "alias_for": "",
+    "name": "ai_function_allow_insecure_endpoint"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_cache_use_clients_cache_for_write"
   },
   {
@@ -5830,6 +5834,10 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_page_filter_push_down"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_parquet_spatial_filter_push_down"
   },
   {
     "alias_for": "",

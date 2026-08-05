@@ -2687,7 +2687,7 @@
     "case_insensitive": "0",
     "categories": "AI",
     "create_query": "",
-    "description": "\\nClassifies the given text into one of the provided categories using an LLM provider.\\n\\nThe function sends the text together with a fixed classification prompt and a JSON-schema response format\\nconstraining the model to return exactly one of the supplied labels. When the response is returned as a JSON\\nobject of the form `{\"category\": \"...\"}`, the label is unwrapped and the label string is returned.\\n\\nCredentials (a named collection specifying the provider, model, endpoint, and optionally an API key)\\nare taken from the `credentials` key of the optional parameter map, or from the\\n`ai_function_text_default_credentials` setting when the map omits it.\\n",
+    "description": "\\nClassifies the given text into one of the provided categories using an LLM provider.\\n\\nCredentials (a named collection specifying the provider, model, endpoint, and optionally an API key)\\nare taken from the `credentials` key of the optional parameter map, or from the\\n`ai_function_text_default_credentials` setting when the map omits it.\\n",
     "deterministic": "\\N",
     "examples": "**Classify sentiment**\\n\\n```sql title=Query\\nSELECT aiClassify(\\'I love this product!\\', [\\'positive\\', \\'negative\\', \\'neutral\\'])\\n```\\n\\n```response title=Response\\npositive\\n```\\n\\n**Classify a column with explicit credentials**\\n\\n```sql title=Query\\nSELECT body, aiClassify(body, [\\'bug\\', \\'question\\', \\'feature\\'], map(\\'credentials\\', \\'ai_text_credentials\\')) AS kind FROM issues LIMIT 5\\n```\\n\\n",
     "higher_order": "\\N",
