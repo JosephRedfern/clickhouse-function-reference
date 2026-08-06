@@ -5135,7 +5135,7 @@
     "case_insensitive": "0",
     "categories": "String",
     "create_query": "",
-    "description": "\\nReturns the length of a string in Unicode code points rather than in bytes or characters.\\nIt assumes that the string contains valid UTF-8 encoded text.\\nIf this assumption is violated, no exception is thrown and the result is undefined.\\n\\n",
+    "description": "\\nReturns the length of a string in Unicode code points rather than in bytes or characters.\\nTo calculate the length of a string in bytes, use the [`length`](/reference/functions/regular-functions/array-functions#length) function.\\nIt assumes that the string contains valid UTF-8 encoded text.\\nIf this assumption is violated, no exception is thrown and the result is undefined.\\n\\n",
     "deterministic": "1",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT lengthUTF8(\\'\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u043c\u0438\u0440!\\')\\n```\\n\\n```response title=Response\\n\u250c\u2500lengthUTF8(\\'\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u043c\u0438\u0440!\\')\u2500\u2510\\n\u2502                             16 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
