@@ -4465,6 +4465,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyzer_compatibility_multiple_joins_qualify_column_names"
+  },
+  {
+    "alias_for": "",
     "name": "enable_identifier_resolve_cache"
   },
   {
@@ -4973,6 +4977,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_delta_kernel_rs"
+  },
+  {
+    "alias_for": "allow_delta_kernel_rs",
     "name": "allow_experimental_delta_kernel_rs"
   },
   {
