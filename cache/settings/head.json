@@ -3633,6 +3633,10 @@
   },
   {
     "alias_for": "",
+    "name": "filesystem_cache_wait_for_concurrent_download_timeout_milliseconds"
+  },
+  {
+    "alias_for": "",
     "name": "filesystem_cache_prefer_bigger_buffer_size"
   },
   {
@@ -4633,6 +4637,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_packed_string_keys_in_aggregation"
+  },
+  {
+    "alias_for": "",
     "name": "enable_parallel_blocks_marshalling"
   },
   {
@@ -4965,7 +4973,7 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_json_ast_dialect"
+    "name": "enable_json_ast_dialect"
   },
   {
     "alias_for": "",
@@ -5910,6 +5918,10 @@
   {
     "alias_for": "",
     "name": "input_format_hive_text_allow_variable_number_of_columns"
+  },
+  {
+    "alias_for": "",
+    "name": "format_hive_text_rows_delimiter"
   },
   {
     "alias_for": "",
