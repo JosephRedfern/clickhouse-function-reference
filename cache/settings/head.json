@@ -2781,7 +2781,7 @@
   },
   {
     "alias_for": "",
-    "name": "use_projection_index_in_read_pools"
+    "name": "use_indexes_refiner_in_read_pools"
   },
   {
     "alias_for": "",
@@ -5470,6 +5470,10 @@
   {
     "alias_for": "",
     "name": "throw_if_deduplication_in_dependent_materialized_views_enabled_with_async_insert"
+  },
+  {
+    "alias_for": "",
+    "name": "use_projection_index_in_read_pools"
   },
   {
     "alias_for": "",
