@@ -2605,6 +2605,10 @@
   },
   {
     "alias_for": "",
+    "name": "materialized_views_populate_atomically"
+  },
+  {
+    "alias_for": "",
     "name": "use_compact_format_in_distributed_parts_names"
   },
   {
@@ -3370,6 +3374,10 @@
   {
     "alias_for": "",
     "name": "query_plan_optimize_lazy_materialization"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_lazy_materialization_for_object_storage"
   },
   {
     "alias_for": "",
