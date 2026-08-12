@@ -27,6 +27,9 @@
     "name": "AFTER"
   },
   {
+    "name": "AGGREGATE"
+  },
+  {
     "name": "ALGORITHM"
   },
   {
@@ -592,6 +595,9 @@
   },
   {
     "name": "EXPRESSION"
+  },
+  {
+    "name": "EXTEND"
   },
   {
     "name": "EXTENDED"

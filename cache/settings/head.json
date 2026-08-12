@@ -3613,6 +3613,10 @@
   },
   {
     "alias_for": "",
+    "name": "filesystem_cache_verbose_logging"
+  },
+  {
+    "alias_for": "",
     "name": "read_from_filesystem_cache_if_exists_otherwise_bypass_cache"
   },
   {
@@ -6882,6 +6886,10 @@
   {
     "alias_for": "",
     "name": "input_format_max_block_size_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_json_max_string_column_growth_step"
   },
   {
     "alias_for": "",
