@@ -6885,6 +6885,18 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_image_time_multiplier_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_image_time_divisor_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_image_streaming_animation"
+  },
+  {
+    "alias_for": "",
     "name": "input_format_max_block_size_bytes"
   },
   {
