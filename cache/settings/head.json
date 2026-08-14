@@ -653,6 +653,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_trivial_view_pushdown_to_distributed"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_move_to_prewhere"
   },
   {
@@ -965,6 +969,10 @@
   },
   {
     "alias_for": "",
+    "name": "merge_tree_prefetch_json_shared_data_substreams"
+  },
+  {
+    "alias_for": "",
     "name": "do_not_merge_across_partitions_select_final"
   },
   {
@@ -1110,6 +1118,10 @@
   {
     "alias_for": "",
     "name": "materialize_statistics_on_insert"
+  },
+  {
+    "alias_for": "",
+    "name": "materialize_statistics_on_insert_max_table_size"
   },
   {
     "alias_for": "",
@@ -1318,6 +1330,10 @@
   {
     "alias_for": "",
     "name": "http_response_buffer_size"
+  },
+  {
+    "alias_for": "",
+    "name": "framing_output_format"
   },
   {
     "alias_for": "",
@@ -4890,6 +4906,10 @@
   {
     "alias_for": "",
     "name": "query_plan_direct_read_from_text_index"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_count_from_text_index"
   },
   {
     "alias_for": "",

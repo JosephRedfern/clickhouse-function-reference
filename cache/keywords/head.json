@@ -201,6 +201,9 @@
     "name": "BOTH"
   },
   {
+    "name": "BOUNDED"
+  },
+  {
     "name": "BY"
   },
   {
@@ -1699,6 +1702,9 @@
   },
   {
     "name": "UNIQUE KEY"
+  },
+  {
+    "name": "UNORDERED"
   },
   {
     "name": "UNSET FAKE TIME"
