@@ -49,6 +49,14 @@
   },
   {
     "alias_for": "",
+    "name": "shrink_over_allocated_columns_min_waste_ratio"
+  },
+  {
+    "alias_for": "",
+    "name": "shrink_over_allocated_columns_min_waste_bytes"
+  },
+  {
+    "alias_for": "",
     "name": "min_external_table_block_size_rows"
   },
   {
@@ -549,6 +557,14 @@
   },
   {
     "alias_for": "",
+    "name": "reader_executor_window_size"
+  },
+  {
+    "alias_for": "",
+    "name": "reader_executor_block_size"
+  },
+  {
+    "alias_for": "",
     "name": "azure_skip_empty_files"
   },
   {
@@ -934,6 +950,10 @@
   {
     "alias_for": "",
     "name": "merge_tree_min_bytes_for_concurrent_read"
+  },
+  {
+    "alias_for": "",
+    "name": "merge_tree_min_bytes_per_read_stream"
   },
   {
     "alias_for": "",
@@ -1478,6 +1498,10 @@
   {
     "alias_for": "",
     "name": "ignore_on_cluster_for_replicated_named_collections_queries"
+  },
+  {
+    "alias_for": "",
+    "name": "ignore_on_cluster_for_replicated_handler_queries"
   },
   {
     "alias_for": "",
@@ -3369,6 +3393,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_read_in_order_through_spilling_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_aggregation_in_order"
   },
   {
@@ -4869,6 +4897,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_metadata_only_named_tuple_alter"
+  },
+  {
+    "alias_for": "",
     "name": "enable_streaming_queries"
   },
   {
@@ -6166,6 +6198,10 @@
   {
     "alias_for": "",
     "name": "input_format_json_max_depth"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_json_max_object_size"
   },
   {
     "alias_for": "",

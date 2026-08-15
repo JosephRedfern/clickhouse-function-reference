@@ -726,6 +726,9 @@
     "name": "HASH"
   },
   {
+    "name": "HANDLER"
+  },
+  {
     "name": "HAVING"
   },
   {
@@ -994,6 +997,9 @@
   },
   {
     "name": "MERGES"
+  },
+  {
+    "name": "METHODS"
   },
   {
     "name": "METRICS"
@@ -1288,6 +1294,9 @@
   },
   {
     "name": "Protobuf"
+  },
+  {
+    "name": "PROTOCOL"
   },
   {
     "name": "Files"
