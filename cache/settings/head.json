@@ -2233,6 +2233,14 @@
   },
   {
     "alias_for": "",
+    "name": "enable_adaptive_aggregator"
+  },
+  {
+    "alias_for": "",
+    "name": "adaptive_aggregator_freeze_threshold"
+  },
+  {
+    "alias_for": "",
     "name": "enable_sharding_aggregator"
   },
   {
@@ -6538,6 +6546,10 @@
   {
     "alias_for": "",
     "name": "output_format_parquet_fixed_string_as_fixed_byte_array"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_wide_integer_as_decimal"
   },
   {
     "alias_for": "",
