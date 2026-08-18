@@ -3501,6 +3501,66 @@
   },
   {
     "alias_for": "",
+    "name": "page"
+  },
+  {
+    "alias_for": "",
+    "name": "select"
+  },
+  {
+    "alias_for": "",
+    "name": "order"
+  },
+  {
+    "alias_for": "",
+    "name": "sort"
+  },
+  {
+    "alias_for": "",
+    "name": "filter"
+  },
+  {
+    "alias_for": "",
+    "name": "database"
+  },
+  {
+    "alias_for": "",
+    "name": "default_format"
+  },
+  {
+    "alias_for": "",
+    "name": "format"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format"
+  },
+  {
+    "alias_for": "",
+    "name": "compression"
+  },
+  {
+    "alias_for": "",
+    "name": "http_allow_database_as_path"
+  },
+  {
+    "alias_for": "",
+    "name": "http_allow_table_as_file"
+  },
+  {
+    "alias_for": "",
+    "name": "http_allow_filters_as_path"
+  },
+  {
+    "alias_for": "",
+    "name": "http_allow_filters_as_unrecognized_url_parameters"
+  },
+  {
+    "alias_for": "",
     "name": "function_range_max_elements_in_block"
   },
   {
