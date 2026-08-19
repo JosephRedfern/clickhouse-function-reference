@@ -1413,6 +1413,10 @@
   },
   {
     "alias_for": "",
+    "name": "explain_syntax_single_record"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_step_description_length"
   },
   {
@@ -2086,6 +2090,10 @@
   {
     "alias_for": "",
     "name": "backup_restore_s3_retry_jitter_factor"
+  },
+  {
+    "alias_for": "",
+    "name": "resumable_backup_from_snapshot"
   },
   {
     "alias_for": "",
@@ -5214,6 +5222,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_force_shuffle_aggregation"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_cascades_optimizer"
   },
   {
     "alias_for": "",
