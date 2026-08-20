@@ -4433,6 +4433,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyzer_compatibility_multiple_joins_qualify_column_names"
+  },
+  {
+    "alias_for": "",
     "name": "enable_identifier_resolve_cache"
   },
   {
@@ -4542,6 +4546,10 @@
   {
     "alias_for": "",
     "name": "use_hive_partitioning"
+  },
+  {
+    "alias_for": "",
+    "name": "throw_on_hive_partitioning_resolution_failure"
   },
   {
     "alias_for": "",

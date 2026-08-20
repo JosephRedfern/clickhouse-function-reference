@@ -1493,6 +1493,10 @@
   },
   {
     "alias_for": "",
+    "name": "run_query_in_background"
+  },
+  {
+    "alias_for": "",
     "name": "ignore_on_cluster_for_replicated_udf_queries"
   },
   {
