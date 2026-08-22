@@ -1593,6 +1593,10 @@
   },
   {
     "alias_for": "",
+    "name": "statistics_max_set_size_for_exact_selectivity_estimation"
+  },
+  {
+    "alias_for": "",
     "name": "analyze_index_with_space_filling_curves"
   },
   {
@@ -3361,6 +3365,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_push_down_volume_reducing_functions"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_convert_outer_join_to_inner_join"
   },
   {
@@ -4798,6 +4806,10 @@
   {
     "alias_for": "",
     "name": "function_date_trunc_return_type_behavior"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_function_early_short_circuit"
   },
   {
     "alias_for": "",

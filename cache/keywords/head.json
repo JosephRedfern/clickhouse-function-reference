@@ -1056,6 +1056,9 @@
     "name": "MODIFY ORDER BY"
   },
   {
+    "name": "MODIFY PROJECTION"
+  },
+  {
     "name": "MODIFY QUERY"
   },
   {
