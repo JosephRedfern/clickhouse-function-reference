@@ -1347,6 +1347,9 @@
     "name": "REALM"
   },
   {
+    "name": "RECENT SAMPLES"
+  },
+  {
     "name": "RECOMPRESS"
   },
   {
@@ -1738,6 +1741,9 @@
   },
   {
     "name": "UUID"
+  },
+  {
+    "name": "VALID FOR"
   },
   {
     "name": "VALID UNTIL"
