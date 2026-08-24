@@ -3149,6 +3149,14 @@
   },
   {
     "alias_for": "",
+    "name": "allow_creating_set_partitions_independently"
+  },
+  {
+    "alias_for": "",
+    "name": "force_creating_set_partitions_independently"
+  },
+  {
+    "alias_for": "",
     "name": "allow_distinct_partitions_independently"
   },
   {
