@@ -1117,6 +1117,14 @@
   },
   {
     "alias_for": "",
+    "name": "enable_group_by_top_k_optimization"
+  },
+  {
+    "alias_for": "",
+    "name": "group_by_top_k_optimization_observation_rows"
+  },
+  {
+    "alias_for": "",
     "name": "use_top_k_dynamic_filtering_for_variable_length_types"
   },
   {
@@ -3165,11 +3173,23 @@
   },
   {
     "alias_for": "",
+    "name": "allow_window_partitions_independently"
+  },
+  {
+    "alias_for": "",
+    "name": "force_window_partitions_independently"
+  },
+  {
+    "alias_for": "",
     "name": "max_number_of_partitions_for_independent_aggregation"
   },
   {
     "alias_for": "",
     "name": "max_number_of_partitions_for_independent_distinct"
+  },
+  {
+    "alias_for": "",
+    "name": "max_number_of_partitions_for_independent_window"
   },
   {
     "alias_for": "",
@@ -3350,6 +3370,10 @@
   {
     "alias_for": "",
     "name": "query_plan_top_k_through_join"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_aggregation_bucket_top_k"
   },
   {
     "alias_for": "",
