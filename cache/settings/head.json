@@ -2265,6 +2265,10 @@
   },
   {
     "alias_for": "",
+    "name": "adaptive_aggregator_freeze_threshold_bytes"
+  },
+  {
+    "alias_for": "",
     "name": "enable_sharding_aggregator"
   },
   {
@@ -2993,6 +2997,10 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_compaction_commit_batch_size"
+  },
+  {
+    "alias_for": "",
     "name": "use_query_cache"
   },
   {
@@ -3393,6 +3401,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_fuse_filter_into_array_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_filter_push_down"
   },
   {
@@ -3454,10 +3466,6 @@
   {
     "alias_for": "",
     "name": "query_plan_read_in_order_through_join"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_read_in_order_through_spilling_join"
   },
   {
     "alias_for": "",
@@ -4021,11 +4029,11 @@
   },
   {
     "alias_for": "",
-    "name": "read_through_distributed_cache"
+    "name": "force_read_through_distributed_cache"
   },
   {
     "alias_for": "",
-    "name": "write_through_distributed_cache"
+    "name": "force_write_through_distributed_cache"
   },
   {
     "alias_for": "",
@@ -4150,6 +4158,10 @@
   {
     "alias_for": "",
     "name": "distributed_cache_file_cache_name"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_cache_client_id"
   },
   {
     "alias_for": "",
@@ -4801,6 +4813,14 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_compaction_max_rows_in_data_file"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_max_bytes_in_data_file"
+  },
+  {
+    "alias_for": "",
     "name": "iceberg_insert_max_partitions"
   },
   {
@@ -5273,6 +5293,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_plan_workers_provisioning_timeout_ms"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_plan_force_exchange_kind"
   },
   {
@@ -5738,6 +5762,14 @@
   {
     "alias_for": "",
     "name": "max_remote_write_network_bandwidth_for_server"
+  },
+  {
+    "alias_for": "",
+    "name": "read_through_distributed_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "write_through_distributed_cache"
   },
   {
     "alias_for": "",
