@@ -4977,6 +4977,14 @@
   },
   {
     "alias_for": "",
+    "name": "enable_hash_join_row_store"
+  },
+  {
+    "alias_for": "",
+    "name": "min_rows_ratio_for_hash_join_row_store"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_materialized_postgresql_table"
   },
   {
