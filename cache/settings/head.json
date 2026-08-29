@@ -2269,10 +2269,6 @@
   },
   {
     "alias_for": "",
-    "name": "enable_sharding_aggregator"
-  },
-  {
-    "alias_for": "",
     "name": "read_in_order_use_buffering"
   },
   {
@@ -4985,6 +4981,54 @@
   },
   {
     "alias_for": "",
+    "name": "ai_function_request_timeout_sec"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_max_retries"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_retry_initial_delay_ms"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_throw_on_error"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_max_input_tokens_per_query"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_max_output_tokens_per_query"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_max_api_calls_per_query"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_throw_on_quota_exceeded"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_embedding_max_batch_size"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_text_default_credentials"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_embedding_default_credentials"
+  },
+  {
+    "alias_for": "",
+    "name": "ai_function_allow_insecure_endpoint"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_materialized_postgresql_table"
   },
   {
@@ -5457,55 +5501,7 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_ai_functions"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_request_timeout_sec"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_max_retries"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_retry_initial_delay_ms"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_throw_on_error"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_max_input_tokens_per_query"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_max_output_tokens_per_query"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_max_api_calls_per_query"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_throw_on_quota_exceeded"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_embedding_max_batch_size"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_text_default_credentials"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_embedding_default_credentials"
-  },
-  {
-    "alias_for": "",
-    "name": "ai_function_allow_insecure_endpoint"
+    "name": "enable_sharding_aggregator"
   },
   {
     "alias_for": "",
@@ -5514,6 +5510,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_query_deduplication"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_ai_functions"
   },
   {
     "alias_for": "",
