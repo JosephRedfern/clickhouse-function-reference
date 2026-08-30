@@ -1073,6 +1073,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_mutations_with_partition_pruning"
+  },
+  {
+    "alias_for": "",
     "name": "use_constant_folding_in_index_analysis"
   },
   {
@@ -1846,6 +1850,10 @@
   {
     "alias_for": "",
     "name": "ast_fuzzer_any_query"
+  },
+  {
+    "alias_for": "",
+    "name": "ast_fuzzer_oracle"
   },
   {
     "alias_for": "",
