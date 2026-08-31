@@ -558,9 +558,6 @@
     "name": "EVENT"
   },
   {
-    "name": "EVENTS"
-  },
-  {
     "name": "EVERY"
   },
   {
@@ -1764,9 +1761,6 @@
     "name": "VISIBLE"
   },
   {
-    "name": "WATCH"
-  },
-  {
     "name": "WATERMARK"
   },
   {
@@ -1861,9 +1855,6 @@
   },
   {
     "name": "WITH TABLES"
-  },
-  {
-    "name": "ALLOWED_LATENESS"
   },
   {
     "name": "AUTO_INCREMENT"
@@ -1963,9 +1954,6 @@
   },
   {
     "name": "SSL_CERTIFICATE"
-  },
-  {
-    "name": "STRICTLY_ASCENDING"
   },
   {
     "name": "TIMEZONE_HOUR"
