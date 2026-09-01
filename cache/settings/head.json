@@ -2737,10 +2737,6 @@
   },
   {
     "alias_for": "",
-    "name": "function_implementation"
-  },
-  {
-    "alias_for": "",
     "name": "data_type_default_nullable"
   },
   {
@@ -5498,6 +5494,10 @@
   {
     "alias_for": "",
     "name": "distributed_cache_use_clients_cache_for_write"
+  },
+  {
+    "alias_for": "",
+    "name": "function_implementation"
   },
   {
     "alias_for": "",
