@@ -9997,7 +9997,7 @@
     "create_query": "",
     "description": "\\nConverts a date or date with time to a `UInt32` number containing the year and month number (YYYY * 100 + MM).\\nAccepts a second optional timezone argument. If provided, the timezone must be a string constant.\\n\\nThis function is the opposite of function `YYYYMMDDToDate()`.\\n    ",
     "deterministic": "1",
-    "examples": "**Convert current date to YYYYMM format**\\n\\n```sql title=Query\\nSELECT toYYYYMM(now(), \\'US/Eastern\\')\\n```\\n\\n```response title=Response\\n\u250c\u2500toYYYYMM(now(), \\'US/Eastern\\')\u2500\u2510\\n\u2502                        202608 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Convert a date and time to YYYYMM format in another time zone**\\n\\n```sql title=Query\\nSELECT toYYYYMM(toDateTime(\\'2026-01-01 03:04:05\\', \\'UTC\\'), \\'US/Eastern\\')\\n```\\n\\n```response title=Response\\n\u250c\u2500toYYYYMM(toDateTime(\\'2026-01-01 03:04:05\\', \\'UTC\\'), \\'US/Eastern\\')\u2500\u2510\\n\u2502                                                           202512 \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "1.1.0",
     "is_aggregate": "0",

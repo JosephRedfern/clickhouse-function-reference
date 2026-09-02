@@ -3181,6 +3181,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_preliminary_distinct_abandoning"
+  },
+  {
+    "alias_for": "",
     "name": "allow_window_partitions_independently"
   },
   {
