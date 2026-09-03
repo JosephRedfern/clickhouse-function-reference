@@ -3409,6 +3409,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_lower_array_join_function"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_filter_push_down"
   },
   {
@@ -5073,10 +5077,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_codecs"
-  },
-  {
-    "alias_for": "",
     "name": "enable_alp_codec"
   },
   {
@@ -5722,6 +5722,10 @@
   {
     "alias_for": "",
     "name": "use_projection_index_in_read_pools"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_codecs"
   },
   {
     "alias_for": "",
