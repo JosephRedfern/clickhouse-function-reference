@@ -9187,7 +9187,7 @@
     "create_query": "",
     "description": "\\nFormats a floating-point sample value using Prometheus label-value semantics.\\n\\nFinite values use fixed notation with the shortest decimal representation that round-trips to the same `Float64`.\\nNegative zero is preserved. Special values are returned as `NaN`, `+Inf`, and `-Inf`.\\n    ",
     "deterministic": "1",
-    "examples": "**Fixed notation**\\n\\n```sql title=Query\\nSELECT timeSeriesPrometheusValueToString(toFloat64(1e-7))\\n```\\n\\n```response title=Response\\n\u250c\u2500timeSeriesPrometheusValueToString(toFloat64(1e-7))\u2500\u2510\\n\u2502 0.0000001                                           \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
+    "examples": "**Fixed notation**\\n\\n```sql title=Query\\nSELECT timeSeriesPrometheusValueToString(toFloat64(1e-7))\\n```\\n\\n```response title=Response\\n\u250c\u2500timeSeriesPrometheusValueToString(toFloat64(1e-7))\u2500\u2510\\n\u2502 0.0000001                                          \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "26.8.0",
     "is_aggregate": "0",

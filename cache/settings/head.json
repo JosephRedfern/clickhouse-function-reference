@@ -2249,6 +2249,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_read_in_reverse_order_final"
+  },
+  {
+    "alias_for": "",
     "name": "read_in_order_use_virtual_row"
   },
   {
@@ -4569,6 +4573,10 @@
   },
   {
     "alias_for": "",
+    "name": "parallel_replicas_allow_merge_tables"
+  },
+  {
+    "alias_for": "",
     "name": "parallel_replicas_prefer_local_replica"
   },
   {
@@ -5346,6 +5354,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_max_rows_to_broadcast"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_read_in_order"
   },
   {
     "alias_for": "",
