@@ -1117,6 +1117,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_statistics_for_min_max_aggregation"
+  },
+  {
+    "alias_for": "",
     "name": "use_top_k_dynamic_filtering"
   },
   {
@@ -3421,6 +3425,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_propagate_predicate_across_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_push_down_volume_reducing_functions"
   },
   {
@@ -4985,6 +4993,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_join_key_only_hash_tables"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_limit_for_join_lazy_indexing"
   },
   {
@@ -6434,6 +6446,10 @@
   {
     "alias_for": "",
     "name": "type_json_skip_invalid_typed_paths"
+  },
+  {
+    "alias_for": "",
+    "name": "type_json_skip_null_typed_paths"
   },
   {
     "alias_for": "",
