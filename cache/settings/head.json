@@ -2989,7 +2989,15 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_manifest_decode_concurrency"
+  },
+  {
+    "alias_for": "iceberg_manifest_decode_concurrency",
     "name": "iceberg_delete_manifest_decode_concurrency"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_file_entries_queue_size"
   },
   {
     "alias_for": "",
@@ -5394,6 +5402,10 @@
   {
     "alias_for": "",
     "name": "enable_cascades_optimizer"
+  },
+  {
+    "alias_for": "",
+    "name": "cascades_aggregation_pushdown"
   },
   {
     "alias_for": "",
