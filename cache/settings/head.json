@@ -4713,6 +4713,10 @@
   },
   {
     "alias_for": "",
+    "name": "create_token_default_ttl_seconds"
+  },
+  {
+    "alias_for": "",
     "name": "enforce_strict_identifier_format"
   },
   {
@@ -5502,6 +5506,14 @@
   {
     "alias_for": "",
     "name": "query_plan_optimize_join_order_algorithm"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_join_order_use_cd_a_conflict_detector"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_join_order_use_cd_c_conflict_detector"
   },
   {
     "alias_for": "",
