@@ -5533,6 +5533,10 @@
   },
   {
     "alias_for": "",
+    "name": "webassembly_udf_input_split_memory_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "webassembly_udf_max_instances"
   },
   {
