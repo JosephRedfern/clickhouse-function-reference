@@ -5089,6 +5089,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_time_series_table"
+  },
+  {
+    "alias_for": "enable_time_series_table",
     "name": "allow_experimental_time_series_table"
   },
   {
@@ -5461,11 +5465,15 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_time_series_aggregate_functions"
+    "name": "enable_time_series_aggregate_functions"
   },
   {
-    "alias_for": "allow_experimental_time_series_aggregate_functions",
+    "alias_for": "enable_time_series_aggregate_functions",
     "name": "allow_experimental_ts_to_grid_aggregate_function"
+  },
+  {
+    "alias_for": "enable_time_series_aggregate_functions",
+    "name": "allow_experimental_time_series_aggregate_functions"
   },
   {
     "alias_for": "",
@@ -5509,11 +5517,11 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_optimize_join_order_use_cd_a_conflict_detector"
+    "name": "query_plan_optimize_join_order_use_conflict_detector_a"
   },
   {
     "alias_for": "",
-    "name": "query_plan_optimize_join_order_use_cd_c_conflict_detector"
+    "name": "query_plan_optimize_join_order_use_conflict_detector_c"
   },
   {
     "alias_for": "",
