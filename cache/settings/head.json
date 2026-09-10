@@ -493,6 +493,10 @@
   },
   {
     "alias_for": "",
+    "name": "s3_upload_checksum_algorithm"
+  },
+  {
+    "alias_for": "",
     "name": "s3_request_timeout_ms"
   },
   {
@@ -5025,6 +5029,18 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_derive_not_null_filters_from_joins"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_allow_derived_not_null_filters_execution"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_max_selectivity_for_not_null_filters_execution"
+  },
+  {
+    "alias_for": "",
     "name": "ai_function_request_timeout_sec"
   },
   {
@@ -5294,6 +5310,10 @@
   {
     "alias_for": "",
     "name": "polyglot_dialect"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_trino_dialect"
   },
   {
     "alias_for": "",
