@@ -1225,6 +1225,10 @@
   },
   {
     "alias_for": "",
+    "name": "session_query_ids_history_size"
+  },
+  {
+    "alias_for": "",
     "name": "log_processors_profiles"
   },
   {
@@ -4485,6 +4489,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_iceberg_manifest_list_partition_pruning"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_distinct_in_order"
   },
   {
@@ -5026,18 +5034,6 @@
   {
     "alias_for": "",
     "name": "min_rows_ratio_for_hash_join_row_store"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_derive_not_null_filters_from_joins"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_allow_derived_not_null_filters_execution"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_max_selectivity_for_not_null_filters_execution"
   },
   {
     "alias_for": "",
