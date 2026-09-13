@@ -489,10 +489,6 @@
   },
   {
     "alias_for": "",
-    "name": "s3_disable_checksum"
-  },
-  {
-    "alias_for": "",
     "name": "s3_upload_checksum_algorithm"
   },
   {
@@ -4057,6 +4053,10 @@
   },
   {
     "alias_for": "",
+    "name": "workload_admission_timeout_ms"
+  },
+  {
+    "alias_for": "",
     "name": "storage_system_stack_trace_pipe_read_timeout_ms"
   },
   {
@@ -5369,6 +5369,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_plan_fallback_to_local_execution"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_plan_execute_locally"
   },
   {
@@ -5570,6 +5574,10 @@
   {
     "alias_for": "",
     "name": "enable_sharding_aggregator"
+  },
+  {
+    "alias_for": "",
+    "name": "s3_disable_checksum"
   },
   {
     "alias_for": "",
