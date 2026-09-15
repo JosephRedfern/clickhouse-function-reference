@@ -2485,6 +2485,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_url_wildcard_from_index_pages"
+  },
+  {
+    "alias_for": "allow_url_wildcard_from_index_pages",
     "name": "allow_experimental_url_wildcard_from_index_pages"
   },
   {
@@ -3165,6 +3169,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_kafka_offsets_storage_in_keeper"
+  },
+  {
+    "alias_for": "allow_kafka_offsets_storage_in_keeper",
     "name": "allow_experimental_kafka_offsets_storage_in_keeper"
   },
   {
@@ -3329,6 +3337,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_correlated_subqueries"
+  },
+  {
+    "alias_for": "allow_correlated_subqueries",
     "name": "allow_experimental_correlated_subqueries"
   },
   {
@@ -4425,6 +4437,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_geo_types_in_iceberg"
+  },
+  {
+    "alias_for": "allow_geo_types_in_iceberg",
     "name": "allow_experimental_geo_types_in_iceberg"
   },
   {
@@ -4469,11 +4485,11 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_delta_lake_writes"
+    "name": "allow_delta_lake_writes"
   },
   {
-    "alias_for": "allow_experimental_delta_lake_writes",
-    "name": "allow_delta_lake_writes"
+    "alias_for": "allow_delta_lake_writes",
+    "name": "allow_experimental_delta_lake_writes"
   },
   {
     "alias_for": "",
@@ -4657,27 +4673,27 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_database_iceberg"
-  },
-  {
-    "alias_for": "allow_experimental_database_iceberg",
     "name": "allow_database_iceberg"
   },
   {
-    "alias_for": "",
-    "name": "allow_experimental_database_unity_catalog"
+    "alias_for": "allow_database_iceberg",
+    "name": "allow_experimental_database_iceberg"
   },
   {
-    "alias_for": "allow_experimental_database_unity_catalog",
+    "alias_for": "",
     "name": "allow_database_unity_catalog"
   },
   {
-    "alias_for": "",
-    "name": "allow_experimental_database_glue_catalog"
+    "alias_for": "allow_database_unity_catalog",
+    "name": "allow_experimental_database_unity_catalog"
   },
   {
-    "alias_for": "allow_experimental_database_glue_catalog",
+    "alias_for": "",
     "name": "allow_database_glue_catalog"
+  },
+  {
+    "alias_for": "allow_database_glue_catalog",
+    "name": "allow_experimental_database_glue_catalog"
   },
   {
     "alias_for": "",
@@ -4981,11 +4997,11 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_nullable_tuple_type"
+    "name": "enable_nullable_tuple_type"
   },
   {
-    "alias_for": "allow_experimental_nullable_tuple_type",
-    "name": "enable_nullable_tuple_type"
+    "alias_for": "enable_nullable_tuple_type",
+    "name": "allow_experimental_nullable_tuple_type"
   },
   {
     "alias_for": "",
@@ -5037,6 +5053,18 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_derive_not_null_filters_from_joins"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_allow_derived_not_null_filters_execution"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_max_selectivity_for_not_null_filters_execution"
+  },
+  {
+    "alias_for": "",
     "name": "ai_function_request_timeout_sec"
   },
   {
@@ -5085,10 +5113,18 @@
   },
   {
     "alias_for": "",
+    "name": "enable_materialized_postgresql_table"
+  },
+  {
+    "alias_for": "enable_materialized_postgresql_table",
     "name": "allow_experimental_materialized_postgresql_table"
   },
   {
     "alias_for": "",
+    "name": "enable_funnel_functions"
+  },
+  {
+    "alias_for": "enable_funnel_functions",
     "name": "allow_experimental_funnel_functions"
   },
   {
@@ -5121,6 +5157,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_unique_key"
+  },
+  {
+    "alias_for": "enable_unique_key",
     "name": "allow_experimental_unique_key"
   },
   {
@@ -5169,10 +5209,18 @@
   },
   {
     "alias_for": "",
+    "name": "allow_join_right_table_sorting"
+  },
+  {
+    "alias_for": "allow_join_right_table_sorting",
     "name": "allow_experimental_join_right_table_sorting"
   },
   {
     "alias_for": "",
+    "name": "enable_json_lazy_type_hints"
+  },
+  {
+    "alias_for": "enable_json_lazy_type_hints",
     "name": "allow_experimental_json_lazy_type_hints"
   },
   {
