@@ -765,6 +765,10 @@
   },
   {
     "alias_for": "",
+    "name": "validate_group_by_all_key_types"
+  },
+  {
+    "alias_for": "",
     "name": "use_variant_default_implementation_for_comparisons"
   },
   {
@@ -4485,6 +4489,10 @@
   },
   {
     "alias_for": "",
+    "name": "delta_lake_accurate_write_cast"
+  },
+  {
+    "alias_for": "",
     "name": "allow_delta_lake_writes"
   },
   {
@@ -5053,18 +5061,6 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_derive_not_null_filters_from_joins"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_allow_derived_not_null_filters_execution"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_max_selectivity_for_not_null_filters_execution"
-  },
-  {
-    "alias_for": "",
     "name": "ai_function_request_timeout_sec"
   },
   {
@@ -5357,7 +5353,7 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_trino_dialect"
+    "name": "enable_trino_dialect"
   },
   {
     "alias_for": "",
@@ -5370,6 +5366,10 @@
   {
     "alias_for": "allow_delta_kernel_rs",
     "name": "allow_experimental_delta_kernel_rs"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_delta_lake_create_table"
   },
   {
     "alias_for": "",
