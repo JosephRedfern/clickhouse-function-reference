@@ -1769,6 +1769,14 @@
   },
   {
     "alias_for": "",
+    "name": "max_bytes_before_external_distinct"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_ratio_before_external_distinct"
+  },
+  {
+    "alias_for": "",
     "name": "max_result_rows"
   },
   {
@@ -5053,6 +5061,14 @@
   },
   {
     "alias_for": "",
+    "name": "enable_json_lazy_type_hints"
+  },
+  {
+    "alias_for": "enable_json_lazy_type_hints",
+    "name": "allow_experimental_json_lazy_type_hints"
+  },
+  {
+    "alias_for": "",
     "name": "enable_hash_join_row_store"
   },
   {
@@ -5210,14 +5226,6 @@
   {
     "alias_for": "allow_join_right_table_sorting",
     "name": "allow_experimental_join_right_table_sorting"
-  },
-  {
-    "alias_for": "",
-    "name": "enable_json_lazy_type_hints"
-  },
-  {
-    "alias_for": "enable_json_lazy_type_hints",
-    "name": "allow_experimental_json_lazy_type_hints"
   },
   {
     "alias_for": "",
@@ -7170,6 +7178,14 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_unsupported_types_as_binary"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_record_batch_size"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_record_batch_size_bytes"
   },
   {
     "alias_for": "",
