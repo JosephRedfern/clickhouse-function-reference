@@ -2873,6 +2873,10 @@
   },
   {
     "alias_for": "",
+    "name": "prefer_optimize_projection"
+  },
+  {
+    "alias_for": "",
     "name": "force_optimize_projection_name"
   },
   {
@@ -4522,6 +4526,10 @@
   {
     "alias_for": "",
     "name": "use_iceberg_manifest_list_partition_pruning"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_tolerate_conflicting_manifest_schemas"
   },
   {
     "alias_for": "",
@@ -7174,6 +7182,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_date_as_uint16"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_unsupported_types"
   },
   {
     "alias_for": "",
