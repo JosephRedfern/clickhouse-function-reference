@@ -4657,10 +4657,6 @@
   },
   {
     "alias_for": "",
-    "name": "parallel_replicas_only_with_analyzer"
-  },
-  {
-    "alias_for": "",
     "name": "parallel_replicas_insert_select_local_pipeline"
   },
   {
@@ -5630,6 +5626,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_eval_table_function"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_only_with_analyzer"
   },
   {
     "alias_for": "",
