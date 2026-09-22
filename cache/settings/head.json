@@ -2357,6 +2357,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_executable_tables"
+  },
+  {
+    "alias_for": "",
     "name": "formatdatetime_f_prints_single_zero"
   },
   {
