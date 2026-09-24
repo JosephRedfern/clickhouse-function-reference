@@ -2749,10 +2749,6 @@
   },
   {
     "alias_for": "",
-    "name": "validate_mutation_query"
-  },
-  {
-    "alias_for": "",
     "name": "lock_acquire_timeout"
   },
   {
@@ -3610,6 +3606,10 @@
   {
     "alias_for": "",
     "name": "optimize_qbit_distance_function_reads"
+  },
+  {
+    "alias_for": "",
+    "name": "qbit_one_bit_symmetric_distance"
   },
   {
     "alias_for": "",
@@ -4662,6 +4662,10 @@
   {
     "alias_for": "",
     "name": "parallel_replicas_connect_timeout_ms"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_for_queries_with_multiple_tables"
   },
   {
     "alias_for": "",
@@ -5758,6 +5762,10 @@
   {
     "alias_for": "",
     "name": "allow_deprecated_snowflake_conversion_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "validate_mutation_query"
   },
   {
     "alias_for": "",
