@@ -561,6 +561,10 @@
   },
   {
     "alias_for": "",
+    "name": "reader_executor_plan_look_ahead"
+  },
+  {
+    "alias_for": "",
     "name": "azure_skip_empty_files"
   },
   {
@@ -5329,11 +5333,7 @@
   },
   {
     "alias_for": "",
-    "name": "text_index_lazy_intersection_density_threshold"
-  },
-  {
-    "alias_for": "text_index_lazy_intersection_density_threshold",
-    "name": "text_index_density_threshold"
+    "name": "text_index_postings_intersection_algorithm"
   },
   {
     "alias_for": "",
@@ -6154,6 +6154,14 @@
   {
     "alias_for": "",
     "name": "cloud_mode_database_engine"
+  },
+  {
+    "alias_for": "",
+    "name": "text_index_lazy_intersection_density_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "text_index_density_threshold"
   },
   {
     "alias_for": "",
