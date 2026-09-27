@@ -2361,6 +2361,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_executable_tables"
+  },
+  {
+    "alias_for": "",
     "name": "formatdatetime_f_prints_single_zero"
   },
   {
@@ -4525,6 +4529,10 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_tolerate_conflicting_manifest_schemas"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_distinct_in_order"
   },
   {
@@ -4742,6 +4750,10 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_multiple_joins_qualify_column_names"
+  },
+  {
+    "alias_for": "",
+    "name": "analyzer_compatibility_allow_cte_redefinition"
   },
   {
     "alias_for": "",

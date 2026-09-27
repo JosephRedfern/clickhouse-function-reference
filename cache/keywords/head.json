@@ -576,6 +576,12 @@
     "name": "EXCEPT TABLES"
   },
   {
+    "name": "EXCEPT DATA FROM TABLE"
+  },
+  {
+    "name": "EXCEPT DATA FROM TABLES"
+  },
+  {
     "name": "EXCEPT"
   },
   {

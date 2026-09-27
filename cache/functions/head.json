@@ -10891,7 +10891,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `year` \u2014 Year number. [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `month` \u2014 Month number (1-12). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day` \u2014 Day of the month (1-31). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day_of_year` \u2014 Day of the year (1-365). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n",
+    "arguments": "- `year` \u2014 Year number. [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `month` \u2014 Month number (1-12). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day` \u2014 Day of the month (1-31). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day_of_year` \u2014 Day of the year (1-365, or 366 in leap years). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Dates and Times",
     "create_query": "",
@@ -10909,7 +10909,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `year` \u2014 Year number. [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `month` \u2014 Month number (1-12). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day` \u2014 Day of the month (1-31). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day_of_year` \u2014 Day of the year (1-365). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n",
+    "arguments": "- `year` \u2014 Year number. [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `month` \u2014 Month number (1-12). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day` \u2014 Day of the month (1-31). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n- `day_of_year` \u2014 Day of the year (1-365, or 366 in leap years). [`(U)Int*`](/reference/data-types/int-uint) or [`Float*`](/reference/data-types/float) or [`Decimal`](/reference/data-types/decimal)\\n",
     "case_insensitive": "1",
     "categories": "Dates and Times",
     "create_query": "",
