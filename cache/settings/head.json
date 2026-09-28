@@ -573,6 +573,10 @@
   },
   {
     "alias_for": "",
+    "name": "arrow_flight_request_timeout_sec"
+  },
+  {
+    "alias_for": "",
     "name": "hsts_max_age"
   },
   {
@@ -3693,6 +3697,10 @@
   },
   {
     "alias_for": "",
+    "name": "http_x_clickhouse_format_overrides_output_format"
+  },
+  {
+    "alias_for": "",
     "name": "function_range_max_elements_in_block"
   },
   {
@@ -3778,6 +3786,10 @@
   {
     "alias_for": "",
     "name": "async_insert"
+  },
+  {
+    "alias_for": "",
+    "name": "async_insert_select_as_async_insert"
   },
   {
     "alias_for": "",
@@ -7174,6 +7186,10 @@
   {
     "alias_for": "",
     "name": "output_format_pretty_named_tuples_as_json"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_pretty_named_tuples_as_subcolumns"
   },
   {
     "alias_for": "",
