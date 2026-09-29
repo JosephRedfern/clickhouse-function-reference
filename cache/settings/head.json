@@ -4673,10 +4673,6 @@
   },
   {
     "alias_for": "",
-    "name": "parallel_replicas_insert_select_local_pipeline"
-  },
-  {
-    "alias_for": "",
     "name": "parallel_replicas_connect_timeout_ms"
   },
   {
@@ -6162,6 +6158,10 @@
   {
     "alias_for": "",
     "name": "query_plan_use_new_logical_join_step"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_insert_select_local_pipeline"
   },
   {
     "alias_for": "",
