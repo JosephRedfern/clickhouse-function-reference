@@ -3689,6 +3689,10 @@
   },
   {
     "alias_for": "",
+    "name": "http_x_clickhouse_format_overrides_output_format"
+  },
+  {
+    "alias_for": "",
     "name": "function_range_max_elements_in_block"
   },
   {
