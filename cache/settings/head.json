@@ -2737,10 +2737,6 @@
   },
   {
     "alias_for": "",
-    "name": "use_compact_format_in_distributed_parts_names"
-  },
-  {
-    "alias_for": "",
     "name": "validate_polygons"
   },
   {
@@ -3474,6 +3470,10 @@
   {
     "alias_for": "",
     "name": "query_plan_lower_array_join_function"
+  },
+  {
+    "alias_for": "",
+    "name": "legacy_array_join_function_nondeterministic_evaluation"
   },
   {
     "alias_for": "",
@@ -4993,6 +4993,10 @@
   },
   {
     "alias_for": "",
+    "name": "kill_throw_if_noop"
+  },
+  {
+    "alias_for": "",
     "name": "jemalloc_enable_profiler"
   },
   {
@@ -6193,6 +6197,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_compact_format_in_distributed_parts_names"
+  },
+  {
+    "alias_for": "",
     "name": "format_csv_delimiter"
   },
   {
@@ -6654,6 +6662,10 @@
   {
     "alias_for": "",
     "name": "input_format_try_infer_exponent_floats"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_freeform_max_search_steps"
   },
   {
     "alias_for": "",
@@ -7330,6 +7342,14 @@
   {
     "alias_for": "",
     "name": "output_format_sql_insert_quote_names"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_sqlite_table_name"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_sqlite_table_name"
   },
   {
     "alias_for": "",
