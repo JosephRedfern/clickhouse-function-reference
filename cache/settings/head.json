@@ -2413,6 +2413,10 @@
   },
   {
     "alias_for": "",
+    "name": "array_count_legacy_uint32_result"
+  },
+  {
+    "alias_for": "",
     "name": "h3togeo_lon_lat_result_order"
   },
   {
@@ -3149,6 +3153,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_rewrite_array_filter_length_to_array_count"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_rewrite_has_to_in"
   },
   {
@@ -3493,6 +3501,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_convert_outer_join_to_inner_join_transitively"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_short_circuit_constant_false_join"
   },
   {
@@ -3510,10 +3522,6 @@
   {
     "alias_for": "",
     "name": "query_plan_convert_join_to_in"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_optimize_prewhere"
   },
   {
     "alias_for": "",
@@ -3537,15 +3545,7 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_read_in_order"
-  },
-  {
-    "alias_for": "",
     "name": "query_plan_read_in_order_through_join"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_aggregation_in_order"
   },
   {
     "alias_for": "",
@@ -5401,6 +5401,26 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_logsql_dialect"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_database"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_table"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_time_column"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_message_column"
+  },
+  {
+    "alias_for": "",
     "name": "enable_trino_dialect"
   },
   {
@@ -6178,6 +6198,18 @@
   {
     "alias_for": "",
     "name": "query_plan_use_new_logical_join_step"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_read_in_order"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_prewhere"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_aggregation_in_order"
   },
   {
     "alias_for": "",
