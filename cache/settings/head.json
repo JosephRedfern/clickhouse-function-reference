@@ -3457,6 +3457,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_aggregation_having_prefilter"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_split_filter"
   },
   {
@@ -3486,6 +3490,10 @@
   {
     "alias_for": "",
     "name": "query_plan_filter_push_down"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_filter_push_down_below_limit_by"
   },
   {
     "alias_for": "",
@@ -5526,6 +5534,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_prefer_replicas_over_workers"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_max_buffered_log_rows"
   },
   {
     "alias_for": "",
