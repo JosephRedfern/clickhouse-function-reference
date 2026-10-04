@@ -421,6 +421,10 @@
   },
   {
     "alias_for": "",
+    "name": "azure_validate_etag_on_read"
+  },
+  {
+    "alias_for": "",
     "name": "azure_check_objects_after_upload"
   },
   {
@@ -5354,6 +5358,10 @@
   {
     "alias_for": "",
     "name": "use_text_index_negative_tokens_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "use_text_index_pattern_bypass_cache"
   },
   {
     "alias_for": "",

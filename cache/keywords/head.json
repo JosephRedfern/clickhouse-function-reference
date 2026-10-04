@@ -1173,6 +1173,9 @@
     "name": "NOT OVERRIDABLE"
   },
   {
+    "name": "NOT SIMILAR TO"
+  },
+  {
     "name": "NOT"
   },
   {
@@ -1570,6 +1573,9 @@
   },
   {
     "name": "SIGNED"
+  },
+  {
+    "name": "SIMILAR TO"
   },
   {
     "name": "SIMPLE"
