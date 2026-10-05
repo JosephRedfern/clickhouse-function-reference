@@ -593,6 +593,26 @@
   },
   {
     "alias_for": "",
+    "name": "use_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_reads_from_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_writes_to_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "columns_cache_max_estimated_bytes_to_write_to_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "columns_cache_max_bytes_to_write_to_cache"
+  },
+  {
+    "alias_for": "",
     "name": "replace_running_query"
   },
   {
@@ -3382,6 +3402,10 @@
   {
     "alias_for": "allow_correlated_subqueries",
     "name": "allow_experimental_correlated_subqueries"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_lateral_join"
   },
   {
     "alias_for": "",

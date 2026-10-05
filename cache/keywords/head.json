@@ -918,6 +918,9 @@
     "name": "LAST"
   },
   {
+    "name": "LATERAL"
+  },
+  {
     "name": "LAYOUT"
   },
   {
