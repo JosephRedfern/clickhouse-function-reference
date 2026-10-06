@@ -1969,6 +1969,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_block_nested_loop_join"
+  },
+  {
+    "alias_for": "",
     "name": "cross_to_inner_join_rewrite"
   },
   {
@@ -2798,6 +2802,10 @@
   {
     "alias_for": "",
     "name": "lock_acquire_timeout"
+  },
+  {
+    "alias_for": "",
+    "name": "get_zookeeper_lock_acquire_timeout_ms"
   },
   {
     "alias_for": "",
@@ -4473,10 +4481,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_named_collection_override_by_default"
-  },
-  {
-    "alias_for": "",
     "name": "default_normal_view_sql_security"
   },
   {
@@ -4798,6 +4802,14 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_allow_compound_identifiers_in_unflatten_nested"
+  },
+  {
+    "alias_for": "",
+    "name": "semi_join_include_columns_from_both_sides"
+  },
+  {
+    "alias_for": "",
+    "name": "anti_join_include_columns_from_both_sides"
   },
   {
     "alias_for": "",
@@ -6266,6 +6278,10 @@
   {
     "alias_for": "",
     "name": "text_index_lazy_intersection_density_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_named_collection_override_by_default"
   },
   {
     "alias_for": "",
