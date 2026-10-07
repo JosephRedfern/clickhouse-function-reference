@@ -4157,6 +4157,30 @@
   },
   {
     "alias_for": "",
+    "name": "weight"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_factor"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_age_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_cpu_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_io_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "workload_priority"
+  },
+  {
+    "alias_for": "",
     "name": "workload_admission_timeout_ms"
   },
   {
@@ -5453,7 +5477,7 @@
   },
   {
     "alias_for": "",
-    "name": "allow_experimental_logsql_dialect"
+    "name": "enable_logsql_dialect"
   },
   {
     "alias_for": "",
