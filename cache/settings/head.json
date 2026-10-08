@@ -725,6 +725,10 @@
   },
   {
     "alias_for": "",
+    "name": "apply_string_filters_during_scan"
+  },
+  {
+    "alias_for": "",
     "name": "alter_sync"
   },
   {
@@ -1166,6 +1170,10 @@
   {
     "alias_for": "",
     "name": "group_by_top_k_optimization_observation_rows"
+  },
+  {
+    "alias_for": "",
+    "name": "group_by_top_k_optimization_shared_boundary"
   },
   {
     "alias_for": "",
@@ -2118,6 +2126,22 @@
   {
     "alias_for": "",
     "name": "max_temporary_data_on_disk_size_for_query"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_tables"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_memory_usage"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_size_bytes_compressed"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_size_bytes_uncompressed"
   },
   {
     "alias_for": "",
@@ -3098,6 +3122,22 @@
   {
     "alias_for": "",
     "name": "enable_reads_from_query_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "query_cache_on_disk_cache_name"
+  },
+  {
+    "alias_for": "",
+    "name": "query_cache_on_disk_codec"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_writes_to_query_cache_on_disk"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_reads_from_query_cache_on_disk"
   },
   {
     "alias_for": "",
@@ -7310,6 +7350,10 @@
   {
     "alias_for": "",
     "name": "output_format_pretty_highlight_trailing_spaces"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_pretty_display_control_characters"
   },
   {
     "alias_for": "",
