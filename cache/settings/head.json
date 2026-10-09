@@ -1181,6 +1181,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_group_by_top_k_dynamic_filtering"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_limit_for_top_k_optimization"
   },
   {
@@ -2417,6 +2421,10 @@
   },
   {
     "alias_for": "",
+    "name": "json_extract_named_tuples_as_objects"
+  },
+  {
+    "alias_for": "",
     "name": "allow_introspection_functions"
   },
   {
@@ -2962,6 +2970,10 @@
   {
     "alias_for": "",
     "name": "min_table_rows_to_use_projection_index"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_join_seal_gated_reading"
   },
   {
     "alias_for": "",

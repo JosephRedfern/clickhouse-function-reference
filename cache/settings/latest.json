@@ -3465,6 +3465,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_filter_push_down_below_limit_by"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_propagate_predicate_across_join"
   },
   {
