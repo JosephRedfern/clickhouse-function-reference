@@ -1833,6 +1833,14 @@
   },
   {
     "alias_for": "",
+    "name": "max_bytes_before_external_set"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_ratio_before_external_set"
+  },
+  {
+    "alias_for": "",
     "name": "max_result_rows"
   },
   {
@@ -5317,6 +5325,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_xgboost"
+  },
+  {
+    "alias_for": "",
     "name": "enable_time_series_table"
   },
   {
@@ -7606,6 +7618,10 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_allow_geoparquet_parser"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_parquet_detect_variant_by_structure"
   },
   {
     "alias_for": "",
