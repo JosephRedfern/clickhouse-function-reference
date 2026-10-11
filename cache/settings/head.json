@@ -3465,6 +3465,10 @@
   },
   {
     "alias_for": "",
+    "name": "external_storage_push_down_limit"
+  },
+  {
+    "alias_for": "",
     "name": "allow_correlated_subqueries"
   },
   {
@@ -4733,6 +4737,10 @@
   },
   {
     "alias_for": "",
+    "name": "automatic_parallel_replicas_max_duplicated_read_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "automatic_parallel_replicas_min_bytes_per_replica"
   },
   {
@@ -5770,6 +5778,10 @@
   {
     "alias_for": "promql_evaluation_time",
     "name": "evaluation_time"
+  },
+  {
+    "alias_for": "",
+    "name": "promql_push_down_label_matchers"
   },
   {
     "alias_for": "",
