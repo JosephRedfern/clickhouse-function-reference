@@ -2665,6 +2665,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_min_max_from_files"
+  },
+  {
+    "alias_for": "",
     "name": "use_cache_for_count_from_files"
   },
   {
