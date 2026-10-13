@@ -857,6 +857,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_aggregation_memory_tracker"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_aggregation_memory_efficient"
   },
   {
@@ -2209,6 +2213,10 @@
   },
   {
     "alias_for": "",
+    "name": "backup_s3_expired_token_retry_timeout_ms"
+  },
+  {
+    "alias_for": "",
     "name": "backup_restore_s3_retry_initial_backoff_ms"
   },
   {
@@ -2302,6 +2310,10 @@
   {
     "alias_for": "",
     "name": "low_cardinality_use_single_dictionary_for_part"
+  },
+  {
+    "alias_for": "",
+    "name": "exact_division_for_integers"
   },
   {
     "alias_for": "",
@@ -5618,6 +5630,10 @@
   {
     "alias_for": "",
     "name": "iceberg_orphan_files_older_than_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_orphan_files_min_retention_seconds"
   },
   {
     "alias_for": "",
