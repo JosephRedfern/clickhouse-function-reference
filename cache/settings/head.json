@@ -125,6 +125,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_concurrency_control_for_max_threads"
+  },
+  {
+    "alias_for": "",
     "name": "max_download_threads"
   },
   {
@@ -3237,6 +3241,14 @@
   },
   {
     "alias_for": "",
+    "name": "use_query_condition_cache_for_time_conditions"
+  },
+  {
+    "alias_for": "",
+    "name": "query_condition_cache_time_condition_grid_factor"
+  },
+  {
+    "alias_for": "",
     "name": "enable_shared_storage_snapshot_in_query"
   },
   {
@@ -5346,6 +5358,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_hash_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_ipcrypt"
   },
   {
     "alias_for": "",
@@ -7658,6 +7674,10 @@
   {
     "alias_for": "",
     "name": "output_format_parquet_geometadata"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_write_file_logical_type"
   },
   {
     "alias_for": "",

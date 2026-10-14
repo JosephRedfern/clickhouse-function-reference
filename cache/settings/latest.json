@@ -821,6 +821,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_aggregation_memory_tracker"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_aggregation_memory_efficient"
   },
   {
