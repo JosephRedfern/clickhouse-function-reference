@@ -2125,6 +2125,10 @@
   },
   {
     "alias_for": "",
+    "name": "min_bytes_to_spill"
+  },
+  {
+    "alias_for": "",
     "name": "max_network_bandwidth"
   },
   {
@@ -2622,6 +2626,34 @@
   {
     "alias_for": "",
     "name": "odbc_bridge_use_connection_pooling"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_seed"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_order"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_cutoff"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_num_buckets_cutoff"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_add"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_desaturate"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_determinator_sliding_window_size"
   },
   {
     "alias_for": "",
@@ -4629,6 +4661,10 @@
   },
   {
     "alias_for": "",
+    "name": "short_circuit_function_evaluation_reorder_arguments"
+  },
+  {
+    "alias_for": "",
     "name": "prefer_warmed_unmerged_parts_seconds"
   },
   {
@@ -4762,6 +4798,10 @@
   {
     "alias_for": "",
     "name": "automatic_parallel_replicas_mode"
+  },
+  {
+    "alias_for": "",
+    "name": "automatic_parallel_replicas_remember_boundary"
   },
   {
     "alias_for": "",
@@ -5398,6 +5438,10 @@
   {
     "alias_for": "",
     "name": "enable_alp_codec"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_pco_codec"
   },
   {
     "alias_for": "",
