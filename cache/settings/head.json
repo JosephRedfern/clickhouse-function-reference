@@ -1685,6 +1685,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyze_index_with_multiple_key_columns_per_condition"
+  },
+  {
+    "alias_for": "",
     "name": "analyze_index_with_space_filling_curves"
   },
   {
@@ -1742,6 +1746,10 @@
   {
     "alias_for": "",
     "name": "opentelemetry_trace_cpu_scheduling"
+  },
+  {
+    "alias_for": "",
+    "name": "opentelemetry_trace_stateless_worker_discovery"
   },
   {
     "alias_for": "",
@@ -3685,6 +3693,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_replace_always_true_filter"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_merge_expression_into_join"
   },
   {
@@ -4034,6 +4046,10 @@
   {
     "alias_for": "",
     "name": "max_streams_for_files_processing_in_cluster_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "cluster_function_wait_for_replica_ms"
   },
   {
     "alias_for": "",
@@ -5754,6 +5770,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_prefer_replicas_over_workers"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_join_runtime_filters"
   },
   {
     "alias_for": "",
