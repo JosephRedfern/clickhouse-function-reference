@@ -3383,7 +3383,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression to match by. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
+    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression to match by. Must contain between 1 and 127 capturing groups. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
@@ -6727,7 +6727,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression. Must contain at least one capturing group. Constant. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
+    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression. Must contain between 1 and 127 capturing groups. Constant. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
     "case_insensitive": "0",
     "categories": "String Search",
     "create_query": "",
@@ -18298,7 +18298,7 @@
   },
   {
     "alias_to": "",
-    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression to match by. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
+    "arguments": "- `s` \u2014 Input string to extract from. [`String`](/reference/data-types/string) or [`FixedString`](/reference/data-types/fixedstring)\\n- `regexp` \u2014 Regular expression to match by. Must contain between 1 and 127 capturing groups. [`const String`](/reference/data-types/string) or [`const FixedString`](/reference/data-types/fixedstring)\\n",
     "case_insensitive": "0",
     "categories": "String Splitting",
     "create_query": "",

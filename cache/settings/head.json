@@ -5537,10 +5537,6 @@
   },
   {
     "alias_for": "",
-    "name": "use_statistics_cache"
-  },
-  {
-    "alias_for": "",
     "name": "enable_full_text_index"
   },
   {
@@ -5950,6 +5946,10 @@
   {
     "alias_for": "",
     "name": "enable_sharding_aggregator"
+  },
+  {
+    "alias_for": "",
+    "name": "use_statistics_cache"
   },
   {
     "alias_for": "",
