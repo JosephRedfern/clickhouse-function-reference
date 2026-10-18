@@ -5745,6 +5745,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_plan_worker_cluster"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_plan_workers_num"
   },
   {
