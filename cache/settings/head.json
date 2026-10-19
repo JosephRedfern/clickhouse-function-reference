@@ -1857,6 +1857,14 @@
   },
   {
     "alias_for": "",
+    "name": "max_bytes_for_external_set_bloom_filter"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_for_external_set_cache"
+  },
+  {
+    "alias_for": "",
     "name": "max_result_rows"
   },
   {
@@ -2329,7 +2337,7 @@
   },
   {
     "alias_for": "",
-    "name": "exact_division_for_integers"
+    "name": "sql_compatible_division_for_integers"
   },
   {
     "alias_for": "",
