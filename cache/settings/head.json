@@ -3181,6 +3181,10 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_list_only_v_prefixed_metadata_files"
+  },
+  {
+    "alias_for": "",
     "name": "iceberg_manifest_decode_concurrency"
   },
   {
@@ -5837,6 +5841,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_plan_partial_aggregation_before_shuffle"
+  },
+  {
+    "alias_for": "",
     "name": "enable_cascades_optimizer"
   },
   {
@@ -7362,6 +7370,10 @@
   {
     "alias_for": "",
     "name": "output_format_parquet_write_checksums"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_use_alp_encoding"
   },
   {
     "alias_for": "",
