@@ -2592,6 +2592,10 @@
     "name": "s3_allow_server_credentials_in_user_queries"
   },
   {
+    "alias_for": "s3_allow_server_credentials_in_user_queries",
+    "name": "allow_server_credentials_in_user_queries"
+  },
+  {
     "alias_for": "",
     "name": "max_parts_to_move"
   },
@@ -5318,6 +5322,10 @@
   {
     "alias_for": "enable_nullable_tuple_type",
     "name": "allow_experimental_nullable_tuple_type"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_subcolumn_codecs"
   },
   {
     "alias_for": "",
