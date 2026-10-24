@@ -125,6 +125,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_concurrency_control_for_max_threads"
+  },
+  {
+    "alias_for": "",
     "name": "max_download_threads"
   },
   {
@@ -353,10 +357,6 @@
   },
   {
     "alias_for": "",
-    "name": "s3_max_connections"
-  },
-  {
-    "alias_for": "",
     "name": "s3_max_get_rps"
   },
   {
@@ -421,7 +421,15 @@
   },
   {
     "alias_for": "",
+    "name": "s3_use_idempotency_id"
+  },
+  {
+    "alias_for": "",
     "name": "s3_validate_etag_on_read"
+  },
+  {
+    "alias_for": "",
+    "name": "azure_validate_etag_on_read"
   },
   {
     "alias_for": "",
@@ -565,11 +573,19 @@
   },
   {
     "alias_for": "",
+    "name": "reader_executor_plan_look_ahead"
+  },
+  {
+    "alias_for": "",
     "name": "azure_skip_empty_files"
   },
   {
     "alias_for": "",
     "name": "arrow_flight_request_descriptor_type"
+  },
+  {
+    "alias_for": "",
+    "name": "arrow_flight_request_timeout_sec"
   },
   {
     "alias_for": "",
@@ -582,6 +598,26 @@
   {
     "alias_for": "",
     "name": "use_uncompressed_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "use_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_reads_from_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_writes_to_columns_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "columns_cache_max_estimated_bytes_to_write_to_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "columns_cache_max_bytes_to_write_to_cache"
   },
   {
     "alias_for": "",
@@ -697,6 +733,10 @@
   },
   {
     "alias_for": "",
+    "name": "apply_string_filters_during_scan"
+  },
+  {
+    "alias_for": "",
     "name": "alter_sync"
   },
   {
@@ -737,6 +777,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_suspicious_indexes"
+  },
+  {
+    "alias_for": "allow_suspicious_indexes",
     "name": "allow_suspicious_indices"
   },
   {
@@ -1141,7 +1185,15 @@
   },
   {
     "alias_for": "",
+    "name": "group_by_top_k_optimization_shared_boundary"
+  },
+  {
+    "alias_for": "",
     "name": "use_top_k_dynamic_filtering_for_variable_length_types"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_group_by_top_k_dynamic_filtering"
   },
   {
     "alias_for": "",
@@ -1169,14 +1221,26 @@
   },
   {
     "alias_for": "",
+    "name": "ignore_data_skipping_indexes"
+  },
+  {
+    "alias_for": "ignore_data_skipping_indexes",
     "name": "ignore_data_skipping_indices"
   },
   {
     "alias_for": "",
+    "name": "force_data_skipping_indexes"
+  },
+  {
+    "alias_for": "force_data_skipping_indexes",
     "name": "force_data_skipping_indices"
   },
   {
     "alias_for": "",
+    "name": "secondary_indexes_enable_bulk_filtering"
+  },
+  {
+    "alias_for": "secondary_indexes_enable_bulk_filtering",
     "name": "secondary_indices_enable_bulk_filtering"
   },
   {
@@ -1625,6 +1689,10 @@
   },
   {
     "alias_for": "",
+    "name": "analyze_index_with_multiple_key_columns_per_condition"
+  },
+  {
+    "alias_for": "",
     "name": "analyze_index_with_space_filling_curves"
   },
   {
@@ -1682,6 +1750,10 @@
   {
     "alias_for": "",
     "name": "opentelemetry_trace_cpu_scheduling"
+  },
+  {
+    "alias_for": "",
+    "name": "opentelemetry_trace_stateless_worker_discovery"
   },
   {
     "alias_for": "",
@@ -1778,6 +1850,22 @@
   {
     "alias_for": "",
     "name": "max_bytes_ratio_before_external_distinct"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_before_external_set"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_ratio_before_external_set"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_for_external_set_bloom_filter"
+  },
+  {
+    "alias_for": "",
+    "name": "max_bytes_for_external_set_cache"
   },
   {
     "alias_for": "",
@@ -1929,6 +2017,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_block_nested_loop_join"
+  },
+  {
+    "alias_for": "",
     "name": "cross_to_inner_join_rewrite"
   },
   {
@@ -2053,6 +2145,10 @@
   },
   {
     "alias_for": "",
+    "name": "min_bytes_to_spill"
+  },
+  {
+    "alias_for": "",
     "name": "max_network_bandwidth"
   },
   {
@@ -2074,6 +2170,22 @@
   {
     "alias_for": "",
     "name": "max_temporary_data_on_disk_size_for_query"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_tables"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_memory_usage"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_size_bytes_compressed"
+  },
+  {
+    "alias_for": "",
+    "name": "max_temporary_table_size_bytes_uncompressed"
   },
   {
     "alias_for": "",
@@ -2126,6 +2238,10 @@
   {
     "alias_for": "",
     "name": "backup_restore_s3_retry_attempts"
+  },
+  {
+    "alias_for": "",
+    "name": "backup_s3_expired_token_retry_timeout_ms"
   },
   {
     "alias_for": "",
@@ -2205,10 +2321,6 @@
   },
   {
     "alias_for": "",
-    "name": "enable_optimize_predicate_expression"
-  },
-  {
-    "alias_for": "",
     "name": "enable_optimize_predicate_expression_to_final_subquery"
   },
   {
@@ -2226,6 +2338,10 @@
   {
     "alias_for": "",
     "name": "low_cardinality_use_single_dictionary_for_part"
+  },
+  {
+    "alias_for": "",
+    "name": "sql_compatible_division_for_integers"
   },
   {
     "alias_for": "",
@@ -2353,6 +2469,10 @@
   },
   {
     "alias_for": "",
+    "name": "json_extract_named_tuples_as_objects"
+  },
+  {
+    "alias_for": "",
     "name": "allow_introspection_functions"
   },
   {
@@ -2398,6 +2518,10 @@
   {
     "alias_for": "",
     "name": "least_greatest_legacy_null_behavior"
+  },
+  {
+    "alias_for": "",
+    "name": "array_count_legacy_uint32_result"
   },
   {
     "alias_for": "",
@@ -2525,6 +2649,34 @@
   },
   {
     "alias_for": "",
+    "name": "obfuscate_seed"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_order"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_cutoff"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_num_buckets_cutoff"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_add"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_frequency_desaturate"
+  },
+  {
+    "alias_for": "",
+    "name": "obfuscate_markov_determinator_sliding_window_size"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_replica_error_half_life"
   },
   {
@@ -2578,6 +2730,10 @@
   {
     "alias_for": "",
     "name": "optimize_count_from_files"
+  },
+  {
+    "alias_for": "",
+    "name": "optimize_min_max_from_files"
   },
   {
     "alias_for": "",
@@ -2725,10 +2881,6 @@
   },
   {
     "alias_for": "",
-    "name": "use_compact_format_in_distributed_parts_names"
-  },
-  {
-    "alias_for": "",
     "name": "validate_polygons"
   },
   {
@@ -2761,11 +2913,11 @@
   },
   {
     "alias_for": "",
-    "name": "validate_mutation_query"
+    "name": "lock_acquire_timeout"
   },
   {
     "alias_for": "",
-    "name": "lock_acquire_timeout"
+    "name": "get_zookeeper_lock_acquire_timeout_ms"
   },
   {
     "alias_for": "",
@@ -2881,6 +3033,10 @@
   },
   {
     "alias_for": "",
+    "name": "prefer_optimize_projection"
+  },
+  {
+    "alias_for": "",
     "name": "force_optimize_projection_name"
   },
   {
@@ -2894,6 +3050,10 @@
   {
     "alias_for": "",
     "name": "min_table_rows_to_use_projection_index"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_join_seal_gated_reading"
   },
   {
     "alias_for": "",
@@ -3057,6 +3217,22 @@
   },
   {
     "alias_for": "",
+    "name": "query_cache_on_disk_cache_name"
+  },
+  {
+    "alias_for": "",
+    "name": "query_cache_on_disk_codec"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_writes_to_query_cache_on_disk"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_reads_from_query_cache_on_disk"
+  },
+  {
+    "alias_for": "",
     "name": "query_cache_for_subqueries"
   },
   {
@@ -3117,6 +3293,14 @@
   },
   {
     "alias_for": "",
+    "name": "use_query_condition_cache_for_time_conditions"
+  },
+  {
+    "alias_for": "",
+    "name": "query_condition_cache_time_condition_grid_factor"
+  },
+  {
+    "alias_for": "",
     "name": "enable_shared_storage_snapshot_in_query"
   },
   {
@@ -3138,6 +3322,10 @@
   {
     "alias_for": "",
     "name": "optimize_rewrite_array_exists_to_has"
+  },
+  {
+    "alias_for": "",
+    "name": "optimize_rewrite_array_filter_length_to_array_count"
   },
   {
     "alias_for": "",
@@ -3357,11 +3545,19 @@
   },
   {
     "alias_for": "",
+    "name": "external_storage_push_down_limit"
+  },
+  {
+    "alias_for": "",
     "name": "allow_correlated_subqueries"
   },
   {
     "alias_for": "allow_correlated_subqueries",
     "name": "allow_experimental_correlated_subqueries"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_experimental_lateral_join"
   },
   {
     "alias_for": "",
@@ -3441,6 +3637,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_aggregation_having_prefilter"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_split_filter"
   },
   {
@@ -3465,6 +3665,10 @@
   },
   {
     "alias_for": "",
+    "name": "legacy_array_join_function_nondeterministic_evaluation"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_filter_push_down"
   },
   {
@@ -3485,6 +3689,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_convert_outer_join_to_inner_join_transitively"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_short_circuit_constant_false_join"
   },
   {
@@ -3497,15 +3705,15 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_replace_always_true_filter"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_merge_expression_into_join"
   },
   {
     "alias_for": "",
     "name": "query_plan_convert_join_to_in"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_optimize_prewhere"
   },
   {
     "alias_for": "",
@@ -3529,15 +3737,7 @@
   },
   {
     "alias_for": "",
-    "name": "query_plan_read_in_order"
-  },
-  {
-    "alias_for": "",
     "name": "query_plan_read_in_order_through_join"
-  },
-  {
-    "alias_for": "",
-    "name": "query_plan_aggregation_in_order"
   },
   {
     "alias_for": "",
@@ -3566,6 +3766,10 @@
   {
     "alias_for": "",
     "name": "query_plan_optimize_lazy_materialization_for_file"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_lazy_materialization_for_join"
   },
   {
     "alias_for": "",
@@ -3601,6 +3805,10 @@
   },
   {
     "alias_for": "",
+    "name": "legacy_join_size_limits_trigger_spilling"
+  },
+  {
+    "alias_for": "",
     "name": "serialize_query_plan"
   },
   {
@@ -3618,6 +3826,10 @@
   {
     "alias_for": "",
     "name": "optimize_qbit_distance_function_reads"
+  },
+  {
+    "alias_for": "",
+    "name": "qbit_one_bit_symmetric_distance"
   },
   {
     "alias_for": "",
@@ -3789,6 +4001,10 @@
   },
   {
     "alias_for": "",
+    "name": "async_insert_select_as_async_insert"
+  },
+  {
+    "alias_for": "",
     "name": "wait_for_async_insert"
   },
   {
@@ -3846,6 +4062,10 @@
   {
     "alias_for": "",
     "name": "max_streams_for_files_processing_in_cluster_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "cluster_function_wait_for_replica_ms"
   },
   {
     "alias_for": "",
@@ -4090,6 +4310,30 @@
   {
     "alias_for": "",
     "name": "workload"
+  },
+  {
+    "alias_for": "",
+    "name": "weight"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_factor"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_age_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_cpu_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "weight_lowering_io_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "workload_priority"
   },
   {
     "alias_for": "",
@@ -4417,10 +4661,6 @@
   },
   {
     "alias_for": "",
-    "name": "allow_named_collection_override_by_default"
-  },
-  {
-    "alias_for": "",
     "name": "default_normal_view_sql_security"
   },
   {
@@ -4450,6 +4690,10 @@
   {
     "alias_for": "",
     "name": "short_circuit_function_evaluation_for_nulls_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "short_circuit_function_evaluation_reorder_arguments"
   },
   {
     "alias_for": "",
@@ -4589,6 +4833,14 @@
   },
   {
     "alias_for": "",
+    "name": "automatic_parallel_replicas_remember_boundary"
+  },
+  {
+    "alias_for": "",
+    "name": "automatic_parallel_replicas_max_duplicated_read_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "automatic_parallel_replicas_min_bytes_per_replica"
   },
   {
@@ -4669,15 +4921,11 @@
   },
   {
     "alias_for": "",
-    "name": "parallel_replicas_only_with_analyzer"
-  },
-  {
-    "alias_for": "",
-    "name": "parallel_replicas_insert_select_local_pipeline"
-  },
-  {
-    "alias_for": "",
     "name": "parallel_replicas_connect_timeout_ms"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_for_queries_with_multiple_tables"
   },
   {
     "alias_for": "",
@@ -4746,6 +4994,14 @@
   {
     "alias_for": "",
     "name": "analyzer_compatibility_allow_compound_identifiers_in_unflatten_nested"
+  },
+  {
+    "alias_for": "",
+    "name": "semi_join_include_columns_from_both_sides"
+  },
+  {
+    "alias_for": "",
+    "name": "anti_join_include_columns_from_both_sides"
   },
   {
     "alias_for": "",
@@ -4977,6 +5233,10 @@
   },
   {
     "alias_for": "",
+    "name": "kill_throw_if_noop"
+  },
+  {
+    "alias_for": "",
     "name": "jemalloc_enable_profiler"
   },
   {
@@ -5173,6 +5433,18 @@
   },
   {
     "alias_for": "",
+    "name": "enable_ipcrypt"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_xgboost"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_elasticsearch"
+  },
+  {
+    "alias_for": "",
     "name": "enable_time_series_table"
   },
   {
@@ -5202,6 +5474,10 @@
   {
     "alias_for": "",
     "name": "enable_alp_codec"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_pco_codec"
   },
   {
     "alias_for": "",
@@ -5281,10 +5557,6 @@
   },
   {
     "alias_for": "",
-    "name": "use_statistics_cache"
-  },
-  {
-    "alias_for": "",
     "name": "enable_full_text_index"
   },
   {
@@ -5329,6 +5601,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_text_index_pattern_bypass_cache"
+  },
+  {
+    "alias_for": "",
     "name": "use_text_index_header_cache"
   },
   {
@@ -5341,11 +5617,7 @@
   },
   {
     "alias_for": "",
-    "name": "text_index_lazy_intersection_density_threshold"
-  },
-  {
-    "alias_for": "text_index_lazy_intersection_density_threshold",
-    "name": "text_index_density_threshold"
+    "name": "text_index_postings_intersection_algorithm"
   },
   {
     "alias_for": "",
@@ -5382,6 +5654,26 @@
   {
     "alias_for": "",
     "name": "polyglot_dialect"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_logsql_dialect"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_database"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_table"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_time_column"
+  },
+  {
+    "alias_for": "",
+    "name": "logsql_message_column"
   },
   {
     "alias_for": "",
@@ -5430,6 +5722,10 @@
   {
     "alias_for": "",
     "name": "iceberg_orphan_files_older_than_seconds"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_orphan_files_min_retention_seconds"
   },
   {
     "alias_for": "",
@@ -5490,6 +5786,14 @@
   {
     "alias_for": "",
     "name": "distributed_plan_prefer_replicas_over_workers"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_join_runtime_filters"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_max_buffered_log_rows"
   },
   {
     "alias_for": "",
@@ -5593,6 +5897,10 @@
   },
   {
     "alias_for": "",
+    "name": "promql_push_down_label_matchers"
+  },
+  {
+    "alias_for": "",
     "name": "allow_experimental_paimon_storage_engine"
   },
   {
@@ -5649,7 +5957,19 @@
   },
   {
     "alias_for": "",
+    "name": "enable_optimize_predicate_expression"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_only_with_analyzer"
+  },
+  {
+    "alias_for": "",
     "name": "enable_sharding_aggregator"
+  },
+  {
+    "alias_for": "",
+    "name": "use_statistics_cache"
   },
   {
     "alias_for": "",
@@ -5766,6 +6086,10 @@
   {
     "alias_for": "",
     "name": "allow_deprecated_snowflake_conversion_functions"
+  },
+  {
+    "alias_for": "",
+    "name": "validate_mutation_query"
   },
   {
     "alias_for": "",
@@ -5886,6 +6210,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_codecs"
+  },
+  {
+    "alias_for": "",
+    "name": "s3_max_connections"
   },
   {
     "alias_for": "",
@@ -6149,7 +6477,39 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_read_in_order"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_optimize_prewhere"
+  },
+  {
+    "alias_for": "",
+    "name": "query_plan_aggregation_in_order"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_insert_select_local_pipeline"
+  },
+  {
+    "alias_for": "",
     "name": "cloud_mode_database_engine"
+  },
+  {
+    "alias_for": "",
+    "name": "text_index_lazy_intersection_density_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_named_collection_override_by_default"
+  },
+  {
+    "alias_for": "",
+    "name": "text_index_density_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "use_compact_format_in_distributed_parts_names"
   },
   {
     "alias_for": "",
@@ -6274,6 +6634,10 @@
   {
     "alias_for": "",
     "name": "input_format_parquet_dictionary_filter_push_down"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_parquet_footer_read_size"
   },
   {
     "alias_for": "",
@@ -6610,6 +6974,10 @@
   {
     "alias_for": "",
     "name": "input_format_try_infer_exponent_floats"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_freeform_max_search_steps"
   },
   {
     "alias_for": "",
@@ -7141,6 +7509,10 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_pretty_display_control_characters"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_pretty_multiline_fields"
   },
   {
@@ -7162,6 +7534,10 @@
   {
     "alias_for": "",
     "name": "output_format_pretty_named_tuples_as_json"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_pretty_named_tuples_as_subcolumns"
   },
   {
     "alias_for": "",
@@ -7194,6 +7570,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_date_as_uint16"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_unsupported_types"
   },
   {
     "alias_for": "",
@@ -7281,6 +7661,14 @@
   },
   {
     "alias_for": "",
+    "name": "input_format_sqlite_table_name"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_sqlite_table_name"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_values_escape_quote_with_quote"
   },
   {
@@ -7365,7 +7753,15 @@
   },
   {
     "alias_for": "",
+    "name": "input_format_parquet_detect_variant_by_structure"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_parquet_geometadata"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_write_file_logical_type"
   },
   {
     "alias_for": "",

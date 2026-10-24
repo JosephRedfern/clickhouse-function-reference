@@ -576,6 +576,12 @@
     "name": "EXCEPT TABLES"
   },
   {
+    "name": "EXCEPT DATA FROM TABLE"
+  },
+  {
+    "name": "EXCEPT DATA FROM TABLES"
+  },
+  {
     "name": "EXCEPT"
   },
   {
@@ -912,6 +918,9 @@
     "name": "LAST"
   },
   {
+    "name": "LATERAL"
+  },
+  {
     "name": "LAYOUT"
   },
   {
@@ -1165,6 +1174,9 @@
   },
   {
     "name": "NOT OVERRIDABLE"
+  },
+  {
+    "name": "NOT SIMILAR TO"
   },
   {
     "name": "NOT"
@@ -1566,6 +1578,9 @@
     "name": "SIGNED"
   },
   {
+    "name": "SIMILAR TO"
+  },
+  {
     "name": "SIMPLE"
   },
   {
@@ -1654,6 +1669,9 @@
   },
   {
     "name": "THEN"
+  },
+  {
+    "name": "TIME RANGES"
   },
   {
     "name": "TIME ZONE"

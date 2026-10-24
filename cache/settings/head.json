@@ -1193,6 +1193,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_top_k_dynamic_filtering_for_single_string_sort_column"
+  },
+  {
+    "alias_for": "",
     "name": "enable_group_by_top_k_dynamic_filtering"
   },
   {
@@ -4441,6 +4445,10 @@
   },
   {
     "alias_for": "",
+    "name": "distributed_cache_min_inflight_bytes_to_discard_connection"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_cache_min_bytes_for_seek"
   },
   {
@@ -4805,6 +4813,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_iceberg_manifest_statistics"
+  },
+  {
+    "alias_for": "",
     "name": "iceberg_tolerate_conflicting_manifest_schemas"
   },
   {
@@ -4950,6 +4962,10 @@
   {
     "alias_for": "",
     "name": "parallel_replicas_for_cluster_engines"
+  },
+  {
+    "alias_for": "",
+    "name": "parallel_replicas_for_object_storage_tables"
   },
   {
     "alias_for": "",
@@ -5421,6 +5437,10 @@
   },
   {
     "alias_for": "",
+    "name": "ai_function_max_concurrent_requests_per_thread"
+  },
+  {
+    "alias_for": "",
     "name": "ai_function_text_default_credentials"
   },
   {
@@ -5522,6 +5542,10 @@
   {
     "alias_for": "",
     "name": "wait_changes_become_visible_after_commit_mode"
+  },
+  {
+    "alias_for": "",
+    "name": "wait_changes_become_visible_timeout_ms"
   },
   {
     "alias_for": "",
@@ -5789,10 +5813,6 @@
   },
   {
     "alias_for": "",
-    "name": "distributed_plan_worker_cluster"
-  },
-  {
-    "alias_for": "",
     "name": "distributed_plan_workers_num"
   },
   {
@@ -5822,6 +5842,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_prefer_replicas_over_workers"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_worker_cluster"
   },
   {
     "alias_for": "",
