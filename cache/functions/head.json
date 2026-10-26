@@ -2646,7 +2646,7 @@
     "case_insensitive": "0",
     "categories": "Arrays",
     "create_query": "",
-    "description": "\\nApplies an aggregate function to array elements in the given ranges and returns an array containing the result corresponding to each range.\\nThe function will return the same result as multiple `arrayReduce(agg_func, arraySlice(arr1, index, length), ...)`.\\n",
+    "description": "\\nApplies an aggregate function to array elements in the given ranges and returns an array containing the result corresponding to each range.\\nThe function will return the same result as multiple `arrayReduce(agg_func, arraySlice(arr1, index, length), ...)`.\\nThe only difference is that the length is unsigned: a length greater than the maximum `Int64` value selects the rest of the array,\\nwhile `arraySlice` interprets such a value as a negative length.\\n",
     "deterministic": "1",
     "examples": "**Usage example**\\n\\n```sql title=Query\\nSELECT arrayReduceInRanges(\\n    \\'sum\\',\\n    [(1, 5), (2, 3), (3, 4), (4, 4)],\\n    [1000000, 200000, 30000, 4000, 500, 60, 7]\\n) AS res\\n```\\n\\n```response title=Response\\n\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\\n\u2502 [1234500,234000,34560,4567] \u2502\\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\\n```\\n\\n",
     "higher_order": "0",
