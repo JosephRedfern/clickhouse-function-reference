@@ -2429,6 +2429,10 @@
   },
   {
     "alias_for": "",
+    "name": "adaptive_aggregator_disable_thaw"
+  },
+  {
+    "alias_for": "",
     "name": "read_in_order_use_buffering"
   },
   {
@@ -6758,6 +6762,14 @@
   {
     "alias_for": "",
     "name": "input_format_orc_dictionary_as_low_cardinality"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_vortex_filter_push_down"
+  },
+  {
+    "alias_for": "",
+    "name": "input_format_vortex_preserve_order"
   },
   {
     "alias_for": "",
