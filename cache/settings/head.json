@@ -3649,6 +3649,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_top_k_through_array_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_aggregation_bucket_top_k"
   },
   {
@@ -5802,6 +5806,10 @@
   {
     "alias_for": "",
     "name": "distributed_plan_default_reader_bucket_count"
+  },
+  {
+    "alias_for": "",
+    "name": "distributed_plan_min_rows_per_reader"
   },
   {
     "alias_for": "",
