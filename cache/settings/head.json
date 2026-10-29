@@ -4113,18 +4113,6 @@
   },
   {
     "alias_for": "",
-    "name": "filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit"
-  },
-  {
-    "alias_for": "filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit",
-    "name": "skip_download_if_exceeds_query_cache"
-  },
-  {
-    "alias_for": "",
-    "name": "filesystem_cache_max_download_size"
-  },
-  {
-    "alias_for": "",
     "name": "throw_on_error_from_cache_on_write_operations"
   },
   {
@@ -6046,6 +6034,18 @@
   {
     "alias_for": "",
     "name": "distributed_cache_use_clients_cache_for_write"
+  },
+  {
+    "alias_for": "",
+    "name": "filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit"
+  },
+  {
+    "alias_for": "filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit",
+    "name": "skip_download_if_exceeds_query_cache"
+  },
+  {
+    "alias_for": "",
+    "name": "filesystem_cache_max_download_size"
   },
   {
     "alias_for": "",
