@@ -893,6 +893,10 @@
   },
   {
     "alias_for": "",
+    "name": "to_start_of_interval_preserves_argument_type"
+  },
+  {
+    "alias_for": "",
     "name": "allow_nonconst_timezone_arguments"
   },
   {
