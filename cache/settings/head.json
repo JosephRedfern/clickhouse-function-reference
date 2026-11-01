@@ -1165,6 +1165,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_skip_indexes_for_disjunctions_max_rpn_elements"
+  },
+  {
+    "alias_for": "",
     "name": "use_skip_indexes_for_top_k"
   },
   {
@@ -2486,6 +2490,10 @@
   {
     "alias_for": "",
     "name": "json_extract_named_tuples_as_objects"
+  },
+  {
+    "alias_for": "",
+    "name": "json_extract_use_cast_string_to_date_time_mode"
   },
   {
     "alias_for": "",
@@ -5145,6 +5153,10 @@
   },
   {
     "alias_for": "",
+    "name": "cluster_table_function_pushed_down_filter"
+  },
+  {
+    "alias_for": "",
     "name": "cluster_table_function_buckets_batch_size"
   },
   {
@@ -5954,6 +5966,10 @@
   {
     "alias_for": "promql_evaluation_time",
     "name": "evaluation_time"
+  },
+  {
+    "alias_for": "",
+    "name": "promql_max_points_per_series"
   },
   {
     "alias_for": "",
