@@ -3633,6 +3633,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_constant_columns_after_filter"
+  },
+  {
+    "alias_for": "",
     "name": "legacy_column_name_of_tuple_literal"
   },
   {
