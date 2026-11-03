@@ -3585,6 +3585,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_lateral_join"
+  },
+  {
+    "alias_for": "enable_lateral_join",
     "name": "allow_experimental_lateral_join"
   },
   {
@@ -5186,6 +5190,10 @@
   {
     "alias_for": "",
     "name": "parallel_hash_join_threshold"
+  },
+  {
+    "alias_for": "",
+    "name": "hash_join_layout"
   },
   {
     "alias_for": "",
