@@ -3057,6 +3057,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_projection_skip_index_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "force_optimize_projection"
   },
   {
@@ -5169,6 +5173,10 @@
   },
   {
     "alias_for": "",
+    "name": "cluster_table_function_split_by_split_offsets"
+  },
+  {
+    "alias_for": "",
     "name": "merge_table_max_tables_to_look_for_schema_inference"
   },
   {
@@ -5218,6 +5226,10 @@
   {
     "alias_for": "",
     "name": "iceberg_insert_max_bytes_in_data_file"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_insert_single_manifest_for_all_partitions"
   },
   {
     "alias_for": "",
@@ -5677,6 +5689,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_page_cache_lookahead_for_text_index"
+  },
+  {
+    "alias_for": "",
     "name": "text_index_posting_list_apply_mode"
   },
   {
@@ -5689,6 +5705,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_database_materialized_postgresql"
+  },
+  {
+    "alias_for": "enable_database_materialized_postgresql",
     "name": "allow_experimental_database_materialized_postgresql"
   },
   {
@@ -5697,18 +5717,34 @@
   },
   {
     "alias_for": "",
+    "name": "enable_database_hms_catalog"
+  },
+  {
+    "alias_for": "enable_database_hms_catalog",
     "name": "allow_experimental_database_hms_catalog"
   },
   {
     "alias_for": "",
+    "name": "enable_kusto_dialect"
+  },
+  {
+    "alias_for": "enable_kusto_dialect",
     "name": "allow_experimental_kusto_dialect"
   },
   {
     "alias_for": "",
+    "name": "enable_prql_dialect"
+  },
+  {
+    "alias_for": "enable_prql_dialect",
     "name": "allow_experimental_prql_dialect"
   },
   {
     "alias_for": "",
+    "name": "enable_polyglot_dialect"
+  },
+  {
+    "alias_for": "enable_polyglot_dialect",
     "name": "allow_experimental_polyglot_dialect"
   },
   {
@@ -5769,6 +5805,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_cleanup_old_data_files_compaction"
+  },
+  {
+    "alias_for": "enable_cleanup_old_data_files_compaction",
     "name": "allow_experimental_cleanup_old_data_files_compaction"
   },
   {
@@ -5793,6 +5833,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_expire_snapshots"
+  },
+  {
+    "alias_for": "allow_expire_snapshots",
     "name": "allow_experimental_expire_snapshots"
   },
   {
@@ -5877,14 +5921,26 @@
   },
   {
     "alias_for": "",
+    "name": "enable_ytsaurus_table_engine"
+  },
+  {
+    "alias_for": "enable_ytsaurus_table_engine",
     "name": "allow_experimental_ytsaurus_table_engine"
   },
   {
     "alias_for": "",
+    "name": "enable_ytsaurus_table_function"
+  },
+  {
+    "alias_for": "enable_ytsaurus_table_function",
     "name": "allow_experimental_ytsaurus_table_function"
   },
   {
     "alias_for": "",
+    "name": "enable_ytsaurus_dictionary_source"
+  },
+  {
+    "alias_for": "enable_ytsaurus_dictionary_source",
     "name": "allow_experimental_ytsaurus_dictionary_source"
   },
   {
@@ -5989,6 +6045,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_paimon_storage_engine"
+  },
+  {
+    "alias_for": "enable_paimon_storage_engine",
     "name": "allow_experimental_paimon_storage_engine"
   },
   {
@@ -6005,6 +6065,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_object_storage_queue_hive_partitioning"
+  },
+  {
+    "alias_for": "enable_object_storage_queue_hive_partitioning",
     "name": "allow_experimental_object_storage_queue_hive_partitioning"
   },
   {
@@ -6017,6 +6081,14 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_join_order_use_interesting_orders"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_database_paimon_rest_catalog"
+  },
+  {
+    "alias_for": "enable_database_paimon_rest_catalog",
     "name": "allow_experimental_database_paimon_rest_catalog"
   },
   {
@@ -6041,6 +6113,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_eval_table_function"
+  },
+  {
+    "alias_for": "enable_eval_table_function",
     "name": "allow_experimental_eval_table_function"
   },
   {
@@ -7049,6 +7125,10 @@
   },
   {
     "alias_for": "",
+    "name": "type_json_skip_duplicate_key_detection"
+  },
+  {
+    "alias_for": "",
     "name": "json_type_escape_dots_in_keys"
   },
   {
@@ -7710,6 +7790,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_record_batch_size_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_max_record_batch_size_bytes"
   },
   {
     "alias_for": "",
