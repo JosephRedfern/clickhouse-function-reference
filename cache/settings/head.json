@@ -5541,10 +5541,6 @@
   },
   {
     "alias_for": "",
-    "name": "enable_alp_codec"
-  },
-  {
-    "alias_for": "",
     "name": "enable_pco_codec"
   },
   {
@@ -6386,6 +6382,10 @@
   {
     "alias_for": "",
     "name": "allow_experimental_codecs"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_alp_codec"
   },
   {
     "alias_for": "",
