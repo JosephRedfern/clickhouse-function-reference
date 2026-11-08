@@ -1177,6 +1177,10 @@
   },
   {
     "alias_for": "",
+    "name": "min_marks_per_part_to_load_statistics"
+  },
+  {
+    "alias_for": "",
     "name": "use_statistics_for_min_max_aggregation"
   },
   {
@@ -3789,6 +3793,10 @@
   },
   {
     "alias_for": "",
+    "name": "query_plan_use_shuffle_for_order_by_rand"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_remove_redundant_distinct"
   },
   {
@@ -4825,6 +4833,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_iceberg_table_statistics_ndv"
+  },
+  {
+    "alias_for": "",
     "name": "iceberg_tolerate_conflicting_manifest_schemas"
   },
   {
@@ -5605,6 +5617,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_experimental_shuffle_query"
+  },
+  {
+    "alias_for": "",
     "name": "enable_streaming_queries"
   },
   {
@@ -5778,14 +5794,6 @@
   {
     "alias_for": "",
     "name": "enable_adaptive_memory_spill_scheduler"
-  },
-  {
-    "alias_for": "",
-    "name": "allow_delta_kernel_rs"
-  },
-  {
-    "alias_for": "allow_delta_kernel_rs",
-    "name": "allow_experimental_delta_kernel_rs"
   },
   {
     "alias_for": "",
@@ -6150,6 +6158,14 @@
   {
     "alias_for": "",
     "name": "filesystem_cache_max_download_size"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_delta_kernel_rs"
+  },
+  {
+    "alias_for": "allow_delta_kernel_rs",
+    "name": "allow_experimental_delta_kernel_rs"
   },
   {
     "alias_for": "",

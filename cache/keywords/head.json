@@ -1581,6 +1581,9 @@
     "name": "SHOW"
   },
   {
+    "name": "SHUFFLE"
+  },
+  {
     "name": "SIGNED"
   },
   {
