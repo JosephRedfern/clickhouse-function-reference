@@ -12699,7 +12699,7 @@
     "create_query": "",
     "description": "Returns the first non-default value from a set of arguments",
     "deterministic": "1",
-    "examples": "**integers**\\n\\n```sql title=Query\\nSELECT firstNonDefault(0, 1, 2)\\n```\\n\\n```response title=Response\\n1\\n```\\n\\n**strings**\\n\\n```sql title=Query\\nSELECT firstNonDefault(\\'\\', \\'hello\\', \\'world\\')\\n```\\n\\n```response title=Response\\nhello\\n```\\n\\n**nulls**\\n\\n```sql title=Query\\nSELECT firstNonDefault(NULL, 0 :: UInt8, 1 :: UInt8)\\n```\\n\\n```response title=Response\\n1\\n```\\n\\n**nullable zero**\\n\\n```sql title=Query\\nSELECT firstNonDefault(NULL, 0 :: Nullable(UInt8), 1 :: Nullable(UInt8))\\n```\\n\\n```response title=Response\\n0\\n```\\n\\n",
+    "examples": "**integers**\\n\\n```sql title=Query\\nSELECT firstNonDefault(0, 1, 2)\\n```\\n\\n```response title=Response\\n1\\n```\\n\\n**strings**\\n\\n```sql title=Query\\nSELECT firstNonDefault(\\'\\', \\'hello\\', \\'world\\')\\n```\\n\\n```response title=Response\\nhello\\n```\\n\\n**nulls**\\n\\n```sql title=Query\\nSELECT firstNonDefault(NULL, 0 :: UInt8, 1 :: UInt8)\\n```\\n\\n```response title=Response\\n1\\n```\\n\\n**nullable zero**\\n\\n```sql title=Query\\nSELECT firstNonDefault(NULL, 0 :: Nullable(UInt8), 1 :: Nullable(UInt8))\\n```\\n\\n```response title=Response\\n0\\n```\\n\\n**enum**\\n\\n```sql title=Query\\nSELECT firstNonDefault(\\'a\\' :: Enum8(\\'a\\' = 1, \\'b\\' = 2), \\'b\\' :: Enum8(\\'a\\' = 1, \\'b\\' = 2))\\n```\\n\\n```response title=Response\\nb\\n```\\n\\n",
     "higher_order": "0",
     "introduced_in": "25.9.0",
     "is_aggregate": "0",

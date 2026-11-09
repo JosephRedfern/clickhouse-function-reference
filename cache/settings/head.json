@@ -2853,6 +2853,10 @@
   },
   {
     "alias_for": "",
+    "name": "optimize_if_transform_const_strings_to_lowcardinality"
+  },
+  {
+    "alias_for": "",
     "name": "optimize_if_transform_strings_to_enum"
   },
   {
