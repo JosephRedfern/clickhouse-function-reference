@@ -41,6 +41,10 @@
   },
   {
     "alias_for": "",
+    "name": "insert_squashing_max_memory_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "min_insert_block_size_rows_for_materialized_views"
   },
   {
@@ -413,6 +417,10 @@
   },
   {
     "alias_for": "",
+    "name": "s3_skip_hidden_files"
+  },
+  {
+    "alias_for": "",
     "name": "azure_create_new_file_on_insert"
   },
   {
@@ -545,6 +553,10 @@
   },
   {
     "alias_for": "",
+    "name": "hdfs_skip_hidden_files"
+  },
+  {
+    "alias_for": "",
     "name": "enable_hdfs_pread"
   },
   {
@@ -578,6 +590,10 @@
   {
     "alias_for": "",
     "name": "azure_skip_empty_files"
+  },
+  {
+    "alias_for": "",
+    "name": "azure_skip_hidden_files"
   },
   {
     "alias_for": "",
@@ -2070,6 +2086,14 @@
   {
     "alias_for": "",
     "name": "join_on_disk_max_files_to_merge"
+  },
+  {
+    "alias_for": "",
+    "name": "grace_hash_join_initial_buckets"
+  },
+  {
+    "alias_for": "",
+    "name": "grace_hash_join_max_buckets"
   },
   {
     "alias_for": "",
@@ -4833,6 +4857,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_join_runtime_filters_for_iceberg_pruning"
+  },
+  {
+    "alias_for": "",
     "name": "use_iceberg_manifest_statistics"
   },
   {
@@ -5417,6 +5445,14 @@
   },
   {
     "alias_for": "",
+    "name": "enable_packed_string_keys_in_hash_join"
+  },
+  {
+    "alias_for": "",
+    "name": "min_rows_for_packed_string_keys_in_hash_join"
+  },
+  {
+    "alias_for": "",
     "name": "query_plan_max_limit_for_join_lazy_indexing"
   },
   {
@@ -5594,14 +5630,6 @@
   {
     "alias_for": "",
     "name": "implicit_transaction"
-  },
-  {
-    "alias_for": "",
-    "name": "grace_hash_join_initial_buckets"
-  },
-  {
-    "alias_for": "",
-    "name": "grace_hash_join_max_buckets"
   },
   {
     "alias_for": "",
