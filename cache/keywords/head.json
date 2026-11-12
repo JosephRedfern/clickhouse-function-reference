@@ -1509,6 +1509,9 @@
     "name": "SECONDS"
   },
   {
+    "name": "SEGMENTS"
+  },
+  {
     "name": "SELECT"
   },
   {
@@ -1549,6 +1552,9 @@
   },
   {
     "name": "SETTINGS"
+  },
+  {
+    "name": "SHARDS"
   },
   {
     "name": "SHARED"
