@@ -4861,7 +4861,7 @@
   },
   {
     "alias_for": "",
-    "name": "use_iceberg_manifest_statistics"
+    "name": "use_datalake_metadata_statistics"
   },
   {
     "alias_for": "",
@@ -5442,6 +5442,10 @@
   {
     "alias_for": "",
     "name": "enable_join_key_only_hash_tables"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_robin_hood_hash_for_joins"
   },
   {
     "alias_for": "",
@@ -7830,6 +7834,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_date_as_uint16"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_uuid_as_fixed_byte_array"
   },
   {
     "alias_for": "",
