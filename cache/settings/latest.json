@@ -2049,6 +2049,14 @@
   },
   {
     "alias_for": "",
+    "name": "grace_hash_join_initial_buckets"
+  },
+  {
+    "alias_for": "",
+    "name": "grace_hash_join_max_buckets"
+  },
+  {
+    "alias_for": "",
     "name": "max_rows_in_set_to_optimize_join"
   },
   {
@@ -2470,6 +2478,10 @@
   {
     "alias_for": "",
     "name": "json_extract_named_tuples_as_objects"
+  },
+  {
+    "alias_for": "",
+    "name": "json_extract_use_cast_string_to_date_time_mode"
   },
   {
     "alias_for": "",
@@ -3557,6 +3569,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_lateral_join"
+  },
+  {
+    "alias_for": "enable_lateral_join",
     "name": "allow_experimental_lateral_join"
   },
   {
@@ -5397,6 +5413,10 @@
   },
   {
     "alias_for": "",
+    "name": "ai_function_max_concurrent_requests_per_thread"
+  },
+  {
+    "alias_for": "",
     "name": "ai_function_text_default_credentials"
   },
   {
@@ -5502,14 +5522,6 @@
   {
     "alias_for": "",
     "name": "implicit_transaction"
-  },
-  {
-    "alias_for": "",
-    "name": "grace_hash_join_initial_buckets"
-  },
-  {
-    "alias_for": "",
-    "name": "grace_hash_join_max_buckets"
   },
   {
     "alias_for": "",
@@ -7586,6 +7598,10 @@
   {
     "alias_for": "",
     "name": "output_format_arrow_record_batch_size_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_arrow_max_record_batch_size_bytes"
   },
   {
     "alias_for": "",

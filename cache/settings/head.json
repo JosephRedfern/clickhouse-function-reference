@@ -817,6 +817,10 @@
   },
   {
     "alias_for": "",
+    "name": "allow_reserved_column_names"
+  },
+  {
+    "alias_for": "",
     "name": "allow_suspicious_types_in_group_by"
   },
   {
