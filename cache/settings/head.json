@@ -613,6 +613,10 @@
   },
   {
     "alias_for": "",
+    "name": "use_lz4_library_decompression"
+  },
+  {
+    "alias_for": "",
     "name": "use_uncompressed_cache"
   },
   {
