@@ -4933,6 +4933,10 @@
   },
   {
     "alias_for": "",
+    "name": "automatic_parallel_replicas_statistics_drift_ratio"
+  },
+  {
+    "alias_for": "",
     "name": "automatic_parallel_replicas_min_bytes_per_replica"
   },
   {
