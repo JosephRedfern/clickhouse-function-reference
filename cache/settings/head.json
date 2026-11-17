@@ -4181,6 +4181,10 @@
   },
   {
     "alias_for": "",
+    "name": "read_from_filesystem_cache_if_exists_otherwise_cache_temporarily"
+  },
+  {
+    "alias_for": "",
     "name": "read_from_filesystem_cache_if_exists_otherwise_bypass_cache"
   },
   {
@@ -5326,6 +5330,10 @@
   {
     "alias_for": "",
     "name": "enable_parallel_single_level_merge"
+  },
+  {
+    "alias_for": "",
+    "name": "enable_parallel_single_level_merge_by_index"
   },
   {
     "alias_for": "",
