@@ -1345,6 +1345,10 @@
   },
   {
     "alias_for": "",
+    "name": "log_query_plans"
+  },
+  {
+    "alias_for": "",
     "name": "distributed_product_mode"
   },
   {
@@ -1554,6 +1558,10 @@
   {
     "alias_for": "",
     "name": "query_plan_max_step_description_length"
+  },
+  {
+    "alias_for": "",
+    "name": "log_query_plans_max_size"
   },
   {
     "alias_for": "",
@@ -4081,6 +4089,10 @@
   },
   {
     "alias_for": "",
+    "name": "merge_tree_read_end_tasks_per_stream"
+  },
+  {
+    "alias_for": "",
     "name": "merge_tree_compact_parts_min_granules_to_multibuffer_read"
   },
   {
@@ -4945,6 +4957,10 @@
   },
   {
     "alias_for": "",
+    "name": "automatic_parallel_replicas_ignore_thresholds"
+  },
+  {
+    "alias_for": "",
     "name": "max_parallel_replicas"
   },
   {
@@ -5325,6 +5341,10 @@
   },
   {
     "alias_for": "",
+    "name": "enable_fixed_and_packed_string_keys_in_aggregation"
+  },
+  {
+    "alias_for": "",
     "name": "enable_parallel_blocks_marshalling"
   },
   {
@@ -5502,6 +5522,14 @@
   {
     "alias_for": "",
     "name": "min_string_column_bytes_for_hash_join_row_store"
+  },
+  {
+    "alias_for": "",
+    "name": "allow_ai_functions"
+  },
+  {
+    "alias_for": "allow_ai_functions",
+    "name": "allow_experimental_ai_functions"
   },
   {
     "alias_for": "",
@@ -6234,10 +6262,6 @@
   {
     "alias_for": "",
     "name": "allow_experimental_query_deduplication"
-  },
-  {
-    "alias_for": "",
-    "name": "allow_experimental_ai_functions"
   },
   {
     "alias_for": "",
@@ -7857,6 +7881,10 @@
   },
   {
     "alias_for": "",
+    "name": "output_format_arrow_variant_as_json_string"
+  },
+  {
+    "alias_for": "",
     "name": "output_format_arrow_uuid_as_fixed_byte_array"
   },
   {
@@ -7962,6 +7990,22 @@
   {
     "alias_for": "",
     "name": "output_format_sqlite_table_name"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_puffin_blob_type"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_puffin_field_ids"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_puffin_snapshot_id"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_puffin_sequence_number"
   },
   {
     "alias_for": "",
