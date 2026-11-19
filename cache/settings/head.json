@@ -3241,11 +3241,15 @@
   },
   {
     "alias_for": "",
-    "name": "iceberg_data_file_size_upper_threshold_compaction"
+    "name": "iceberg_max_number_datafiles_to_compact"
   },
   {
     "alias_for": "",
-    "name": "iceberg_max_number_datafiles_to_compact"
+    "name": "iceberg_compaction_max_bytes_to_merge"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_max_rows_to_merge"
   },
   {
     "alias_for": "",
@@ -5309,14 +5313,6 @@
   },
   {
     "alias_for": "",
-    "name": "iceberg_compaction_max_rows_in_data_file"
-  },
-  {
-    "alias_for": "",
-    "name": "iceberg_compaction_max_bytes_in_data_file"
-  },
-  {
-    "alias_for": "",
     "name": "iceberg_insert_max_partitions"
   },
   {
@@ -6210,6 +6206,18 @@
   {
     "alias_for": "enable_eval_table_function",
     "name": "allow_experimental_eval_table_function"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_max_rows_in_data_file"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_compaction_max_bytes_in_data_file"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_data_file_size_upper_threshold_compaction"
   },
   {
     "alias_for": "",
@@ -7602,6 +7610,10 @@
   {
     "alias_for": "",
     "name": "output_format_parquet_data_page_size"
+  },
+  {
+    "alias_for": "",
+    "name": "output_format_parquet_data_page_row_limit"
   },
   {
     "alias_for": "",
