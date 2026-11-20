@@ -5309,6 +5309,10 @@
   },
   {
     "alias_for": "",
+    "name": "iceberg_insert_max_data_files_in_upload"
+  },
+  {
+    "alias_for": "",
     "name": "iceberg_insert_single_manifest_for_all_partitions"
   },
   {
