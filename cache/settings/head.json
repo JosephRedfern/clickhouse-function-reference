@@ -2785,6 +2785,10 @@
   },
   {
     "alias_for": "",
+    "name": "truncate_removes_parts_immediately"
+  },
+  {
+    "alias_for": "",
     "name": "enable_scalar_subquery_optimization"
   },
   {
@@ -5310,6 +5314,14 @@
   {
     "alias_for": "",
     "name": "iceberg_insert_max_data_files_in_upload"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_insert_max_sort_buffer_bytes"
+  },
+  {
+    "alias_for": "",
+    "name": "iceberg_write_table_statistics_ndv"
   },
   {
     "alias_for": "",
